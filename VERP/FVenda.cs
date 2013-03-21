@@ -11,11 +11,12 @@ using Database;
 
 namespace VERP
 {
-    public partial class Venda : Form
+    public partial class FVenda : Form
     {
         private Produto produtoAchado;
+        private Venda VendaAtual;
 
-        public Venda()
+        public FVenda()
         {
             InitializeComponent();
         }
@@ -32,16 +33,8 @@ namespace VERP
 
         private void Venda_Shown(object sender, EventArgs e)
         {
-            Item item = new Item();
-            item.Id = 1;
-            item.Quantidade = 1;
-            item.Valor = 10;
-            item.Total = 10;
-            Produto prod = new Produto();
-            prod.Id = 1;
-            prod.Descricao = "Teste";
-            item.Produto = prod;
-            itemBindingSource.Add(item);
+            VendaAtual = new Venda();
+            itemBindingSource.DataSource = VendaAtual.Itens;
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
@@ -70,7 +63,9 @@ namespace VERP
                 tbxQtde.Focus();
             }
 
-            itemBindingSource.Add(new Item(produtoAchado, Convert.ToDouble(tbxQtde.Text)));
+            VendaAtual.Itens.Add(new Item(produtoAchado, Convert.ToDouble(tbxQtde.Text)));
+            tbxProduto.Clear();
+            tbxQtde.Clear();
         }
     }
 }

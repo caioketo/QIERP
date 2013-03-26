@@ -21,6 +21,13 @@ namespace VERP
             InitializeComponent();
         }
 
+        public void AddItem(Item item)
+        {
+            VendaAtual.Itens.Add(item);
+            rtbTotal.Text = "Total: " + VendaAtual.Total.ToString("C2") + Environment.NewLine 
+                + "Total Itens: " + VendaAtual.Itens.Count.ToString();
+        }
+
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -63,9 +70,16 @@ namespace VERP
                 tbxQtde.Focus();
             }
 
-            VendaAtual.Itens.Add(new Item(produtoAchado, Convert.ToDouble(tbxQtde.Text)));
+            AddItem(new Item(produtoAchado, Convert.ToDouble(tbxQtde.Text)));
             tbxProduto.Clear();
             tbxQtde.Clear();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FFechaVenda fechaVenda = new FFechaVenda();
+            fechaVenda.VendaAtual = this.VendaAtual;
+            fechaVenda.ShowDialog();
         }
     }
 }

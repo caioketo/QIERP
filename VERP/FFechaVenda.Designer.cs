@@ -37,6 +37,7 @@
             this.tbxCheque = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.rtbTotal = new System.Windows.Forms.RichTextBox();
+            this.btnFinalizaVenda = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +55,6 @@
             this.tbxDinheiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxDinheiro.Location = new System.Drawing.Point(121, 12);
             this.tbxDinheiro.Name = "tbxDinheiro";
-            this.tbxDinheiro.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tbxDinheiro.Size = new System.Drawing.Size(131, 35);
             this.tbxDinheiro.TabIndex = 1;
             this.tbxDinheiro.Leave += new System.EventHandler(this.textBox1_Leave);
@@ -64,7 +64,6 @@
             this.tbxCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxCredito.Location = new System.Drawing.Point(121, 53);
             this.tbxCredito.Name = "tbxCredito";
-            this.tbxCredito.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tbxCredito.Size = new System.Drawing.Size(131, 35);
             this.tbxCredito.TabIndex = 3;
             this.tbxCredito.Leave += new System.EventHandler(this.textBox2_Leave);
@@ -84,7 +83,6 @@
             this.tbxDebito.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxDebito.Location = new System.Drawing.Point(121, 94);
             this.tbxDebito.Name = "tbxDebito";
-            this.tbxDebito.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tbxDebito.Size = new System.Drawing.Size(131, 35);
             this.tbxDebito.TabIndex = 5;
             this.tbxDebito.Leave += new System.EventHandler(this.textBox3_Leave);
@@ -104,7 +102,6 @@
             this.tbxCheque.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxCheque.Location = new System.Drawing.Point(121, 135);
             this.tbxCheque.Name = "tbxCheque";
-            this.tbxCheque.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tbxCheque.Size = new System.Drawing.Size(131, 35);
             this.tbxCheque.TabIndex = 7;
             this.tbxCheque.Leave += new System.EventHandler(this.textBox4_Leave);
@@ -121,6 +118,8 @@
             // 
             // rtbTotal
             // 
+            this.rtbTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbTotal.BackColor = System.Drawing.SystemColors.Window;
             this.rtbTotal.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbTotal.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -133,11 +132,24 @@
             this.rtbTotal.TabStop = false;
             this.rtbTotal.Text = "Total Venda: R$ 50,00\nTotal Pago: R$ 70,00\nTroco: R$ 20,00";
             // 
+            // btnFinalizaVenda
+            // 
+            this.btnFinalizaVenda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFinalizaVenda.Location = new System.Drawing.Point(286, 177);
+            this.btnFinalizaVenda.Name = "btnFinalizaVenda";
+            this.btnFinalizaVenda.Size = new System.Drawing.Size(519, 44);
+            this.btnFinalizaVenda.TabIndex = 9;
+            this.btnFinalizaVenda.Text = "Finalizar Venda";
+            this.btnFinalizaVenda.UseVisualStyleBackColor = true;
+            this.btnFinalizaVenda.Click += new System.EventHandler(this.btnFinalizaVenda_Click);
+            // 
             // FFechaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 655);
+            this.Controls.Add(this.btnFinalizaVenda);
             this.Controls.Add(this.rtbTotal);
             this.Controls.Add(this.tbxCheque);
             this.Controls.Add(this.label4);
@@ -147,10 +159,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbxDinheiro);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "FFechaVenda";
             this.Text = "FFechaVenda";
-            this.Load += new System.EventHandler(this.FFechaVenda_Load);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.FFechaVenda_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FFechaVenda_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +181,6 @@
         private System.Windows.Forms.TextBox tbxCheque;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox rtbTotal;
+        private System.Windows.Forms.Button btnFinalizaVenda;
     }
 }

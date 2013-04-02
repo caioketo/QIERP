@@ -15,15 +15,11 @@ namespace VERP
     public partial class FFechaVenda : Form
     {
         public Venda VendaAtual;
+        public FVenda fVenda;
 
         public FFechaVenda()
         {
             InitializeComponent();
-        }
-
-        private void FFechaVenda_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void FFechaVenda_Shown(object sender, EventArgs e)
@@ -33,31 +29,16 @@ namespace VERP
 
         private void CalculaPagto()
         {
-            double pagto = 0;
-            if (tbxDinheiro.Text.Trim() != "")
-            {
-                pagto += Double.Parse(tbxDinheiro.Text.Substring(2));
-            }
-            if (tbxCredito.Text.Trim() != "")
-            {
-                pagto += Double.Parse(tbxCredito.Text.Substring(2));
-            }
-            if (tbxDebito.Text.Trim() != "")
-            {
-                pagto += Double.Parse(tbxDebito.Text.Substring(2));
-            }
-            if (tbxCheque.Text.Trim() != "")
-            {
-                pagto += Double.Parse(tbxCheque.Text.Substring(2));
-            }
-
-
             rtbTotal.Clear();
             rtbTotal.AppendText("Total Venda: " + VendaAtual.Total.ToString("C2") + Environment.NewLine, Color.Black);
-            rtbTotal.AppendText("Total Pago: " + pagto.ToString("C2") + Environment.NewLine, Color.Black);
-            if (pagto > VendaAtual.Total)
+            rtbTotal.AppendText("Total Pago: " + VendaAtual.TotalPagto.ToString("C2") + Environment.NewLine, Color.Black);
+            if (VendaAtual.Troco > 0)
             {
-                rtbTotal.AppendText("Troco: " + ((Double)(pagto - VendaAtual.Total)).ToString("C2"), Color.Red);
+                rtbTotal.AppendText("Troco: " + VendaAtual.Troco.ToString("C2"), Color.Black);
+            }
+            else if (VendaAtual.Troco < 0)
+            {
+                rtbTotal.AppendText("Falta: " + (VendaAtual.Troco * -1).ToString("C2"), Color.Red);
             }
         }
 
@@ -70,25 +51,39 @@ namespace VERP
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
+            if (tbxDinheiro.Text.Trim() == "")
+            {
+                tbxDinheiro.Text = "0";
+            }
+            
             if (tbxDinheiro.Text.Contains("R$"))
             {
+                VendaAtual.PagtoDin = Double.Parse(tbxDinheiro.Text.Substring(2));
                 tbxDinheiro.Text = VerifyNumeric(tbxDinheiro.Text.Substring(2));
             }
             else
             {
+                VendaAtual.PagtoDin = Double.Parse(tbxDinheiro.Text);
                 tbxDinheiro.Text = VerifyNumeric(tbxDinheiro.Text);
             }
+            
             CalculaPagto();
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
+            if (tbxCredito.Text.Trim() == "")
+            {
+                tbxCredito.Text = "0";
+            }
             if (tbxCredito.Text.Contains("R$"))
             {
+                VendaAtual.PagtoCred = Double.Parse(tbxCredito.Text.Substring(2));
                 tbxCredito.Text = VerifyNumeric(tbxCredito.Text.Substring(2));
             }
             else
             {
+                VendaAtual.PagtoCred = Double.Parse(tbxCredito.Text);
                 tbxCredito.Text = VerifyNumeric(tbxCredito.Text);
             }
             CalculaPagto();
@@ -96,12 +91,18 @@ namespace VERP
 
         private void textBox3_Leave(object sender, EventArgs e)
         {
+            if (tbxDebito.Text.Trim() == "")
+            {
+                tbxDebito.Text = "0";
+            }
             if (tbxDebito.Text.Contains("R$"))
             {
+                VendaAtual.PagtoDeb = Double.Parse(tbxDebito.Text.Substring(2));
                 tbxDebito.Text = VerifyNumeric(tbxDebito.Text.Substring(2));
             }
             else
             {
+                VendaAtual.PagtoDeb = Double.Parse(tbxDebito.Text);
                 tbxDebito.Text = VerifyNumeric(tbxDebito.Text);
             }
             CalculaPagto();
@@ -109,15 +110,53 @@ namespace VERP
 
         private void textBox4_Leave(object sender, EventArgs e)
         {
+            if (tbxCheque.Text.Trim() == "")
+            {
+                tbxCheque.Text = "0";
+            }
             if (tbxCheque.Text.Contains("R$"))
             {
+                VendaAtual.PagtoCheq = Double.Parse(tbxCheque.Text.Substring(2));
                 tbxCheque.Text = VerifyNumeric(tbxCheque.Text.Substring(2));
             }
             else
             {
+                VendaAtual.PagtoCheq = Double.Parse(tbxCheque.Text);
                 tbxCheque.Text = VerifyNumeric(tbxCheque.Text);
             }
             CalculaPagto();
+        }
+
+        private void btnFinalizaVenda_Click(object sender, EventArgs e)
+        {
+            if (VendaAtual.Troco < 0)
+            {
+                return;
+            }
+
+            if (!DB.SalvaVenda(VendaAtual))
+            {
+                MessageBox.Show(DB.Error);
+            }
+            else
+            {
+                fVenda.VendaAtual = null;
+                MessageBox.Show("Venda Concluída!");
+                this.Close();
+            }
+        }
+
+        private void FFechaVenda_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
         }
     }
 

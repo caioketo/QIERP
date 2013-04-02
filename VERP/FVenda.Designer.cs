@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rtbTotal = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -61,6 +61,8 @@
             // 
             // rtbTotal
             // 
+            this.rtbTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbTotal.BackColor = System.Drawing.SystemColors.Window;
             this.rtbTotal.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbTotal.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -72,10 +74,11 @@
             this.rtbTotal.TabIndex = 3;
             this.rtbTotal.TabStop = false;
             this.rtbTotal.Text = "Teste";
-            this.rtbTotal.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.tbxQtde);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.tbxProduto);
@@ -111,7 +114,6 @@
             this.tbxProduto.Name = "tbxProduto";
             this.tbxProduto.Size = new System.Drawing.Size(226, 31);
             this.tbxProduto.TabIndex = 1;
-            this.tbxProduto.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.tbxProduto.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // label1
@@ -130,6 +132,9 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -164,8 +169,8 @@
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            dataGridViewCellStyle1.Format = "c";
-            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Format = "c";
+            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             this.valorDataGridViewTextBoxColumn.ReadOnly = true;
@@ -173,8 +178,8 @@
             // totalDataGridViewTextBoxColumn
             // 
             this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            dataGridViewCellStyle2.Format = "c";
-            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Format = "c";
+            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -192,9 +197,12 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.rtbTotal);
             this.Controls.Add(this.pictureBox1);
+            this.KeyPreview = true;
             this.Name = "FVenda";
             this.Text = "Venda";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.Venda_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FVenda_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

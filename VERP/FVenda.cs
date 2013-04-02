@@ -14,7 +14,7 @@ namespace VERP
     public partial class FVenda : Form
     {
         private Produto produtoAchado;
-        private Venda VendaAtual;
+        public Venda VendaAtual;
 
         public FVenda()
         {
@@ -23,30 +23,26 @@ namespace VERP
 
         public void AddItem(Item item)
         {
+            if (VendaAtual == null)
+            {
+                VendaAtual = new Venda();
+                itemBindingSource.DataSource = VendaAtual.Itens;
+            }
             VendaAtual.Itens.Add(item);
             rtbTotal.Text = "Total: " + VendaAtual.Total.ToString("C2") + Environment.NewLine 
                 + "Total Itens: " + VendaAtual.Itens.Count.ToString();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void Venda_Shown(object sender, EventArgs e)
         {
-            VendaAtual = new Venda();
-            itemBindingSource.DataSource = VendaAtual.Itens;
+            itemBindingSource.DataSource = null;
+            rtbTotal.Text = "CAIXA ABERTO" + Environment.NewLine + "PASSE O ITEM";
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            Produto prod = Database.Database.FindProduto(tbxProduto.Text);
+            Produto prod = DB.FindProduto(tbxProduto.Text);
             if (prod != null)
             {
                 produtoAchado = prod;
@@ -75,11 +71,40 @@ namespace VERP
             tbxQtde.Clear();
         }
 
+        private void FecharVenda()
+        {
+            using (FFechaVenda fechaVenda = new FFechaVenda())
+            {
+                fechaVenda.fVenda = this;
+                fechaVenda.VendaAtual = this.VendaAtual;
+                fechaVenda.ShowDialog();
+
+                if (VendaAtual == null)
+                {
+                    itemBindingSource.DataSource = null;
+                    rtbTotal.Text = "CAIXA ABERTO" + Environment.NewLine + "PASSE O ITEM";
+                }
+            }
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            FFechaVenda fechaVenda = new FFechaVenda();
-            fechaVenda.VendaAtual = this.VendaAtual;
-            fechaVenda.ShowDialog();
+            FecharVenda();
+        }
+
+        private void FVenda_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (VendaAtual != null)
+                {
+                    if (MessageBox.Show("Deseja cancelar a venda?", "VERP", MessageBoxButtons.YesNo) != System.Windows.Forms.DialogResult.Yes)
+                    {
+                        return;
+                    }
+                }
+                this.Close();
+            }
         }
     }
 }

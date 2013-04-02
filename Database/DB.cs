@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Database
 {
-    public class Database
+    public class DB
     {
         public static Produto FindProduto(string codigo)
         {
@@ -15,5 +15,14 @@ namespace Database
             retorno.Valor = 10;
             return retorno;
         }
+
+        public static bool SalvaVenda(Venda VendaAtual)
+        {
+            DB.Error = "Não implementado!";
+            return true;
+            //throw new NotImplementedException();
+        }
+
+        public static string Error { get; set; }
     }
 }

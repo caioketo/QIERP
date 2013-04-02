@@ -10,6 +10,24 @@ namespace Database
     public class Venda
     {
         public BindingList<Item> Itens { get; set; }
+        public double PagtoDin { get; set; }
+        public double PagtoCred { get; set; }
+        public double PagtoDeb { get; set; }
+        public double PagtoCheq { get; set; }
+        public double Troco
+        {
+            get
+            {
+                return (PagtoCheq + PagtoCred + PagtoDeb + PagtoDin) - Total;
+            }
+        }
+        public double TotalPagto
+        {
+            get
+            {
+                return (PagtoCheq + PagtoCred + PagtoDeb + PagtoDin);
+            }
+        }
         public double Total
         {
             get

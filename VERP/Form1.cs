@@ -16,5 +16,13 @@ namespace VERP
         {
             InitializeComponent();
         }
+
+        private void abrirVendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FVenda venda = new FVenda())
+            {
+                venda.ShowDialog();
+            }
+        }
     }
 }

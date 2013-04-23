@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,5 +25,14 @@ namespace Database
         }
 
         public static string Error { get; set; }
+
+        public static BindingList<Produto> FindProdutos(string trecho)
+        {
+            BindingList<Produto> result = new BindingList<Produto>();
+            result.Add(FindProduto(""));
+            result.Add(FindProduto(""));
+            result.Add(FindProduto(""));
+            return result;
+        }
     }
 }

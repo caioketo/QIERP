@@ -42,6 +42,10 @@ namespace VERP
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
+            using (FConsProduto consProd = new FConsProduto())
+            {
+                consProd.ShowDialog();
+            }
             Produto prod = DB.FindProduto(tbxProduto.Text);
             if (prod != null)
             {

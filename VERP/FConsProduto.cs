@@ -17,7 +17,9 @@ namespace VERP
 
         private void GetProdutos()
         {
-            Produtos = DB.FindProdutos(tbxProduto.Text);
+            ProdutoRepository repo = new ProdutoRepository();
+            Produtos = new BindingList<Produto>(repo.GetAll().Where(p => p.Descricao.Contains(tbxProduto.Text)).ToList());
+            //Produtos = DB.FindProdutos(tbxProduto.Text);
             dgvProdutos.DataSource = Produtos;
         }
 

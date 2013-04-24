@@ -14,12 +14,9 @@ namespace VERP
     public partial class FConsProduto : Form
     {
         private BindingList<Produto> Produtos;
-
         private void GetProdutos()
         {
-            ProdutoRepository repo = new ProdutoRepository();
-            Produtos = new BindingList<Produto>(repo.GetAll().Where(p => p.Descricao.Contains(tbxProduto.Text)).ToList());
-            //Produtos = DB.FindProdutos(tbxProduto.Text);
+            Produtos = new BindingList<Produto>(DB.ProdutoRepo.GetAll().Where(p => p.Descricao.Contains(tbxProduto.Text)).ToList());
             dgvProdutos.DataSource = Produtos;
         }
 

@@ -9,13 +9,7 @@ namespace Database
 {
     public class DB
     {
-        public static Produto FindProduto(string codigo)
-        {
-            Produto retorno = new Produto();
-            retorno.Descricao = "prod1";
-            retorno.Valor = 10;
-            return retorno;
-        }
+        public static ProdutoRepository ProdutoRepo = new ProdutoRepository();
 
         public static bool SalvaVenda(Venda VendaAtual)
         {
@@ -25,14 +19,5 @@ namespace Database
         }
 
         public static string Error { get; set; }
-
-        public static BindingList<Produto> FindProdutos(string trecho)
-        {
-            BindingList<Produto> result = new BindingList<Produto>();
-            result.Add(FindProduto(""));
-            result.Add(FindProduto(""));
-            result.Add(FindProduto(""));
-            return result;
-        }
     }
 }

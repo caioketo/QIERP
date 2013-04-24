@@ -46,14 +46,15 @@ namespace VERP
             {
                 consProd.ShowDialog();
             }
-            Produto prod = DB.FindProduto(tbxProduto.Text);
+            Produto prod = DB.ProdutoRepo.GetAll().Where(p => p.Codigo == tbxProduto.Text).First();
             if (prod != null)
             {
                 produtoAchado = prod;
             }
             else
             {
-                MessageBox.Show("Produto não encontrado!");
+                FConsProduto consProduto = new FConsProduto();
+                consProduto.ShowDialog();
                 tbxProduto.Focus();
             }
         }

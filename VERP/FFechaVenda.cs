@@ -28,11 +28,6 @@ namespace VERP
             pagamentoBindingSource.DataSource = VendaAtual.Pagamentos;
             formaDePagamentoBindingSource.DataSource = DB.FPRepo.GetAll();
             condicaoDePagamentoBindingSource.DataSource = DB.CPRepo.GetAll();
-            Pagamento pag = new Pagamento();
-            pag.Valor = 100;
-            pag.Forma = new FormaDePagamento();
-            pag.Forma.Descricao = "Teste";
-            VendaAtual.Pagamentos.Add(pag);
         }
 
         private void CalculaPagto()
@@ -57,84 +52,6 @@ namespace VERP
             return value.ToString("C2"); 
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (tbxDinheiro.Text.Trim() == "")
-            {
-                tbxDinheiro.Text = "0";
-            }
-            
-            if (tbxDinheiro.Text.Contains("R$"))
-            {
-                VendaAtual.PagtoDin = Double.Parse(tbxDinheiro.Text.Substring(2));
-                tbxDinheiro.Text = VerifyNumeric(tbxDinheiro.Text.Substring(2));
-            }
-            else
-            {
-                VendaAtual.PagtoDin = Double.Parse(tbxDinheiro.Text);
-                tbxDinheiro.Text = VerifyNumeric(tbxDinheiro.Text);
-            }
-            
-            CalculaPagto();
-        }
-
-        private void textBox2_Leave(object sender, EventArgs e)
-        {
-            if (tbxCredito.Text.Trim() == "")
-            {
-                tbxCredito.Text = "0";
-            }
-            if (tbxCredito.Text.Contains("R$"))
-            {
-                VendaAtual.PagtoCred = Double.Parse(tbxCredito.Text.Substring(2));
-                tbxCredito.Text = VerifyNumeric(tbxCredito.Text.Substring(2));
-            }
-            else
-            {
-                VendaAtual.PagtoCred = Double.Parse(tbxCredito.Text);
-                tbxCredito.Text = VerifyNumeric(tbxCredito.Text);
-            }
-            CalculaPagto();
-        }
-
-        private void textBox3_Leave(object sender, EventArgs e)
-        {
-            if (tbxDebito.Text.Trim() == "")
-            {
-                tbxDebito.Text = "0";
-            }
-            if (tbxDebito.Text.Contains("R$"))
-            {
-                VendaAtual.PagtoDeb = Double.Parse(tbxDebito.Text.Substring(2));
-                tbxDebito.Text = VerifyNumeric(tbxDebito.Text.Substring(2));
-            }
-            else
-            {
-                VendaAtual.PagtoDeb = Double.Parse(tbxDebito.Text);
-                tbxDebito.Text = VerifyNumeric(tbxDebito.Text);
-            }
-            CalculaPagto();
-        }
-
-        private void textBox4_Leave(object sender, EventArgs e)
-        {
-            if (tbxCheque.Text.Trim() == "")
-            {
-                tbxCheque.Text = "0";
-            }
-            if (tbxCheque.Text.Contains("R$"))
-            {
-                VendaAtual.PagtoCheq = Double.Parse(tbxCheque.Text.Substring(2));
-                tbxCheque.Text = VerifyNumeric(tbxCheque.Text.Substring(2));
-            }
-            else
-            {
-                VendaAtual.PagtoCheq = Double.Parse(tbxCheque.Text);
-                tbxCheque.Text = VerifyNumeric(tbxCheque.Text);
-            }
-            CalculaPagto();
-        }
-
         private void btnFinalizaVenda_Click(object sender, EventArgs e)
         {
             if (VendaAtual.Troco < 0)
@@ -142,7 +59,7 @@ namespace VERP
                 return;
             }
 
-            if (!DB.VendaRepo.Salvar(VendaAtual))
+            if (!DB.VendaRepo.Inserir(VendaAtual))
             {
                 MessageBox.Show(DB.Error);
             }
@@ -217,6 +134,7 @@ namespace VERP
             pagto.Valor = valor;
 
             VendaAtual.Pagamentos.Add(pagto);
+            CalculaPagto();
         }
     }
 

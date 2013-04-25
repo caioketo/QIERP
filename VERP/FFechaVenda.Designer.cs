@@ -29,109 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbxDinheiro = new System.Windows.Forms.TextBox();
-            this.tbxCredito = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbxDebito = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbxCheque = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rtbTotal = new System.Windows.Forms.RichTextBox();
             this.btnFinalizaVenda = new System.Windows.Forms.Button();
             this.cmbForma = new System.Windows.Forms.ComboBox();
+            this.formaDePagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmbCondicao = new System.Windows.Forms.ComboBox();
+            this.condicaoDePagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbxValor = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Forma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CondicaoPagto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formaDePagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.condicaoDePagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaDePagamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.condicaoDePagamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagamentoBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(562, 494);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Dinheiro";
-            // 
-            // tbxDinheiro
-            // 
-            this.tbxDinheiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxDinheiro.Location = new System.Drawing.Point(672, 491);
-            this.tbxDinheiro.Name = "tbxDinheiro";
-            this.tbxDinheiro.Size = new System.Drawing.Size(131, 35);
-            this.tbxDinheiro.TabIndex = 1;
-            this.tbxDinheiro.Leave += new System.EventHandler(this.textBox1_Leave);
-            // 
-            // tbxCredito
-            // 
-            this.tbxCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxCredito.Location = new System.Drawing.Point(672, 532);
-            this.tbxCredito.Name = "tbxCredito";
-            this.tbxCredito.Size = new System.Drawing.Size(131, 35);
-            this.tbxCredito.TabIndex = 3;
-            this.tbxCredito.Leave += new System.EventHandler(this.textBox2_Leave);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(574, 535);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 29);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Crédito";
-            // 
-            // tbxDebito
-            // 
-            this.tbxDebito.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxDebito.Location = new System.Drawing.Point(672, 573);
-            this.tbxDebito.Name = "tbxDebito";
-            this.tbxDebito.Size = new System.Drawing.Size(131, 35);
-            this.tbxDebito.TabIndex = 5;
-            this.tbxDebito.Leave += new System.EventHandler(this.textBox3_Leave);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(582, 576);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 29);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Débito";
-            // 
-            // tbxCheque
-            // 
-            this.tbxCheque.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxCheque.Location = new System.Drawing.Point(672, 614);
-            this.tbxCheque.Name = "tbxCheque";
-            this.tbxCheque.Size = new System.Drawing.Size(131, 35);
-            this.tbxCheque.TabIndex = 7;
-            this.tbxCheque.Leave += new System.EventHandler(this.textBox4_Leave);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(568, 617);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 29);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Cheque";
             // 
             // rtbTotal
             // 
@@ -173,6 +90,10 @@
             this.cmbForma.TabIndex = 10;
             this.cmbForma.ValueMember = "Id";
             // 
+            // formaDePagamentoBindingSource
+            // 
+            this.formaDePagamentoBindingSource.DataSource = typeof(Database.FormaDePagamento);
+            // 
             // cmbCondicao
             // 
             this.cmbCondicao.DataSource = this.condicaoDePagamentoBindingSource;
@@ -184,6 +105,10 @@
             this.cmbCondicao.Size = new System.Drawing.Size(247, 37);
             this.cmbCondicao.TabIndex = 11;
             this.cmbCondicao.ValueMember = "Id";
+            // 
+            // condicaoDePagamentoBindingSource
+            // 
+            this.condicaoDePagamentoBindingSource.DataSource = typeof(Database.CondicaoDePagamento);
             // 
             // tbxValor
             // 
@@ -212,6 +137,10 @@
             this.dataGridView1.Size = new System.Drawing.Size(790, 184);
             this.dataGridView1.TabIndex = 13;
             // 
+            // pagamentoBindingSource
+            // 
+            this.pagamentoBindingSource.DataSource = typeof(Database.Pagamento);
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
@@ -228,10 +157,6 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Forma";
             this.dataGridViewTextBoxColumn1.HeaderText = "Forma de Pagamento";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // pagamentoBindingSource
-            // 
-            this.pagamentoBindingSource.DataSource = typeof(Database.Pagamento);
             // 
             // Forma
             // 
@@ -252,17 +177,11 @@
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
+            dataGridViewCellStyle1.Format = "c";
+            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             this.valorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // formaDePagamentoBindingSource
-            // 
-            this.formaDePagamentoBindingSource.DataSource = typeof(Database.FormaDePagamento);
-            // 
-            // condicaoDePagamentoBindingSource
-            // 
-            this.condicaoDePagamentoBindingSource.DataSource = typeof(Database.CondicaoDePagamento);
             // 
             // FFechaVenda
             // 
@@ -276,24 +195,16 @@
             this.Controls.Add(this.cmbForma);
             this.Controls.Add(this.btnFinalizaVenda);
             this.Controls.Add(this.rtbTotal);
-            this.Controls.Add(this.tbxCheque);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbxDebito);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.tbxCredito);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbxDinheiro);
-            this.Controls.Add(this.label1);
             this.KeyPreview = true;
             this.Name = "FFechaVenda";
             this.Text = "FFechaVenda";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.FFechaVenda_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FFechaVenda_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaDePagamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.condicaoDePagamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,14 +212,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbxDinheiro;
-        private System.Windows.Forms.TextBox tbxCredito;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbxDebito;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbxCheque;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox rtbTotal;
         private System.Windows.Forms.Button btnFinalizaVenda;
         private System.Windows.Forms.ComboBox cmbForma;
@@ -318,10 +221,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource pagamentoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource formaDePagamentoBindingSource;
+        private System.Windows.Forms.BindingSource condicaoDePagamentoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn Forma;
         private System.Windows.Forms.DataGridViewTextBoxColumn CondicaoPagto;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource formaDePagamentoBindingSource;
-        private System.Windows.Forms.BindingSource condicaoDePagamentoBindingSource;
     }
 }

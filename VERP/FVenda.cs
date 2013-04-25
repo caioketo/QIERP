@@ -42,11 +42,7 @@ namespace VERP
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            using (FConsProduto consProd = new FConsProduto())
-            {
-                consProd.ShowDialog();
-            }
-            Produto prod = DB.ProdutoRepo.GetAll().Where(p => p.Codigo == tbxProduto.Text).First();
+            Produto prod = DB.ProdutoRepo.GetAll().Where(p => p.Codigo == tbxProduto.Text).FirstOrDefault();
             if (prod != null)
             {
                 produtoAchado = prod;
@@ -69,6 +65,7 @@ namespace VERP
             {
                 MessageBox.Show("Quantidade inválida!");
                 tbxQtde.Focus();
+                return;
             }
 
             AddItem(new Item(produtoAchado, Convert.ToDouble(tbxQtde.Text)));

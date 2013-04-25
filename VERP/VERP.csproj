@@ -107,6 +107,7 @@
       <DependentUpon>FVenda.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Database.Item.datasource" />
+    <None Include="Properties\DataSources\Database.Pagamento.datasource" />
     <None Include="Properties\DataSources\Database.Produto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

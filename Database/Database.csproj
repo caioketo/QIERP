@@ -30,6 +30,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\..\Program Files\PostgreSQL\Npgsql\ms.net4.0\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\..\..\Program Files\PostgreSQL\Npgsql\ms.net4.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="policy.2.0.Npgsql">
+      <HintPath>..\..\..\..\Program Files\PostgreSQL\Npgsql\ms.net4.0\policy.2.0.Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,12 +49,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB.cs" />
+    <Compile Include="FormaDePagamento.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Pagamento.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="ProdutoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Venda.cs" />
+    <Compile Include="VendaRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

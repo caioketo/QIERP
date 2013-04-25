@@ -10,6 +10,7 @@ namespace Database
     public class Venda
     {
         public BindingList<Item> Itens { get; set; }
+        public BindingList<Pagamento> Pagamentos { get; set; }
         public double PagtoDin { get; set; }
         public double PagtoCred { get; set; }
         public double PagtoDeb { get; set; }
@@ -18,14 +19,19 @@ namespace Database
         {
             get
             {
-                return (PagtoCheq + PagtoCred + PagtoDeb + PagtoDin) - Total;
+                return TotalPagto - Total;
             }
         }
         public double TotalPagto
         {
             get
             {
-                return (PagtoCheq + PagtoCred + PagtoDeb + PagtoDin);
+                double t = 0;
+                foreach (Pagamento pagamento in Pagamentos)
+                {
+                    t += pagamento.Valor;
+                }
+                return t;
             }
         }
         public double Total
@@ -44,6 +50,7 @@ namespace Database
         public Venda()
         {
             Itens = new BindingList<Item>();
+            Pagamentos = new BindingList<Pagamento>();
         }
     }
 }

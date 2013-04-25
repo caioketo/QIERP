@@ -25,6 +25,12 @@ namespace VERP
         private void FFechaVenda_Shown(object sender, EventArgs e)
         {
             CalculaPagto();
+            pagamentoBindingSource.DataSource = VendaAtual.Pagamentos;
+            Pagamento pag = new Pagamento();
+            pag.Valor = 100;
+            pag.Forma = new FormaDePagamento();
+            pag.Forma.Descricao = "Teste";
+            VendaAtual.Pagamentos.Add(pag);
         }
 
         private void CalculaPagto()
@@ -134,7 +140,7 @@ namespace VERP
                 return;
             }
 
-            if (!DB.SalvaVenda(VendaAtual))
+            if (!DB.VendaRepo.Salvar(VendaAtual))
             {
                 MessageBox.Show(DB.Error);
             }
@@ -157,6 +163,11 @@ namespace VERP
             {
                 SelectNextControl(ActiveControl, true, true, true, true);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

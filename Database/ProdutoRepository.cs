@@ -32,6 +32,12 @@ namespace Database
         public IQueryable<Produto> GetAll()
         {
             List<Produto> lista = new List<Produto>();
+            Produto prod = new Produto();
+            prod.Codigo = "1";
+            prod.Descricao = "Teste";
+            prod.Id = 1;
+            prod.Valor = 100;
+            lista.Add(prod);
             return lista.AsQueryable();
         }
     }

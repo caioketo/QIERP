@@ -106,6 +106,8 @@
     <EmbeddedResource Include="FVenda.resx">
       <DependentUpon>FVenda.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Database.CondicaoDePagamento.datasource" />
+    <None Include="Properties\DataSources\Database.FormaDePagamento.datasource" />
     <None Include="Properties\DataSources\Database.Item.datasource" />
     <None Include="Properties\DataSources\Database.Pagamento.datasource" />
     <None Include="Properties\DataSources\Database.Produto.datasource" />

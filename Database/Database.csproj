@@ -48,8 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CondicaoDePagamento.cs" />
+    <Compile Include="CPRepository.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="FormaDePagamento.cs" />
+    <Compile Include="FPRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Pagamento.cs" />

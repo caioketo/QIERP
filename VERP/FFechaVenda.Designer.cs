@@ -39,17 +39,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.rtbTotal = new System.Windows.Forms.RichTextBox();
             this.btnFinalizaVenda = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmbForma = new System.Windows.Forms.ComboBox();
+            this.cmbCondicao = new System.Windows.Forms.ComboBox();
+            this.tbxValor = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Forma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CondicaoPagto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formaDePagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.condicaoDePagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formaDePagamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.condicaoDePagamentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -156,31 +161,37 @@
             this.btnFinalizaVenda.UseVisualStyleBackColor = true;
             this.btnFinalizaVenda.Click += new System.EventHandler(this.btnFinalizaVenda_Click);
             // 
-            // comboBox1
+            // cmbForma
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 176);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(272, 37);
-            this.comboBox1.TabIndex = 10;
+            this.cmbForma.DataSource = this.formaDePagamentoBindingSource;
+            this.cmbForma.DisplayMember = "Descricao";
+            this.cmbForma.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.cmbForma.FormattingEnabled = true;
+            this.cmbForma.Location = new System.Drawing.Point(12, 176);
+            this.cmbForma.Name = "cmbForma";
+            this.cmbForma.Size = new System.Drawing.Size(272, 37);
+            this.cmbForma.TabIndex = 10;
+            this.cmbForma.ValueMember = "Id";
             // 
-            // comboBox2
+            // cmbCondicao
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(290, 176);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(247, 37);
-            this.comboBox2.TabIndex = 11;
+            this.cmbCondicao.DataSource = this.condicaoDePagamentoBindingSource;
+            this.cmbCondicao.DisplayMember = "Descricao";
+            this.cmbCondicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.cmbCondicao.FormattingEnabled = true;
+            this.cmbCondicao.Location = new System.Drawing.Point(290, 176);
+            this.cmbCondicao.Name = "cmbCondicao";
+            this.cmbCondicao.Size = new System.Drawing.Size(247, 37);
+            this.cmbCondicao.TabIndex = 11;
+            this.cmbCondicao.ValueMember = "Id";
             // 
-            // textBox1
+            // tbxValor
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(543, 176);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 35);
-            this.textBox1.TabIndex = 12;
+            this.tbxValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxValor.Location = new System.Drawing.Point(543, 176);
+            this.tbxValor.Name = "tbxValor";
+            this.tbxValor.Size = new System.Drawing.Size(210, 35);
+            this.tbxValor.TabIndex = 12;
             // 
             // dataGridView1
             // 
@@ -192,6 +203,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Forma,
+            this.CondicaoPagto,
             this.valorDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pagamentoBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(13, 220);
@@ -229,12 +241,28 @@
             this.Forma.ReadOnly = true;
             this.Forma.Width = 300;
             // 
+            // CondicaoPagto
+            // 
+            this.CondicaoPagto.DataPropertyName = "CondicaoPagto";
+            this.CondicaoPagto.HeaderText = "Condição de Pagamento";
+            this.CondicaoPagto.Name = "CondicaoPagto";
+            this.CondicaoPagto.ReadOnly = true;
+            this.CondicaoPagto.Width = 300;
+            // 
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             this.valorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // formaDePagamentoBindingSource
+            // 
+            this.formaDePagamentoBindingSource.DataSource = typeof(Database.FormaDePagamento);
+            // 
+            // condicaoDePagamentoBindingSource
+            // 
+            this.condicaoDePagamentoBindingSource.DataSource = typeof(Database.CondicaoDePagamento);
             // 
             // FFechaVenda
             // 
@@ -243,9 +271,9 @@
             this.ClientSize = new System.Drawing.Size(808, 655);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.tbxValor);
+            this.Controls.Add(this.cmbCondicao);
+            this.Controls.Add(this.cmbForma);
             this.Controls.Add(this.btnFinalizaVenda);
             this.Controls.Add(this.rtbTotal);
             this.Controls.Add(this.tbxCheque);
@@ -264,6 +292,8 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FFechaVenda_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formaDePagamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.condicaoDePagamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,14 +311,17 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox rtbTotal;
         private System.Windows.Forms.Button btnFinalizaVenda;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmbForma;
+        private System.Windows.Forms.ComboBox cmbCondicao;
+        private System.Windows.Forms.TextBox tbxValor;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource pagamentoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Forma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CondicaoPagto;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource formaDePagamentoBindingSource;
+        private System.Windows.Forms.BindingSource condicaoDePagamentoBindingSource;
     }
 }

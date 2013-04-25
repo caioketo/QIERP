@@ -26,6 +26,8 @@ namespace VERP
         {
             CalculaPagto();
             pagamentoBindingSource.DataSource = VendaAtual.Pagamentos;
+            formaDePagamentoBindingSource.DataSource = DB.FPRepo.GetAll();
+            condicaoDePagamentoBindingSource.DataSource = DB.CPRepo.GetAll();
             Pagamento pag = new Pagamento();
             pag.Valor = 100;
             pag.Forma = new FormaDePagamento();
@@ -167,7 +169,54 @@ namespace VERP
 
         private void button1_Click(object sender, EventArgs e)
         {
+            double valor = 0;
+            if (tbxValor.Text.Trim() == "")
+            {
+                tbxValor.Text = "0";
+            }
 
+            if (tbxValor.Text.Contains("R$"))
+            {
+                valor = Double.Parse(tbxValor.Text.Substring(2));
+                tbxValor.Text = VerifyNumeric(tbxValor.Text.Substring(2));
+            }
+            else
+            {
+                valor = Double.Parse(tbxValor.Text);
+                tbxValor.Text = VerifyNumeric(tbxValor.Text);
+            }
+
+            if (valor <= 0)
+            {
+                MessageBox.Show("Valor deve ser superior à 0!");
+                tbxValor.Focus();
+                return;
+            }
+
+            FormaDePagamento fp = DB.FPRepo.GetById((int)cmbForma.SelectedValue);
+
+            if (fp == null)
+            {
+                MessageBox.Show("Favor selecionar uma forma de pagamento válida!");
+                cmbForma.Focus();
+                return;
+            }
+
+            CondicaoDePagamento cp = DB.CPRepo.GetById((int)cmbCondicao.SelectedValue);
+
+            if (cp == null)
+            {
+                MessageBox.Show("Favor selecionar uma condição de pagamento válida!");
+                cmbCondicao.Focus();
+                return;
+            }
+
+            Pagamento pagto = new Pagamento();
+            pagto.Condicao = cp;
+            pagto.Forma = fp;
+            pagto.Valor = valor;
+
+            VendaAtual.Pagamentos.Add(pagto);
         }
     }
 

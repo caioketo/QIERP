@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@
             // vendaToolStripMenuItem
             // 
             this.vendaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.abrirVendaToolStripMenuItem});
+            this.abrirVendaToolStripMenuItem,
+            this.consultaVendaToolStripMenuItem});
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
             this.vendaToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.vendaToolStripMenuItem.Text = "Venda";
@@ -55,9 +57,16 @@
             // abrirVendaToolStripMenuItem
             // 
             this.abrirVendaToolStripMenuItem.Name = "abrirVendaToolStripMenuItem";
-            this.abrirVendaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.abrirVendaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.abrirVendaToolStripMenuItem.Text = "Abrir Venda";
             this.abrirVendaToolStripMenuItem.Click += new System.EventHandler(this.abrirVendaToolStripMenuItem_Click);
+            // 
+            // consultaVendaToolStripMenuItem
+            // 
+            this.consultaVendaToolStripMenuItem.Name = "consultaVendaToolStripMenuItem";
+            this.consultaVendaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.consultaVendaToolStripMenuItem.Text = "Consulta Venda";
+            this.consultaVendaToolStripMenuItem.Click += new System.EventHandler(this.consultaVendaToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -81,6 +90,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem vendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirVendaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaVendaToolStripMenuItem;
     }
 }
 

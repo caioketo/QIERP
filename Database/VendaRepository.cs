@@ -8,6 +8,8 @@ namespace Database
 {
     public class VendaRepository : IRepository<Venda>
     {
+        private List<Venda> Vendas = new List<Venda>();
+
         public bool Salvar(Venda item)
         {
             throw new NotImplementedException();
@@ -15,7 +17,12 @@ namespace Database
 
         public bool Inserir(Venda item)
         {
-            return DB.IncluirVenda(item);
+            if (DB.IncluirVenda(item))
+            {
+                Vendas.Add(item);
+                return true;
+            }
+            return false;
         }
 
         public Venda GetById(int id)
@@ -25,7 +32,7 @@ namespace Database
 
         public IQueryable<Venda> GetAll()
         {
-            throw new NotImplementedException();
+            return Vendas.AsQueryable();
         }
 
         public bool Deletar(Venda item)

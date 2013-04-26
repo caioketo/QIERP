@@ -24,5 +24,13 @@ namespace VERP
                 venda.ShowDialog();
             }
         }
+
+        private void consultaVendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FConsVenda consVenda = new FConsVenda())
+            {
+                consVenda.ShowDialog();
+            }
+        }
     }
 }

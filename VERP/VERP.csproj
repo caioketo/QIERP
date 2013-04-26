@@ -65,6 +65,12 @@
     <Compile Include="FConsProduto.Designer.cs">
       <DependentUpon>FConsProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FConsVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FConsVenda.Designer.cs">
+      <DependentUpon>FConsVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="FFechaVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="FConsProduto.resx">
       <DependentUpon>FConsProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FConsVenda.resx">
+      <DependentUpon>FConsVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FFechaVenda.resx">
       <DependentUpon>FFechaVenda.cs</DependentUpon>
@@ -111,6 +120,7 @@
     <None Include="Properties\DataSources\Database.Item.datasource" />
     <None Include="Properties\DataSources\Database.Pagamento.datasource" />
     <None Include="Properties\DataSources\Database.Produto.datasource" />
+    <None Include="Properties\DataSources\Database.Venda.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

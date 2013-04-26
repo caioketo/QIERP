@@ -11,10 +11,8 @@ namespace Database
     {
         public BindingList<Item> Itens { get; set; }
         public BindingList<Pagamento> Pagamentos { get; set; }
-        public double PagtoDin { get; set; }
-        public double PagtoCred { get; set; }
-        public double PagtoDeb { get; set; }
-        public double PagtoCheq { get; set; }
+        public int Id { get; set; }
+        public int Pedido { get; set; }
         public double Troco
         {
             get

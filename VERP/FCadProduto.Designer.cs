@@ -35,8 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbxValor = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFechar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,16 +99,6 @@
             this.panel1.Size = new System.Drawing.Size(775, 32);
             this.panel1.TabIndex = 6;
             // 
-            // btnFechar
-            // 
-            this.btnFechar.Location = new System.Drawing.Point(693, 0);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(81, 31);
-            this.btnFechar.TabIndex = 0;
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
             // btnGravar
             // 
             this.btnGravar.Location = new System.Drawing.Point(611, 0);
@@ -118,6 +108,16 @@
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = true;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(693, 0);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(81, 31);
+            this.btnFechar.TabIndex = 0;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // FCadProduto
             // 

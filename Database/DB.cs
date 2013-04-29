@@ -8,6 +8,13 @@ using Npgsql;
 
 namespace Database
 {
+    public enum Modo
+    {
+        Inserir,
+        Editar,
+        Excluir
+    }
+
     public class DB
     {
         private static NpgsqlConnection Conexao = new NpgsqlConnection("Server=192.168.0.10;User Id=postgres;" +

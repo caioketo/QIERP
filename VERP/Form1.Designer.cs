@@ -32,13 +32,15 @@
             this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vendaToolStripMenuItem});
+            this.vendaToolStripMenuItem,
+            this.produtosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(284, 24);
@@ -68,6 +70,13 @@
             this.consultaVendaToolStripMenuItem.Text = "Consulta Venda";
             this.consultaVendaToolStripMenuItem.Click += new System.EventHandler(this.consultaVendaToolStripMenuItem_Click);
             // 
+            // produtosToolStripMenuItem
+            // 
+            this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.produtosToolStripMenuItem.Text = "Produtos";
+            this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -91,6 +100,7 @@
         private System.Windows.Forms.ToolStripMenuItem vendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirVendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaVendaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
     }
 }
 

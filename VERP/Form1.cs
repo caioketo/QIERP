@@ -32,5 +32,13 @@ namespace VERP
                 consVenda.ShowDialog();
             }
         }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FGridProduto gridProduto = new FGridProduto())
+            {
+                gridProduto.ShowDialog();
+            }
+        }
     }
 }

@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FCadProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCadProduto.Designer.cs">
+      <DependentUpon>FCadProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FConsProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,12 @@
     <Compile Include="FFechaVenda.Designer.cs">
       <DependentUpon>FFechaVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="FGridProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FGridProduto.Designer.cs">
+      <DependentUpon>FGridProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +103,9 @@
     <Compile Include="FVenda.Designer.cs">
       <DependentUpon>FVenda.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FCadProduto.resx">
+      <DependentUpon>FCadProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FConsProduto.resx">
       <DependentUpon>FConsProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FFechaVenda.resx">
       <DependentUpon>FFechaVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGridProduto.resx">
+      <DependentUpon>FGridProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

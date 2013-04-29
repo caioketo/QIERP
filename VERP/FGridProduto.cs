@@ -53,5 +53,21 @@ namespace VERP
                 }
             }
         }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            using (FCadProduto cadastro = new FCadProduto())
+            {
+                cadastro.ShowDialog();
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (DB.ProdutoRepo.Deletar((Produto)produtoBindingSource.Current))
+            {
+                MessageBox.Show("Sucesso!");
+            }
+        }
     }
 }

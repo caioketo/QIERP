@@ -12,5 +12,15 @@ namespace Database
         public string Descricao { get; set; }
         public double Valor { get; set; }
         public string Codigo { get; set; }
+
+        public Produto()
+        {
+            this.Id = -1;
+        }
+
+        public Produto(int id)
+        {
+            this.Id = id;
+        }
     }
 }

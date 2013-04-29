@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRUD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRUD.Designer.cs">
+      <DependentUpon>CRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="FCadProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     <Compile Include="FVenda.Designer.cs">
       <DependentUpon>FVenda.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CRUD.resx">
+      <DependentUpon>CRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FCadProduto.resx">
       <DependentUpon>FCadProduto.cs</DependentUpon>
     </EmbeddedResource>

@@ -106,7 +106,10 @@
             this.Controls.Add(this.tbxPesquisa);
             this.Controls.Add(this.dgvCRUD);
             this.Name = "FCRUD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FCRUD";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Shown += new System.EventHandler(this.FCRUD_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCRUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -115,10 +118,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnInserir;
-        private System.Windows.Forms.TextBox tbxPesquisa;
-        private System.Windows.Forms.DataGridView dgvCRUD;
+        protected System.Windows.Forms.Button btnExcluir;
+        protected System.Windows.Forms.Button btnEditar;
+        protected System.Windows.Forms.Button btnInserir;
+        protected System.Windows.Forms.TextBox tbxPesquisa;
+        protected System.Windows.Forms.DataGridView dgvCRUD;
     }
 }

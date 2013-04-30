@@ -8,6 +8,18 @@ namespace Database
 {
     public class ProdutoRepository : IRepository<Produto>
     {
+        public IQueryable<Produto> GetAll()
+        {
+            List<Produto> lista = new List<Produto>();
+            Produto prod = new Produto();
+            prod.Codigo = "1";
+            prod.Descricao = "Teste";
+            prod.Id = 1;
+            prod.Valor = 100;
+            lista.Add(prod);
+            return lista.AsQueryable();
+        }
+
         public bool Salvar(Produto item)
         {
             throw new NotImplementedException();
@@ -26,19 +38,6 @@ namespace Database
         public bool Deletar(Produto item)
         {
             throw new NotImplementedException();
-        }
-
-
-        public IQueryable<Produto> GetAll()
-        {
-            List<Produto> lista = new List<Produto>();
-            Produto prod = new Produto();
-            prod.Codigo = "1";
-            prod.Descricao = "Teste";
-            prod.Id = 1;
-            prod.Valor = 100;
-            lista.Add(prod);
-            return lista.AsQueryable();
         }
     }
 }

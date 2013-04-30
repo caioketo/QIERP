@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Database;
 
 namespace VERP
 {
@@ -35,9 +36,13 @@ namespace VERP
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (FGridProduto gridProduto = new FGridProduto())
+            //using (FGridProduto gridProduto = new FGridProduto())
+            //{
+                //gridProduto.ShowDialog();
+            //}
+            using (FCRUDProduto crud = new FCRUDProduto())
             {
-                gridProduto.ShowDialog();
+                crud.ShowDialog();
             }
         }
     }

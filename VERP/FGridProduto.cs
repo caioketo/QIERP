@@ -33,6 +33,10 @@ namespace VERP
 
         private void FGridProduto_Shown(object sender, EventArgs e)
         {
+            crud1.setBingingSource(produtoBindingSource);
+            crud1.AddColumn("Código", "Codigo");
+            crud1.AddColumn("Descrição", "Descricao");
+            crud1.AddColumn("Valor", "Valor", "c");
             tbxPesquisa.Text = "";
             GetProdutos();
         }

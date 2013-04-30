@@ -83,6 +83,12 @@
     <Compile Include="FConsVenda.Designer.cs">
       <DependentUpon>FConsVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="FCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCRUD.Designer.cs">
+      <DependentUpon>FCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="FFechaVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FConsVenda.resx">
       <DependentUpon>FConsVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCRUD.resx">
+      <DependentUpon>FCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FFechaVenda.resx">
       <DependentUpon>FFechaVenda.cs</DependentUpon>

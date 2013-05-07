@@ -24,7 +24,7 @@ namespace VERP
         {
             Campos.Add(new Campo("Codigo", "Código", "", TiposDeCampo.Varchar, 14));
             Campos.Add(new Campo("Descricao", "Descrição", "", TiposDeCampo.Varchar, 50));
-            Campos.Add(new Campo("Valor", "Valor", "c", TiposDeCampo.Numeric, 17));
+            Campos.Add(new Campo("Valor", "Valor", "c", TiposDeCampo.Numeric, 15, 2));
 
             InitializeComponent();
         }

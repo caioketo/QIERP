@@ -31,25 +31,33 @@ namespace VERP
                 return;
             }
 
-            int i = 0;
+            int screenWidth = this.Width;
+            int screenHeight = this.Height;
+            int x = 13;
+            int y = 0;
             foreach (Campo campo in CRUD.Campos)
             {
+                if ((x + (int)(campo.Tamanho / 13) * 100) > screenWidth)
+                {
+                    x = 13;
+                    y += 52;
+                }
                 Label lbl = new Label();
                 lbl.Text = campo.Titulo;
                 lbl.Name = "lbl" + campo.Nome;
-                lbl.Location = new Point(13, 13 + (i * 40));
+                lbl.Location = new Point(x + 13, y + 13);
                 lbl.AutoSize = true;
                 lbl.Size = new Size(38, 13);
                 Labels.Add(lbl);
 
                 TextBox tbx = new TextBox();
                 tbx.Name = "tbx" + campo.Nome;
-                tbx.Location = new Point(13, 28 + (i * 40));
+                tbx.Location = new Point(x + 13, y + 28);
                 tbx.CharacterCasing = CharacterCasing.Upper;
                 tbx.Size = new Size((int)(campo.Tamanho/13) * 100, 20);
                 Controles.Add(tbx);
 
-                i += 1;
+                x += ((int)(campo.Tamanho / 13) * 100) + 5;
             }
 
             foreach (Label lbl in Labels)

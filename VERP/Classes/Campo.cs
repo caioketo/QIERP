@@ -13,10 +13,11 @@ namespace VERP.Classes
         public string Formatacao { get; set; }
         public TiposDeCampo Tipo { get; set; }
         public int Tamanho { get; set; }
+        public int Precisao { get; set; }
         public bool MostraGrid { get; set; }
         public object Valor { get; set; }
 
-        public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho, bool mostraGrid)
+        public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho, int precisao, bool mostraGrid)
         {
             Nome = nome;
             Titulo = titulo;
@@ -26,9 +27,19 @@ namespace VERP.Classes
             MostraGrid = mostraGrid;
         }
 
-        public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho) : 
-            this(nome, titulo, formatacao, tipo, tamanho, true)
-        {            
+        public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho) :
+            this(nome, titulo, formatacao, tipo, tamanho, 0, true)
+        {
+        }
+
+        public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho, bool mostraGrid) :
+            this(nome, titulo, formatacao, tipo, tamanho, 0, mostraGrid)
+        {
+        }
+
+        public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho, int precisao) :
+            this(nome, titulo, formatacao, tipo, tamanho, precisao, true)
+        {
         }
     }
 }

@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Campo.cs" />
+    <Compile Include="Classes\TiposDeCampo.cs" />
     <Compile Include="FCadProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +90,12 @@
     </Compile>
     <Compile Include="FCRUDProduto.Designer.cs">
       <DependentUpon>FCRUDProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FEdicao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FEdicao.Designer.cs">
+      <DependentUpon>FEdicao.cs</DependentUpon>
     </Compile>
     <Compile Include="FFechaVenda.cs">
       <SubType>Form</SubType>
@@ -123,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FCRUDProduto.resx">
       <DependentUpon>FCRUDProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FEdicao.resx">
+      <DependentUpon>FEdicao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FFechaVenda.resx">
       <DependentUpon>FFechaVenda.cs</DependentUpon>

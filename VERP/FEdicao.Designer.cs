@@ -1,6 +1,6 @@
 ﻿namespace VERP
 {
-    partial class FCRUDProduto
+    partial class FEdicao
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbxPesquisa
-            // 
-            this.tbxPesquisa.TextChanged += new System.EventHandler(this.tbxPesquisa_TextChanged);
-            // 
-            // FCRUDProduto
+            // FEdicao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(874, 332);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "FCRUDProduto";
-            this.Shown += new System.EventHandler(this.FCRUDProduto_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Name = "FEdicao";
+            this.Text = "FEdicao";
+            this.Load += new System.EventHandler(this.FEdicao_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
+
+
+
     }
 }

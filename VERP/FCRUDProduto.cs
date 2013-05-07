@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Database;
+using VERP.Classes;
 
 namespace VERP
 {
@@ -21,9 +22,10 @@ namespace VERP
 
         public FCRUDProduto()
         {
-            Campos = new string[]{"Codigo", "Descricao", "Valor"};
-            Titulos = new string[] { "Código", "Descrição", "Valor" };
-            Formats = new string[] { "", "", "c" };
+            Campos.Add(new Campo("Codigo", "Código", "", TiposDeCampo.Varchar, 14));
+            Campos.Add(new Campo("Descricao", "Descrição", "", TiposDeCampo.Varchar, 50));
+            Campos.Add(new Campo("Valor", "Valor", "c", TiposDeCampo.Numeric, 17));
+
             InitializeComponent();
         }
 

@@ -8,92 +8,51 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Database;
+using VERP.Classes;
 
 namespace VERP
 {
     public partial class FCRUD : Form
     {
-        private string[] campos;
-        public string[] Campos
-        {
-            get
-            {
-                return campos;
-            }
-            set
-            {
-                campos = value;
-            }
-        }
+        private FEdicao Edicao;
 
-        private string[] titulos;
-        public string[] Titulos
-        {
-            get
-            {
-                return titulos;
-            }
-            set
-            {
-                titulos = value;
-            }
-        }
-
-        private string[] formats;
-        public string[] Formats
-        {
-            get
-            {
-                return formats;
-            }
-            set
-            {
-                formats = value;
-            }
-        }
-
-        private string[] tiposCampos;
-        public string[] TiposCampos
-        {
-            get
-            {
-                return tiposCampos;
-            }
-            set
-            {
-                tiposCampos = value;
-            }
-        }
-
+        public List<Campo> Campos = new List<Campo>();
         public BindingSource bindingSource = new BindingSource();
 
 
         public FCRUD()
         {
             InitializeComponent();
+            Edicao = new FEdicao();
+            Edicao.CRUD = this;
         }
 
         private void FCRUD_Shown(object sender, EventArgs e)
         {
-            if (campos != null)
+            foreach (Campo campo in Campos)
             {
-                for (int i = 0; i < campos.Length; i++)
+                if (campo.MostraGrid)
                 {
                     DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                    col.DataPropertyName = campos[i];
+                    col.DataPropertyName = campo.Nome;
                     col.DefaultCellStyle = new DataGridViewCellStyle();
-                    if (!formats[i].Equals(""))
+                    if (!campo.Formatacao.Equals(""))
                     {
-                        col.DefaultCellStyle.Format = formats[i];
+                        col.DefaultCellStyle.Format = campo.Formatacao;
                     }
-                    col.HeaderText = titulos[i];
-                    col.Name = titulos[i];
+                    col.HeaderText = campo.Titulo;
+                    col.Name = campo.Titulo;
                     dgvCRUD.Columns.Add(col);
                 }
             }
 
             dgvCRUD.AutoGenerateColumns = false;
             dgvCRUD.DataSource = bindingSource;
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            Edicao.ShowDialog();
         }
     }
 }

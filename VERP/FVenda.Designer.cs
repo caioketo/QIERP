@@ -186,7 +186,7 @@
             // 
             // itemBindingSource
             // 
-            this.itemBindingSource.DataSource = typeof(Database.Item);
+            this.itemBindingSource.DataSource = typeof(VERPDatabase.Item);
             // 
             // FVenda
             // 

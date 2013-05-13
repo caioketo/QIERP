@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Database;
+using VERPDatabase;
 
 namespace VERP
 {
@@ -26,7 +26,7 @@ namespace VERP
 
         private void FConsVenda_Shown(object sender, EventArgs e)
         {
-            vendaBindingSource.DataSource = DB.VendaRepo.GetAll();
+            vendaBindingSource.DataSource = DB.GetInstance().VendaRepo.GetAll();
         }
 
         private void vendaBindingSource_DataSourceChanged(object sender, EventArgs e)

@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Database;
+using VERPDatabase;
+using VERP.Utils;
 
 namespace VERP
 {
@@ -26,8 +27,8 @@ namespace VERP
         {
             CalculaPagto();
             pagamentoBindingSource.DataSource = VendaAtual.Pagamentos;
-            formaDePagamentoBindingSource.DataSource = DB.FPRepo.GetAll();
-            condicaoDePagamentoBindingSource.DataSource = DB.CPRepo.GetAll();
+            formaDePagamentoBindingSource.DataSource = DB.GetInstance().FPRepo.GetAll();
+            condicaoDePagamentoBindingSource.DataSource = DB.GetInstance().CPRepo.GetAll();
         }
 
         private void CalculaPagto()
@@ -59,14 +60,14 @@ namespace VERP
                 return;
             }
 
-            if (!DB.VendaRepo.Inserir(VendaAtual))
+            if (!DB.GetInstance().VendaRepo.Inserir(VendaAtual))
             {
-                MessageBox.Show(DB.Error);
+                Mensagem.MostrarMsg(40002, DB.GetInstance().Error);
             }
             else
             {
                 fVenda.VendaAtual = null;
-                MessageBox.Show("Venda Concluída!");
+                Mensagem.MostrarMsg(10000);
                 this.Close();
             }
         }
@@ -105,25 +106,25 @@ namespace VERP
 
             if (valor <= 0)
             {
-                MessageBox.Show("Valor deve ser superior à 0!");
+                Mensagem.MostrarMsg(40003);
                 tbxValor.Focus();
                 return;
             }
 
-            FormaDePagamento fp = DB.FPRepo.GetById((int)cmbForma.SelectedValue);
+            FormaDePagamento fp = DB.GetInstance().FPRepo.GetById((int)cmbForma.SelectedValue);
 
             if (fp == null)
             {
-                MessageBox.Show("Favor selecionar uma forma de pagamento válida!");
+                Mensagem.MostrarMsg(40000, "Forma de Pagamento");
                 cmbForma.Focus();
                 return;
             }
 
-            CondicaoDePagamento cp = DB.CPRepo.GetById((int)cmbCondicao.SelectedValue);
+            CondicaoDePagamento cp = DB.GetInstance().CPRepo.GetById((int)cmbCondicao.SelectedValue);
 
             if (cp == null)
             {
-                MessageBox.Show("Favor selecionar uma condição de pagamento válida!");
+                Mensagem.MostrarMsg(40000, "Condição de Pagamento");
                 cmbCondicao.Focus();
                 return;
             }

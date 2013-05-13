@@ -31,6 +31,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // tbxPesquisa
             // 
             this.tbxPesquisa.TextChanged += new System.EventHandler(this.tbxPesquisa_TextChanged);
@@ -41,6 +45,7 @@
             this.ClientSize = new System.Drawing.Size(874, 332);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "FCRUDProduto";
+            this.Activated += new System.EventHandler(this.FCRUDProduto_Activated);
             this.Shown += new System.EventHandler(this.FCRUDProduto_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             this.ResumeLayout(false);

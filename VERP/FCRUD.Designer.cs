@@ -57,6 +57,7 @@
             this.btnEditar.TabIndex = 13;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnInserir
             // 
@@ -92,6 +93,7 @@
             this.dgvCRUD.Location = new System.Drawing.Point(12, 49);
             this.dgvCRUD.Name = "dgvCRUD";
             this.dgvCRUD.ReadOnly = true;
+            this.dgvCRUD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCRUD.Size = new System.Drawing.Size(850, 280);
             this.dgvCRUD.TabIndex = 10;
             this.dgvCRUD.TabStop = false;
@@ -106,11 +108,13 @@
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.tbxPesquisa);
             this.Controls.Add(this.dgvCRUD);
+            this.KeyPreview = true;
             this.Name = "FCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FCRUD";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.FCRUD_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FCRUD_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCRUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

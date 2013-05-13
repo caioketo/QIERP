@@ -62,7 +62,7 @@
             // 
             // produtoBindingSource
             // 
-            this.produtoBindingSource.DataSource = typeof(Database.Produto);
+            this.produtoBindingSource.DataSource = typeof(VERPDatabase.Produto);
             // 
             // groupBox1
             // 

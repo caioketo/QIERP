@@ -6,8 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Database;
 using VERP.Classes;
+using VERPDatabase;
+using VERPDatabase.Classes;
 
 namespace VERP
 {
@@ -15,17 +16,15 @@ namespace VERP
     {
         public void GetRecords()
         {
-            bindingSource.DataSource = DB.ProdutoRepo.GetAll().Where(p => p.Descricao.ToUpper().Contains(tbxPesquisa.Text) ||
+            bindingSource.DataSource = DB.GetInstance().ProdutoRepo.GetAll().Where(p => p.Descricao.ToUpper().Contains(tbxPesquisa.Text) ||
                 p.Codigo == tbxPesquisa.Text);
         }
 
 
         public FCRUDProduto()
         {
-            Campos.Add(new Campo("Codigo", "Código", "", TiposDeCampo.Varchar, 14));
-            Campos.Add(new Campo("Descricao", "Descrição", "", TiposDeCampo.Varchar, 50));
-            Campos.Add(new Campo("Valor", "Valor", "c", TiposDeCampo.Numeric, 15, 2));
-
+            tabela = DB.GetInstance().GetTabela("Produtos");
+            Edicao = new FEdicaoProduto();
             InitializeComponent();
         }
 
@@ -36,6 +35,18 @@ namespace VERP
 
         private void tbxPesquisa_TextChanged(object sender, EventArgs e)
         {
+            GetRecords();
+        }
+
+        private void FCRUDProduto_Activated(object sender, EventArgs e)
+        {
+            GetRecords();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            DB.GetInstance().ProdutoRepo.Deletar((Produto)bindingSource.Current);
+            DB.GetInstance().context.SaveChanges();
             GetRecords();
         }
     }

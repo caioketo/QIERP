@@ -4,9 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VERPDatabase.Classes;
 using Npgsql;
 
-namespace Database
+namespace VERPDatabase
 {
     public enum Modo
     {
@@ -17,23 +18,53 @@ namespace Database
 
     public class DB
     {
-        private static NpgsqlConnection Conexao = new NpgsqlConnection("Server=192.168.0.10;User Id=postgres;" +
-                                "Password=visual;Database=verp");
-        public static ProdutoRepository ProdutoRepo = new ProdutoRepository();
-        public static VendaRepository VendaRepo = new VendaRepository();
-        public static FPRepository FPRepo = new FPRepository();
-        public static CPRepository CPRepo = new CPRepository();
+        private static DB Instance = null;
 
-        public static string Error { get; set; }
+        public static DB GetInstance()
+        {
+            if (Instance == null)
+            {
+                Instance = new DB();
+            }
+            return Instance;
+        }
 
-        private static bool IncluirItem(Item item)
+        private List<Tabela> Tabelas = new List<Tabela>();
+
+        private NpgsqlConnection Conexao = new NpgsqlConnection("Server=192.168.0.10;User Id=postgres;" +
+                                "Password=visual;VERPDatabase=verp");
+        public ProdutoRepository ProdutoRepo = new ProdutoRepository();
+        public VendaRepository VendaRepo = new VendaRepository();
+        public FPRepository FPRepo = new FPRepository();
+        public CPRepository CPRepo = new CPRepository();
+
+        public string Error { get; set; }
+
+        private bool IncluirItem(Item item)
         {
             return true;
         }
 
-        public static bool IncluirVenda(Venda venda)
+        public bool IncluirVenda(Venda venda)
         {
             return true;
+        }
+
+        public Tabela GetTabela(string nome)
+        {
+            foreach (Tabela tab in Tabelas)
+            {
+                if (tab.Nome.ToUpper().Equals(nome.ToUpper()))
+                {
+                    return tab;
+                }
+            }
+            return null;
+        }
+
+        public DB()
+        {
+            Tabelas.Add(new Tabela("Produtos"));
         }
     }
 }

@@ -92,7 +92,7 @@
             // 
             // formaDePagamentoBindingSource
             // 
-            this.formaDePagamentoBindingSource.DataSource = typeof(Database.FormaDePagamento);
+            this.formaDePagamentoBindingSource.DataSource = typeof(VERPDatabase.FormaDePagamento);
             // 
             // cmbCondicao
             // 
@@ -108,7 +108,7 @@
             // 
             // condicaoDePagamentoBindingSource
             // 
-            this.condicaoDePagamentoBindingSource.DataSource = typeof(Database.CondicaoDePagamento);
+            this.condicaoDePagamentoBindingSource.DataSource = typeof(VERPDatabase.CondicaoDePagamento);
             // 
             // tbxValor
             // 
@@ -165,7 +165,7 @@
             // 
             // pagamentoBindingSource
             // 
-            this.pagamentoBindingSource.DataSource = typeof(Database.Pagamento);
+            this.pagamentoBindingSource.DataSource = typeof(VERPDatabase.Pagamento);
             // 
             // button1
             // 

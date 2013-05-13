@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VERP.Classes
+namespace VERPDatabase.Classes
 {
     public class Campo
     {
@@ -16,8 +16,9 @@ namespace VERP.Classes
         public int Precisao { get; set; }
         public bool MostraGrid { get; set; }
         public object Valor { get; set; }
+        public bool Obrigatorio { get; set; }
 
-        public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho, int precisao, bool mostraGrid)
+        public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho, int precisao, bool mostraGrid, bool obrigatorio)
         {
             Nome = nome;
             Titulo = titulo;
@@ -25,20 +26,21 @@ namespace VERP.Classes
             Tipo = tipo;
             Tamanho = tamanho;
             MostraGrid = mostraGrid;
+            Obrigatorio = obrigatorio;
         }
 
         public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho) :
-            this(nome, titulo, formatacao, tipo, tamanho, 0, true)
+            this(nome, titulo, formatacao, tipo, tamanho, 0, true, true)
         {
         }
 
         public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho, bool mostraGrid) :
-            this(nome, titulo, formatacao, tipo, tamanho, 0, mostraGrid)
+            this(nome, titulo, formatacao, tipo, tamanho, 0, mostraGrid, true)
         {
         }
 
         public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho, int precisao) :
-            this(nome, titulo, formatacao, tipo, tamanho, precisao, true)
+            this(nome, titulo, formatacao, tipo, tamanho, precisao, true, true)
         {
         }
     }

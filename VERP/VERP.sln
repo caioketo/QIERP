@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VERP", "VERP.csproj", "{57609D96-D81F-4C89-9B91-B3FD25CFBBF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "..\Database\Database.csproj", "{6D020A49-0737-4B5F-AA1D-4C66995F9A55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VERPDatabase", "..\VERPDatabase\VERPDatabase.csproj", "{5B12E237-CA0E-49A0-9B50-D6ECEE97545C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,10 @@ Global
 		{57609D96-D81F-4C89-9B91-B3FD25CFBBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57609D96-D81F-4C89-9B91-B3FD25CFBBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57609D96-D81F-4C89-9B91-B3FD25CFBBF4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D020A49-0737-4B5F-AA1D-4C66995F9A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D020A49-0737-4B5F-AA1D-4C66995F9A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D020A49-0737-4B5F-AA1D-4C66995F9A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D020A49-0737-4B5F-AA1D-4C66995F9A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B12E237-CA0E-49A0-9B50-D6ECEE97545C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B12E237-CA0E-49A0-9B50-D6ECEE97545C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B12E237-CA0E-49A0-9B50-D6ECEE97545C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B12E237-CA0E-49A0-9B50-D6ECEE97545C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

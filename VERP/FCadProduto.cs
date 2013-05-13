@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Database;
+using VERPDatabase;
 
 namespace VERP
 {
@@ -47,11 +47,11 @@ namespace VERP
         {
             if (ProdutoAtual.Id > -1)
             {
-                DB.ProdutoRepo.Salvar(ProdutoAtual);
+                DB.GetInstance().ProdutoRepo.Salvar(ProdutoAtual);
             }
             else
             {
-                DB.ProdutoRepo.Inserir(ProdutoAtual);
+                DB.GetInstance().ProdutoRepo.Inserir(ProdutoAtual);
             }
         }
     }

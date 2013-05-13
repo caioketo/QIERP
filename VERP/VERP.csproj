@@ -47,8 +47,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,8 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Campo.cs" />
-    <Compile Include="Classes\TiposDeCampo.cs" />
+    <Compile Include="Classes\Enum.cs" />
     <Compile Include="FCadProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +101,12 @@
     <Compile Include="FEdicao.Designer.cs">
       <DependentUpon>FEdicao.cs</DependentUpon>
     </Compile>
+    <Compile Include="FEdicaoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FEdicaoProduto.Designer.cs">
+      <DependentUpon>FEdicaoProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FFechaVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +127,8 @@
     <Compile Include="FVenda.Designer.cs">
       <DependentUpon>FVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Mensagem.cs" />
+    <Compile Include="Utils\Util.cs" />
     <EmbeddedResource Include="FCadProduto.resx">
       <DependentUpon>FCadProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FEdicao.resx">
       <DependentUpon>FEdicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FEdicaoProduto.resx">
+      <DependentUpon>FEdicaoProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FFechaVenda.resx">
       <DependentUpon>FFechaVenda.cs</DependentUpon>
@@ -153,6 +168,7 @@
     <EmbeddedResource Include="FVenda.resx">
       <DependentUpon>FVenda.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\Database.CondicaoDePagamento.datasource" />
     <None Include="Properties\DataSources\Database.FormaDePagamento.datasource" />
     <None Include="Properties\DataSources\Database.Item.datasource" />
@@ -173,12 +189,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Database\Database.csproj">
-      <Project>{6d020a49-0737-4b5f-aa1d-4c66995f9a55}</Project>
-      <Name>Database</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
@@ -194,6 +204,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VERPDatabase\VERPDatabase.csproj">
+      <Project>{5b12e237-ca0e-49a0-9b50-d6ecee97545c}</Project>
+      <Name>VERPDatabase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

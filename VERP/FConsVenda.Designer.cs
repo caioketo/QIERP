@@ -83,7 +83,7 @@
             // 
             // vendaBindingSource
             // 
-            this.vendaBindingSource.DataSource = typeof(Database.Venda);
+            this.vendaBindingSource.DataSource = typeof(VERPDatabase.Venda);
             this.vendaBindingSource.DataSourceChanged += new System.EventHandler(this.vendaBindingSource_DataSourceChanged);
             this.vendaBindingSource.PositionChanged += new System.EventHandler(this.vendaBindingSource_PositionChanged);
             // 
@@ -107,7 +107,7 @@
             // 
             // itemBindingSource
             // 
-            this.itemBindingSource.DataSource = typeof(Database.Item);
+            this.itemBindingSource.DataSource = typeof(VERPDatabase.Item);
             // 
             // dataGridView3
             // 
@@ -150,7 +150,7 @@
             // 
             // pagamentoBindingSource
             // 
-            this.pagamentoBindingSource.DataSource = typeof(Database.Pagamento);
+            this.pagamentoBindingSource.DataSource = typeof(VERPDatabase.Pagamento);
             // 
             // descricaoDataGridViewTextBoxColumn
             // 

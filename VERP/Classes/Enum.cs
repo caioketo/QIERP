@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace VERP.Classes
 {
-    public enum TiposDeCampo
+    public enum Estado
     {
-        Varchar,
-        Integer,
-        Timestamp,
-        Numeric
+        Inserir,
+        Modificar,
+        Deletar
     }
 }

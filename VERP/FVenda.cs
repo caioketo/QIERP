@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Database;
+using VERPDatabase;
+using VERP.Utils;
 
 namespace VERP
 {
@@ -42,7 +43,7 @@ namespace VERP
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            Produto prod = DB.ProdutoRepo.GetAll().Where(p => p.Codigo == tbxProduto.Text).FirstOrDefault();
+            Produto prod = DB.GetInstance().ProdutoRepo.GetAll().Where(p => p.Codigo == tbxProduto.Text).FirstOrDefault();
             if (prod != null)
             {
                 produtoAchado = prod;
@@ -63,7 +64,7 @@ namespace VERP
             }
             catch (Exception)
             {
-                MessageBox.Show("Quantidade inválida!");
+                Mensagem.MostrarMsg(40004);
                 tbxQtde.Focus();
                 return;
             }
@@ -100,7 +101,7 @@ namespace VERP
             {
                 if (VendaAtual != null)
                 {
-                    if (MessageBox.Show("Deseja cancelar a venda?", "VERP", MessageBoxButtons.YesNo) != System.Windows.Forms.DialogResult.Yes)
+                    if (Mensagem.MostrarMsg(30001) != System.Windows.Forms.DialogResult.Yes)
                     {
                         return;
                     }

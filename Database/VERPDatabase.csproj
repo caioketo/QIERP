@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\VERP\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Security">
       <HintPath>..\..\..\..\Program Files\PostgreSQL\Npgsql\ms.net4.0\Mono.Security.dll</HintPath>
     </Reference>
@@ -48,7 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Campo.cs" />
+    <Compile Include="Classes\ClasseBase.cs" />
     <Compile Include="Classes\CondicaoDePagamento.cs" />
+    <Compile Include="Classes\Tabela.cs" />
+    <Compile Include="Classes\TiposDeCampo.cs" />
     <Compile Include="Repositorios\CPRepository.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="Classes\FormaDePagamento.cs" />
@@ -61,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Venda.cs" />
     <Compile Include="Repositorios\VendaRepository.cs" />
+    <Compile Include="VerpContext.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,24 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Database;
+using VERPDatabase;
+using VERPDatabase.Classes;
 using VERP.Classes;
+using VERP.Utils;
 
 namespace VERP
 {
     public partial class FCRUD : Form
     {
-        private FEdicao Edicao;
+        protected FEdicao Edicao;
 
-        public List<Campo> Campos = new List<Campo>();
+        public List<Campo> Campos
+        {
+            get
+            {
+                if (tabela != null)
+                {
+                    return tabela.Campos;
+                }
+                else
+                {
+                    return new List<Campo>();
+                }
+            }
+        }
+        public Tabela tabela;
         public BindingSource bindingSource = new BindingSource();
-
 
         public FCRUD()
         {
             InitializeComponent();
-            Edicao = new FEdicao();
-            Edicao.CRUD = this;
         }
 
         private void FCRUD_Shown(object sender, EventArgs e)
@@ -48,11 +61,35 @@ namespace VERP
 
             dgvCRUD.AutoGenerateColumns = false;
             dgvCRUD.DataSource = bindingSource;
+
+            if (Edicao != null)
+            {
+                Edicao.CRUD = this;
+            }
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
+            Edicao.estado = Estado.Inserir;
             Edicao.ShowDialog();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Edicao.estado = Estado.Modificar;
+            Edicao.Objeto = (ClasseBase)bindingSource.Current;
+            Edicao.ShowDialog();
+        }
+
+        private void FCRUD_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (Mensagem.MostrarMsg(30000) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    this.Close();
+                }
+            }
         }
     }
 }

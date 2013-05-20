@@ -28,7 +28,16 @@ namespace VERP
             CalculaPagto();
             pagamentoBindingSource.DataSource = VendaAtual.Pagamentos;
             formaDePagamentoBindingSource.DataSource = DB.GetInstance().FPRepo.GetAll();
-            condicaoDePagamentoBindingSource.DataSource = DB.GetInstance().CPRepo.GetAll();
+            AtualizaCondicoes();
+        }
+
+        public void AtualizaCondicoes()
+        {
+            FormaDePagamento fp = (FormaDePagamento)cmbForma.SelectedItem;
+            if (fp != null)
+            {
+                condicaoDePagamentoBindingSource.DataSource = DB.GetInstance().CPRepo.GetAll().Where(c => c.Forma.Id == fp.Id).ToList();
+            }
         }
 
         private void CalculaPagto()
@@ -136,6 +145,20 @@ namespace VERP
 
             VendaAtual.Pagamentos.Add(pagto);
             CalculaPagto();
+        }
+
+        private void cmbForma_SelectedValueChanged(object sender, EventArgs e)
+        {
+            AtualizaCondicoes();
+        }
+
+        private void tbxValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !e.KeyChar.Equals(','))
+            {
+                e.Handled = true;
+            }
+            base.OnKeyPress(e);
         }
     }
 

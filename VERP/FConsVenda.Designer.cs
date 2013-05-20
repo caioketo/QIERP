@@ -29,27 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.formaPagtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.condicaoPagtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formaPagtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condicaoPagtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -67,25 +71,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(865, 210);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Pedido
-            // 
-            this.Pedido.DataPropertyName = "Pedido";
-            this.Pedido.HeaderText = "Pedido";
-            this.Pedido.Name = "Pedido";
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vendaBindingSource
-            // 
-            this.vendaBindingSource.DataSource = typeof(VERPDatabase.Venda);
-            this.vendaBindingSource.DataSourceChanged += new System.EventHandler(this.vendaBindingSource_DataSourceChanged);
-            this.vendaBindingSource.PositionChanged += new System.EventHandler(this.vendaBindingSource_PositionChanged);
             // 
             // dataGridView2
             // 
@@ -105,10 +90,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(865, 231);
             this.dataGridView2.TabIndex = 1;
             // 
-            // itemBindingSource
-            // 
-            this.itemBindingSource.DataSource = typeof(VERPDatabase.Item);
-            // 
             // dataGridView3
             // 
             this.dataGridView3.AllowUserToAddRows = false;
@@ -126,31 +107,19 @@
             this.dataGridView3.Size = new System.Drawing.Size(865, 150);
             this.dataGridView3.TabIndex = 2;
             // 
-            // formaPagtoDataGridViewTextBoxColumn
-            // 
-            this.formaPagtoDataGridViewTextBoxColumn.DataPropertyName = "FormaPagto";
-            this.formaPagtoDataGridViewTextBoxColumn.HeaderText = "FormaPagto";
-            this.formaPagtoDataGridViewTextBoxColumn.Name = "formaPagtoDataGridViewTextBoxColumn";
-            this.formaPagtoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.formaPagtoDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // condicaoPagtoDataGridViewTextBoxColumn
-            // 
-            this.condicaoPagtoDataGridViewTextBoxColumn.DataPropertyName = "CondicaoPagto";
-            this.condicaoPagtoDataGridViewTextBoxColumn.HeaderText = "CondicaoPagto";
-            this.condicaoPagtoDataGridViewTextBoxColumn.Name = "condicaoPagtoDataGridViewTextBoxColumn";
-            this.condicaoPagtoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.condicaoPagtoDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // valorDataGridViewTextBoxColumn1
-            // 
-            this.valorDataGridViewTextBoxColumn1.DataPropertyName = "Valor";
-            this.valorDataGridViewTextBoxColumn1.HeaderText = "Valor";
-            this.valorDataGridViewTextBoxColumn1.Name = "valorDataGridViewTextBoxColumn1";
-            // 
             // pagamentoBindingSource
             // 
             this.pagamentoBindingSource.DataSource = typeof(VERPDatabase.Pagamento);
+            // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataSource = typeof(VERPDatabase.Item);
+            // 
+            // vendaBindingSource
+            // 
+            this.vendaBindingSource.DataSource = typeof(VERPDatabase.Venda);
+            this.vendaBindingSource.DataSourceChanged += new System.EventHandler(this.vendaBindingSource_DataSourceChanged);
+            this.vendaBindingSource.PositionChanged += new System.EventHandler(this.vendaBindingSource_PositionChanged);
             // 
             // descricaoDataGridViewTextBoxColumn
             // 
@@ -163,6 +132,8 @@
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
+            dataGridViewCellStyle2.Format = "c2";
+            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             // 
@@ -175,8 +146,49 @@
             // totalDataGridViewTextBoxColumn1
             // 
             this.totalDataGridViewTextBoxColumn1.DataPropertyName = "Total";
+            dataGridViewCellStyle3.Format = "c2";
+            this.totalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
             this.totalDataGridViewTextBoxColumn1.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn1.Name = "totalDataGridViewTextBoxColumn1";
+            // 
+            // Pedido
+            // 
+            this.Pedido.DataPropertyName = "Pedido";
+            this.Pedido.HeaderText = "Pedido";
+            this.Pedido.Name = "Pedido";
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            dataGridViewCellStyle1.Format = "c2";
+            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // formaPagtoDataGridViewTextBoxColumn
+            // 
+            this.formaPagtoDataGridViewTextBoxColumn.DataPropertyName = "FormaPagto";
+            this.formaPagtoDataGridViewTextBoxColumn.HeaderText = "FormaPagto";
+            this.formaPagtoDataGridViewTextBoxColumn.Name = "formaPagtoDataGridViewTextBoxColumn";
+            this.formaPagtoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.formaPagtoDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // condicaoPagtoDataGridViewTextBoxColumn
+            // 
+            this.condicaoPagtoDataGridViewTextBoxColumn.DataPropertyName = "CondicaoPagto";
+            this.condicaoPagtoDataGridViewTextBoxColumn.HeaderText = "CondicaoPagto";
+            this.condicaoPagtoDataGridViewTextBoxColumn.Name = "condicaoPagtoDataGridViewTextBoxColumn";
+            this.condicaoPagtoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.condicaoPagtoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // valorDataGridViewTextBoxColumn1
+            // 
+            this.valorDataGridViewTextBoxColumn1.DataPropertyName = "Valor";
+            dataGridViewCellStyle4.Format = "c2";
+            this.valorDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.valorDataGridViewTextBoxColumn1.HeaderText = "Valor";
+            this.valorDataGridViewTextBoxColumn1.Name = "valorDataGridViewTextBoxColumn1";
             // 
             // FConsVenda
             // 
@@ -188,13 +200,15 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FConsVenda";
             this.Text = "FConsVenda";
+            this.Load += new System.EventHandler(this.FConsVenda_Load);
             this.Shown += new System.EventHandler(this.FConsVenda_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FConsVenda_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,14 +221,14 @@
         private System.Windows.Forms.BindingSource itemBindingSource;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.BindingSource pagamentoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn formaPagtoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn condicaoPagtoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn1;
     }
 }

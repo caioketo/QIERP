@@ -60,6 +60,9 @@ namespace VERP.Utils
                 case 30001:
                     mensagem += "Deseja cancelar a venda?";
                     break;
+                case 30002:
+                    mensagem += "Tem certeza que deseja excluir o registro?";
+                    break;
                 case 40000:
                     mensagem += "Campo %1 é obrigatório!";
                     break;

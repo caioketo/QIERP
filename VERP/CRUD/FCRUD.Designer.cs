@@ -81,6 +81,7 @@
             this.tbxPesquisa.Name = "tbxPesquisa";
             this.tbxPesquisa.Size = new System.Drawing.Size(580, 31);
             this.tbxPesquisa.TabIndex = 11;
+            this.tbxPesquisa.TextChanged += new System.EventHandler(this.tbxPesquisa_TextChanged);
             // 
             // dgvCRUD
             // 
@@ -113,6 +114,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FCRUD";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.FCRUD_Activated);
             this.Shown += new System.EventHandler(this.FCRUD_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FCRUD_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCRUD)).EndInit();

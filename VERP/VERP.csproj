@@ -65,11 +65,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Enum.cs" />
-    <Compile Include="FCadProduto.cs">
+    <Compile Include="CRUD\FCRUDCondicaoDePagamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FCadProduto.Designer.cs">
-      <DependentUpon>FCadProduto.cs</DependentUpon>
+    <Compile Include="CRUD\FCRUDCondicaoDePagamento.Designer.cs">
+      <DependentUpon>FCRUDCondicaoDePagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\FCRUDFormaDePagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUD\FCRUDFormaDePagamento.Designer.cs">
+      <DependentUpon>FCRUDFormaDePagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\FEdicaoCondicaoDePagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\FEdicaoCondicaoDePagamento.Designer.cs">
+      <DependentUpon>FEdicaoCondicaoDePagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\FEdicaoFormaDePagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\FEdicaoFormaDePagamento.Designer.cs">
+      <DependentUpon>FEdicaoFormaDePagamento.cs</DependentUpon>
     </Compile>
     <Compile Include="FConsProduto.cs">
       <SubType>Form</SubType>
@@ -83,28 +101,28 @@
     <Compile Include="FConsVenda.Designer.cs">
       <DependentUpon>FConsVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="FCRUD.cs">
+    <Compile Include="CRUD\FCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FCRUD.Designer.cs">
+    <Compile Include="CRUD\FCRUD.Designer.cs">
       <DependentUpon>FCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="FCRUDProduto.cs">
+    <Compile Include="CRUD\FCRUDProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FCRUDProduto.Designer.cs">
+    <Compile Include="CRUD\FCRUDProduto.Designer.cs">
       <DependentUpon>FCRUDProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FEdicao.cs">
+    <Compile Include="Edicao\FEdicao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FEdicao.Designer.cs">
+    <Compile Include="Edicao\FEdicao.Designer.cs">
       <DependentUpon>FEdicao.cs</DependentUpon>
     </Compile>
-    <Compile Include="FEdicaoProduto.cs">
+    <Compile Include="Edicao\FEdicaoProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FEdicaoProduto.Designer.cs">
+    <Compile Include="Edicao\FEdicaoProduto.Designer.cs">
       <DependentUpon>FEdicaoProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="FFechaVenda.cs">
@@ -127,10 +145,25 @@
     <Compile Include="FVenda.Designer.cs">
       <DependentUpon>FVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\Mensagem.cs" />
     <Compile Include="Utils\Util.cs" />
-    <EmbeddedResource Include="FCadProduto.resx">
-      <DependentUpon>FCadProduto.cs</DependentUpon>
+    <EmbeddedResource Include="CRUD\FCRUDCondicaoDePagamento.resx">
+      <DependentUpon>FCRUDCondicaoDePagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUD\FCRUDFormaDepagamento.resx">
+      <DependentUpon>FCRUDFormaDePagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\FEdicaoCondicaoDePagamento.resx">
+      <DependentUpon>FEdicaoCondicaoDePagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\FEdicaoFormaDePagamento.resx">
+      <DependentUpon>FEdicaoFormaDePagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FConsProduto.resx">
       <DependentUpon>FConsProduto.cs</DependentUpon>
@@ -138,16 +171,16 @@
     <EmbeddedResource Include="FConsVenda.resx">
       <DependentUpon>FConsVenda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FCRUD.resx">
+    <EmbeddedResource Include="CRUD\FCRUD.resx">
       <DependentUpon>FCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FCRUDProduto.resx">
+    <EmbeddedResource Include="CRUD\FCRUDProduto.resx">
       <DependentUpon>FCRUDProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FEdicao.resx">
+    <EmbeddedResource Include="Edicao\FEdicao.resx">
       <DependentUpon>FEdicao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FEdicaoProduto.resx">
+    <EmbeddedResource Include="Edicao\FEdicaoProduto.resx">
       <DependentUpon>FEdicaoProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FFechaVenda.resx">
@@ -167,6 +200,9 @@
     </Compile>
     <EmbeddedResource Include="FVenda.resx">
       <DependentUpon>FVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Database.CondicaoDePagamento.datasource" />

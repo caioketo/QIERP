@@ -11,6 +11,7 @@ namespace VERPDatabase.Classes
         Varchar,
         Integer,
         Timestamp,
-        Numeric
+        Numeric,
+        Model
     }
 }

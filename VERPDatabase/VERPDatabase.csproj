@@ -55,7 +55,6 @@
     <Compile Include="Classes\Tabela.cs" />
     <Compile Include="Classes\TiposDeCampo.cs" />
     <Compile Include="Classes\Venda.cs" />
-    <Compile Include="Configuration.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

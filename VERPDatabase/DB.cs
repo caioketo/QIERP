@@ -30,8 +30,7 @@ namespace VERPDatabase
 
         private List<Tabela> Tabelas = new List<Tabela>();
 
-        //private NpgsqlConnection Conexao = new NpgsqlConnection("Server=192.168.0.10;User Id=postgres;" +
-                                //"Password=visual;VERPDatabase=verp");
+
         public ProdutoRepository ProdutoRepo = new ProdutoRepository();
         public VendaRepository VendaRepo = new VendaRepository();
         public FPRepository FPRepo = new FPRepository();
@@ -67,6 +66,50 @@ namespace VERPDatabase
         {
             context = new VerpContext(VerpContext.CreateConnectionString());
             Tabelas.Add(new Tabela("Produtos"));
+            Tabelas.Add(new Tabela("FormasDePagamento"));
+            Tabelas.Add(new Tabela("CondicoesDePagamento"));
+        }
+
+        public dynamic GetAll(string tabela)
+        {
+            if (tabela == "Produtos")
+            {
+                return ProdutoRepo.GetAll().ToList(); ;
+            }
+            if (tabela == "FormasDePagamento")
+            {
+                return FPRepo.GetAll().ToList();
+            }
+            if (tabela == "CondicoesDePagamento")
+            {
+                return CPRepo.GetAll().ToList();
+            }
+            if (tabela == "Vendas")
+            {
+                return VendaRepo.GetAll().ToList();
+            }
+            return null;
+        }
+
+        public dynamic GetById(string tabela, int id)
+        {
+            if (tabela == "Produtos")
+            {
+                return ProdutoRepo.GetById(id);
+            }
+            if (tabela == "FormasDePagamento")
+            {
+                return FPRepo.GetById(id);
+            }
+            if (tabela == "CondicoesDePagamento")
+            {
+                return CPRepo.GetById(id);
+            }
+            if (tabela == "Vendas")
+            {
+                return VendaRepo.GetById(id);
+            }
+            return null;
         }
     }
 }

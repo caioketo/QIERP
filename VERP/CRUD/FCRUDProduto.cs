@@ -14,7 +14,7 @@ namespace VERP
 {
     public partial class FCRUDProduto : VERP.FCRUD
     {
-        public void GetRecords()
+        protected override void GetRecords()
         {
             bindingSource.DataSource = DB.GetInstance().ProdutoRepo.GetAll().Where(p => p.Descricao.ToUpper().Contains(tbxPesquisa.Text) ||
                 p.Codigo == tbxPesquisa.Text);
@@ -26,21 +26,6 @@ namespace VERP
             tabela = DB.GetInstance().GetTabela("Produtos");
             Edicao = new FEdicaoProduto();
             InitializeComponent();
-        }
-
-        private void FCRUDProduto_Shown(object sender, EventArgs e)
-        {
-            GetRecords();
-        }
-
-        private void tbxPesquisa_TextChanged(object sender, EventArgs e)
-        {
-            GetRecords();
-        }
-
-        private void FCRUDProduto_Activated(object sender, EventArgs e)
-        {
-            GetRecords();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

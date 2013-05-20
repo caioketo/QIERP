@@ -40,6 +40,11 @@ namespace VERP
             InitializeComponent();
         }
 
+        protected virtual void GetRecords()
+        {
+        }
+
+
         private void FCRUD_Shown(object sender, EventArgs e)
         {
             foreach (Campo campo in Campos)
@@ -66,6 +71,8 @@ namespace VERP
             {
                 Edicao.CRUD = this;
             }
+
+            GetRecords();
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -90,6 +97,16 @@ namespace VERP
                     this.Close();
                 }
             }
+        }
+
+        private void tbxPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            GetRecords();
+        }
+
+        private void FCRUD_Activated(object sender, EventArgs e)
+        {
+            GetRecords();
         }
     }
 }

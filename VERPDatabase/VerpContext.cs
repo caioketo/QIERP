@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
@@ -30,8 +31,31 @@ namespace VERPDatabase
         {
             Database.SetInitializer<VerpContext>(new DropCreateDatabaseIfModelChanges<VerpContext>());
             Database.DefaultConnectionFactory = new SqlConnectionFactory("System.Data.SqlServer");
-
             base.OnModelCreating(modelBuilder);
+        }
+
+        public int GetSequence(string sequence)
+        {
+            try
+            {
+                return Database.SqlQuery<int>("select Next value for " + sequence).FirstOrDefault();
+            }
+            catch
+            {
+                Database.ExecuteSqlCommand("CREATE SEQUENCE " + sequence + " AS [int] START WITH 1 INCREMENT BY 1 MINVALUE 1");
+                return Database.SqlQuery<int>("select Next value for " + sequence).FirstOrDefault();
+            }
+            
+        }
+
+        public void LoadAll()
+        {
+            Produtos.Load();
+            FormasDePagamento.Load();
+            CondicoesDePagamento.Load();
+            Items.Load();
+            Pagamentos.Load();
+            Vendas.Load();
         }
     }
 }

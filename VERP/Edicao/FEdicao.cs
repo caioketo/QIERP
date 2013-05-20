@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VERPDatabase.Classes;
 using VERP.Classes;
 using VERP.Utils;
+using VERPDatabase;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace VERP
 {
@@ -108,7 +108,15 @@ namespace VERP
         {
             foreach (var prop in Objeto.GetType().GetProperties())
             {
-                Control ctr = GetControl(("tbx" + prop.Name).ToUpper());
+                Control ctr = null;
+                if (prop.PropertyType.ToString().ToUpper().Contains("SYSTEM"))
+                {
+                    ctr = GetControl(("tbx" + prop.Name).ToUpper());
+                }
+                else
+                {
+                    ctr = GetControl(("cbx" + prop.Name).ToUpper());
+                }
                 if (ctr != null)
                 {
                     Type tipo = prop.PropertyType;
@@ -130,7 +138,11 @@ namespace VERP
                     else if (tipo.ToString().ToString().ToUpper().Equals("SYSTEM.INTEGER"))
                     {
                         prop.SetValue(Objeto, Convert.ToInt32(ctr.Text));
-                    }                    
+                    }
+                    else
+                    {
+                        prop.SetValue(Objeto, DB.GetInstance().GetById(GetCampo(prop.Name).Tabela, (int)((ComboBox)ctr).SelectedValue));
+                    }
                 }
             }
         }
@@ -139,11 +151,23 @@ namespace VERP
         {
             foreach (var prop in Objeto.GetType().GetProperties())
             {
-                Control ctr = GetControl(("tbx" + prop.Name).ToUpper());
-                if (ctr != null)
+                Control ctr = null;
+                if (prop.PropertyType.ToString().ToUpper().Contains("SYSTEM"))
                 {
-                    ctr.Text = prop.GetValue(Objeto, null).ToString();
-                    tbx_Leave(ctr, null);
+                    ctr = GetControl(("tbx" + prop.Name).ToUpper());
+                    if (ctr != null)
+                    {
+                        ctr.Text = prop.GetValue(Objeto, null).ToString();
+                        tbx_Leave(ctr, null);
+                    }
+                }
+                else
+                {
+                    ctr = GetControl(("cbx" + prop.Name).ToUpper());
+                    if (ctr != null)
+                    {
+                        ((ComboBox)ctr).SelectedItem = prop.GetValue(Objeto, null);
+                    }
                 }
             }
         }
@@ -184,6 +208,10 @@ namespace VERP
             btnFechar.TabIndex = CRUD.Campos.Count + 1;
             foreach (Campo campo in CRUD.Campos)
             {
+                if (!campo.Edita)
+                {
+                    continue;
+                }
                 if ((x + (int)(campo.Tamanho / 13) * 100) > screenWidth)
                 {
                     x = 13;
@@ -197,18 +225,34 @@ namespace VERP
                 lbl.Size = new Size(38, 13);
                 Labels.Add(lbl);
 
-                TextBox tbx = new TextBox();
-                tbx.Name = "tbx" + campo.Nome;
-                tbx.Location = new Point(x + 13, y + 28);
-                tbx.CharacterCasing = CharacterCasing.Upper;
-                tbx.TabIndex = i;
-                tbx.Size = new Size((int)(campo.Tamanho / 13) * 100, 20);
-                if (campo.Tipo == TiposDeCampo.Integer || campo.Tipo == TiposDeCampo.Numeric)
+                if (campo.Tipo == TiposDeCampo.Model)
                 {
-                    tbx.Validating += tbx_Leave;
-                }
+                    ComboBox cbx = new ComboBox();
+                    cbx.DataSource = DB.GetInstance().GetAll(campo.Tabela);
+                    cbx.ValueMember = "Id";
+                    cbx.DisplayMember = "Descricao";
+                    cbx.Name = "cbx" + campo.Nome;
+                    cbx.Location = new Point(x + 13, y + 28);
+                    cbx.TabIndex = i;
+                    cbx.Size = new Size((int)(campo.Tamanho / 13) * 100, 20);
 
-                Controles.Add(tbx);
+                    Controles.Add(cbx);
+                }
+                else
+                {
+                    TextBox tbx = new TextBox();
+                    tbx.Name = "tbx" + campo.Nome;
+                    tbx.Location = new Point(x + 13, y + 28);
+                    tbx.CharacterCasing = CharacterCasing.Upper;
+                    tbx.TabIndex = i;
+                    tbx.Size = new Size((int)(campo.Tamanho / 13) * 100, 20);
+                    if (campo.Tipo == TiposDeCampo.Integer || campo.Tipo == TiposDeCampo.Numeric)
+                    {
+                        tbx.Validating += tbx_Leave;
+                    }
+
+                    Controles.Add(tbx);
+                }
 
                 x += ((int)(campo.Tamanho / 13) * 100) + 5;
                 i++;
@@ -246,7 +290,10 @@ namespace VERP
         {
             foreach (Control ctr in Controles)
             {
-                tbx_Leave(ctr, null);
+                if (ctr is TextBox)
+                {
+                    tbx_Leave(ctr, null);
+                }
             }
 
             Mapear();

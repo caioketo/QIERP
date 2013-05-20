@@ -17,6 +17,8 @@ namespace VERPDatabase.Classes
         public bool MostraGrid { get; set; }
         public object Valor { get; set; }
         public bool Obrigatorio { get; set; }
+        public string Tabela { get; set; }
+        public bool Edita { get; set; }
 
         public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho, int precisao, bool mostraGrid, bool obrigatorio)
         {
@@ -27,6 +29,7 @@ namespace VERPDatabase.Classes
             Tamanho = tamanho;
             MostraGrid = mostraGrid;
             Obrigatorio = obrigatorio;
+            Edita = true;
         }
 
         public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho) :

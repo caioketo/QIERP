@@ -2,55 +2,42 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace VERPDatabase
 {
     public class CPRepository : IRepository<CondicaoDePagamento>
     {
-        private List<CondicaoDePagamento> CPs = new List<CondicaoDePagamento>();
+        public IQueryable<CondicaoDePagamento> GetAll()
+        {
+            DB.GetInstance().context.CondicoesDePagamento.Load();
+            return DB.GetInstance().context.CondicoesDePagamento.Local.AsQueryable().Where(cp => cp.DataExclusao == null);
+        }
 
         public bool Salvar(CondicaoDePagamento item)
         {
-            throw new NotImplementedException();
+            DB.GetInstance().context.SaveChanges();
+            return true;
         }
 
         public bool Inserir(CondicaoDePagamento item)
         {
-            throw new NotImplementedException();
+            DB.GetInstance().context.CondicoesDePagamento.Add(item);
+            DB.GetInstance().context.SaveChanges();
+            return true;
         }
 
         public CondicaoDePagamento GetById(int id)
         {
-            foreach (CondicaoDePagamento cond in CPs)
-            {
-                if (cond.Id == id)
-                {
-                    return cond;
-                }
-            }
-            return null;
-        }
-
-        public IQueryable<CondicaoDePagamento> GetAll()
-        {
-            if (CPs.Count == 0)
-            {
-                CondicaoDePagamento fp1 = new CondicaoDePagamento();
-                fp1.Id = 1;
-                fp1.Descricao = "Dinheiro";
-                CondicaoDePagamento fp2 = new CondicaoDePagamento();
-                fp2.Id = 2;
-                fp2.Descricao = "Cartão de Crédito";
-                CPs.Add(fp1);
-                CPs.Add(fp2);
-            }
-            return CPs.AsQueryable();            
+            return DB.GetInstance().context.CondicoesDePagamento.Find(id);
         }
 
         public bool Deletar(CondicaoDePagamento item)
         {
-            throw new NotImplementedException();
+            DB.GetInstance().context.Entry<CondicaoDePagamento>(item).State = System.Data.EntityState.Modified;
+            item.DataExclusao = DateTime.Now;
+            return true;
         }
     }
 }

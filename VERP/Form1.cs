@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VERP.CRUD;
 using VERPDatabase;
 
 namespace VERP
 {
     public partial class Form1 : Form
     {
+        public Splash splash;
         public Form1()
         {
             InitializeComponent();
@@ -36,14 +39,31 @@ namespace VERP
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //using (FGridProduto gridProduto = new FGridProduto())
-            //{
-                //gridProduto.ShowDialog();
-            //}
             using (FCRUDProduto crud = new FCRUDProduto())
             {
                 crud.ShowDialog();
             }
+        }
+
+        private void formasDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FCRUDFormaDePagamento crud = new FCRUDFormaDePagamento())
+            {
+                crud.ShowDialog();
+            }
+        }
+
+        private void condiçõesDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FCRUDCondicaoDePagamento crud = new FCRUDCondicaoDePagamento())
+            {
+                crud.ShowDialog();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

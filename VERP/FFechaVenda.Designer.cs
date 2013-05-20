@@ -61,16 +61,15 @@
             this.rtbTotal.Name = "rtbTotal";
             this.rtbTotal.ReadOnly = true;
             this.rtbTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rtbTotal.Size = new System.Drawing.Size(791, 158);
+            this.rtbTotal.Size = new System.Drawing.Size(922, 158);
             this.rtbTotal.TabIndex = 8;
             this.rtbTotal.TabStop = false;
             this.rtbTotal.Text = "Total Venda: R$ 50,00\nTotal Pago: R$ 70,00\nTroco: R$ 20,00";
             // 
             // btnFinalizaVenda
             // 
-            this.btnFinalizaVenda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFinalizaVenda.Location = new System.Drawing.Point(12, 421);
+            this.btnFinalizaVenda.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFinalizaVenda.Location = new System.Drawing.Point(74, 461);
             this.btnFinalizaVenda.Name = "btnFinalizaVenda";
             this.btnFinalizaVenda.Size = new System.Drawing.Size(791, 44);
             this.btnFinalizaVenda.TabIndex = 9;
@@ -80,15 +79,17 @@
             // 
             // cmbForma
             // 
+            this.cmbForma.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbForma.DataSource = this.formaDePagamentoBindingSource;
             this.cmbForma.DisplayMember = "Descricao";
             this.cmbForma.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.cmbForma.FormattingEnabled = true;
-            this.cmbForma.Location = new System.Drawing.Point(12, 176);
+            this.cmbForma.Location = new System.Drawing.Point(74, 216);
             this.cmbForma.Name = "cmbForma";
             this.cmbForma.Size = new System.Drawing.Size(272, 37);
             this.cmbForma.TabIndex = 0;
             this.cmbForma.ValueMember = "Id";
+            this.cmbForma.SelectedValueChanged += new System.EventHandler(this.cmbForma_SelectedValueChanged);
             // 
             // formaDePagamentoBindingSource
             // 
@@ -96,11 +97,12 @@
             // 
             // cmbCondicao
             // 
+            this.cmbCondicao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbCondicao.DataSource = this.condicaoDePagamentoBindingSource;
             this.cmbCondicao.DisplayMember = "Descricao";
             this.cmbCondicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.cmbCondicao.FormattingEnabled = true;
-            this.cmbCondicao.Location = new System.Drawing.Point(290, 176);
+            this.cmbCondicao.Location = new System.Drawing.Point(352, 216);
             this.cmbCondicao.Name = "cmbCondicao";
             this.cmbCondicao.Size = new System.Drawing.Size(247, 37);
             this.cmbCondicao.TabIndex = 1;
@@ -112,11 +114,13 @@
             // 
             // tbxValor
             // 
+            this.tbxValor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbxValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxValor.Location = new System.Drawing.Point(543, 176);
+            this.tbxValor.Location = new System.Drawing.Point(605, 216);
             this.tbxValor.Name = "tbxValor";
             this.tbxValor.Size = new System.Drawing.Size(210, 35);
             this.tbxValor.TabIndex = 2;
+            this.tbxValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxValor_KeyPress);
             // 
             // dataGridView1
             // 
@@ -124,6 +128,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -131,10 +136,10 @@
             this.CondicaoPagto,
             this.valorDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pagamentoBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 220);
+            this.dataGridView1.Location = new System.Drawing.Point(74, 260);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(790, 184);
+            this.dataGridView1.Size = new System.Drawing.Size(791, 184);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.TabStop = false;
             // 
@@ -169,8 +174,9 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(760, 176);
+            this.button1.Location = new System.Drawing.Point(822, 216);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(43, 35);
             this.button1.TabIndex = 3;
@@ -188,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 655);
+            this.ClientSize = new System.Drawing.Size(939, 655);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tbxValor);

@@ -13,5 +13,6 @@ namespace VERPDatabase
         public double Custo { get; set; }
         public double Valor { get; set; }
         public string Codigo { get; set; }
+        public double Quantidade { get; set; }
     }
 }

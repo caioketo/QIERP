@@ -30,6 +30,7 @@ namespace VERP
                 itemBindingSource.DataSource = VendaAtual.Itens;
             }
             VendaAtual.Itens.Add(item);
+            produtoAchado.Quantidade -= item.Quantidade;
             rtbTotal.Text = "Total: " + VendaAtual.Total.ToString("C2") + Environment.NewLine 
                 + "Total Itens: " + VendaAtual.Itens.Count.ToString();
         }
@@ -41,7 +42,7 @@ namespace VERP
             rtbTotal.Text = "CAIXA ABERTO" + Environment.NewLine + "PASSE O ITEM";
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
+        public void textBox2_Leave(object sender, EventArgs e)
         {
             Produto prod = DB.GetInstance().ProdutoRepo.GetAll().Where(p => p.Codigo == tbxProduto.Text).FirstOrDefault();
             if (prod != null)
@@ -51,8 +52,18 @@ namespace VERP
             else
             {
                 FConsProduto consProduto = new FConsProduto();
+                consProduto.Venda = this;
                 consProduto.ShowDialog();
-                tbxProduto.Focus();
+                prod = DB.GetInstance().ProdutoRepo.GetAll().Where(p => p.Codigo == tbxProduto.Text).FirstOrDefault();
+                if (prod != null)
+                {
+                    produtoAchado = prod;
+                    tbxQtde.Focus();
+                }
+                else
+                {
+                    tbxProduto.Focus();
+                }
             }
         }
 
@@ -108,6 +119,15 @@ namespace VERP
                 }
                 this.Close();
             }
+        }
+
+        private void tbxQtde_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !e.KeyChar.Equals(','))
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

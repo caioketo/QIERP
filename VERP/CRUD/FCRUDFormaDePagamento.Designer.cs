@@ -1,6 +1,6 @@
-﻿namespace VERP
+﻿namespace VERP.CRUD
 {
-    partial class FCRUDProduto
+    partial class FCRUDFormaDePagamento
     {
         /// <summary>
         /// Required designer variable.
@@ -33,20 +33,14 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
             // 
-            // tbxPesquisa
-            // 
-            this.tbxPesquisa.TextChanged += new System.EventHandler(this.tbxPesquisa_TextChanged);
-            // 
-            // FCRUDProduto
+            // FCRUDFormaDePagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(874, 332);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "FCRUDProduto";
-            this.Activated += new System.EventHandler(this.FCRUDProduto_Activated);
-            this.Shown += new System.EventHandler(this.FCRUDProduto_Shown);
+            this.Name = "FCRUDFormaDePagamento";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VERPDatabase.Classes;
+using VERPDatabase.Repositorios;
 
 namespace VERPDatabase
 {
@@ -35,6 +36,7 @@ namespace VERPDatabase
         public VendaRepository VendaRepo = new VendaRepository();
         public FPRepository FPRepo = new FPRepository();
         public CPRepository CPRepo = new CPRepository();
+        public MovRepository MovRepo = new MovRepository();
         public VerpContext context;
 
 
@@ -68,6 +70,7 @@ namespace VERPDatabase
             Tabelas.Add(new Tabela("Produtos"));
             Tabelas.Add(new Tabela("FormasDePagamento"));
             Tabelas.Add(new Tabela("CondicoesDePagamento"));
+            Tabelas.Add(new Tabela("Movimentacao"));
         }
 
         public dynamic GetAll(string tabela)
@@ -87,6 +90,10 @@ namespace VERPDatabase
             if (tabela == "Vendas")
             {
                 return VendaRepo.GetAll().ToList();
+            }
+            if (tabela == "Movimentacao")
+            {
+                return MovRepo.GetAll().ToList();
             }
             return null;
         }
@@ -108,6 +115,10 @@ namespace VERPDatabase
             if (tabela == "Vendas")
             {
                 return VendaRepo.GetById(id);
+            }
+            if (tabela == "Movimentacao")
+            {
+                return MovRepo.GetById(id);
             }
             return null;
         }

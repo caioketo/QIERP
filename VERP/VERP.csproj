@@ -77,6 +77,12 @@
     <Compile Include="CRUD\FCRUDFormaDePagamento.Designer.cs">
       <DependentUpon>FCRUDFormaDePagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="CRUD\FCRUDMovimentacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUD\FCRUDMovimentacao.Designer.cs">
+      <DependentUpon>FCRUDMovimentacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Edicao\FEdicaoCondicaoDePagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="Edicao\FEdicaoFormaDePagamento.Designer.cs">
       <DependentUpon>FEdicaoFormaDePagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\FEdicaoMovimentacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\FEdicaoMovimentacao.Designer.cs">
+      <DependentUpon>FEdicaoMovimentacao.cs</DependentUpon>
     </Compile>
     <Compile Include="FConsProduto.cs">
       <SubType>Form</SubType>
@@ -159,11 +171,17 @@
     <EmbeddedResource Include="CRUD\FCRUDFormaDepagamento.resx">
       <DependentUpon>FCRUDFormaDePagamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CRUD\FCRUDMovimentacao.resx">
+      <DependentUpon>FCRUDMovimentacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Edicao\FEdicaoCondicaoDePagamento.resx">
       <DependentUpon>FEdicaoCondicaoDePagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edicao\FEdicaoFormaDePagamento.resx">
       <DependentUpon>FEdicaoFormaDePagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\FEdicaoMovimentacao.resx">
+      <DependentUpon>FEdicaoMovimentacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FConsProduto.resx">
       <DependentUpon>FConsProduto.cs</DependentUpon>

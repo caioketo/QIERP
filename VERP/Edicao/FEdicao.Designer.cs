@@ -40,15 +40,15 @@
             this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.btnFechar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 550);
+            this.panel1.Location = new System.Drawing.Point(0, 274);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(846, 34);
+            this.panel1.Size = new System.Drawing.Size(318, 34);
             this.panel1.TabIndex = 0;
             // 
             // btnSalvar
             // 
             this.btnSalvar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSalvar.Location = new System.Drawing.Point(676, 0);
+            this.btnSalvar.Location = new System.Drawing.Point(148, 0);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(84, 32);
             this.btnSalvar.TabIndex = 0;
@@ -59,7 +59,7 @@
             // btnFechar
             // 
             this.btnFechar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnFechar.Location = new System.Drawing.Point(760, 0);
+            this.btnFechar.Location = new System.Drawing.Point(232, 0);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(84, 32);
             this.btnFechar.TabIndex = 1;
@@ -71,12 +71,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 584);
+            this.ClientSize = new System.Drawing.Size(318, 308);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
             this.Name = "FEdicao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FEdicao";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FEdicao_Load);
             this.Shown += new System.EventHandler(this.FEdicao_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FEdicao_KeyDown);

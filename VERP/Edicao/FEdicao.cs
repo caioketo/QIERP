@@ -224,6 +224,7 @@ namespace VERP
                 lbl.AutoSize = true;
                 lbl.Size = new Size(38, 13);
                 Labels.Add(lbl);
+                Control ctr = null;
 
                 if (campo.Tipo == TiposDeCampo.Model)
                 {
@@ -235,8 +236,10 @@ namespace VERP
                     cbx.Location = new Point(x + 13, y + 28);
                     cbx.TabIndex = i;
                     cbx.Size = new Size((int)(campo.Tamanho / 13) * 100, 20);
-
+                    ctr = cbx;
                     Controles.Add(cbx);
+
+                    
                 }
                 else
                 {
@@ -251,12 +254,28 @@ namespace VERP
                         tbx.Validating += tbx_Leave;
                     }
 
+                    ctr = tbx;
                     Controles.Add(tbx);
                 }
 
                 x += ((int)(campo.Tamanho / 13) * 100) + 5;
                 i++;
+
+                if (i == 3)
+                {
+                    screenWidth = ctr.Left + ctr.Width + 60;
+                }
+
+                if (i == CRUD.Campos.Count)
+                {
+                    screenHeight = ctr.Top + ctr.Height + 150;
+                    if (i < 3)
+                    {
+                        screenWidth = ctr.Left + ctr.Width + 100;
+                    }
+                }
             }
+            
 
             foreach (Label lbl in Labels)
             {
@@ -267,6 +286,9 @@ namespace VERP
             {
                 Controls.Add(ctr);
             }
+
+            this.ResizeRedraw = true;
+            this.Size = new Size(screenWidth, screenHeight);
         }
 
         void tbx_Leave(object sender, EventArgs e)

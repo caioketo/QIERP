@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VERPDatabase.Classes;
 
 namespace VERPDatabase
 {
@@ -26,6 +27,7 @@ namespace VERPDatabase
         public DbSet<Item> Items { get; set; }
         public DbSet<Pagamento> Pagamentos { get; set; }
         public DbSet<Venda> Vendas { get; set; }
+        public DbSet<Movimentacao> Movimentacoes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -56,6 +58,7 @@ namespace VERPDatabase
             Items.Load();
             Pagamentos.Load();
             Vendas.Load();
+            Movimentacoes.Load();
         }
     }
 }

@@ -50,6 +50,8 @@
     <Compile Include="Classes\CondicaoDePagamento.cs" />
     <Compile Include="Classes\FormaDePagamento.cs" />
     <Compile Include="Classes\Item.cs" />
+    <Compile Include="Classes\ItemMovimentacao.cs" />
+    <Compile Include="Classes\Movimentacao.cs" />
     <Compile Include="Classes\Pagamento.cs" />
     <Compile Include="Classes\Produto.cs" />
     <Compile Include="Classes\Tabela.cs" />
@@ -60,6 +62,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\CPRepository.cs" />
     <Compile Include="Repositorios\FPRepository.cs" />
+    <Compile Include="Repositorios\MovRepository.cs" />
     <Compile Include="Repositorios\ProdutoRepository.cs" />
     <Compile Include="Repositorios\VendaRepository.cs" />
     <Compile Include="VerpContext.cs" />

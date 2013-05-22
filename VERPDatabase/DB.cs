@@ -72,55 +72,5 @@ namespace VERPDatabase
             Tabelas.Add(new Tabela("CondicoesDePagamento"));
             Tabelas.Add(new Tabela("Movimentacao"));
         }
-
-        public dynamic GetAll(string tabela)
-        {
-            if (tabela == "Produtos")
-            {
-                return ProdutoRepo.GetAll().ToList(); ;
-            }
-            if (tabela == "FormasDePagamento")
-            {
-                return FPRepo.GetAll().ToList();
-            }
-            if (tabela == "CondicoesDePagamento")
-            {
-                return CPRepo.GetAll().ToList();
-            }
-            if (tabela == "Vendas")
-            {
-                return VendaRepo.GetAll().ToList();
-            }
-            if (tabela == "Movimentacao")
-            {
-                return MovRepo.GetAll().ToList();
-            }
-            return null;
-        }
-
-        public dynamic GetById(string tabela, int id)
-        {
-            if (tabela == "Produtos")
-            {
-                return ProdutoRepo.GetById(id);
-            }
-            if (tabela == "FormasDePagamento")
-            {
-                return FPRepo.GetById(id);
-            }
-            if (tabela == "CondicoesDePagamento")
-            {
-                return CPRepo.GetById(id);
-            }
-            if (tabela == "Vendas")
-            {
-                return VendaRepo.GetById(id);
-            }
-            if (tabela == "Movimentacao")
-            {
-                return MovRepo.GetById(id);
-            }
-            return null;
-        }
     }
 }

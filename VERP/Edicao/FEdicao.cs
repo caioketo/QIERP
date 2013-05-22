@@ -10,6 +10,7 @@ using VERP.Utils;
 using VERPDatabase;
 using System.Collections.Generic;
 using System.Linq;
+using VERPDatabase.Repositorios;
 
 namespace VERP
 {
@@ -20,6 +21,7 @@ namespace VERP
         public FCRUD CRUD;
         public Estado estado;
         public ClasseBase Objeto;
+        public ExtRepository Repo;
 
         public FEdicao()
         {
@@ -141,7 +143,7 @@ namespace VERP
                     }
                     else
                     {
-                        prop.SetValue(Objeto, DB.GetInstance().GetById(GetCampo(prop.Name).Tabela, (int)((ComboBox)ctr).SelectedValue));
+                        prop.SetValue(Objeto, Repo.GetByIdExt((int)((ComboBox)ctr).SelectedValue));
                     }
                 }
             }
@@ -175,7 +177,6 @@ namespace VERP
 
         private void FEdicao_Load(object sender, EventArgs e)
         {
-            //Controls.Clear();
             if (Controles != null && Controles.Count > 0)
             {
                 foreach (Control ctr in Controles)
@@ -229,7 +230,7 @@ namespace VERP
                 if (campo.Tipo == TiposDeCampo.Model)
                 {
                     ComboBox cbx = new ComboBox();
-                    cbx.DataSource = DB.GetInstance().GetAll(campo.Tabela);
+                    cbx.DataSource = Repo.GetAllExt();
                     cbx.ValueMember = "Id";
                     cbx.DisplayMember = "Descricao";
                     cbx.Name = "cbx" + campo.Nome;

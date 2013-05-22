@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity;
 using System.Threading.Tasks;
+using VERPDatabase.Repositorios;
 
 namespace VERPDatabase
 {
-    public class FPRepository : IRepository<FormaDePagamento>
+    public class FPRepository : ExtRepository, IRepository<FormaDePagamento>
     {
         public IQueryable<FormaDePagamento> GetAll()
         {
@@ -38,6 +39,16 @@ namespace VERPDatabase
             DB.GetInstance().context.Entry<FormaDePagamento>(item).State = System.Data.EntityState.Modified;
             item.DataExclusao = DateTime.Now;
             return true;
+        }
+
+        public override dynamic GetAllExt()
+        {
+            return this.GetAll().ToList();
+        }
+
+        public override dynamic GetByIdExt(int id)
+        {
+            return this.GetById(id);
         }
     }
 }

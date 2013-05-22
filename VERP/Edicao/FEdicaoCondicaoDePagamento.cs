@@ -15,6 +15,7 @@ namespace VERP.Edicao
         public FEdicaoCondicaoDePagamento()
         {
             InitializeComponent();
+            this.Repo = DB.GetInstance().FPRepo;
         }
 
         private CondicaoDePagamento condicao;

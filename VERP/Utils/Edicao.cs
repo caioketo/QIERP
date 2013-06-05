@@ -40,6 +40,11 @@ namespace VERP.Utils
                         ((Pesquisa)ctr).Objeto = prop.GetValue(Objeto, null) as ClasseBase;
                         ((Pesquisa)ctr).Selecionar();
                     }
+                    else if (ctr is cmpEdicao)
+                    {
+                        ((cmpEdicao)ctr).Objeto = prop.GetValue(Objeto, null) as ClasseBase;
+                        ((cmpEdicao)ctr).MapearTela();
+                    }
                 }
             }
         }
@@ -132,7 +137,15 @@ namespace VERP.Utils
                     }
                     else
                     {
-                        prop.SetValue(Objeto, ((Pesquisa)ctr).Objeto);
+                        if (ctr is Pesquisa)
+                        {
+                            prop.SetValue(Objeto, ((Pesquisa)ctr).Objeto);
+                        }
+                        else if (ctr is cmpEdicao)
+                        {
+                            ((cmpEdicao)ctr).Gravar();
+                            prop.SetValue(Objeto, ((cmpEdicao)ctr).Objeto);
+                        }
                     }
                 }
             }

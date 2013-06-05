@@ -196,6 +196,14 @@ namespace VERP
 
         private void FEdicao_Shown(object sender, EventArgs e)
         {
+            foreach (Control ctr in Controles)
+            {
+                if (ctr is cmpEdicao)
+                {
+                    ((cmpEdicao)ctr).estado = estado;
+                }
+            }
+
             if (Controles != null && Controles.Count > 0)
             {
                 Controles[0].Focus();

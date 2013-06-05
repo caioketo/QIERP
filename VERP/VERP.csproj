@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F699046F13007B329A903A202050F8163707DC95</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>466DB0827ADB22F6614D4481D93E3C9B495E779D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>VERP_TemporaryKey.pfx</ManifestKeyFile>

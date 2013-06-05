@@ -67,6 +67,7 @@
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\CPRepository.cs" />
+    <Compile Include="Repositorios\EndRepository.cs" />
     <Compile Include="Repositorios\ExtRepository.cs" />
     <Compile Include="Repositorios\FPRepository.cs" />
     <Compile Include="Repositorios\MovRepository.cs" />

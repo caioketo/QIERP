@@ -66,6 +66,10 @@ namespace VERP.Utils
             {
                 case "FormasDePagamento":
                     return DB.GetInstance().FPRepo;
+                case "Telefones":
+                    return DB.GetInstance().TelefoneRepo;
+                case "Enderecos":
+                    return DB.GetInstance().EndRepo;
             }
 
             return null;

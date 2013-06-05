@@ -39,6 +39,7 @@ namespace VERPDatabase
         public MovRepository MovRepo = new MovRepository();
         public PessoaRepository PessoaRepo = new PessoaRepository();
         public TelefoneRepository TelefoneRepo = new TelefoneRepository();
+        public EndRepository EndRepo = new EndRepository();
         public VerpContext context;
 
 
@@ -75,6 +76,7 @@ namespace VERPDatabase
             Tabelas.Add(new Tabela("Movimentacao"));
             Tabelas.Add(new Tabela("Pessoa"));
             Tabelas.Add(new Tabela("Telefone"));
+            Tabelas.Add(new Tabela("Endereco"));
         }
     }
 }

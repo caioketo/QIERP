@@ -64,12 +64,32 @@ namespace VERPDatabase.Classes
                     campo = new Campo("NomeFantasia", "Nome Fantasia", "", TiposDeCampo.Varchar, 50);
                     campo.Obrigatorio = false;
                     Campos.Add(campo);
+                    campo = new Campo("Telefone", "Telefone", "", TiposDeCampo.ModelUnico, 50);
+                    campo.TabelaRel = "Telefone";
+                    campo.MostraGrid = false;
+                    Campos.Add(campo);
+                    campo = new Campo("Endereco", "Endereço", "", TiposDeCampo.ModelUnico, 50);
+                    campo.TabelaRel = "Endereco";
+                    campo.MostraGrid = false;
+                    Campos.Add(campo);
                     Descricao = "Pessoas";
                     break;
                 case "Telefone":
                     Campos.Add(new Campo("Numero", "Número", "", TiposDeCampo.Varchar, 20));
                     Campos.Add(new Campo("Contato", "Contato", "", TiposDeCampo.Varchar, 30));
                     Descricao = "Telefones";
+                    break;
+                case "Endereco":
+                    Campos.Add(new Campo("Logradouro", "Logradouro", "", TiposDeCampo.Varchar, 40));
+                    Campos.Add(new Campo("Numero", "Número", "", TiposDeCampo.Varchar, 10));
+                    Campos.Add(new Campo("Complemento", "Complemento", "", TiposDeCampo.Varchar, 20));
+                    Campos.Add(new Campo("Bairro", "Bairro", "", TiposDeCampo.Varchar, 20));
+                    Campos.Add(new Campo("CEP", "CEP", "", TiposDeCampo.Varchar, 10));
+                    campo = new Campo("Cidade", "Cidade", "", TiposDeCampo.ModelUnico, 50);
+                    campo.TabelaRel = "Cidades";
+                    campo.MostraGrid = false;
+                    Campos.Add(campo);
+                    Descricao = "Endereços";
                     break;
             }
         }

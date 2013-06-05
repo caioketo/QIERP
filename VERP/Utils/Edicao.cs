@@ -198,6 +198,10 @@ namespace VERP.Utils
                     cmpEdicao edc = new cmpEdicao();
                     edc.Repo = Util.GetRepo(campo.TabelaRel);
                     edc.tabela = DB.GetInstance().GetTabela(campo.TabelaRel);
+                    edc.Location = new Point(x + 13, y + 8);
+                    edc.TabIndex = i;
+                    edc.Size = new Size((int)(campo.Tamanho / 13) * 100, 20);
+                    ctr = edc;
                 }
                 else if (campo.Tipo == TiposDeCampo.IntegerRadio)
                 {

@@ -40,6 +40,8 @@ namespace VERPDatabase
         public PessoaRepository PessoaRepo = new PessoaRepository();
         public TelefoneRepository TelefoneRepo = new TelefoneRepository();
         public EndRepository EndRepo = new EndRepository();
+        public CidadeRepository CidadeRepo = new CidadeRepository();
+        public UFRepository UFRepo = new UFRepository();
         public VerpContext context;
 
 
@@ -77,6 +79,8 @@ namespace VERPDatabase
             Tabelas.Add(new Tabela("Pessoa"));
             Tabelas.Add(new Tabela("Telefone"));
             Tabelas.Add(new Tabela("Endereco"));
+            Tabelas.Add(new Tabela("Cidade"));
+            Tabelas.Add(new Tabela("UF"));
         }
     }
 }

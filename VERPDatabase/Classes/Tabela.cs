@@ -91,6 +91,19 @@ namespace VERPDatabase.Classes
                     Campos.Add(campo);
                     Descricao = "Endereços";
                     break;
+                case "Cidade":
+                    Campos.Add(new Campo("Descricao", "Descrição", "", TiposDeCampo.Varchar, 50));
+                    campo = new Campo("UF", "UF", "", TiposDeCampo.ModelUnico, 50);
+                    campo.TabelaRel = "UFs";
+                    campo.MostraGrid = false;
+                    Campos.Add(campo);
+                    Descricao = "Cidades";
+                    break;
+                case "UF":
+                    Campos.Add(new Campo("Descricao", "Descrição", "", TiposDeCampo.Varchar, 50));
+                    Campos.Add(new Campo("Codigo", "Código", "", TiposDeCampo.Varchar, 2));
+                    Descricao = "UFs";
+                    break;
             }
         }
     }

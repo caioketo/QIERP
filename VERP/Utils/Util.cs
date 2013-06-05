@@ -70,6 +70,10 @@ namespace VERP.Utils
                     return DB.GetInstance().TelefoneRepo;
                 case "Enderecos":
                     return DB.GetInstance().EndRepo;
+                case "Cidades":
+                    return DB.GetInstance().CidadeRepo;
+                case "UFs":
+                    return DB.GetInstance().UFRepo;
             }
 
             return null;

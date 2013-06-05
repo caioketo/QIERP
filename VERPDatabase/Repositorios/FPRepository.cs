@@ -50,5 +50,20 @@ namespace VERPDatabase
         {
             return this.GetById(id);
         }
+
+        public override dynamic GetByText(string text)
+        {
+            return this.GetAll().Where(p => p.Descricao.ToUpper().Equals(text.ToUpper())).FirstOrDefault();
+        }
+
+        public override bool Inserir(object objeto)
+        {
+            return this.Inserir(objeto as FormaDePagamento);
+        }
+
+        public override bool Salvar(object objeto)
+        {
+            return this.Salvar(objeto as FormaDePagamento);
+        }
     }
 }

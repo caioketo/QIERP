@@ -19,6 +19,11 @@ namespace VERPDatabase.Classes
         public bool Obrigatorio { get; set; }
         public string Tabela { get; set; }
         public bool Edita { get; set; }
+        public string[] Opcoes { get; set; }
+        public string CampoRel { get; set; }
+        public string DisplayRel { get; set; }
+        public string TabelaRel { get; set; }
+
 
         public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho, int precisao, bool mostraGrid, bool obrigatorio)
         {
@@ -27,6 +32,7 @@ namespace VERPDatabase.Classes
             Formatacao = formatacao;
             Tipo = tipo;
             Tamanho = tamanho;
+            Opcoes = new string[tamanho];
             MostraGrid = mostraGrid;
             Obrigatorio = obrigatorio;
             Edita = true;

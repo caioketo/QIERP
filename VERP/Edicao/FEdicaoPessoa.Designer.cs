@@ -1,6 +1,6 @@
 ﻿namespace VERP.Edicao
 {
-    partial class FEdicaoMovimentacao
+    partial class FEdicaoPessoa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gitItens = new VERP.Utils.GridItens();
+            this.edcTelefone = new VERP.Utils.cmpEdicao();
             this.SuspendLayout();
             // 
-            // gitItens
+            // edcTelefone
             // 
-            this.gitItens.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gitItens.Campos = null;
-            this.gitItens.CamposEdicao = null;
-            this.gitItens.Location = new System.Drawing.Point(12, 92);
-            this.gitItens.Name = "gitItens";
-            this.gitItens.Size = new System.Drawing.Size(668, 218);
-            this.gitItens.TabIndex = 2;
+            this.edcTelefone.estado = VERP.Classes.Estado.Inserir;
+            this.edcTelefone.Location = new System.Drawing.Point(12, 330);
+            this.edcTelefone.Name = "edcTelefone";
+            this.edcTelefone.Objeto = null;
+            this.edcTelefone.Repo = null;
+            this.edcTelefone.Size = new System.Drawing.Size(46, 50);
+            this.edcTelefone.tabela = null;
+            this.edcTelefone.TabIndex = 1;
             // 
-            // FEdicaoMovimentacao
+            // FEdicaoPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(692, 356);
-            this.Controls.Add(this.gitItens);
-            this.Name = "FEdicaoMovimentacao";
-            this.Load += new System.EventHandler(this.FEdicaoMovimentacao_Load);
-            this.Shown += new System.EventHandler(this.FEdicaoMovimentacao_Shown);
-            this.Controls.SetChildIndex(this.gitItens, 0);
+            this.ClientSize = new System.Drawing.Size(927, 516);
+            this.Controls.Add(this.edcTelefone);
+            this.Name = "FEdicaoPessoa";
+            this.Shown += new System.EventHandler(this.FEdicaoPessoa_Shown);
+            this.Controls.SetChildIndex(this.edcTelefone, 0);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Utils.GridItens gitItens;
+        private Utils.cmpEdicao edcTelefone;
     }
 }

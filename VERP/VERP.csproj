@@ -11,7 +11,8 @@
     <AssemblyName>VERP</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\FTP\Teste\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -21,10 +22,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -45,6 +46,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>F699046F13007B329A903A202050F8163707DC95</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>VERP_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -83,6 +96,12 @@
     <Compile Include="CRUD\FCRUDMovimentacao.Designer.cs">
       <DependentUpon>FCRUDMovimentacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="CRUD\FCRUDPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUD\FCRUDPessoa.Designer.cs">
+      <DependentUpon>FCRUDPessoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Edicao\FEdicaoCondicaoDePagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,11 +120,11 @@
     <Compile Include="Edicao\FEdicaoMovimentacao.Designer.cs">
       <DependentUpon>FEdicaoMovimentacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="FConsProduto.cs">
+    <Compile Include="Edicao\FEdicaoPessoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FConsProduto.Designer.cs">
-      <DependentUpon>FConsProduto.cs</DependentUpon>
+    <Compile Include="Edicao\FEdicaoPessoa.Designer.cs">
+      <DependentUpon>FEdicaoPessoa.cs</DependentUpon>
     </Compile>
     <Compile Include="FConsVenda.cs">
       <SubType>Form</SubType>
@@ -163,7 +182,34 @@
     <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\cmpEdicao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utils\cmpEdicao.Designer.cs">
+      <DependentUpon>cmpEdicao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Controle.cs" />
+    <Compile Include="Utils\Edicao.cs" />
+    <Compile Include="Utils\GridItens.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utils\GridItens.Designer.cs">
+      <DependentUpon>GridItens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\IEdicao.cs" />
     <Compile Include="Utils\Mensagem.cs" />
+    <Compile Include="Utils\Pesquisa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utils\Pesquisa.Designer.cs">
+      <DependentUpon>Pesquisa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\Util.cs" />
     <EmbeddedResource Include="CRUD\FCRUDCondicaoDePagamento.resx">
       <DependentUpon>FCRUDCondicaoDePagamento.cs</DependentUpon>
@@ -174,6 +220,9 @@
     <EmbeddedResource Include="CRUD\FCRUDMovimentacao.resx">
       <DependentUpon>FCRUDMovimentacao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CRUD\FCRUDPessoa.resx">
+      <DependentUpon>FCRUDPessoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Edicao\FEdicaoCondicaoDePagamento.resx">
       <DependentUpon>FEdicaoCondicaoDePagamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,8 +232,8 @@
     <EmbeddedResource Include="Edicao\FEdicaoMovimentacao.resx">
       <DependentUpon>FEdicaoMovimentacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FConsProduto.resx">
-      <DependentUpon>FConsProduto.cs</DependentUpon>
+    <EmbeddedResource Include="Edicao\FEdicaoPessoa.resx">
+      <DependentUpon>FEdicaoPessoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FConsVenda.resx">
       <DependentUpon>FConsVenda.cs</DependentUpon>
@@ -222,6 +271,18 @@
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Utils\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\cmpEdicao.resx">
+      <DependentUpon>cmpEdicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\GridItens.resx">
+      <DependentUpon>GridItens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\Pesquisa.resx">
+      <DependentUpon>Pesquisa.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Database.CondicaoDePagamento.datasource" />
     <None Include="Properties\DataSources\Database.FormaDePagamento.datasource" />
@@ -238,6 +299,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="VERP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -257,6 +319,11 @@
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.Express.11.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2012 Express</ProductName>
+      <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>

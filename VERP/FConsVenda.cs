@@ -13,17 +13,29 @@ using VERPDatabase;
 
 namespace VERP
 {
-    public partial class FConsVenda : Form
+    public partial class FConsVenda : BaseForm
     {
         public FConsVenda()
         {
             InitializeComponent();
         }
 
+        public void BindItensFps()
+        {
+            try
+            {
+                itemBindingSource.DataSource = ((Venda)vendaBindingSource.Current).Itens;
+                pagamentoBindingSource.DataSource = ((Venda)vendaBindingSource.Current).Pagamentos;
+            }
+            catch
+            {
+                return;
+            }
+        }
+
         private void vendaBindingSource_PositionChanged(object sender, EventArgs e)
         {
-            itemBindingSource.DataSource = ((Venda)vendaBindingSource.Current).Itens;
-            pagamentoBindingSource.DataSource = ((Venda)vendaBindingSource.Current).Pagamentos;
+            BindItensFps();
         }
 
         private void FConsVenda_Shown(object sender, EventArgs e)
@@ -33,8 +45,7 @@ namespace VERP
 
         private void vendaBindingSource_DataSourceChanged(object sender, EventArgs e)
         {
-            itemBindingSource.DataSource = ((Venda)vendaBindingSource.Current).Itens;
-            pagamentoBindingSource.DataSource = ((Venda)vendaBindingSource.Current).Pagamentos;
+            BindItensFps();
         }
 
         private void FConsVenda_Load(object sender, EventArgs e)

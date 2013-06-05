@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace VERPDatabase.Classes
 {
-    public enum TiposDeCampo
+    public class Cliente : ClasseBase
     {
-        Varchar,
-        Integer,
-        Timestamp,
-        Numeric,
-        Model,
-        IntegerRadio,
-        ModelUnico
+        public Pessoa Pessoa { get; set; }
     }
 }

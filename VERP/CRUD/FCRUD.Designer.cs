@@ -33,6 +33,7 @@
             this.btnInserir = new System.Windows.Forms.Button();
             this.tbxPesquisa = new System.Windows.Forms.TextBox();
             this.dgvCRUD = new System.Windows.Forms.DataGridView();
+            this.btnSelecionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCRUD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,11 +100,25 @@
             this.dgvCRUD.TabIndex = 10;
             this.dgvCRUD.TabStop = false;
             // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionar.Location = new System.Drawing.Point(500, 12);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(92, 31);
+            this.btnSelecionar.TabIndex = 15;
+            this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Visible = false;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            // 
             // FCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 332);
+            this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnInserir);
@@ -130,5 +145,6 @@
         protected System.Windows.Forms.Button btnInserir;
         protected System.Windows.Forms.TextBox tbxPesquisa;
         protected System.Windows.Forms.DataGridView dgvCRUD;
+        protected System.Windows.Forms.Button btnSelecionar;
     }
 }

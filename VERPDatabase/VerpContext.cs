@@ -15,7 +15,7 @@ namespace VERPDatabase
     {
         public static string CreateConnectionString()
         {
-            return "Server=127.0.0.1;Database=verp;User Id=sa;Password=vd7887;";
+            return "Server=127.0.0.1\\SQLSERVER;Database=verp;User Id=sa;Password=vd001989;";
         }
 
         public VerpContext() : base() { }
@@ -28,6 +28,9 @@ namespace VERPDatabase
         public DbSet<Pagamento> Pagamentos { get; set; }
         public DbSet<Venda> Vendas { get; set; }
         public DbSet<Movimentacao> Movimentacoes { get; set; }
+        public DbSet<Pessoa> Pessoas { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Telefone> Telefones { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -59,6 +62,9 @@ namespace VERPDatabase
             Pagamentos.Load();
             Vendas.Load();
             Movimentacoes.Load();
+            Pessoas.Load();
+            Clientes.Load();
+            Telefones.Load();
         }
     }
 }

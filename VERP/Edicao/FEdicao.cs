@@ -14,10 +14,11 @@ using VERPDatabase.Repositorios;
 
 namespace VERP
 {
-    public partial class FEdicao : Form
+    public partial class FEdicao : BaseForm, IEdicao
     {
         protected List<Control> Controles;
         private List<Label> Labels;
+
         public FCRUD CRUD;
         public Estado estado;
         public ClasseBase Objeto;
@@ -30,45 +31,7 @@ namespace VERP
 
         protected virtual bool Validar()
         {
-            foreach (var prop in Objeto.GetType().GetProperties())
-            {
-                Campo campo = GetCampo(prop.Name);
-                if (campo != null)
-                {
-                    if (campo.Obrigatorio)
-                    {
-                        Type tipo = prop.PropertyType;
-                        if (tipo.ToString().ToString().ToUpper().Equals("SYSTEM.STRING"))
-                        {
-                            if (((String)prop.GetValue(Objeto, null)).Equals(""))
-                            {
-                                Mensagem.MostrarMsg(40000, Util.GetNomeReal(prop.Name));
-                                GetControl("tbx" + prop.Name).Focus();
-                                return false;
-                            }
-                        }
-                        else if (tipo.ToString().ToString().ToUpper().Equals("SYSTEM.DOUBLE"))
-                        {
-                            if (((double)prop.GetValue(Objeto, null)) <= 0)
-                            {
-                                Mensagem.MostrarMsg(40000, Util.GetNomeReal(prop.Name));
-                                GetControl("tbx" + prop.Name).Focus();
-                                return false;
-                            }
-                        }
-                        else if (tipo.ToString().ToString().ToUpper().Equals("SYSTEM.INTEGER"))
-                        {
-                            if (((int)prop.GetValue(Objeto, null)) <= 0)
-                            {
-                                Mensagem.MostrarMsg(40000, Util.GetNomeReal(prop.Name));
-                                GetControl("tbx" + prop.Name).Focus();
-                                return false;
-                            }
-                        }
-                    }
-                }
-            }
-            return true;
+            return Utils.Edicao.Validar(Objeto, this);
         }
 
         protected virtual void Fechar()
@@ -81,7 +44,7 @@ namespace VERP
             this.Close();
         }
 
-        private Campo GetCampo(string nome)
+        public Campo GetCampo(string nome)
         {
             foreach (Campo campo in CRUD.Campos)
             {
@@ -94,7 +57,7 @@ namespace VERP
             return null;
         }
 
-        private Control GetControl(string nome)
+        public Control GetControl(string nome)
         {
             foreach (Control ctr in Controles)
             {
@@ -108,191 +71,80 @@ namespace VERP
 
         protected void Mapear()
         {
-            foreach (var prop in Objeto.GetType().GetProperties())
-            {
-                Control ctr = null;
-                if (prop.PropertyType.ToString().ToUpper().Contains("SYSTEM"))
-                {
-                    ctr = GetControl(("tbx" + prop.Name).ToUpper());
-                }
-                else
-                {
-                    ctr = GetControl(("cbx" + prop.Name).ToUpper());
-                }
-                if (ctr != null)
-                {
-                    Type tipo = prop.PropertyType;
-                    if (tipo.ToString().ToString().ToUpper().Equals("SYSTEM.STRING"))
-                    {
-                        prop.SetValue(Objeto, ctr.Text);
-                    }
-                    else if (tipo.ToString().ToString().ToUpper().Equals("SYSTEM.DOUBLE"))
-                    {
-                        if (ctr.Text.Contains("R$"))
-                        {
-                            prop.SetValue(Objeto, Convert.ToDouble(ctr.Text.Substring(2)));
-                        }
-                        else
-                        {
-                            prop.SetValue(Objeto, Convert.ToDouble(ctr.Text));
-                        }
-                    }
-                    else if (tipo.ToString().ToString().ToUpper().Equals("SYSTEM.INTEGER"))
-                    {
-                        prop.SetValue(Objeto, Convert.ToInt32(ctr.Text));
-                    }
-                    else
-                    {
-                        prop.SetValue(Objeto, Repo.GetByIdExt((int)((ComboBox)ctr).SelectedValue));
-                    }
-                }
-            }
+            Utils.Edicao.Mapear(Objeto, this);
         }
 
         protected void MapearTela()
         {
-            foreach (var prop in Objeto.GetType().GetProperties())
-            {
-                Control ctr = null;
-                if (prop.PropertyType.ToString().ToUpper().Contains("SYSTEM"))
-                {
-                    ctr = GetControl(("tbx" + prop.Name).ToUpper());
-                    if (ctr != null)
-                    {
-                        ctr.Text = prop.GetValue(Objeto, null).ToString();
-                        tbx_Leave(ctr, null);
-                    }
-                }
-                else
-                {
-                    ctr = GetControl(("cbx" + prop.Name).ToUpper());
-                    if (ctr != null)
-                    {
-                        ((ComboBox)ctr).SelectedItem = prop.GetValue(Objeto, null);
-                    }
-                }
-            }
+            Utils.Edicao.MapearTela(Objeto, this);
         }
 
 
         private void FEdicao_Load(object sender, EventArgs e)
         {
-            if (Controles != null && Controles.Count > 0)
-            {
-                foreach (Control ctr in Controles)
-                {
-                    Controls.Remove(ctr);
-                }
-            }
-
-            if (Labels != null && Labels.Count > 0)
-            {
-                foreach (Control ctr in Labels)
-                {
-                    Controls.Remove(ctr);
-                }
-            }
-
-            Controles = new List<Control>();
-            Labels = new List<Label>();
             if (CRUD == null)
             {
                 return;
             }
 
+            Controles = new List<Control>();
+            Labels = new List<Label>();
+            int t = 0;
+            foreach (Control ctr in Controls)
+            {
+                ctr.TabIndex = CRUD.Campos.Count + t;
+            }
+
+            List<Controle> UControles = Utils.Edicao.getControles(CRUD.Campos, this.Width, this);
+
             int screenWidth = this.Width;
             int screenHeight = this.Height;
-            int x = 13;
-            int y = 0;
-            int i = 0;
-            btnSalvar.TabIndex = CRUD.Campos.Count;
-            btnFechar.TabIndex = CRUD.Campos.Count + 1;
-            foreach (Campo campo in CRUD.Campos)
+            if (UControles.Count == 3)
             {
-                if (!campo.Edita)
-                {
-                    continue;
-                }
-                if ((x + (int)(campo.Tamanho / 13) * 100) > screenWidth)
-                {
-                    x = 13;
-                    y += 52;
-                }
-                Label lbl = new Label();
-                lbl.Text = campo.Titulo;
-                lbl.Name = "lbl" + campo.Nome;
-                lbl.Location = new Point(x + 13, y + 13);
-                lbl.AutoSize = true;
-                lbl.Size = new Size(38, 13);
-                Labels.Add(lbl);
-                Control ctr = null;
+                Control ctr = UControles[UControles.Count - 1].control;
+                screenWidth = ctr.Left + ctr.Width + 60;
+            }
 
-                if (campo.Tipo == TiposDeCampo.Model)
+            if (UControles.Count == CRUD.Campos.Count)
+            {
+                Control ctr = UControles[UControles.Count - 1].control;
+                screenHeight = ctr.Top + ctr.Height + 150;
+                if (UControles.Count < 3)
                 {
-                    ComboBox cbx = new ComboBox();
-                    cbx.DataSource = Repo.GetAllExt();
-                    cbx.ValueMember = "Id";
-                    cbx.DisplayMember = "Descricao";
-                    cbx.Name = "cbx" + campo.Nome;
-                    cbx.Location = new Point(x + 13, y + 28);
-                    cbx.TabIndex = i;
-                    cbx.Size = new Size((int)(campo.Tamanho / 13) * 100, 20);
-                    ctr = cbx;
-                    Controles.Add(cbx);
-
-                    
-                }
-                else
-                {
-                    TextBox tbx = new TextBox();
-                    tbx.Name = "tbx" + campo.Nome;
-                    tbx.Location = new Point(x + 13, y + 28);
-                    tbx.CharacterCasing = CharacterCasing.Upper;
-                    tbx.TabIndex = i;
-                    tbx.Size = new Size((int)(campo.Tamanho / 13) * 100, 20);
-                    if (campo.Tipo == TiposDeCampo.Integer || campo.Tipo == TiposDeCampo.Numeric)
-                    {
-                        tbx.Validating += tbx_Leave;
-                    }
-
-                    ctr = tbx;
-                    Controles.Add(tbx);
-                }
-
-                x += ((int)(campo.Tamanho / 13) * 100) + 5;
-                i++;
-
-                if (i == 3)
-                {
-                    screenWidth = ctr.Left + ctr.Width + 60;
-                }
-
-                if (i == CRUD.Campos.Count)
-                {
-                    screenHeight = ctr.Top + ctr.Height + 150;
-                    if (i < 3)
-                    {
-                        screenWidth = ctr.Left + ctr.Width + 100;
-                    }
+                    screenWidth = ctr.Left + ctr.Width + 100;
                 }
             }
             
-
-            foreach (Label lbl in Labels)
+            foreach (Controle controle in UControles)
             {
-                Controls.Add(lbl);
+                try
+                {
+                    Controls.Remove(controle.label);
+                    Controls.Remove(controle.control);
+                }
+                catch
+                {
+                }
             }
 
-            foreach (Control ctr in Controles)
+            foreach (Controle controle in UControles)
             {
-                Controls.Add(ctr);
+                Controles.Add(controle.control);
+                Labels.Add(controle.label);
+                Controls.Add(controle.label);
+                Controls.Add(controle.control);
             }
 
             this.ResizeRedraw = true;
-            this.Size = new Size(screenWidth, screenHeight);
+            if (Controls.Count - 1 == Labels.Count + Controles.Count)
+            {
+                this.Size = new Size(screenWidth, screenHeight);
+            }
+
+            this.Text = "Inserção/Edição de " + CRUD.tabela.Descricao;
         }
 
-        void tbx_Leave(object sender, EventArgs e)
+        public void tbx_Leave(object sender, EventArgs e)
         {
             if (GetCampo(((TextBox)sender).Name.Substring(3)).Tipo == TiposDeCampo.Integer ||
                     GetCampo(((TextBox)sender).Name.Substring(3)).Tipo == TiposDeCampo.Numeric)
@@ -348,6 +200,11 @@ namespace VERP
             {
                 Controles[0].Focus();
             }
+        }
+
+        public ExtRepository GetRepo()
+        {
+            return this.Repo;
         }
     }
 }

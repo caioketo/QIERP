@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace VERPDatabase.Classes
 {
-    public enum TiposDeCampo
+    public class Telefone : ClasseBase
     {
-        Varchar,
-        Integer,
-        Timestamp,
-        Numeric
+        public string Numero { get; set; }
+        public string Contato { get; set; }
     }
 }

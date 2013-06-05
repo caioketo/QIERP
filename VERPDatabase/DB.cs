@@ -37,6 +37,8 @@ namespace VERPDatabase
         public FPRepository FPRepo = new FPRepository();
         public CPRepository CPRepo = new CPRepository();
         public MovRepository MovRepo = new MovRepository();
+        public PessoaRepository PessoaRepo = new PessoaRepository();
+        public TelefoneRepository TelefoneRepo = new TelefoneRepository();
         public VerpContext context;
 
 
@@ -71,6 +73,8 @@ namespace VERPDatabase
             Tabelas.Add(new Tabela("FormasDePagamento"));
             Tabelas.Add(new Tabela("CondicoesDePagamento"));
             Tabelas.Add(new Tabela("Movimentacao"));
+            Tabelas.Add(new Tabela("Pessoa"));
+            Tabelas.Add(new Tabela("Telefone"));
         }
     }
 }

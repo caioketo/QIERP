@@ -13,7 +13,7 @@ using VERP.Utils;
 namespace VERP
 {
 
-    public partial class FFechaVenda : Form
+    public partial class FFechaVenda : BaseForm
     {
         public Venda VendaAtual;
         public FVenda fVenda;
@@ -33,10 +33,17 @@ namespace VERP
 
         public void AtualizaCondicoes()
         {
-            FormaDePagamento fp = (FormaDePagamento)cmbForma.SelectedItem;
-            if (fp != null)
+            try
             {
-                condicaoDePagamentoBindingSource.DataSource = DB.GetInstance().CPRepo.GetAll().Where(c => c.Forma.Id == fp.Id).ToList();
+                FormaDePagamento fp = (FormaDePagamento)cmbForma.SelectedItem;
+                if (fp != null)
+                {
+                    condicaoDePagamentoBindingSource.DataSource = DB.GetInstance().CPRepo.GetAll().Where(c => c.Forma.Id == fp.Id).ToList();
+                }
+            }
+            catch
+            {
+                return;
             }
         }
 
@@ -86,11 +93,6 @@ namespace VERP
             if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
-            }
-
-            if (e.KeyCode == Keys.Enter)
-            {
-                SelectNextControl(ActiveControl, true, true, true, true);
             }
         }
 

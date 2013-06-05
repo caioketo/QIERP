@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VERPDatabase
+namespace VERPDatabase.Classes
 {
-    public class CondicaoDePagamento
+    public class UF : ClasseBase
     {
-        public int Id { get; set; }
+        public string Codigo { get; set; }
         public string Descricao { get; set; }
     }
 }

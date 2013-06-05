@@ -12,7 +12,7 @@ using VERP.Utils;
 
 namespace VERP
 {
-    public partial class FVenda : Form
+    public partial class FVenda : BaseForm
     {
         private Produto produtoAchado;
         public Venda VendaAtual;
@@ -51,18 +51,21 @@ namespace VERP
             }
             else
             {
-                FConsProduto consProduto = new FConsProduto();
-                consProduto.Venda = this;
-                consProduto.ShowDialog();
-                prod = DB.GetInstance().ProdutoRepo.GetAll().Where(p => p.Codigo == tbxProduto.Text).FirstOrDefault();
-                if (prod != null)
+                using (FCRUDProduto crud = new FCRUDProduto())
                 {
-                    produtoAchado = prod;
-                    tbxQtde.Focus();
-                }
-                else
-                {
-                    tbxProduto.Focus();
+                    crud.TextoInicial = tbxProduto.Text;
+                    object resultado = crud.Selecionar();
+                    if (resultado != null)
+                    {
+                        prod = (Produto)resultado;
+                        produtoAchado = prod;
+                        tbxProduto.Text = produtoAchado.Codigo;
+                        tbxQtde.Focus();
+                    }
+                    else
+                    {
+                        tbxProduto.Focus();
+                    }
                 }
             }
         }

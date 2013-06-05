@@ -78,6 +78,9 @@ namespace VERP.Utils
                 case 40004:
                     mensagem += "Quantidade inválida!";
                     break;
+                case 40005:
+                    mensagem += "Produto já adicionado!";
+                    break;
             }
 
 

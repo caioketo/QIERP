@@ -1,0 +1,148 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using VERP.Classes;
+using VERPDatabase.Repositorios;
+using VERPDatabase.Classes;
+
+namespace VERP.Utils
+{
+    public partial class cmpEdicao : UserControl, IEdicao
+    {
+        protected List<Controle> Controles = new List<Controle>();
+        public Estado estado { get; set; }
+        public ClasseBase Objeto { get; set; }
+        public ExtRepository Repo { get; set; }
+        public Tabela tabela { get; set; }
+
+
+        public cmpEdicao()
+        {
+            InitializeComponent();
+        }
+
+        private void cmpEdicao_Load(object sender, EventArgs e)
+        {
+            if (tabela != null)
+            {
+                gbxGeral.Text = tabela.Descricao;
+                Controles = Utils.Edicao.getControles(tabela.Campos, this.Parent.Width, this);
+
+                int screenWidth = this.Width;
+                int screenHeight = this.Height;
+                if (Controles.Count == 3)
+                {
+                    Control ctr = Controles[Controles.Count - 1].control;
+                    screenWidth = ctr.Left + ctr.Width + 60;
+                }
+
+                if (Controles.Count == tabela.Campos.Count)
+                {
+                    Control ctr = Controles[Controles.Count - 1].control;
+                    screenHeight = ctr.Top + ctr.Height + 10;
+                    if (Controles.Count < 3)
+                    {
+                        screenWidth = ctr.Left + ctr.Width + 15;
+                    }
+                }
+
+                if (gbxGeral.Controls.Count == 0)
+                {
+                    foreach (Controle controle in Controles)
+                    {
+                        gbxGeral.Controls.Add(controle.label);
+                        gbxGeral.Controls.Add(controle.control);
+                    }
+
+                    this.ResizeRedraw = true;
+                    if (gbxGeral.Controls.Count == (Controles.Count * 2))
+                    {
+                        this.Size = new Size(screenWidth, screenHeight);
+                    }
+                }
+            }
+        }
+
+        public Control GetControl(string nome)
+        {
+            foreach (Controle ctr in Controles)
+            {
+                if (ctr.control.Name.ToUpper().Equals(nome.ToUpper()))
+                {
+                    return ctr.control;
+                }
+            }
+            return null;
+        }
+
+        public ExtRepository GetRepo()
+        {
+            return Repo;
+        }
+
+        public Campo GetCampo(string nome)
+        {
+            foreach (Campo campo in tabela.Campos)
+            {
+                if (campo.Nome.ToUpper().Equals(nome.ToUpper()))
+                {
+                    return campo;
+                }
+            }
+
+            return null;
+        }
+
+        public void tbx_Leave(object sender, EventArgs e)
+        {
+            if (GetCampo(((TextBox)sender).Name.Substring(3)).Tipo == TiposDeCampo.Integer ||
+                    GetCampo(((TextBox)sender).Name.Substring(3)).Tipo == TiposDeCampo.Numeric)
+            {
+                double value = 0;
+                string texto = ((TextBox)sender).Text;
+                if (((TextBox)sender).Text.Contains("R$"))
+                {
+                    texto = ((TextBox)sender).Text.Substring(2);
+                }
+
+                double.TryParse(texto, out value);
+                ((TextBox)sender).Text = value.ToString(GetCampo(((TextBox)sender).Name.Substring(3)).Formatacao);
+            }
+        }
+
+        public void Mapear()
+        {
+            Utils.Edicao.Mapear(Objeto, this);
+        }
+
+        public void MapearTela()
+        {
+            Utils.Edicao.MapearTela(Objeto, this);
+        }
+
+        public bool Validar()
+        {
+            return Utils.Edicao.Validar(Objeto, this);
+        }
+
+        public void Gravar()
+        {
+            Mapear();
+            if (estado == Estado.Inserir)
+            {
+                Repo.Inserir(Objeto);
+            }
+            else if (estado == Estado.Modificar)
+            {
+                Repo.Salvar(Objeto);
+            }
+        }
+
+    }
+}

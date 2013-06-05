@@ -14,9 +14,11 @@ using VERP.Utils;
 
 namespace VERP
 {
-    public partial class FCRUD : Form
+    public partial class FCRUD : BaseForm
     {
         protected FEdicao Edicao;
+        public string TextoInicial { get; set; }
+        public object Resultado { get; set; }
 
         public List<Campo> Campos
         {
@@ -37,6 +39,7 @@ namespace VERP
 
         public FCRUD()
         {
+            TextoInicial = "";
             InitializeComponent();
         }
 
@@ -47,24 +50,7 @@ namespace VERP
 
         private void FCRUD_Shown(object sender, EventArgs e)
         {
-            foreach (Campo campo in Campos)
-            {
-                if (campo.MostraGrid)
-                {
-                    DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                    col.DataPropertyName = campo.Nome;
-                    col.DefaultCellStyle = new DataGridViewCellStyle();
-                    if (!campo.Formatacao.Equals(""))
-                    {
-                        col.DefaultCellStyle.Format = campo.Formatacao;
-                    }
-                    col.HeaderText = campo.Titulo;
-                    col.Name = campo.Titulo;
-                    dgvCRUD.Columns.Add(col);
-                }
-            }
-
-            dgvCRUD.AutoGenerateColumns = false;
+            Util.AdicionaGridColumns(dgvCRUD, Campos);
             dgvCRUD.DataSource = bindingSource;
 
             if (Edicao != null)
@@ -72,7 +58,24 @@ namespace VERP
                 Edicao.CRUD = this;
             }
 
+            tbxPesquisa.Text = TextoInicial;
+
+
             GetRecords();
+
+            if (tabela != null)
+            {
+                if (!tabela.Edita)
+                {
+                    btnEditar.Enabled = false;
+                }
+                else
+                {
+                    btnEditar.Enabled = true;
+                }
+
+                this.Text = tabela.Descricao;
+            }
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -84,8 +87,14 @@ namespace VERP
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Edicao.estado = Estado.Modificar;
-            Edicao.Objeto = (ClasseBase)bindingSource.Current;
-            Edicao.ShowDialog();
+            try
+            {
+                Edicao.Objeto = (ClasseBase)bindingSource.Current;
+                Edicao.ShowDialog();
+            }
+            catch
+            {
+            }
         }
 
         private void FCRUD_KeyDown(object sender, KeyEventArgs e)
@@ -107,6 +116,25 @@ namespace VERP
         private void FCRUD_Activated(object sender, EventArgs e)
         {
             GetRecords();
+        }
+
+        public object Selecionar()
+        {
+            this.Resultado = null;
+            this.btnSelecionar.Visible = true;
+            this.btnSelecionar.TabIndex = 12;
+            this.tbxPesquisa.Size = new Size(482, 31);
+            this.ShowDialog();
+            this.btnSelecionar.Visible = false;
+            this.tbxPesquisa.Size = new Size(580, 31);
+            this.btnInserir.TabIndex = 12;
+            return Resultado;
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            Resultado = bindingSource.Current;
+            this.Close();
         }
     }
 }

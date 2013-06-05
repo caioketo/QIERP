@@ -110,6 +110,7 @@
             // 
             // tbxProduto
             // 
+            this.tbxProduto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxProduto.Location = new System.Drawing.Point(102, 9);
             this.tbxProduto.Name = "tbxProduto";

@@ -4,10 +4,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VERPDatabase.Repositorios;
 
 namespace VERPDatabase
 {
-    public class ProdutoRepository : IRepository<Produto>
+    public class ProdutoRepository : ExtRepository, IRepository<Produto>
     {
         public IQueryable<Produto> GetAll()
         {
@@ -38,6 +39,31 @@ namespace VERPDatabase
             DB.GetInstance().context.Entry<Produto>(item).State = System.Data.EntityState.Modified;
             item.DataExclusao = DateTime.Now;
             return true;
+        }
+
+        public override dynamic GetAllExt()
+        {
+            return this.GetAll().ToList();
+        }
+
+        public override dynamic GetByIdExt(int id)
+        {
+            return this.GetById(id);
+        }
+
+        public override dynamic GetByText(string text)
+        {
+            return this.GetAll().Where(p => p.Codigo.ToUpper().Equals(text.ToUpper())).FirstOrDefault();
+        }
+
+        public override bool Inserir(object objeto)
+        {
+            return this.Inserir(objeto as Produto);
+        }
+
+        public override bool Salvar(object objeto)
+        {
+            return this.Salvar(objeto as Produto);
         }
     }
 }

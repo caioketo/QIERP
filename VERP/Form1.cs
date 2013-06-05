@@ -9,11 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VERP.CRUD;
+using VERP.Utils;
 using VERPDatabase;
 
 namespace VERP
 {
-    public partial class Form1 : Form
+    public partial class Form1 : BaseForm
     {
         public Splash splash;
         public Form1()
@@ -64,6 +65,27 @@ namespace VERP
         private void Form1_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void movimentaçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FCRUDMovimentacao crud = new FCRUDMovimentacao())
+            {
+                crud.ShowDialog();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (FCRUDPessoa crud = new FCRUDPessoa())
+            {
+                crud.ShowDialog();
+            }
         }
     }
 }

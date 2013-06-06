@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VERPDatabase;
+using VERP.Properties;
 
 namespace VERP
 {
@@ -26,6 +27,8 @@ namespace VERP
 
         private void Splash_Shown(object sender, EventArgs e)
         {
+            //Settings.Default.
+            DB.GetInstance().context.LoadAll();
         }
     }
 }

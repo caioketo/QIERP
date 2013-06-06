@@ -196,6 +196,10 @@ namespace VERP
 
         private void FEdicao_Shown(object sender, EventArgs e)
         {
+            if (Controles == null)
+            {
+                return;
+            }
             foreach (Control ctr in Controles)
             {
                 if (ctr is cmpEdicao)

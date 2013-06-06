@@ -85,16 +85,22 @@ namespace VERPDatabase.Classes
                     Campos.Add(new Campo("Complemento", "Complemento", "", TiposDeCampo.Varchar, 20));
                     Campos.Add(new Campo("Bairro", "Bairro", "", TiposDeCampo.Varchar, 20));
                     Campos.Add(new Campo("CEP", "CEP", "", TiposDeCampo.Varchar, 10));
-                    campo = new Campo("Cidade", "Cidade", "", TiposDeCampo.ModelUnico, 50);
+                    campo = new Campo("Cidade", "Cidade", "", TiposDeCampo.Model, 50);
                     campo.TabelaRel = "Cidades";
+                    campo.CampoRel = "Descricao";
+                    campo.DisplayRel = "Descricao";
+
                     campo.MostraGrid = false;
+
                     Campos.Add(campo);
                     Descricao = "Endereços";
                     break;
                 case "Cidade":
                     Campos.Add(new Campo("Descricao", "Descrição", "", TiposDeCampo.Varchar, 50));
-                    campo = new Campo("UF", "UF", "", TiposDeCampo.ModelUnico, 50);
+                    campo = new Campo("UF", "UF", "", TiposDeCampo.Model, 50);
                     campo.TabelaRel = "UFs";
+                    campo.CampoRel = "Codigo";
+                    campo.DisplayRel = "Descricao";
                     campo.MostraGrid = false;
                     Campos.Add(campo);
                     Descricao = "Cidades";

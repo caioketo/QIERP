@@ -78,6 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Enum.cs" />
+    <Compile Include="CRUD\FCRUDCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUD\FCRUDCidade.Designer.cs">
+      <DependentUpon>FCRUDCidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="CRUD\FCRUDCondicaoDePagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,18 @@
     <Compile Include="CRUD\FCRUDPessoa.Designer.cs">
       <DependentUpon>FCRUDPessoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="CRUD\FCRUDUF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUD\FCRUDUF.Designer.cs">
+      <DependentUpon>FCRUDUF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\FEdicaoCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\FEdicaoCidade.Designer.cs">
+      <DependentUpon>FEdicaoCidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Edicao\FEdicaoCondicaoDePagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +143,12 @@
     </Compile>
     <Compile Include="Edicao\FEdicaoPessoa.Designer.cs">
       <DependentUpon>FEdicaoPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\FEdicaoUF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\FEdicaoUF.Designer.cs">
+      <DependentUpon>FEdicaoUF.cs</DependentUpon>
     </Compile>
     <Compile Include="FConsVenda.cs">
       <SubType>Form</SubType>
@@ -211,6 +235,9 @@
       <DependentUpon>Pesquisa.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Util.cs" />
+    <EmbeddedResource Include="CRUD\FCRUDCidade.resx">
+      <DependentUpon>FCRUDCidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CRUD\FCRUDCondicaoDePagamento.resx">
       <DependentUpon>FCRUDCondicaoDePagamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +250,12 @@
     <EmbeddedResource Include="CRUD\FCRUDPessoa.resx">
       <DependentUpon>FCRUDPessoa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CRUD\FCRUDUF.resx">
+      <DependentUpon>FCRUDUF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\FEdicaoCidade.resx">
+      <DependentUpon>FEdicaoCidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Edicao\FEdicaoCondicaoDePagamento.resx">
       <DependentUpon>FEdicaoCondicaoDePagamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edicao\FEdicaoPessoa.resx">
       <DependentUpon>FEdicaoPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\FEdicaoUF.resx">
+      <DependentUpon>FEdicaoUF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FConsVenda.resx">
       <DependentUpon>FConsVenda.cs</DependentUpon>

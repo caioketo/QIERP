@@ -56,6 +56,10 @@ namespace VERP.Utils
             {
                 case "FormasDePagamento":
                     return new FCRUDFormaDePagamento();
+                case "Cidades":
+                    return new FCRUDCidade();
+                case "UFs":
+                    return new FCRUDUF();
             }
             return null;
         }

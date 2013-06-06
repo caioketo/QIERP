@@ -19,8 +19,7 @@ namespace VERP
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Splash s = new Splash();
-            s.Show();
-            DB.GetInstance().context.LoadAll();
+            s.ShowDialog();
             s.Close();
             Application.Run(new Form1());
         }

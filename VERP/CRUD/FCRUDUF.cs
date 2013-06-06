@@ -2,30 +2,29 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Linq;
 using System.Drawing;
 using System.Text;
+using System.Linq;
 using System.Windows.Forms;
 using VERPDatabase;
-using VERPDatabase.Classes;
-using VERP.Utils;
 using VERP.Edicao;
-using VERPDatabase.Repositorios;
+using VERP.Utils;
+using VERPDatabase.Classes;
 
 namespace VERP.CRUD
 {
-    public partial class FCRUDPessoa : VERP.FCRUD
+    public partial class FCRUDUF : VERP.FCRUD
     {
         protected override void GetRecords()
         {
-            bindingSource.DataSource = DB.GetInstance().PessoaRepo.GetAll().Where(p => p.Nome.ToUpper().Contains(tbxPesquisa.Text) ||
-                p.NomeFantasia.ToUpper().Contains(tbxPesquisa.Text) || p.Documento.Contains(tbxPesquisa.Text));
+            bindingSource.DataSource = DB.GetInstance().UFRepo.GetAll().Where(p => p.Descricao.ToUpper().Contains(tbxPesquisa.Text) ||
+                p.Codigo.ToUpper().Contains(tbxPesquisa.Text));
         }
 
-        public FCRUDPessoa()
+        public FCRUDUF()
         {
-            tabela = DB.GetInstance().GetTabela("Pessoa");
-            Edicao = new FEdicaoPessoa();
+            tabela = DB.GetInstance().GetTabela("UF");
+            Edicao = new FEdicaoUF();
             InitializeComponent();
         }
 
@@ -33,7 +32,7 @@ namespace VERP.CRUD
         {
             if (Mensagem.MostrarMsg(30002) == System.Windows.Forms.DialogResult.Yes)
             {
-                DB.GetInstance().PessoaRepo.Deletar((Pessoa)bindingSource.Current);
+                DB.GetInstance().UFRepo.Deletar((UF)bindingSource.Current);
                 DB.GetInstance().context.SaveChanges();
                 GetRecords();
             }

@@ -26,6 +26,7 @@ namespace VERPDatabase.Classes
             }
         }
         public BindingList<ItemMovimentacao> Itens { get; set; }
+        public Pessoa ClienteOuFornecedor { get; set; }
 
         public Movimentacao()
         {

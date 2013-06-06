@@ -55,6 +55,12 @@ namespace VERPDatabase.Classes
                     campo = new Campo("TipoDescricao", "Tipo", "", TiposDeCampo.Varchar, 50);
                     campo.Edita = false;
                     Campos.Add(campo);
+                    campo = new Campo("ClienteOuFornecedor", "Cliente/Fornecedor", "", TiposDeCampo.Model, 50);
+                    campo.TabelaRel = "Pessoas";
+                    campo.CampoRel = "Documento";
+                    campo.DisplayRel = "Nome";
+                    campo.MostraGrid = false;
+                    Campos.Add(campo);
                     Edita = false;
                     Descricao = "Movimentações";
                     break;
@@ -89,9 +95,7 @@ namespace VERPDatabase.Classes
                     campo.TabelaRel = "Cidades";
                     campo.CampoRel = "Descricao";
                     campo.DisplayRel = "Descricao";
-
                     campo.MostraGrid = false;
-
                     Campos.Add(campo);
                     Descricao = "Endereços";
                     break;

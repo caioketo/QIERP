@@ -14,6 +14,8 @@ namespace VERPDatabase
     {
         public BindingList<Item> Itens { get; set; }
         public BindingList<Pagamento> Pagamentos { get; set; }
+        public Cliente Cliente { get; set; }
+        public Vendedor Vendedor { get; set; }
         public int Pedido { get; set; }
         public double Troco
         {

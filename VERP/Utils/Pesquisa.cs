@@ -20,10 +20,17 @@ namespace VERP.Utils
         public string Titulo { get; set; }
         public ExtRepository Repo { get; set; }
         public ClasseBase Objeto { get; set; }
+        public Size Tamanho { get; set; }
+        public Font Fonte { get; set; }
 
         public Pesquisa()
         {
             InitializeComponent();
+            if (Tamanho != null && Fonte != null)
+            {
+                tbxPesquisa.Size = Tamanho;
+                tbxPesquisa.Font = Fonte;
+            }
         }
 
         public void Selecionar()
@@ -101,12 +108,15 @@ namespace VERP.Utils
 
         public void onLoad()
         {
-            if (Titulo.Equals(""))
+            if (Titulo != null)
             {
-                Titulo = Campo;
+                if (Titulo.Equals(""))
+                {
+                    Titulo = Campo;
+                }
+                lblCampo.Text = Titulo + ":";
+                Objeto = null;
             }
-            lblCampo.Text = Titulo + ":";
-            Objeto = null;
         }
 
         private void tbxPesquisa_Leave(object sender, EventArgs e)

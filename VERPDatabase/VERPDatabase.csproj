@@ -52,6 +52,7 @@
     <Compile Include="Classes\CondicaoDePagamento.cs" />
     <Compile Include="Classes\Endereco.cs" />
     <Compile Include="Classes\FormaDePagamento.cs" />
+    <Compile Include="Classes\Fornecedor.cs" />
     <Compile Include="Classes\Item.cs" />
     <Compile Include="Classes\ItemMovimentacao.cs" />
     <Compile Include="Classes\Movimentacao.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Classes\TiposDeCampo.cs" />
     <Compile Include="Classes\UF.cs" />
     <Compile Include="Classes\Venda.cs" />
+    <Compile Include="Classes\Vendedor.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

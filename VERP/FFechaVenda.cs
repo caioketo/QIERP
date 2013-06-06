@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VERPDatabase;
 using VERP.Utils;
+using VERP.CRUD;
 
 namespace VERP
 {
@@ -21,6 +22,18 @@ namespace VERP
         public FFechaVenda()
         {
             InitializeComponent();
+            pesCliente.CRUD = new FCRUDPessoa();
+            pesCliente.Campo = "Nome";
+            pesCliente.CampoDisplay = "Nome";
+            pesCliente.Titulo = "Cliente";
+            pesCliente.Repo = DB.GetInstance().PessoaRepo;
+            pesCliente.Objeto = VendaAtual.Cliente;
+            pesVendedor.CRUD = new FCRUDPessoa();
+            pesVendedor.Campo = "Nome";
+            pesVendedor.CampoDisplay = "Nome";
+            pesVendedor.Titulo = "Vendedor";
+            pesVendedor.Repo = DB.GetInstance().PessoaRepo;
+            pesVendedor.Objeto = VendaAtual.Vendedor;
         }
 
         private void FFechaVenda_Shown(object sender, EventArgs e)

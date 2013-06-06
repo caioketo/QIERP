@@ -52,7 +52,8 @@ namespace VERPDatabase.Repositorios
 
         public override dynamic GetByText(string text)
         {
-            return this.GetAll().Where(p => p.Documento.ToUpper().Equals(text.ToUpper())).FirstOrDefault();
+            return this.GetAll().Where(p => p.Documento.ToUpper().Equals(text.ToUpper()) || 
+                p.Nome.ToUpper().Equals(text.ToUpper()) || p.NomeFantasia.ToUpper().Equals(text.ToUpper())).FirstOrDefault();
         }
 
         public override bool Inserir(object objeto)

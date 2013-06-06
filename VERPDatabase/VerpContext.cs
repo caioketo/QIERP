@@ -34,6 +34,8 @@ namespace VERPDatabase
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
         public DbSet<UF> UFs { get; set; }
+        public DbSet<Fornecedor> Fornecedores { get; set; }
+        public DbSet<Vendedor> Vendedores { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -71,6 +73,8 @@ namespace VERPDatabase
             Enderecos.Load();
             Cidades.Load();
             UFs.Load();
+            Fornecedores.Load();
+            Vendedores.Load();
         }
     }
 }

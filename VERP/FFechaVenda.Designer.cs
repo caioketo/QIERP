@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rtbTotal = new System.Windows.Forms.RichTextBox();
             this.btnFinalizaVenda = new System.Windows.Forms.Button();
             this.cmbForma = new System.Windows.Forms.ComboBox();
@@ -44,6 +44,8 @@
             this.pagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesCliente = new VERP.Utils.Pesquisa();
+            this.pesVendedor = new VERP.Utils.Pesquisa();
             ((System.ComponentModel.ISupportInitialize)(this.formaDePagamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.condicaoDePagamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,7 +71,7 @@
             // btnFinalizaVenda
             // 
             this.btnFinalizaVenda.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnFinalizaVenda.Location = new System.Drawing.Point(74, 461);
+            this.btnFinalizaVenda.Location = new System.Drawing.Point(74, 628);
             this.btnFinalizaVenda.Name = "btnFinalizaVenda";
             this.btnFinalizaVenda.Size = new System.Drawing.Size(791, 44);
             this.btnFinalizaVenda.TabIndex = 9;
@@ -84,7 +86,7 @@
             this.cmbForma.DisplayMember = "Descricao";
             this.cmbForma.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.cmbForma.FormattingEnabled = true;
-            this.cmbForma.Location = new System.Drawing.Point(74, 216);
+            this.cmbForma.Location = new System.Drawing.Point(74, 187);
             this.cmbForma.Name = "cmbForma";
             this.cmbForma.Size = new System.Drawing.Size(272, 37);
             this.cmbForma.TabIndex = 0;
@@ -102,7 +104,7 @@
             this.cmbCondicao.DisplayMember = "Descricao";
             this.cmbCondicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.cmbCondicao.FormattingEnabled = true;
-            this.cmbCondicao.Location = new System.Drawing.Point(352, 216);
+            this.cmbCondicao.Location = new System.Drawing.Point(352, 187);
             this.cmbCondicao.Name = "cmbCondicao";
             this.cmbCondicao.Size = new System.Drawing.Size(247, 37);
             this.cmbCondicao.TabIndex = 1;
@@ -116,7 +118,7 @@
             // 
             this.tbxValor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbxValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxValor.Location = new System.Drawing.Point(605, 216);
+            this.tbxValor.Location = new System.Drawing.Point(605, 187);
             this.tbxValor.Name = "tbxValor";
             this.tbxValor.Size = new System.Drawing.Size(210, 35);
             this.tbxValor.TabIndex = 2;
@@ -136,7 +138,7 @@
             this.CondicaoPagto,
             this.valorDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.pagamentoBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(74, 260);
+            this.dataGridView1.Location = new System.Drawing.Point(74, 231);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(791, 184);
@@ -162,8 +164,8 @@
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            dataGridViewCellStyle1.Format = "c";
-            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "c";
+            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             this.valorDataGridViewTextBoxColumn.ReadOnly = true;
@@ -176,7 +178,7 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(822, 216);
+            this.button1.Location = new System.Drawing.Point(822, 187);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(43, 35);
             this.button1.TabIndex = 3;
@@ -190,11 +192,45 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Forma de Pagamento";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
+            // pesCliente
+            // 
+            this.pesCliente.Campo = null;
+            this.pesCliente.CampoDisplay = null;
+            this.pesCliente.CRUD = null;
+            this.pesCliente.Fonte = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.pesCliente.Location = new System.Drawing.Point(74, 421);
+            this.pesCliente.MinimumSize = new System.Drawing.Size(251, 51);
+            this.pesCliente.Name = "pesCliente";
+            this.pesCliente.Objeto = null;
+            this.pesCliente.Repo = null;
+            this.pesCliente.Size = new System.Drawing.Size(791, 81);
+            this.pesCliente.TabIndex = 14;
+            this.pesCliente.Tamanho = new System.Drawing.Size(272, 37);
+            this.pesCliente.Titulo = null;
+            // 
+            // pesVendedor
+            // 
+            this.pesVendedor.Campo = null;
+            this.pesVendedor.CampoDisplay = null;
+            this.pesVendedor.CRUD = null;
+            this.pesVendedor.Fonte = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.pesVendedor.Location = new System.Drawing.Point(74, 508);
+            this.pesVendedor.MinimumSize = new System.Drawing.Size(251, 51);
+            this.pesVendedor.Name = "pesVendedor";
+            this.pesVendedor.Objeto = null;
+            this.pesVendedor.Repo = null;
+            this.pesVendedor.Size = new System.Drawing.Size(791, 81);
+            this.pesVendedor.TabIndex = 15;
+            this.pesVendedor.Tamanho = new System.Drawing.Size(272, 37);
+            this.pesVendedor.Titulo = null;
+            // 
             // FFechaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 655);
+            this.ClientSize = new System.Drawing.Size(939, 687);
+            this.Controls.Add(this.pesVendedor);
+            this.Controls.Add(this.pesCliente);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tbxValor);
@@ -202,7 +238,6 @@
             this.Controls.Add(this.cmbForma);
             this.Controls.Add(this.btnFinalizaVenda);
             this.Controls.Add(this.rtbTotal);
-            this.KeyPreview = true;
             this.Name = "FFechaVenda";
             this.Text = "FFechaVenda";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -233,5 +268,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Forma;
         private System.Windows.Forms.DataGridViewTextBoxColumn CondicaoPagto;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
+        private Utils.Pesquisa pesCliente;
+        private Utils.Pesquisa pesVendedor;
     }
 }

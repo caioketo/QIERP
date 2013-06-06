@@ -57,6 +57,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Splash";
+            this.Activated += new System.EventHandler(this.Splash_Activated);
             this.Load += new System.EventHandler(this.Splash_Load);
             this.Shown += new System.EventHandler(this.Splash_Shown);
             this.ResumeLayout(false);

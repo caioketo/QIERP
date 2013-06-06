@@ -27,8 +27,12 @@ namespace VERP
 
         private void Splash_Shown(object sender, EventArgs e)
         {
-            //Settings.Default.
-            DB.GetInstance().context.LoadAll();
+            
+        }
+
+        private void Splash_Activated(object sender, EventArgs e)
+        {
+            
         }
     }
 }

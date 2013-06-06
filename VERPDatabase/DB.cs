@@ -20,11 +20,11 @@ namespace VERPDatabase
     {
         private static DB Instance = null;
 
-        public static DB GetInstance()
+        public static DB GetInstance(string connectionString = "")
         {
             if (Instance == null)
             {
-                Instance = new DB();
+                Instance = new DB(connectionString);
             }
             return Instance;
         }
@@ -69,9 +69,9 @@ namespace VERPDatabase
             return null;
         }
 
-        public DB()
+        public DB(string connectionString)
         {
-            context = new VerpContext(VerpContext.CreateConnectionString());
+            context = new VerpContext(connectionString);
             Tabelas.Add(new Tabela("Produtos"));
             Tabelas.Add(new Tabela("FormasDePagamento"));
             Tabelas.Add(new Tabela("CondicoesDePagamento"));

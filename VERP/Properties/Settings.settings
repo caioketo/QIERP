@@ -6,7 +6,7 @@
       <Value Profile="(Default)">Server=127.0.0.1\\SQLSERVER;Database=verp;User Id=sa;Password=vd001989;</Value>
     </Setting>
     <Setting Name="FirstRun" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

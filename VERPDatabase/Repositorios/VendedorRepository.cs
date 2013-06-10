@@ -88,5 +88,11 @@ namespace VERPDatabase.Repositorios
                 return null;
             }
         }
+
+        public Vendedor GetByPessoa(Pessoa pessoa)
+        {
+            Vendedor vendedor = this.GetAll().Where(v => v.Pessoa.Id == pessoa.Id).FirstOrDefault();
+            return vendedor;
+        }
     }
 }

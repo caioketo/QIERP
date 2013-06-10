@@ -165,10 +165,11 @@ namespace VERP.Utils
                 {
                     continue;
                 }
-                if ((x + (int)(campo.Tamanho / 13) * 100) > screenWidth)
+
+                if ((edicao is cmpEdicao && (i % 3 == 0)) || ((x + (int)(campo.Tamanho / 13) * 100) > screenWidth))
                 {
                     x = 13;
-                    y += 52;
+                    y = Controles[Controles.Count - 1].control.Top + Controles[Controles.Count - 1].control.Height + 52;
                 }
                 Label lbl = new Label();
                 lbl.Text = campo.Titulo;

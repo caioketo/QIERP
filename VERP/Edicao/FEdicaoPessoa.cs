@@ -31,6 +31,41 @@ namespace VERP.Edicao
                 DB.GetInstance().PessoaRepo.Salvar(pessoa);
             }
 
+            if (cbxCliente.Checked)
+            {
+                if (estado == Estado.Inserir)
+                {
+                    Cliente cliente = new Cliente();
+                    cliente.Pessoa = pessoa;
+                    DB.GetInstance().ClienteRepo.Inserir(cliente);
+                }
+            }
+            else
+            {
+                if (estado == Estado.Modificar && DB.GetInstance().ClienteRepo.GetByPessoa(pessoa) != null)
+                {
+                    DB.GetInstance().ClienteRepo.Deletar(DB.GetInstance().ClienteRepo.GetByPessoa(pessoa));
+                }
+            }
+
+
+            if (cbxVendedor.Checked)
+            {
+                if (estado == Estado.Inserir)
+                {
+                    Vendedor vendedor = new Vendedor();
+                    vendedor.Pessoa = pessoa;
+                    DB.GetInstance().VendedorRepo.Inserir(vendedor);
+                }
+            }
+            else
+            {
+                if (estado == Estado.Modificar && DB.GetInstance().VendedorRepo.GetByPessoa(pessoa) != null)
+                {
+                    DB.GetInstance().VendedorRepo.Deletar(DB.GetInstance().VendedorRepo.GetByPessoa(pessoa));
+                }
+            }
+
             this.Close();
         }
 
@@ -53,6 +88,9 @@ namespace VERP.Edicao
                 pessoa = Objeto as Pessoa;
                 MapearTela();
             }
+
+            cbxCliente.Checked = (DB.GetInstance().ClienteRepo.GetByPessoa(pessoa) != null);
+            cbxVendedor.Checked = (DB.GetInstance().VendedorRepo.GetByPessoa(pessoa) != null);            
         }
 
     }

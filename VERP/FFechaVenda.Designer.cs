@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rtbTotal = new System.Windows.Forms.RichTextBox();
             this.btnFinalizaVenda = new System.Windows.Forms.Button();
             this.cmbForma = new System.Windows.Forms.ComboBox();
@@ -71,7 +71,7 @@
             // btnFinalizaVenda
             // 
             this.btnFinalizaVenda.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnFinalizaVenda.Location = new System.Drawing.Point(74, 628);
+            this.btnFinalizaVenda.Location = new System.Drawing.Point(74, 547);
             this.btnFinalizaVenda.Name = "btnFinalizaVenda";
             this.btnFinalizaVenda.Size = new System.Drawing.Size(791, 44);
             this.btnFinalizaVenda.TabIndex = 9;
@@ -164,8 +164,8 @@
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            dataGridViewCellStyle2.Format = "c";
-            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "c";
+            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             this.valorDataGridViewTextBoxColumn.ReadOnly = true;
@@ -203,7 +203,7 @@
             this.pesCliente.Name = "pesCliente";
             this.pesCliente.Objeto = null;
             this.pesCliente.Repo = null;
-            this.pesCliente.Size = new System.Drawing.Size(791, 81);
+            this.pesCliente.Size = new System.Drawing.Size(791, 56);
             this.pesCliente.TabIndex = 14;
             this.pesCliente.Tamanho = new System.Drawing.Size(272, 37);
             this.pesCliente.Titulo = null;
@@ -214,12 +214,12 @@
             this.pesVendedor.CampoDisplay = null;
             this.pesVendedor.CRUD = null;
             this.pesVendedor.Fonte = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.pesVendedor.Location = new System.Drawing.Point(74, 508);
+            this.pesVendedor.Location = new System.Drawing.Point(74, 483);
             this.pesVendedor.MinimumSize = new System.Drawing.Size(251, 51);
             this.pesVendedor.Name = "pesVendedor";
             this.pesVendedor.Objeto = null;
             this.pesVendedor.Repo = null;
-            this.pesVendedor.Size = new System.Drawing.Size(791, 81);
+            this.pesVendedor.Size = new System.Drawing.Size(791, 58);
             this.pesVendedor.TabIndex = 15;
             this.pesVendedor.Tamanho = new System.Drawing.Size(272, 37);
             this.pesVendedor.Titulo = null;
@@ -228,7 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 687);
+            this.ClientSize = new System.Drawing.Size(939, 597);
             this.Controls.Add(this.pesVendedor);
             this.Controls.Add(this.pesCliente);
             this.Controls.Add(this.button1);

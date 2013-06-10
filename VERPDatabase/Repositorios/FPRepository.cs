@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using VERPDatabase.Repositorios;
+using System.Data;
 
 namespace VERPDatabase
 {
@@ -64,6 +65,19 @@ namespace VERPDatabase
         public override bool Salvar(object objeto)
         {
             return this.Salvar(objeto as FormaDePagamento);
+        }
+
+        public override List<int> GetIds()
+        {
+            var ids = from e in DB.GetInstance().context.FormasDePagamento
+                      where e.DataExclusao == null
+                      select e.Id;
+            return ids.ToList();
+        }
+
+        public override dynamic GetFields(string field)
+        {
+            return null;
         }
     }
 }

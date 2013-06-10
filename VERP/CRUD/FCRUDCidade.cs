@@ -10,6 +10,7 @@ using VERPDatabase;
 using VERPDatabase.Classes;
 using VERP.Utils;
 using VERP.Edicao;
+using System.Linq.Expressions;
 
 namespace VERP.CRUD
 {

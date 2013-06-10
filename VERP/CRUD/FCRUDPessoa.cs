@@ -18,8 +18,23 @@ namespace VERP.CRUD
     {
         protected override void GetRecords()
         {
-            bindingSource.DataSource = DB.GetInstance().PessoaRepo.GetAll().Where(p => p.Nome.ToUpper().Contains(tbxPesquisa.Text) ||
+            if (Filter.Equals("Clientes"))
+            {
+                List<int> clientesIds = DB.GetInstance().ClienteRepo.GetFields("Pessoa_Id");
+                bindingSource.DataSource = DB.GetInstance().PessoaRepo.GetAll().Where(p => (p.Nome.ToUpper().Contains(tbxPesquisa.Text) ||
+                p.NomeFantasia.ToUpper().Contains(tbxPesquisa.Text) || p.Documento.Contains(tbxPesquisa.Text)) && (clientesIds.Contains(p.Id)));
+            }
+            else if (Filter.Equals("Vendedores"))
+            {
+                List<int> vendedoresIds = DB.GetInstance().VendedorRepo.GetFields("Pessoa_Id");
+                bindingSource.DataSource = DB.GetInstance().PessoaRepo.GetAll().Where(p => (p.Nome.ToUpper().Contains(tbxPesquisa.Text) ||
+                p.NomeFantasia.ToUpper().Contains(tbxPesquisa.Text) || p.Documento.Contains(tbxPesquisa.Text)) && (vendedoresIds.Contains(p.Id)));
+            }
+            else
+            {
+                bindingSource.DataSource = DB.GetInstance().PessoaRepo.GetAll().Where(p => p.Nome.ToUpper().Contains(tbxPesquisa.Text) ||
                 p.NomeFantasia.ToUpper().Contains(tbxPesquisa.Text) || p.Documento.Contains(tbxPesquisa.Text));
+            }
         }
 
         public FCRUDPessoa()

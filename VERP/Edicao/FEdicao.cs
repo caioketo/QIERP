@@ -79,6 +79,35 @@ namespace VERP
             Utils.Edicao.MapearTela(Objeto, this);
         }
 
+        private Control MaxWidth()
+        {
+            int w = 0;
+            Control retorno = null;
+            foreach (Control ctr in Controles)
+            {
+                if ((ctr.Width + ctr.Left) > w)
+                {
+                    w = ctr.Width + ctr.Left;
+                    retorno = ctr;
+                }
+            }
+            return retorno;
+        }
+
+        private Control MaxHeight()
+        {
+            int h = 0;
+            Control retorno = null;
+            foreach (Control ctr in Controles)
+            {
+                if ((ctr.Width + ctr.Top) > h)
+                {
+                    h = (ctr.Height + ctr.Top);
+                    retorno = ctr;
+                }
+            }
+            return retorno;
+        }
 
         private void FEdicao_Load(object sender, EventArgs e)
         {
@@ -99,21 +128,6 @@ namespace VERP
 
             int screenWidth = this.Width;
             int screenHeight = this.Height;
-            if (UControles.Count == 3)
-            {
-                Control ctr = UControles[UControles.Count - 1].control;
-                screenWidth = ctr.Left + ctr.Width + 60;
-            }
-
-            if (UControles.Count == CRUD.Campos.Count)
-            {
-                Control ctr = UControles[UControles.Count - 1].control;
-                screenHeight = ctr.Top + ctr.Height + 150;
-                if (UControles.Count < 3)
-                {
-                    screenWidth = ctr.Left + ctr.Width + 100;
-                }
-            }
             
             foreach (Controle controle in UControles)
             {
@@ -133,6 +147,14 @@ namespace VERP
                 Labels.Add(controle.label);
                 Controls.Add(controle.label);
                 Controls.Add(controle.control);
+            }
+
+            if (UControles.Count == CRUD.Campos.Count)
+            {
+                Control ctr = MaxWidth();
+                screenWidth = ctr.Left + ctr.Width + 100;
+                ctr = MaxHeight();
+                screenHeight = ctr.Top + ctr.Height + 150;
             }
 
             this.ResizeRedraw = true;

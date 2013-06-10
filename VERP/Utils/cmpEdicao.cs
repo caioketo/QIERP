@@ -27,29 +27,59 @@ namespace VERP.Utils
             InitializeComponent();
         }
 
-        private void cmpEdicao_Load(object sender, EventArgs e)
+        private Control MaxWidth()
+        {
+            int w = 0;
+            Control retorno = null;
+            foreach (Controle ctr in Controles)
+            {
+                if ((ctr.control.Width + ctr.control.Left) > w)
+                {
+                    w = ctr.control.Width + ctr.control.Left;
+                    retorno = ctr.control;
+                }
+            }
+            return retorno;
+        }
+
+        private Control MaxHeight()
+        {
+            int h = 0;
+            Control retorno = null;
+            foreach (Controle ctr in Controles)
+            {
+                if ((ctr.control.Width + ctr.control.Top) > h)
+                {
+                    h = (ctr.control.Height + ctr.control.Top);
+                    retorno = ctr.control;
+                }
+            }
+            return retorno;
+        }
+        
+        public void cmpEdicao_Load(object sender, EventArgs e)
         {
             if (tabela != null)
             {
                 gbxGeral.Text = tabela.Descricao;
-                Controles = Utils.Edicao.getControles(tabela.Campos, this.Parent.Width, this);
+                if (this.Parent == null)
+                {
+                    Controles = Utils.Edicao.getControles(tabela.Campos, ((Control)sender).Width, this);
+                }
+                else
+                {
+                    Controles = Utils.Edicao.getControles(tabela.Campos, this.Parent.Width, this);
+                }
 
                 int screenWidth = this.Width;
                 int screenHeight = this.Height;
-                if (Controles.Count == 3)
-                {
-                    Control ctr = Controles[Controles.Count - 1].control;
-                    screenWidth = ctr.Left + ctr.Width + 60;
-                }
 
                 if (Controles.Count == tabela.Campos.Count)
                 {
-                    Control ctr = Controles[Controles.Count - 1].control;
+                    Control ctr = MaxWidth();
+                    screenWidth = ctr.Left + ctr.Width + 15;
+                    ctr = MaxHeight();
                     screenHeight = ctr.Top + ctr.Height + 10;
-                    if (Controles.Count < 3)
-                    {
-                        screenWidth = ctr.Left + ctr.Width + 15;
-                    }
                 }
 
                 if (gbxGeral.Controls.Count == 0)

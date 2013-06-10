@@ -69,6 +69,7 @@
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\CidadeRepository.cs" />
+    <Compile Include="Repositorios\ClienteRepository.cs" />
     <Compile Include="Repositorios\CPRepository.cs" />
     <Compile Include="Repositorios\EndRepository.cs" />
     <Compile Include="Repositorios\ExtRepository.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Repositorios\TelefoneRepository.cs" />
     <Compile Include="Repositorios\UFRepository.cs" />
     <Compile Include="Repositorios\VendaRepository.cs" />
+    <Compile Include="Repositorios\VendedorRepository.cs" />
     <Compile Include="VerpContext.cs" />
   </ItemGroup>
   <ItemGroup>

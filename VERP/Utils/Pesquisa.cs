@@ -12,7 +12,7 @@ using VERPDatabase.Classes;
 
 namespace VERP.Utils
 {
-    public partial class Pesquisa : UserControl
+    public partial class Pesquisa : UserControl 
     {
         public FCRUD CRUD { get; set; }
         public string Campo { get; set; }
@@ -22,9 +22,11 @@ namespace VERP.Utils
         public ClasseBase Objeto { get; set; }
         public Size Tamanho { get; set; }
         public Font Fonte { get; set; }
+        public string Filter { get; set; }
 
         public Pesquisa()
         {
+            Filter = "";
             InitializeComponent();
             if (Tamanho != null && Fonte != null)
             {
@@ -108,6 +110,10 @@ namespace VERP.Utils
 
         public void onLoad()
         {
+            if (!Filter.Equals(""))
+            {
+                CRUD.Filter = Filter;
+            }
             if (Titulo != null)
             {
                 if (Titulo.Equals(""))

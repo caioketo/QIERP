@@ -14,5 +14,7 @@ namespace VERPDatabase.Repositorios
         public abstract dynamic GetByText(string text);
         public abstract bool Inserir(object objeto);
         public abstract bool Salvar(object objeto);
+        public abstract List<int> GetIds();
+        public abstract dynamic GetFields(string field);
     }
 }

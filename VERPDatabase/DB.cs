@@ -42,6 +42,8 @@ namespace VERPDatabase
         public EndRepository EndRepo = new EndRepository();
         public CidadeRepository CidadeRepo = new CidadeRepository();
         public UFRepository UFRepo = new UFRepository();
+        public ClienteRepository ClienteRepo = new ClienteRepository();
+        public VendedorRepository VendedorRepo = new VendedorRepository();
         public VerpContext context;
 
 

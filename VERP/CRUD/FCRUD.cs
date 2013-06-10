@@ -19,6 +19,7 @@ namespace VERP
         protected FEdicao Edicao;
         public string TextoInicial { get; set; }
         public object Resultado { get; set; }
+        public string Filter { get; set; }
 
         public List<Campo> Campos
         {
@@ -40,6 +41,7 @@ namespace VERP
         public FCRUD()
         {
             TextoInicial = "";
+            Filter = "";
             InitializeComponent();
         }
 

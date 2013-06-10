@@ -28,34 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.edcTelefone = new VERP.Utils.cmpEdicao();
             this.SuspendLayout();
-            // 
-            // edcTelefone
-            // 
-            this.edcTelefone.estado = VERP.Classes.Estado.Inserir;
-            this.edcTelefone.Location = new System.Drawing.Point(12, 330);
-            this.edcTelefone.Name = "edcTelefone";
-            this.edcTelefone.Objeto = null;
-            this.edcTelefone.Repo = null;
-            this.edcTelefone.Size = new System.Drawing.Size(46, 50);
-            this.edcTelefone.tabela = null;
-            this.edcTelefone.TabIndex = 1;
             // 
             // FEdicaoPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(927, 516);
-            this.Controls.Add(this.edcTelefone);
             this.Name = "FEdicaoPessoa";
             this.Shown += new System.EventHandler(this.FEdicaoPessoa_Shown);
-            this.Controls.SetChildIndex(this.edcTelefone, 0);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Utils.cmpEdicao edcTelefone;
     }
 }

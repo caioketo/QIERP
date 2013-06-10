@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using VERPDatabase.Classes;
+using System.Data;
 
 namespace VERPDatabase.Repositorios
 {
@@ -64,6 +65,19 @@ namespace VERPDatabase.Repositorios
         public override bool Salvar(object objeto)
         {
             return this.Salvar(objeto as Pessoa);
+        }
+
+        public override List<int> GetIds()
+        {
+            var ids = from e in DB.GetInstance().context.Pessoas
+                      where e.DataExclusao == null
+                      select e.Id;
+            return ids.ToList();
+        }
+
+        public override dynamic GetFields(string field)
+        {
+            return null;
         }
     }
 }

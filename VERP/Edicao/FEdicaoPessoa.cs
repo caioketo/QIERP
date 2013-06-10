@@ -18,14 +18,10 @@ namespace VERP.Edicao
         public FEdicaoPessoa()
         {
             InitializeComponent();
-            edcTelefone.tabela = DB.GetInstance().GetTabela("Telefone");
-            edcTelefone.Repo = DB.GetInstance().TelefoneRepo;
         }
 
         protected override void Gravar()
         {
-            edcTelefone.Gravar();
-            pessoa.Telefone = edcTelefone.Objeto as Telefone;
             if (estado == Estado.Inserir)
             {
                 DB.GetInstance().PessoaRepo.Inserir(pessoa);
@@ -47,19 +43,15 @@ namespace VERP.Edicao
                     ((TextBox)ctr).Clear();
                 }
             }
-            edcTelefone.estado = estado;
             if (estado == Estado.Inserir)
             {
                 pessoa = new Pessoa();
                 Objeto = pessoa;
-                edcTelefone.Objeto = new Telefone();
             }
             else if (estado == Estado.Modificar)
             {
                 pessoa = Objeto as Pessoa;
-                edcTelefone.Objeto = pessoa.Telefone;
                 MapearTela();
-                edcTelefone.MapearTela();
             }
         }
 

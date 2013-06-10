@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using VERPDatabase;
 using VERP.Utils;
 using VERP.CRUD;
+using VERPDatabase.Classes;
 
 namespace VERP
 {
@@ -22,22 +23,28 @@ namespace VERP
         public FFechaVenda()
         {
             InitializeComponent();
+        }
+
+        private void FFechaVenda_Shown(object sender, EventArgs e)
+        {
+            VendaAtual.Cliente = new Cliente();
+            VendaAtual.Vendedor = new Vendedor();
             pesCliente.CRUD = new FCRUDPessoa();
             pesCliente.Campo = "Nome";
             pesCliente.CampoDisplay = "Nome";
             pesCliente.Titulo = "Cliente";
             pesCliente.Repo = DB.GetInstance().PessoaRepo;
             pesCliente.Objeto = VendaAtual.Cliente;
+            pesCliente.Filter = "Clientes";
+            pesCliente.onLoad();
             pesVendedor.CRUD = new FCRUDPessoa();
             pesVendedor.Campo = "Nome";
             pesVendedor.CampoDisplay = "Nome";
             pesVendedor.Titulo = "Vendedor";
             pesVendedor.Repo = DB.GetInstance().PessoaRepo;
             pesVendedor.Objeto = VendaAtual.Vendedor;
-        }
+            pesVendedor.onLoad();
 
-        private void FFechaVenda_Shown(object sender, EventArgs e)
-        {
             CalculaPagto();
             pagamentoBindingSource.DataSource = VendaAtual.Pagamentos;
             formaDePagamentoBindingSource.DataSource = DB.GetInstance().FPRepo.GetAll();

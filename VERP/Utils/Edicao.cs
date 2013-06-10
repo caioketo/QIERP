@@ -195,12 +195,14 @@ namespace VERP.Utils
                 }
                 else if (campo.Tipo == TiposDeCampo.ModelUnico)
                 {
+                    lbl.Text = "";
                     cmpEdicao edc = new cmpEdicao();
                     edc.Repo = Util.GetRepo(campo.TabelaRel);
                     edc.tabela = DB.GetInstance().GetTabela(campo.TabelaRel);
                     edc.Location = new Point(x + 13, y + 8);
                     edc.TabIndex = i;
                     edc.Size = new Size((int)(campo.Tamanho / 13) * 100, 20);
+                    edc.cmpEdicao_Load(edicao, null);
                     ctr = edc;
                 }
                 else if (campo.Tipo == TiposDeCampo.IntegerRadio)
@@ -234,6 +236,10 @@ namespace VERP.Utils
                     tbx.CharacterCasing = CharacterCasing.Upper;
                     tbx.TabIndex = i;
                     tbx.Size = new Size(((int)(campo.Tamanho / 13) * 100) + 13, 20);
+                    if (tbx.Width == 13)
+                    {
+                        tbx.Width = 70;
+                    }
                     if (campo.Tipo == TiposDeCampo.Integer || campo.Tipo == TiposDeCampo.Numeric)
                     {
                         tbx.Validating += edicao.tbx_Leave;
@@ -245,7 +251,8 @@ namespace VERP.Utils
 
                 Controles.Add(new Controle(lbl, ctr));
 
-                x += ((int)(campo.Tamanho / 13) * 100) + 18;
+                //x += ((int)(campo.Tamanho / 13) * 100) + 18;
+                x = Controles[Controles.Count - 1].control.Left + Controles[Controles.Count - 1].control.Width + 20;
                 i++;
             }
 

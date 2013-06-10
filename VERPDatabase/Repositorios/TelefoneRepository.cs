@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,6 +63,19 @@ namespace VERPDatabase.Repositorios
         public override bool Salvar(object objeto)
         {
             return this.Salvar(objeto as Telefone);
+        }
+
+        public override List<int> GetIds()
+        {
+            var ids = from e in DB.GetInstance().context.Telefones
+                      where e.DataExclusao == null
+                      select e.Id;
+            return ids.ToList();
+        }
+
+        public override dynamic GetFields(string field)
+        {
+            return null;
         }
     }
 }

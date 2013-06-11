@@ -18,6 +18,7 @@ namespace VERP
     public partial class FFechaVenda : BaseForm
     {
         public Venda VendaAtual;
+        public FormaDePagamento FP = null;
         public FVenda fVenda;
 
         public FFechaVenda()
@@ -48,6 +49,10 @@ namespace VERP
             CalculaPagto();
             pagamentoBindingSource.DataSource = VendaAtual.Pagamentos;
             formaDePagamentoBindingSource.DataSource = DB.GetInstance().FPRepo.GetAll();
+            if (FP != null)
+            {
+                cmbForma.SelectedValue = FP;
+            }
             AtualizaCondicoes();
         }
 

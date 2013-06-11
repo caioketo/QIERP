@@ -37,7 +37,7 @@
             this.formasDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.condiçõesDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimentaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.clientesVendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +47,8 @@
             this.vendaToolStripMenuItem,
             this.produtosToolStripMenuItem,
             this.pagamentosToolStripMenuItem,
-            this.movimentaçõesToolStripMenuItem});
+            this.movimentaçõesToolStripMenuItem,
+            this.clientesVendedoresToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(608, 24);
@@ -115,22 +116,18 @@
             this.movimentaçõesToolStripMenuItem.Text = "Movimentações";
             this.movimentaçõesToolStripMenuItem.Click += new System.EventHandler(this.movimentaçõesToolStripMenuItem_Click);
             // 
-            // button1
+            // clientesVendedoresToolStripMenuItem
             // 
-            this.button1.Location = new System.Drawing.Point(329, 130);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.clientesVendedoresToolStripMenuItem.Name = "clientesVendedoresToolStripMenuItem";
+            this.clientesVendedoresToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.clientesVendedoresToolStripMenuItem.Text = "Clientes/Vendedores";
+            this.clientesVendedoresToolStripMenuItem.Click += new System.EventHandler(this.clientesVendedoresToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 320);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -155,7 +152,7 @@
         private System.Windows.Forms.ToolStripMenuItem formasDePagamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem condiçõesDePagamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem movimentaçõesToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem clientesVendedoresToolStripMenuItem;
     }
 }
 

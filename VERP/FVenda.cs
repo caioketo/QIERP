@@ -88,10 +88,11 @@ namespace VERP
             tbxQtde.Clear();
         }
 
-        private void FecharVenda()
+        private void FecharVenda(FormaDePagamento fp)
         {
             using (FFechaVenda fechaVenda = new FFechaVenda())
             {
+                fechaVenda.FP = fp;
                 fechaVenda.fVenda = this;
                 fechaVenda.VendaAtual = this.VendaAtual;
                 fechaVenda.ShowDialog();
@@ -106,7 +107,7 @@ namespace VERP
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            FecharVenda();
+            FecharVenda(null);
         }
 
         private void FVenda_KeyDown(object sender, KeyEventArgs e)
@@ -121,6 +122,11 @@ namespace VERP
                     }
                 }
                 this.Close();
+            }
+
+            if (Util.GetFP(e.KeyCode) != null)
+            {
+                FecharVenda(Util.GetFP(e.KeyCode));
             }
         }
 

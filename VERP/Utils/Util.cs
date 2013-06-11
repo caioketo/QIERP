@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VERP.CRUD;
+using VERP.Properties;
 using VERPDatabase;
 using VERPDatabase.Classes;
 
@@ -12,6 +13,36 @@ namespace VERP.Utils
 {
     public class Util
     {
+        public static FormaDePagamento GetFP(Keys key)
+        {
+            switch (key)
+            {
+                case Keys.F1:
+                    return DB.GetInstance().FPRepo.GetById(Settings.Default.F1);
+                case Keys.F10:
+                    break;
+                case Keys.F11:
+                    break;
+                case Keys.F3:
+                    break;
+                case Keys.F4:
+                    break;
+                case Keys.F5:
+                    break;
+                case Keys.F6:
+                    break;
+                case Keys.F7:
+                    break;
+                case Keys.F8:
+                    break;
+                case Keys.F9:
+                    break;
+                default:
+                    break;
+            }
+            return null;
+        }
+
         public static string GetNomeReal(string nomeCampo)
         {
             if (nomeCampo.Contains("cao"))

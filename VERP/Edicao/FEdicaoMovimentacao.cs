@@ -31,6 +31,11 @@ namespace VERP.Edicao
             foreach (ItemMovimentacao item in movimentacao.Itens)
             {
                 item.Produto.Quantidade += item.Quantidade * mult;
+                if (movimentacao.Tipo == 0)
+                {
+                    item.Produto.Custo = item.Valor;
+                }
+                DB.GetInstance().ProdutoRepo.Salvar(item.Produto);
             }
 
             if (estado == Estado.Inserir)

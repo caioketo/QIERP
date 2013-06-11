@@ -46,5 +46,17 @@ namespace VERP.Properties {
                 this["FirstRun"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int F1 {
+            get {
+                return ((int)(this["F1"]));
+            }
+            set {
+                this["F1"] = value;
+            }
+        }
     }
 }

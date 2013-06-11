@@ -51,7 +51,8 @@ namespace VERP
             formaDePagamentoBindingSource.DataSource = DB.GetInstance().FPRepo.GetAll();
             if (FP != null)
             {
-                cmbForma.SelectedValue = FP;
+                cmbForma.SelectedItem = FP;
+                cmbCondicao.Focus();
             }
             AtualizaCondicoes();
         }

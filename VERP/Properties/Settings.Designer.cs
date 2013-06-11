@@ -58,5 +58,17 @@ namespace VERP.Properties {
                 this["F1"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int F2 {
+            get {
+                return ((int)(this["F2"]));
+            }
+            set {
+                this["F2"] = value;
+            }
+        }
     }
 }

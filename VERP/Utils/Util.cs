@@ -23,6 +23,8 @@ namespace VERP.Utils
                     break;
                 case Keys.F11:
                     break;
+                case Keys.F2:
+                    return DB.GetInstance().FPRepo.GetById(Settings.Default.F2);
                 case Keys.F3:
                     break;
                 case Keys.F4:

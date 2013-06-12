@@ -25,7 +25,7 @@ namespace VERP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=127.0.0.1\\\\SQLSERVER;Database=verp;User Id=sa;Password=vd001989;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=127.0.0.1\\\\SQLSERVER;Database=qierp;User Id=sa;Password=vd001989;")]
         public string ConnectionStr {
             get {
                 return ((string)(this["ConnectionStr"]));
@@ -61,7 +61,7 @@ namespace VERP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
         public int F2 {
             get {
                 return ((int)(this["F2"]));
@@ -73,7 +73,7 @@ namespace VERP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
         public int F3 {
             get {
                 return ((int)(this["F3"]));
@@ -85,7 +85,7 @@ namespace VERP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
         public int F4 {
             get {
                 return ((int)(this["F4"]));
@@ -97,7 +97,7 @@ namespace VERP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
         public int F5 {
             get {
                 return ((int)(this["F5"]));
@@ -109,7 +109,7 @@ namespace VERP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
         public int F6 {
             get {
                 return ((int)(this["F6"]));
@@ -121,7 +121,7 @@ namespace VERP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
         public int F7 {
             get {
                 return ((int)(this["F7"]));
@@ -133,7 +133,7 @@ namespace VERP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
         public int F8 {
             get {
                 return ((int)(this["F8"]));
@@ -145,7 +145,7 @@ namespace VERP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("9")]
         public int F9 {
             get {
                 return ((int)(this["F9"]));
@@ -157,7 +157,7 @@ namespace VERP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public int F10 {
             get {
                 return ((int)(this["F10"]));
@@ -169,7 +169,7 @@ namespace VERP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("11")]
         public int F11 {
             get {
                 return ((int)(this["F11"]));

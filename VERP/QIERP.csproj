@@ -373,9 +373,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VERPDatabase\VERPDatabase.csproj">
+    <ProjectReference Include="..\VERPDatabase\QIERPDatabase.csproj">
       <Project>{5b12e237-ca0e-49a0-9b50-d6ecee97545c}</Project>
-      <Name>VERPDatabase</Name>
+      <Name>QIERPDatabase</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

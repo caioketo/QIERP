@@ -26,6 +26,10 @@ namespace VERP.Utils
             conn += ";Database=" + tbxDatabase.Text;
             conn += ";User Id=" + tbxUsuario.Text;
             conn += ";Password=" + tbxSenha.Text + ";";
+            if (conn.Equals("Server=\\;Database=;User Id=;Password=;"))
+            {
+                conn = "Server=127.0.0.1\\SQLSERVER;Database=qierp;User Id=sa;Password=vd001989;";
+            }
             Settings.Default.ConnectionStr = conn;
             Settings.Default.Save();
             Close();

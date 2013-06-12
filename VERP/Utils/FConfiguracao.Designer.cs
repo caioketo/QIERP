@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbxHost = new System.Windows.Forms.TextBox();
-            this.tbxInstancia = new System.Windows.Forms.TextBox();
-            this.tbxDatabase = new System.Windows.Forms.TextBox();
-            this.tbxUsuario = new System.Windows.Forms.TextBox();
             this.tbxSenha = new System.Windows.Forms.TextBox();
+            this.tbxUsuario = new System.Windows.Forms.TextBox();
+            this.tbxDatabase = new System.Windows.Forms.TextBox();
+            this.tbxInstancia = new System.Windows.Forms.TextBox();
+            this.tbxHost = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,41 +62,40 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conexão";
             // 
-            // label1
+            // tbxSenha
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Host:";
+            this.tbxSenha.Location = new System.Drawing.Point(169, 83);
+            this.tbxSenha.Name = "tbxSenha";
+            this.tbxSenha.Size = new System.Drawing.Size(166, 20);
+            this.tbxSenha.TabIndex = 9;
             // 
-            // label2
+            // tbxUsuario
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(166, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Instância:";
+            this.tbxUsuario.Location = new System.Drawing.Point(13, 83);
+            this.tbxUsuario.Name = "tbxUsuario";
+            this.tbxUsuario.Size = new System.Drawing.Size(144, 20);
+            this.tbxUsuario.TabIndex = 8;
             // 
-            // label3
+            // tbxDatabase
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(344, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Database:";
+            this.tbxDatabase.Location = new System.Drawing.Point(347, 37);
+            this.tbxDatabase.Name = "tbxDatabase";
+            this.tbxDatabase.Size = new System.Drawing.Size(140, 20);
+            this.tbxDatabase.TabIndex = 7;
             // 
-            // label4
+            // tbxInstancia
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Usuário:";
+            this.tbxInstancia.Location = new System.Drawing.Point(169, 37);
+            this.tbxInstancia.Name = "tbxInstancia";
+            this.tbxInstancia.Size = new System.Drawing.Size(166, 20);
+            this.tbxInstancia.TabIndex = 6;
+            // 
+            // tbxHost
+            // 
+            this.tbxHost.Location = new System.Drawing.Point(10, 37);
+            this.tbxHost.Name = "tbxHost";
+            this.tbxHost.Size = new System.Drawing.Size(147, 20);
+            this.tbxHost.TabIndex = 5;
             // 
             // label5
             // 
@@ -107,40 +106,41 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Senha:";
             // 
-            // tbxHost
+            // label4
             // 
-            this.tbxHost.Location = new System.Drawing.Point(10, 37);
-            this.tbxHost.Name = "tbxHost";
-            this.tbxHost.Size = new System.Drawing.Size(147, 20);
-            this.tbxHost.TabIndex = 5;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Usuário:";
             // 
-            // tbxInstancia
+            // label3
             // 
-            this.tbxInstancia.Location = new System.Drawing.Point(169, 37);
-            this.tbxInstancia.Name = "tbxInstancia";
-            this.tbxInstancia.Size = new System.Drawing.Size(166, 20);
-            this.tbxInstancia.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(344, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Database:";
             // 
-            // tbxDatabase
+            // label2
             // 
-            this.tbxDatabase.Location = new System.Drawing.Point(347, 37);
-            this.tbxDatabase.Name = "tbxDatabase";
-            this.tbxDatabase.Size = new System.Drawing.Size(140, 20);
-            this.tbxDatabase.TabIndex = 7;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(166, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Instância:";
             // 
-            // tbxUsuario
+            // label1
             // 
-            this.tbxUsuario.Location = new System.Drawing.Point(13, 83);
-            this.tbxUsuario.Name = "tbxUsuario";
-            this.tbxUsuario.Size = new System.Drawing.Size(144, 20);
-            this.tbxUsuario.TabIndex = 8;
-            // 
-            // tbxSenha
-            // 
-            this.tbxSenha.Location = new System.Drawing.Point(169, 83);
-            this.tbxSenha.Name = "tbxSenha";
-            this.tbxSenha.Size = new System.Drawing.Size(166, 20);
-            this.tbxSenha.TabIndex = 9;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Host:";
             // 
             // button1
             // 
@@ -160,6 +160,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FConfiguracao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FConfiguracao";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

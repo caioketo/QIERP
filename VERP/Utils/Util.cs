@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VERP.CRUD;
-using VERP.Properties;
+using QIERP.Properties;
 using VERPDatabase;
 using VERPDatabase.Classes;
 

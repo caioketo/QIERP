@@ -7,8 +7,8 @@
     <ProjectGuid>{57609D96-D81F-4C89-9B91-B3FD25CFBBF4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VERP</RootNamespace>
-    <AssemblyName>VERP</AssemblyName>
+    <RootNamespace>QIERP</RootNamespace>
+    <AssemblyName>QIERP</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -307,6 +307,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="FVenda.resx">
       <DependentUpon>FVenda.cs</DependentUpon>

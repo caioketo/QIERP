@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using VERPDatabase;
 using System.ComponentModel;
 using System.Threading;
-using VERP.Properties;
+using QIERP.Properties;
 using VERP.Utils;
 
 namespace VERP

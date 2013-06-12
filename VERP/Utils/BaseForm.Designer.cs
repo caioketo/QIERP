@@ -38,6 +38,7 @@
             this.KeyPreview = true;
             this.Name = "BaseForm";
             this.Text = "BaseForm";
+            this.Shown += new System.EventHandler(this.BaseForm_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BaseForm_KeyDown);
             this.ResumeLayout(false);
 

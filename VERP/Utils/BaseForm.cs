@@ -24,5 +24,10 @@ namespace VERP.Utils
                 SendKeys.Send("{TAB}");
             }
         }
+
+        private void BaseForm_Shown(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+        }
     }
 }

@@ -20,25 +20,25 @@ namespace VERP.Utils
                 case Keys.F1:
                     return DB.GetInstance().FPRepo.GetById(Settings.Default.F1);
                 case Keys.F10:
-                    break;
+                    return DB.GetInstance().FPRepo.GetById(Settings.Default.F10);
                 case Keys.F11:
-                    break;
+                    return DB.GetInstance().FPRepo.GetById(Settings.Default.F11);
                 case Keys.F2:
                     return DB.GetInstance().FPRepo.GetById(Settings.Default.F2);
                 case Keys.F3:
-                    break;
+                    return DB.GetInstance().FPRepo.GetById(Settings.Default.F3);
                 case Keys.F4:
-                    break;
+                    return DB.GetInstance().FPRepo.GetById(Settings.Default.F4);
                 case Keys.F5:
-                    break;
+                    return DB.GetInstance().FPRepo.GetById(Settings.Default.F5);
                 case Keys.F6:
-                    break;
+                    return DB.GetInstance().FPRepo.GetById(Settings.Default.F6);
                 case Keys.F7:
-                    break;
+                    return DB.GetInstance().FPRepo.GetById(Settings.Default.F7);
                 case Keys.F8:
-                    break;
+                    return DB.GetInstance().FPRepo.GetById(Settings.Default.F8);
                 case Keys.F9:
-                    break;
+                    return DB.GetInstance().FPRepo.GetById(Settings.Default.F9);
                 default:
                     break;
             }

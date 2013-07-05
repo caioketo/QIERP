@@ -15,6 +15,7 @@ namespace VERPDatabase.Classes
         Model,
         IntegerRadio,
         ModelUnico,
-        DateTime
+        DateTime,
+        Boolean
     }
 }

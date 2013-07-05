@@ -26,17 +26,18 @@ namespace VERP.Utils
                             int check = (int)prop.GetValue(Objeto, null);
                             ((RadioButton)ctr.Controls[check]).Checked = true;
                         }
+                        else if (ctr is DateTimePicker)
+                        {
+                            ((DateTimePicker)ctr).Value = (DateTime)prop.GetValue(Objeto, null);
+                        }
+                        else if (ctr is CheckBox)
+                        {
+                            ((CheckBox)ctr).Checked = (bool)prop.GetValue(Objeto, null);
+                        }
                         else
                         {
-                            if (ctr is DateTimePicker)
-                            {
-                                ((DateTimePicker)ctr).Value = (DateTime)prop.GetValue(Objeto, null);
-                            }
-                            else
-                            {
-                                ctr.Text = prop.GetValue(Objeto, null).ToString();
-                                edicao.tbx_Leave(ctr, null);
-                            }
+                            ctr.Text = prop.GetValue(Objeto, null).ToString();
+                            edicao.tbx_Leave(ctr, null);
                         }
                     }
                 }
@@ -134,6 +135,10 @@ namespace VERP.Utils
                         {
                             prop.SetValue(Objeto, Convert.ToDecimal(ctr.Text));
                         }
+                    }
+                    else if (tipo.ToString().ToUpper().Equals("SYSTEM.BOOLEAN"))
+                    {
+                        prop.SetValue(Objeto, ((CheckBox)ctr).Checked);
                     }
                     else if (tipo.ToString().ToUpper().Equals("SYSTEM.INTEGER") || tipo.ToString().ToUpper().Equals("SYSTEM.INT32"))
                     {
@@ -264,6 +269,17 @@ namespace VERP.Utils
                     }
 
                     ctr = dtp;
+                }
+                else if (campo.Tipo == TiposDeCampo.Boolean)
+                {
+                    CheckBox cbx = new CheckBox();
+                    cbx.Name = "tbx" + campo.Nome;
+                    cbx.Location = new Point(x + 13, y + 28);
+                    cbx.TabIndex = i;
+                    cbx.Text = lbl.Text;
+                    lbl.Text = "";
+
+                    ctr = cbx;
                 }
                 else
                 {

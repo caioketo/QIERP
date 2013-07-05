@@ -10,6 +10,7 @@ namespace VERPDatabase
     public class CondicaoDePagamento : ClasseBase
     {
         public string Descricao { get; set; }
+        public int DiasVencimento { get; set; }
         public FormaDePagamento Forma { get; set; }
         public string FormaDescricao
         {

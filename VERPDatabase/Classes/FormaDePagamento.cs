@@ -10,5 +10,6 @@ namespace VERPDatabase
     public class FormaDePagamento : ClasseBase
     {
         public string Descricao { get; set; }
+        public bool LancaCR { get; set; }
     }
 }

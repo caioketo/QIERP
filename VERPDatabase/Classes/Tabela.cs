@@ -29,6 +29,7 @@ namespace VERPDatabase.Classes
                     break;
                 case "FormasDePagamento":
                     Campos.Add(new Campo("Descricao", "Descrição", "", TiposDeCampo.Varchar, 50));
+                    Campos.Add(new Campo("LancaCR", "Lança no CR", "", TiposDeCampo.Boolean, 5));
                     Descricao = "Formas de Pagamento";
                     break;
                 case "CondicoesDePagamento":
@@ -43,6 +44,7 @@ namespace VERPDatabase.Classes
 
                     campo.MostraGrid = false;
                     Campos.Add(campo);
+                    Campos.Add(new Campo("DiasVencimento", "Dias p/ Vencimento", "", TiposDeCampo.Integer, 10));
                     Descricao = "Condições de Pagamento";
                     break;
                 case "Movimentacao":

@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VERPDatabase.Classes;
 
 namespace VERPDatabase
 {
@@ -25,6 +26,19 @@ namespace VERPDatabase
         {
             item.Pedido = DB.GetInstance().context.GetSequence("sqnPedido");
             DB.GetInstance().context.Vendas.Add(item);
+
+            foreach (Pagamento pag in item.Pagamentos)
+            {
+                if (pag.Forma.LancaCR)
+                {
+                    ContaReceber cr = new ContaReceber();
+                    cr.Descricao = pag.Forma.Descricao + " - Venda nº " + item.Pedido.ToString();
+                    cr.Valor = (decimal)pag.Valor;
+                    cr.Vencimento = DateTime.Now.AddDays(pag.Condicao.DiasVencimento);
+                    DB.GetInstance().context.CRs.Add(cr);
+                }
+            }
+
             DB.GetInstance().context.SaveChanges();
             return true;
         }

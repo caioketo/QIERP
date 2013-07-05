@@ -7,34 +7,34 @@ using VERPDatabase.Classes;
 
 namespace VERPDatabase.Repositorios
 {
-    public class CPRepository : ExtRepository, IRepository<ContaPagar>
+    public class ChequeRepository : ExtRepository, IRepository<Cheque>
     {
-        public IQueryable<ContaPagar> GetAll()
+        public IQueryable<Cheque> GetAll()
         {
-            return DB.GetInstance().context.CPs.Local.AsQueryable().Where(p => p.DataExclusao == null);
+            return DB.GetInstance().context.Cheques.Local.AsQueryable().Where(p => p.DataExclusao == null);
         }
 
-        public bool Salvar(ContaPagar item)
+        public bool Salvar(Cheque item)
         {
             DB.GetInstance().context.SaveChanges();
             return true;
         }
 
-        public bool Inserir(ContaPagar item)
+        public bool Inserir(Cheque item)
         {
-            DB.GetInstance().context.CPs.Add(item);
+            DB.GetInstance().context.Cheques.Add(item);
             DB.GetInstance().context.SaveChanges();
             return true;
         }
 
-        public ContaPagar GetById(int id)
+        public Cheque GetById(int id)
         {
-            return DB.GetInstance().context.CPs.Find(id);
+            return DB.GetInstance().context.Cheques.Find(id);
         }
 
-        public bool Deletar(ContaPagar item)
+        public bool Deletar(Cheque item)
         {
-            DB.GetInstance().context.Entry<ContaPagar>(item).State = System.Data.EntityState.Modified;
+            DB.GetInstance().context.Entry<Cheque>(item).State = System.Data.EntityState.Modified;
             item.DataExclusao = DateTime.Now;
             return true;
         }
@@ -51,22 +51,22 @@ namespace VERPDatabase.Repositorios
 
         public override dynamic GetByText(string text)
         {
-            return this.GetAll().Where(p => p.Descricao.ToUpper().Equals(text.ToUpper())).FirstOrDefault();
+            return this.GetAll().Where(p => p.Numero.ToUpper().Equals(text.ToUpper())).FirstOrDefault();
         }
 
         public override bool Inserir(object objeto)
         {
-            return this.Inserir(objeto as ContaPagar);
+            return this.Inserir(objeto as Cheque);
         }
 
         public override bool Salvar(object objeto)
         {
-            return this.Salvar(objeto as ContaPagar);
+            return this.Salvar(objeto as Cheque);
         }
 
         public override List<int> GetIds()
         {
-            var ids = from e in DB.GetInstance().context.CPs
+            var ids = from e in DB.GetInstance().context.Cheques
                       where e.DataExclusao == null
                       select e.Id;
             return ids.ToList();

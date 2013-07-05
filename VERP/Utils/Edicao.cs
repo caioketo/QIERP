@@ -28,8 +28,15 @@ namespace VERP.Utils
                         }
                         else
                         {
-                            ctr.Text = prop.GetValue(Objeto, null).ToString();
-                            edicao.tbx_Leave(ctr, null);
+                            if (ctr is DateTimePicker)
+                            {
+                                ((DateTimePicker)ctr).Value = (DateTime)prop.GetValue(Objeto, null);
+                            }
+                            else
+                            {
+                                ctr.Text = prop.GetValue(Objeto, null).ToString();
+                                edicao.tbx_Leave(ctr, null);
+                            }
                         }
                     }
                 }
@@ -102,11 +109,11 @@ namespace VERP.Utils
                 if (ctr != null)
                 {
                     Type tipo = prop.PropertyType;
-                    if (tipo.ToString().ToString().ToUpper().Equals("SYSTEM.STRING"))
+                    if (tipo.ToString().ToUpper().Equals("SYSTEM.STRING"))
                     {
                         prop.SetValue(Objeto, ctr.Text);
                     }
-                    else if (tipo.ToString().ToString().ToUpper().Equals("SYSTEM.DOUBLE"))
+                    else if (tipo.ToString().ToUpper().Equals("SYSTEM.DOUBLE"))
                     {
                         if (ctr.Text.Contains("R$"))
                         {
@@ -117,7 +124,18 @@ namespace VERP.Utils
                             prop.SetValue(Objeto, Convert.ToDouble(ctr.Text));
                         }
                     }
-                    else if (tipo.ToString().ToString().ToUpper().Equals("SYSTEM.INTEGER") || tipo.ToString().ToString().ToUpper().Equals("SYSTEM.INT32"))
+                    else if (tipo.ToString().ToUpper().Equals("SYSTEM.DECIMAL"))
+                    {
+                        if (ctr.Text.Contains("R$"))
+                        {
+                            prop.SetValue(Objeto, Convert.ToDecimal(ctr.Text.Substring(2)));
+                        }
+                        else
+                        {
+                            prop.SetValue(Objeto, Convert.ToDecimal(ctr.Text));
+                        }
+                    }
+                    else if (tipo.ToString().ToUpper().Equals("SYSTEM.INTEGER") || tipo.ToString().ToUpper().Equals("SYSTEM.INT32"))
                     {
                         if (ctr is GroupBox)
                         {
@@ -134,6 +152,10 @@ namespace VERP.Utils
                         {
                             prop.SetValue(Objeto, Convert.ToInt32(ctr.Text));
                         }
+                    }
+                    else if (tipo.ToString().ToUpper().Equals("SYSTEM.DATETIME"))
+                    {
+                        prop.SetValue(Objeto, ((DateTimePicker)ctr).Value);
                     }
                     else
                     {
@@ -228,6 +250,20 @@ namespace VERP.Utils
                         grupo.Controls.Add(radio);
                     }
                     ctr = grupo;
+                }
+                else if (campo.Tipo == TiposDeCampo.DateTime)
+                {
+                    DateTimePicker dtp = new DateTimePicker();
+                    dtp.Name = "tbx" + campo.Nome;
+                    dtp.Location = new Point(x + 13, y + 28);
+                    dtp.TabIndex = i;
+                    dtp.Size = new Size(230, 20);
+                    if (dtp.Width == 13)
+                    {
+                        dtp.Width = 70;
+                    }
+
+                    ctr = dtp;
                 }
                 else
                 {

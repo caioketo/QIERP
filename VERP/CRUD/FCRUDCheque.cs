@@ -3,29 +3,27 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using VERP.Edicao;
+using QIERP.Edicao;
 using VERP.Utils;
-using System.Data.Entity;
-using System.Linq;
 using VERPDatabase;
+using VERPDatabase.Classes;
 
-namespace VERP.CRUD
+namespace QIERP.CRUD
 {
-    public partial class FCRUDCondicaoDePagamento : VERP.FCRUD
+    public partial class FCRUDCheque : VERP.FCRUD
     {
         protected override void GetRecords()
         {
-            DB.GetInstance().context.FormasDePagamento.Load();
-            bindingSource.DataSource = DB.GetInstance().CondicaoRepo.GetAll().Where(p => p.Descricao.ToUpper().Contains(tbxPesquisa.Text));
+            bindingSource.DataSource = DB.GetInstance().ChequeRepo.GetAll().Where(p => p.Numero.ToUpper().Contains(tbxPesquisa.Text));
         }
 
-
-        public FCRUDCondicaoDePagamento()
+        public FCRUDCheque()
         {
-            tabela = DB.GetInstance().GetTabela("CondicoesDePagamento");
-            Edicao = new FEdicaoCondicaoDePagamento();
+            tabela = DB.GetInstance().GetTabela("Cheque");
+            Edicao = new FEdicaoCheque();
             InitializeComponent();
         }
 
@@ -33,7 +31,7 @@ namespace VERP.CRUD
         {
             if (Mensagem.MostrarMsg(30002) == System.Windows.Forms.DialogResult.Yes)
             {
-                DB.GetInstance().CondicaoRepo.Deletar((CondicaoDePagamento)bindingSource.Current);
+                DB.GetInstance().ChequeRepo.Deletar((Cheque)bindingSource.Current);
                 DB.GetInstance().context.SaveChanges();
                 GetRecords();
             }

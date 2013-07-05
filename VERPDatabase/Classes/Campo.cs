@@ -23,6 +23,7 @@ namespace VERPDatabase.Classes
         public string CampoRel { get; set; }
         public string DisplayRel { get; set; }
         public string TabelaRel { get; set; }
+        public bool ButtonInGrid { get; set; }
 
 
         public Campo(string nome, string titulo, string formatacao, TiposDeCampo tipo, int tamanho, int precisao, bool mostraGrid, bool obrigatorio)

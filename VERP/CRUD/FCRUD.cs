@@ -138,5 +138,14 @@ namespace VERP
             Resultado = bindingSource.Current;
             this.Close();
         }
+
+        public virtual void btnGridClick(int column, int row)
+        {
+        }
+
+        private void dgvCRUD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnGridClick(e.ColumnIndex, e.RowIndex);
+        }
     }
 }

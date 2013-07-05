@@ -111,6 +111,7 @@ namespace VERP
 
         private void FEdicao_Load(object sender, EventArgs e)
         {
+            this.Size = new Size(334, 346);
             if (CRUD == null)
             {
                 return;
@@ -128,25 +129,26 @@ namespace VERP
 
             int screenWidth = this.Width;
             int screenHeight = this.Height;
-            
-            foreach (Controle controle in UControles)
+
+            for (int i = 0; i < Controls.Count; i++)
             {
-                try
+                if (Controls[i].Name.Equals("pnlGeral"))
                 {
-                    Controls.Remove(controle.label);
-                    Controls.Remove(controle.control);
-                }
-                catch
-                {
-                }
+                    Controls.Remove(Controls[i]);
+                }                
             }
+
+            Panel pnlGeral = new Panel();
+            pnlGeral.Name = "pnlGeral";
+            pnlGeral.Dock = DockStyle.Fill;
+            pnlGeral.BorderStyle = BorderStyle.None;
 
             foreach (Controle controle in UControles)
             {
                 Controles.Add(controle.control);
                 Labels.Add(controle.label);
-                Controls.Add(controle.label);
-                Controls.Add(controle.control);
+                pnlGeral.Controls.Add(controle.label);
+                pnlGeral.Controls.Add(controle.control);
             }
 
             if (UControles.Count == CRUD.Campos.Count)
@@ -158,10 +160,11 @@ namespace VERP
             }
 
             this.ResizeRedraw = true;
-            if (Controls.Count - 1 == Labels.Count + Controles.Count)
+            if (pnlGeral.Controls.Count == Labels.Count + Controles.Count)
             {
                 this.Size = new Size(screenWidth, screenHeight);
             }
+            Controls.Add(pnlGeral);
 
             this.Text = "Inserção/Edição de " + CRUD.tabela.Descricao;
         }

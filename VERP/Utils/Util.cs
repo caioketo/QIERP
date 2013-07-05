@@ -67,16 +67,28 @@ namespace VERP.Utils
             {
                 if (campo.MostraGrid)
                 {
-                    DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                    col.DataPropertyName = campo.Nome;
-                    col.DefaultCellStyle = new DataGridViewCellStyle();
-                    if (!campo.Formatacao.Equals(""))
+                    if (campo.ButtonInGrid)
                     {
-                        col.DefaultCellStyle.Format = campo.Formatacao;
+                        DataGridViewButtonColumn col = new DataGridViewButtonColumn();
+                        col.Text = campo.Titulo;
+                        col.Name = campo.Titulo;
+                        col.HeaderText = campo.Titulo;
+                        col.UseColumnTextForButtonValue = true;
+                        dgv.Columns.Add(col);
                     }
-                    col.HeaderText = campo.Titulo;
-                    col.Name = campo.Titulo;
-                    dgv.Columns.Add(col);
+                    else
+                    {
+                        DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                        col.DataPropertyName = campo.Nome;
+                        col.DefaultCellStyle = new DataGridViewCellStyle();
+                        if (!campo.Formatacao.Equals(""))
+                        {
+                            col.DefaultCellStyle.Format = campo.Formatacao;
+                        }
+                        col.HeaderText = campo.Titulo;
+                        col.Name = campo.Titulo;
+                        dgv.Columns.Add(col);
+                    }
                 }
             }
 

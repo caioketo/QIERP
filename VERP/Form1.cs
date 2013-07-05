@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QIERP.CRUD;
 using VERP.CRUD;
 using VERP.Utils;
 using VERPDatabase;
@@ -83,6 +84,38 @@ namespace VERP
         private void clientesVendedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FCRUDPessoa crud = new FCRUDPessoa())
+            {
+                crud.ShowDialog();
+            }
+        }
+
+        private void contasÀReceberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FCRUDCR crud = new FCRUDCR())
+            {
+                crud.ShowDialog();
+            }
+        }
+
+        private void contasÀPagarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FCRUDCP crud = new FCRUDCP())
+            {
+                crud.ShowDialog();
+            }
+        }
+
+        private void chequesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FCRUDCheque crud = new FCRUDCheque())
+            {
+                crud.ShowDialog();
+            }
+        }
+
+        private void notasFiscaisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FCRUDNota crud = new FCRUDNota())
             {
                 crud.ShowDialog();
             }

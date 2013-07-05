@@ -38,6 +38,11 @@
             this.condiçõesDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimentaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesVendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasÀReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasÀPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chequesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notasFiscaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +53,8 @@
             this.produtosToolStripMenuItem,
             this.pagamentosToolStripMenuItem,
             this.movimentaçõesToolStripMenuItem,
-            this.clientesVendedoresToolStripMenuItem});
+            this.clientesVendedoresToolStripMenuItem,
+            this.financeiroToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(608, 24);
@@ -60,7 +66,8 @@
             // 
             this.vendaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.abrirVendaToolStripMenuItem,
-            this.consultaVendaToolStripMenuItem});
+            this.consultaVendaToolStripMenuItem,
+            this.notasFiscaisToolStripMenuItem});
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
             this.vendaToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.vendaToolStripMenuItem.Text = "Venda";
@@ -123,6 +130,44 @@
             this.clientesVendedoresToolStripMenuItem.Text = "Clientes/Vendedores";
             this.clientesVendedoresToolStripMenuItem.Click += new System.EventHandler(this.clientesVendedoresToolStripMenuItem_Click);
             // 
+            // financeiroToolStripMenuItem
+            // 
+            this.financeiroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contasÀReceberToolStripMenuItem,
+            this.contasÀPagarToolStripMenuItem,
+            this.chequesToolStripMenuItem});
+            this.financeiroToolStripMenuItem.Name = "financeiroToolStripMenuItem";
+            this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.financeiroToolStripMenuItem.Text = "Financeiro";
+            // 
+            // contasÀReceberToolStripMenuItem
+            // 
+            this.contasÀReceberToolStripMenuItem.Name = "contasÀReceberToolStripMenuItem";
+            this.contasÀReceberToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.contasÀReceberToolStripMenuItem.Text = "Contas à Receber";
+            this.contasÀReceberToolStripMenuItem.Click += new System.EventHandler(this.contasÀReceberToolStripMenuItem_Click);
+            // 
+            // contasÀPagarToolStripMenuItem
+            // 
+            this.contasÀPagarToolStripMenuItem.Name = "contasÀPagarToolStripMenuItem";
+            this.contasÀPagarToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.contasÀPagarToolStripMenuItem.Text = "Contas à Pagar";
+            this.contasÀPagarToolStripMenuItem.Click += new System.EventHandler(this.contasÀPagarToolStripMenuItem_Click);
+            // 
+            // chequesToolStripMenuItem
+            // 
+            this.chequesToolStripMenuItem.Name = "chequesToolStripMenuItem";
+            this.chequesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.chequesToolStripMenuItem.Text = "Cheques";
+            this.chequesToolStripMenuItem.Click += new System.EventHandler(this.chequesToolStripMenuItem_Click);
+            // 
+            // notasFiscaisToolStripMenuItem
+            // 
+            this.notasFiscaisToolStripMenuItem.Name = "notasFiscaisToolStripMenuItem";
+            this.notasFiscaisToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.notasFiscaisToolStripMenuItem.Text = "Notas Fiscais";
+            this.notasFiscaisToolStripMenuItem.Click += new System.EventHandler(this.notasFiscaisToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +198,11 @@
         private System.Windows.Forms.ToolStripMenuItem condiçõesDePagamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem movimentaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesVendedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem financeiroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contasÀReceberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contasÀPagarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chequesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem notasFiscaisToolStripMenuItem;
     }
 }
 

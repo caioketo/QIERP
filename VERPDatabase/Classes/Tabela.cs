@@ -64,6 +64,17 @@ namespace VERPDatabase.Classes
                     Edita = false;
                     Descricao = "Movimentações";
                     break;
+                case "NotaFiscal":
+                    Campos.Add(new Campo("Numero", "Número", "", TiposDeCampo.Varchar, 20));
+                    campo = new Campo("Venda", "Venda", "", TiposDeCampo.Model, 50);
+                    campo.TabelaRel = "Vendas";
+                    campo.CampoRel = "Pedido";
+                    campo.DisplayRel = "Pedido";
+                    campo.Edita = false;
+                    campo.MostraGrid = false;
+                    Campos.Add(campo);
+                    Descricao = "Notas Fiscais";
+                    break;
                 case "Pessoa":
                     Campos.Add(new Campo("Documento", "Documento", "", TiposDeCampo.Varchar, 20));
                     Campos.Add(new Campo("Nome", "Nome", "", TiposDeCampo.Varchar, 50));
@@ -113,6 +124,41 @@ namespace VERPDatabase.Classes
                     Campos.Add(new Campo("Descricao", "Descrição", "", TiposDeCampo.Varchar, 50));
                     Campos.Add(new Campo("Codigo", "Código", "", TiposDeCampo.Varchar, 2));
                     Descricao = "UFs";
+                    break;
+                case "CR":
+                    Campos.Add(new Campo("Descricao", "Descrição", "", TiposDeCampo.Varchar, 50));
+                    Campos.Add(new Campo("Valor", "Valor", "c", TiposDeCampo.Numeric, 15, 2, true, true));
+                    Campos.Add(new Campo("Vencimento", "Data de Vencimento", "d", TiposDeCampo.DateTime, 0));
+                    campo = new Campo("Baixa", "Data da Baixa", "d", TiposDeCampo.DateTime, 0);
+                    campo.Edita = false;
+                    Campos.Add(campo);
+                    campo = new Campo("Baixar", "Baixar", "", TiposDeCampo.Varchar, 0);
+                    campo.Edita = false;
+                    campo.ButtonInGrid = true;
+                    Campos.Add(campo);
+                    Descricao = "Contas à Receber";
+                    break;
+                case "CP":
+                    Campos.Add(new Campo("Descricao", "Descrição", "", TiposDeCampo.Varchar, 50));
+                    Campos.Add(new Campo("Valor", "Valor", "c", TiposDeCampo.Numeric, 15, 2, true, true));
+                    Campos.Add(new Campo("Vencimento", "Data de Vencimento", "d", TiposDeCampo.DateTime, 0));
+                    campo = new Campo("Baixa", "Data da Baixa", "d", TiposDeCampo.DateTime, 0);
+                    campo.Edita = false;
+                    Campos.Add(campo);
+                    campo = new Campo("Baixar", "Baixar", "", TiposDeCampo.Varchar, 0);
+                    campo.Edita = false;
+                    campo.ButtonInGrid = true;
+                    Campos.Add(campo);
+                    Descricao = "Contas à Pagar";
+                    break;
+                case "Cheque":
+                    Campos.Add(new Campo("Numero", "Número", "", TiposDeCampo.Varchar, 20));
+                    Campos.Add(new Campo("Banco", "Banco", "", TiposDeCampo.Varchar, 3));
+                    Campos.Add(new Campo("Agencia", "Agência", "", TiposDeCampo.Varchar, 6));
+                    Campos.Add(new Campo("Conta", "Conta", "", TiposDeCampo.Varchar, 15));
+                    Campos.Add(new Campo("Emissor", "Emissor", "", TiposDeCampo.Varchar, 50));
+                    Campos.Add(new Campo("Telefone", "Telefone", "", TiposDeCampo.Varchar, 15));
+                    Descricao = "Cheques";
                     break;
             }
         }

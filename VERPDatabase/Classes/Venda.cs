@@ -49,6 +49,30 @@ namespace VERPDatabase
             }
         }
 
+        public string ClienteNome
+        {
+            get
+            {
+                if (Cliente != null)
+                {
+                    return Cliente.Pessoa.Nome;
+                }
+                return "";
+            }
+        }
+
+        public string VendedorNome
+        {
+            get
+            {
+                if (Vendedor != null)
+                {
+                    return Vendedor.Pessoa.Nome;
+                }
+                return "";
+            }
+        }
+
         public Venda()
         {
             Itens = new BindingList<Item>();

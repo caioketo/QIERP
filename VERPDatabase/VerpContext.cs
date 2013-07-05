@@ -36,6 +36,10 @@ namespace VERPDatabase
         public DbSet<UF> UFs { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Vendedor> Vendedores { get; set; }
+        public DbSet<ContaReceber> CRs { get; set; }
+        public DbSet<ContaPagar> CPs { get; set; }
+        public DbSet<Cheque> Cheques { get; set; }
+        public DbSet<NotaFiscal> Notas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -75,6 +79,10 @@ namespace VERPDatabase
             UFs.Load();
             Fornecedores.Load();
             Vendedores.Load();
+            CRs.Load();
+            CPs.Load();
+            Cheques.Load();
+            Notas.Load();
         }
     }
 }

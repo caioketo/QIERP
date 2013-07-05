@@ -7,34 +7,34 @@ using VERPDatabase.Classes;
 
 namespace VERPDatabase.Repositorios
 {
-    public class CPRepository : ExtRepository, IRepository<ContaPagar>
+    public class NotaRepository : ExtRepository, IRepository<NotaFiscal>
     {
-        public IQueryable<ContaPagar> GetAll()
+        public IQueryable<NotaFiscal> GetAll()
         {
-            return DB.GetInstance().context.CPs.Local.AsQueryable().Where(p => p.DataExclusao == null);
+            return DB.GetInstance().context.Notas.Local.AsQueryable().Where(p => p.DataExclusao == null);
         }
 
-        public bool Salvar(ContaPagar item)
+        public bool Salvar(NotaFiscal item)
         {
             DB.GetInstance().context.SaveChanges();
             return true;
         }
 
-        public bool Inserir(ContaPagar item)
+        public bool Inserir(NotaFiscal item)
         {
-            DB.GetInstance().context.CPs.Add(item);
+            DB.GetInstance().context.Notas.Add(item);
             DB.GetInstance().context.SaveChanges();
             return true;
         }
 
-        public ContaPagar GetById(int id)
+        public NotaFiscal GetById(int id)
         {
-            return DB.GetInstance().context.CPs.Find(id);
+            return DB.GetInstance().context.Notas.Find(id);
         }
 
-        public bool Deletar(ContaPagar item)
+        public bool Deletar(NotaFiscal item)
         {
-            DB.GetInstance().context.Entry<ContaPagar>(item).State = System.Data.EntityState.Modified;
+            DB.GetInstance().context.Entry<NotaFiscal>(item).State = System.Data.EntityState.Modified;
             item.DataExclusao = DateTime.Now;
             return true;
         }
@@ -51,22 +51,22 @@ namespace VERPDatabase.Repositorios
 
         public override dynamic GetByText(string text)
         {
-            return this.GetAll().Where(p => p.Descricao.ToUpper().Equals(text.ToUpper())).FirstOrDefault();
+            return this.GetAll().Where(p => p.Numero.ToUpper().Equals(text.ToUpper())).FirstOrDefault();
         }
 
         public override bool Inserir(object objeto)
         {
-            return this.Inserir(objeto as ContaPagar);
+            return this.Inserir(objeto as NotaFiscal);
         }
 
         public override bool Salvar(object objeto)
         {
-            return this.Salvar(objeto as ContaPagar);
+            return this.Salvar(objeto as NotaFiscal);
         }
 
         public override List<int> GetIds()
         {
-            var ids = from e in DB.GetInstance().context.CPs
+            var ids = from e in DB.GetInstance().context.Notas
                       where e.DataExclusao == null
                       select e.Id;
             return ids.ToList();

@@ -7,50 +7,53 @@ using System.Text;
 using System.Windows.Forms;
 using VERP.Classes;
 using VERPDatabase;
+using VERPDatabase.Classes;
 
-namespace VERP.Edicao
+namespace QIERP.Edicao
 {
-    public partial class FEdicaoCondicaoDePagamento : VERP.FEdicao
+    public partial class FEdicaoCP : VERP.FEdicao
     {
-        public FEdicaoCondicaoDePagamento()
+        public FEdicaoCP()
         {
             InitializeComponent();
-            this.Repo = DB.GetInstance().FPRepo;
         }
 
-        private CondicaoDePagamento condicao;
+        private ContaPagar conta;
 
         protected override void Gravar()
         {
             if (estado == Estado.Inserir)
             {
-                DB.GetInstance().CondicaoRepo.Inserir(condicao);
+                DB.GetInstance().CPRepo.Inserir(conta);
             }
             else if (estado == Estado.Modificar)
             {
-                DB.GetInstance().CondicaoRepo.Salvar(condicao);
+                DB.GetInstance().CPRepo.Salvar(conta);
             }
 
             this.Close();
         }
 
-        private void FEdicaoCondicaoDePagamento_Shown(object sender, EventArgs e)
+        private void FEdicaoCP_Shown(object sender, EventArgs e)
         {
             foreach (Control ctr in Controles)
             {
-                if (ctr is TextBox)
+                try
                 {
                     ((TextBox)ctr).Clear();
+                }
+                catch
+                {
                 }
             }
             if (estado == Estado.Inserir)
             {
-                condicao = new CondicaoDePagamento();
-                Objeto = condicao;
+                conta = new ContaPagar();
+                Objeto = conta;
             }
             else if (estado == Estado.Modificar)
             {
-                condicao = Objeto as CondicaoDePagamento;
+                conta = Objeto as ContaPagar;
                 MapearTela();
             }
         }

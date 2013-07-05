@@ -7,50 +7,55 @@ using System.Text;
 using System.Windows.Forms;
 using VERP.Classes;
 using VERPDatabase;
+using VERPDatabase.Classes;
 
-namespace VERP.Edicao
+namespace QIERP.Edicao
 {
-    public partial class FEdicaoCondicaoDePagamento : VERP.FEdicao
+    public partial class FEdicaoNota : VERP.FEdicao
     {
-        public FEdicaoCondicaoDePagamento()
+        public FEdicaoNota()
         {
+            this.importacao = false;
             InitializeComponent();
-            this.Repo = DB.GetInstance().FPRepo;
         }
 
-        private CondicaoDePagamento condicao;
+        private NotaFiscal nota;
+        public bool importacao;
 
         protected override void Gravar()
         {
             if (estado == Estado.Inserir)
             {
-                DB.GetInstance().CondicaoRepo.Inserir(condicao);
+                DB.GetInstance().NotaRepo.Inserir(nota);
             }
             else if (estado == Estado.Modificar)
             {
-                DB.GetInstance().CondicaoRepo.Salvar(condicao);
+                DB.GetInstance().NotaRepo.Salvar(nota);
             }
-
+            this.importacao = false;
             this.Close();
         }
 
-        private void FEdicaoCondicaoDePagamento_Shown(object sender, EventArgs e)
+        private void FEdicaoNota_Shown(object sender, EventArgs e)
         {
             foreach (Control ctr in Controles)
             {
-                if (ctr is TextBox)
+                try
                 {
                     ((TextBox)ctr).Clear();
                 }
+                catch
+                {
+                }
             }
-            if (estado == Estado.Inserir)
+            if (estado == Estado.Inserir && (!this.importacao))
             {
-                condicao = new CondicaoDePagamento();
-                Objeto = condicao;
+                nota = new NotaFiscal();
+                Objeto = nota;
             }
-            else if (estado == Estado.Modificar)
+            else if (estado == Estado.Modificar || this.importacao)
             {
-                condicao = Objeto as CondicaoDePagamento;
+                nota = Objeto as NotaFiscal;
                 MapearTela();
             }
         }

@@ -64,7 +64,7 @@ namespace VERP
                 FormaDePagamento fp = (FormaDePagamento)cmbForma.SelectedItem;
                 if (fp != null)
                 {
-                    condicaoDePagamentoBindingSource.DataSource = DB.GetInstance().CPRepo.GetAll().Where(c => c.Forma.Id == fp.Id).ToList();
+                    condicaoDePagamentoBindingSource.DataSource = DB.GetInstance().CondicaoRepo.GetAll().Where(c => c.Forma.Id == fp.Id).ToList();
                 }
             }
             catch
@@ -157,7 +157,7 @@ namespace VERP
                 return;
             }
 
-            CondicaoDePagamento cp = DB.GetInstance().CPRepo.GetById((int)cmbCondicao.SelectedValue);
+            CondicaoDePagamento cp = DB.GetInstance().CondicaoRepo.GetById((int)cmbCondicao.SelectedValue);
 
             if (cp == null)
             {

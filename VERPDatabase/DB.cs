@@ -35,7 +35,7 @@ namespace VERPDatabase
         public ProdutoRepository ProdutoRepo = new ProdutoRepository();
         public VendaRepository VendaRepo = new VendaRepository();
         public FPRepository FPRepo = new FPRepository();
-        public CPRepository CPRepo = new CPRepository();
+        public CondicaoRepository CondicaoRepo = new CondicaoRepository();
         public MovRepository MovRepo = new MovRepository();
         public PessoaRepository PessoaRepo = new PessoaRepository();
         public TelefoneRepository TelefoneRepo = new TelefoneRepository();
@@ -44,6 +44,10 @@ namespace VERPDatabase
         public UFRepository UFRepo = new UFRepository();
         public ClienteRepository ClienteRepo = new ClienteRepository();
         public VendedorRepository VendedorRepo = new VendedorRepository();
+        public CRRepository CRRepo = new CRRepository();
+        public CPRepository CPRepo = new CPRepository();
+        public ChequeRepository ChequeRepo = new ChequeRepository();
+        public NotaRepository NotaRepo = new NotaRepository();
         public VerpContext context;
 
 
@@ -83,6 +87,10 @@ namespace VERPDatabase
             Tabelas.Add(new Tabela("Endereco"));
             Tabelas.Add(new Tabela("Cidade"));
             Tabelas.Add(new Tabela("UF"));
+            Tabelas.Add(new Tabela("CR"));
+            Tabelas.Add(new Tabela("CP"));
+            Tabelas.Add(new Tabela("Cheque"));
+            Tabelas.Add(new Tabela("NotaFiscal"));
         }
     }
 }

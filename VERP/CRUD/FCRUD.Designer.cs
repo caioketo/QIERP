@@ -99,6 +99,7 @@
             this.dgvCRUD.Size = new System.Drawing.Size(850, 280);
             this.dgvCRUD.TabIndex = 10;
             this.dgvCRUD.TabStop = false;
+            this.dgvCRUD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCRUD_CellContentClick);
             // 
             // btnSelecionar
             // 
@@ -124,7 +125,6 @@
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.tbxPesquisa);
             this.Controls.Add(this.dgvCRUD);
-            this.KeyPreview = true;
             this.Name = "FCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FCRUD";

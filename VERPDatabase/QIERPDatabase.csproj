@@ -46,16 +46,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Campo.cs" />
+    <Compile Include="Classes\Cheque.cs" />
     <Compile Include="Classes\Cidade.cs" />
     <Compile Include="Classes\ClasseBase.cs" />
     <Compile Include="Classes\Cliente.cs" />
     <Compile Include="Classes\CondicaoDePagamento.cs" />
+    <Compile Include="Classes\Conta.cs" />
+    <Compile Include="Classes\ContaPagar.cs" />
+    <Compile Include="Classes\ContaReceber.cs" />
     <Compile Include="Classes\Endereco.cs" />
     <Compile Include="Classes\FormaDePagamento.cs" />
     <Compile Include="Classes\Fornecedor.cs" />
     <Compile Include="Classes\Item.cs" />
     <Compile Include="Classes\ItemMovimentacao.cs" />
     <Compile Include="Classes\Movimentacao.cs" />
+    <Compile Include="Classes\NotaFiscal.cs" />
     <Compile Include="Classes\Pagamento.cs" />
     <Compile Include="Classes\Pessoa.cs" />
     <Compile Include="Classes\Produto.cs" />
@@ -68,13 +73,17 @@
     <Compile Include="DB.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\ChequeRepository.cs" />
     <Compile Include="Repositorios\CidadeRepository.cs" />
     <Compile Include="Repositorios\ClienteRepository.cs" />
+    <Compile Include="Repositorios\CondicaoRepository.cs" />
     <Compile Include="Repositorios\CPRepository.cs" />
+    <Compile Include="Repositorios\CRRepository.cs" />
     <Compile Include="Repositorios\EndRepository.cs" />
     <Compile Include="Repositorios\ExtRepository.cs" />
     <Compile Include="Repositorios\FPRepository.cs" />
     <Compile Include="Repositorios\MovRepository.cs" />
+    <Compile Include="Repositorios\NotaRepository.cs" />
     <Compile Include="Repositorios\PessoaRepository.cs" />
     <Compile Include="Repositorios\ProdutoRepository.cs" />
     <Compile Include="Repositorios\TelefoneRepository.cs" />

@@ -42,6 +42,7 @@ namespace QIERP.CRUD
         {
             Edicao.Objeto = new NotaFiscal();
             Edicao.estado = Estado.Inserir;
+            ((FEdicaoNota)Edicao).importacao = true;
             Edicao.ShowDialog();
         }
     }

@@ -13,7 +13,7 @@ namespace VERPDatabase
         public IQueryable<Venda> GetAll()
         {
             DB.GetInstance().context.Vendas.Load();
-            return DB.GetInstance().context.Vendas.Local.AsQueryable().Where(v => v.DataExclusao == null);
+            return DB.GetInstance().context.Vendas.Local.AsQueryable();//.Where(v => v.DataExclusao == null);
         }
 
         public bool Salvar(Venda item)

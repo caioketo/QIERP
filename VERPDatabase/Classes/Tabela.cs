@@ -75,6 +75,9 @@ namespace VERPDatabase.Classes
                     campo.Edita = false;
                     campo.MostraGrid = false;
                     Campos.Add(campo);
+                    campo = new Campo("Pedido", "Pedido", "", TiposDeCampo.Integer, 10);
+                    campo.Edita = false;
+                    Campos.Add(campo);
                     Descricao = "Notas Fiscais";
                     break;
                 case "Pessoa":

@@ -11,6 +11,7 @@ using QIERP.Edicao;
 using VERP.Utils;
 using VERPDatabase.Classes;
 using VERP.Classes;
+using QIERP.Utils;
 
 namespace QIERP.CRUD
 {
@@ -40,7 +41,16 @@ namespace QIERP.CRUD
 
         private void btnImpVenda_Click(object sender, EventArgs e)
         {
-            Edicao.Objeto = new NotaFiscal();
+            using (FSelecionaPedido sel = new FSelecionaPedido())
+            {
+                sel.ShowDialog();
+                if (sel.resultado == null)
+                {
+                    return;
+                }
+                Edicao.Objeto = new NotaFiscal();
+                ((NotaFiscal)Edicao.Objeto).Venda = sel.resultado;
+            }
             Edicao.estado = Estado.Inserir;
             ((FEdicaoNota)Edicao).importacao = true;
             Edicao.ShowDialog();

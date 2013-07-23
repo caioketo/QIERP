@@ -81,6 +81,9 @@ namespace VERP.Utils
                 case 40005:
                     mensagem += "Produto já adicionado!";
                     break;
+                case 40006:
+                    mensagem += "Pedido não encontrado!";
+                    break;
             }
 
 

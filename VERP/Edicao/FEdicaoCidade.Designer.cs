@@ -62,7 +62,7 @@
             this.pesEstado.Name = "pesEstado";
             this.pesEstado.Objeto = null;
             this.pesEstado.Repo = null;
-            this.pesEstado.Size = new System.Drawing.Size(251, 51);
+            this.pesEstado.Size = new System.Drawing.Size(343, 51);
             this.pesEstado.TabIndex = 3;
             this.pesEstado.Tamanho = new System.Drawing.Size(0, 0);
             this.pesEstado.Titulo = null;
@@ -70,11 +70,12 @@
             // FEdicaoCidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(368, 308);
+            this.ClientSize = new System.Drawing.Size(372, 195);
             this.Controls.Add(this.pesEstado);
             this.Controls.Add(this.tbxDescricao);
             this.Controls.Add(this.label1);
             this.Name = "FEdicaoCidade";
+            this.Load += new System.EventHandler(this.FEdicaoCidade_Load);
             this.Shown += new System.EventHandler(this.FEdicaoCidade_Shown);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.tbxDescricao, 0);

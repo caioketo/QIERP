@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using VERP.Classes;
+using VERP.CRUD;
+using VERP.Utils;
 using VERPDatabase;
 using VERPDatabase.Classes;
 
@@ -66,6 +68,15 @@ namespace VERP.Edicao
                 cidade = Objeto as Cidade;
                 MapearTela();
             }
+        }
+
+        private void FEdicaoCidade_Load(object sender, EventArgs e)
+        {
+            pesEstado.CRUD = new FCRUDUF();
+            pesEstado.Campo = "Codigo";
+            pesEstado.CampoDisplay = "Descricao";
+            pesEstado.Titulo = "UF";
+            pesEstado.Repo = Util.GetRepo("UFs");
         }
 
     }

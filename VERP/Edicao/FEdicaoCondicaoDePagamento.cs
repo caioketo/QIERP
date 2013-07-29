@@ -20,7 +20,7 @@ namespace VERP.Edicao
 
         private CondicaoDePagamento condicao;
 
-        protected void Gravar()
+        protected override void Gravar()
         {
             if (estado == Estado.Inserir)
             {
@@ -32,6 +32,21 @@ namespace VERP.Edicao
             }
 
             this.Close();
+        }
+
+        protected override void Mapear()
+        {
+            condicao.Descricao = tbxDescricao.Text;
+            condicao.DiasVencimento = Convert.ToInt32(tbxDiasVencimento.Text);
+            condicao.Forma = pesFormaDePagamento.Objeto as FormaDePagamento;
+        }
+
+        private void MapearTela()
+        {
+            tbxDescricao.Text = condicao.Descricao;
+            tbxDiasVencimento.Text = condicao.DiasVencimento.ToString();
+            pesFormaDePagamento.Objeto = condicao.Forma;
+            pesFormaDePagamento.Selecionar();
         }
 
         private void FEdicaoCondicaoDePagamento_Shown(object sender, EventArgs e)
@@ -51,7 +66,7 @@ namespace VERP.Edicao
             else if (estado == Estado.Modificar)
             {
                 condicao = Objeto as CondicaoDePagamento;
-                //MapearTela();
+                MapearTela();
             }
         }
     }

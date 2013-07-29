@@ -20,7 +20,7 @@ namespace QIERP.Edicao
 
         private ContaPagar conta;
 
-        protected void Gravar()
+        protected override void Gravar()
         {
             if (estado == Estado.Inserir)
             {
@@ -32,6 +32,27 @@ namespace QIERP.Edicao
             }
 
             this.Close();
+        }
+
+        protected override void Mapear()
+        {
+            conta.Descricao = tbxDescricao.Text;
+            if (tbxValor.Text.Contains("R$"))
+            {
+                conta.Valor = Convert.ToDecimal(tbxValor.Text.Substring(3));
+            }
+            else
+            {
+                conta.Valor = Convert.ToDecimal(tbxValor.Text);
+            }
+            conta.Vencimento = dtpVencimento.Value;
+        }
+
+        private void MapearTela()
+        {
+            tbxDescricao.Text = conta.Descricao;
+            tbxValor.Text = conta.Valor.ToString(GetCampo("Valor").Formatacao);
+            dtpVencimento.Value = conta.Vencimento;
         }
 
         private void FEdicaoCP_Shown(object sender, EventArgs e)
@@ -54,7 +75,7 @@ namespace QIERP.Edicao
             else if (estado == Estado.Modificar)
             {
                 conta = Objeto as ContaPagar;
-                //MapearTela();
+                MapearTela();
             }
         }
     }

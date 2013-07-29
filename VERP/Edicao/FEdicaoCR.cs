@@ -20,7 +20,7 @@ namespace QIERP.Edicao
 
         private ContaReceber conta;
 
-        protected override void Gravar()
+        protected void Gravar()
         {
             if (estado == Estado.Inserir)
             {
@@ -54,7 +54,7 @@ namespace QIERP.Edicao
             else if (estado == Estado.Modificar)
             {
                 conta = Objeto as ContaReceber;
-                MapearTela();
+                //MapearTela();
             }
         }
     }

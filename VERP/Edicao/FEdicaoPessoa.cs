@@ -20,7 +20,7 @@ namespace VERP.Edicao
             InitializeComponent();
         }
 
-        protected override void Gravar()
+        protected void Gravar()
         {
             if (estado == Estado.Inserir)
             {
@@ -86,7 +86,7 @@ namespace VERP.Edicao
             else if (estado == Estado.Modificar)
             {
                 pessoa = Objeto as Pessoa;
-                MapearTela();
+                //MapearTela();
             }
 
             cbxCliente.Checked = (DB.GetInstance().ClienteRepo.GetByPessoa(pessoa) != null);

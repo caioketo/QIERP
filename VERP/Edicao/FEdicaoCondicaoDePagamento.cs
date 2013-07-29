@@ -20,7 +20,7 @@ namespace VERP.Edicao
 
         private CondicaoDePagamento condicao;
 
-        protected override void Gravar()
+        protected void Gravar()
         {
             if (estado == Estado.Inserir)
             {
@@ -51,7 +51,7 @@ namespace VERP.Edicao
             else if (estado == Estado.Modificar)
             {
                 condicao = Objeto as CondicaoDePagamento;
-                MapearTela();
+                //MapearTela();
             }
         }
     }

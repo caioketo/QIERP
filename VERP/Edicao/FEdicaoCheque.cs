@@ -34,16 +34,35 @@ namespace QIERP.Edicao
             this.Close();
         }
 
+        protected override void Mapear()
+        {
+            cheque.Agencia = tbxAgencia.Text;
+            cheque.Banco = tbxBanco.Text;
+            cheque.Conta = tbxConta.Text;
+            cheque.Emissor = tbxEmissor.Text;
+            cheque.Numero = tbxNumero.Text;
+            cheque.Telefone = tbxTelefone.Text;
+            cheque.Vencimento = dtpVencimento.Value;
+        }
+
+        private void MapearTela()
+        {
+            tbxAgencia.Text = cheque.Agencia;
+            tbxBanco.Text = cheque.Banco;
+            tbxConta.Text = cheque.Conta;
+            tbxEmissor.Text = cheque.Emissor;
+            tbxNumero.Text = cheque.Numero;
+            tbxTelefone.Text = cheque.Telefone;
+            dtpVencimento.Value = cheque.Vencimento;
+        }
+
         private void FEdicaoCheque_Shown(object sender, EventArgs e)
         {
             foreach (Control ctr in Controles)
             {
-                try
+                if (ctr is TextBox)
                 {
                     ((TextBox)ctr).Clear();
-                }
-                catch
-                {
                 }
             }
             if (estado == Estado.Inserir)

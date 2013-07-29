@@ -34,6 +34,19 @@ namespace VERP.Edicao
             this.Close();
         }
 
+        protected override void Mapear()
+        {
+            cidade.Descricao = tbxDescricao.Text;
+            cidade.Estado = pesEstado.Objeto as UF;
+        }
+
+        private void MapearTela()
+        {
+            tbxDescricao.Text = cidade.Descricao;
+            pesEstado.Objeto = cidade.Estado;
+            pesEstado.Selecionar();
+        }
+
         private void FEdicaoCidade_Shown(object sender, EventArgs e)
         {
             foreach (Control ctr in Controles)

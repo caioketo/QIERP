@@ -20,7 +20,7 @@ namespace VERP.Edicao
             InitializeComponent();
         }
 
-        protected override void Gravar()
+        protected void Gravar()
         {
             if (estado == Estado.Inserir)
             {
@@ -51,7 +51,7 @@ namespace VERP.Edicao
             else if (estado == Estado.Modificar)
             {
                 uf = Objeto as UF;
-                MapearTela();
+                //MapearTela();
             }
         }
     }

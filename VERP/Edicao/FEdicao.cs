@@ -69,15 +69,13 @@ namespace VERP
             return null;
         }
 
-        protected void Mapear()
-        {
-            Utils.Edicao.Mapear(Objeto, this);
-        }
+        protected virtual void Mapear()
+        { }
 
-        protected void MapearTela()
-        {
-            Utils.Edicao.MapearTela(Objeto, this);
-        }
+        //protected void MapearTela()
+        //{
+            //Utils.Edicao.MapearTela(Objeto, this);
+        //}
 
         private Control MaxWidth()
         {
@@ -111,7 +109,7 @@ namespace VERP
 
         private void FEdicao_Load(object sender, EventArgs e)
         {
-            this.Size = new Size(334, 346);
+            /*this.Size = new Size(334, 346);
             if (CRUD == null)
             {
                 return;
@@ -166,7 +164,7 @@ namespace VERP
             }
             Controls.Add(pnlGeral);
 
-            this.Text = "Inserção/Edição de " + CRUD.tabela.Descricao;
+            this.Text = "Inserção/Edição de " + CRUD.tabela.Descricao;*/
         }
 
         public void tbx_Leave(object sender, EventArgs e)
@@ -188,13 +186,13 @@ namespace VERP
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            foreach (Control ctr in Controles)
+            /*foreach (Control ctr in Controles)
             {
                 if (ctr is TextBox)
                 {
                     tbx_Leave(ctr, null);
                 }
-            }
+            }*/
 
             Mapear();
             if (Validar())

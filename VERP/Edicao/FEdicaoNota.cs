@@ -22,7 +22,7 @@ namespace QIERP.Edicao
         private NotaFiscal nota;
         public bool importacao;
 
-        protected override void Gravar()
+        protected void Gravar()
         {
             if (estado == Estado.Inserir)
             {
@@ -56,7 +56,7 @@ namespace QIERP.Edicao
             else if (estado == Estado.Modificar || this.importacao)
             {
                 nota = Objeto as NotaFiscal;
-                MapearTela();
+                //MapearTela();
             }
         }
     }

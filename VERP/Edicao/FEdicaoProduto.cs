@@ -9,10 +9,11 @@ using System.Windows.Forms;
 using VERP.Classes;
 using VERP.Utils;
 using VERPDatabase;
+using VERPDatabase.Classes;
 
 namespace VERP
 {
-    public partial class FEdicaoProduto : VERP.FEdicao
+    public partial class FEdicaoProduto : FEdicao
     {
         private Produto produto;
 
@@ -49,11 +50,47 @@ namespace VERP
             }
         }
 
+        protected override void Mapear()
+        {
+            produto.Codigo = tbxCodigo.Text;
+            if (tbxCusto.Text.Contains("R$"))
+            {
+                produto.Custo = Convert.ToDouble(tbxCusto.Text.Substring(2));
+            }
+            else
+            {
+                produto.Custo = Convert.ToDouble(tbxCusto.Text);
+            }
+
+            if (tbxValor.Text.Contains("R$"))
+            {
+                produto.Valor = Convert.ToDouble(tbxValor.Text.Substring(2));
+            }
+            else
+            {
+                produto.Valor = Convert.ToDouble(tbxValor.Text);
+            }
+            produto.Descricao = tbxDescricao.Text;
+            produto.Quantidade = Convert.ToDouble(tbxQuantidade.Text);
+        }
+
+        private void MapearTela()
+        {
+            tbxCodigo.Text = produto.Codigo;
+            tbxCusto.Text = produto.Custo.ToString(GetCampo("Codigo").Formatacao);
+            tbxDescricao.Text = produto.Descricao;
+            tbxQuantidade.Text = produto.Quantidade.ToString(GetCampo("Quantidade").Formatacao);
+            tbxValor.Text = produto.Valor.ToString(GetCampo("Valor").Formatacao);
+        }
+
         private void FEdicaoProduto_Shown(object sender, EventArgs e)
         {
-            foreach (Control ctr in Controles)
+            foreach (Control ctr in Controls)
             {
-                ((TextBox)ctr).Clear();
+                if (ctr is TextBox)
+                {
+                    ((TextBox)ctr).Clear();
+                }
             }
             if (estado == Estado.Inserir)
             {
@@ -65,6 +102,11 @@ namespace VERP
                 produto = Objeto as Produto;
                 MapearTela();
             }
+        }
+
+        private void FEdicaoProduto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

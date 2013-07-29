@@ -21,7 +21,7 @@ namespace VERP.Edicao
 
         private FormaDePagamento forma;
 
-        protected override void Gravar()
+        protected void Gravar()
         {
             if (estado == Estado.Inserir)
             {
@@ -49,7 +49,7 @@ namespace VERP.Edicao
             else if (estado == Estado.Modificar)
             {
                 forma = Objeto as FormaDePagamento;
-                MapearTela();
+                //MapearTela();
             }
         }
     }

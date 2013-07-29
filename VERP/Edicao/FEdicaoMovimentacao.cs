@@ -21,7 +21,7 @@ namespace VERP.Edicao
 
         private Movimentacao movimentacao;
 
-        protected override void Gravar()
+        protected void Gravar()
         {
             int mult = 1;
             if (movimentacao.Tipo == 1)
@@ -80,7 +80,7 @@ namespace VERP.Edicao
             else if (estado == Estado.Modificar)
             {
                 movimentacao = Objeto as Movimentacao;
-                MapearTela();
+                //MapearTela();
             }
             gitItens.Campos = new List<Campo>();
             gitItens.Campos.Add(new Campo("Descricao", "Descrição", "", TiposDeCampo.Varchar, 50));

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QIERP", "QIERP.csproj", "{57609D96-D81F-4C89-9B91-B3FD25CFBBF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QIERPDatabase", "..\VERPDatabase\QIERPDatabase.csproj", "{5B12E237-CA0E-49A0-9B50-D6ECEE97545C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QIERPDatabase", "..\QIERPDatabase\QIERPDatabase.csproj", "{5B12E237-CA0E-49A0-9B50-D6ECEE97545C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

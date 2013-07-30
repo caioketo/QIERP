@@ -51,7 +51,7 @@ namespace VERP.Edicao
 
         private void FEdicaoCidade_Shown(object sender, EventArgs e)
         {
-            foreach (Control ctr in Controles)
+            foreach (Control ctr in Controls)
             {
                 if (ctr is TextBox)
                 {

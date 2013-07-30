@@ -20,7 +20,7 @@ namespace VERP.Edicao
             InitializeComponent();
         }
 
-        protected void Gravar()
+        protected override void Gravar()
         {
             if (estado == Estado.Inserir)
             {
@@ -34,9 +34,21 @@ namespace VERP.Edicao
             this.Close();
         }
 
+        protected override void Mapear()
+        {
+            uf.Descricao = tbxDescricao.Text;
+            uf.Codigo = tbxCodigo.Text;
+        }
+
+        private void MapearTela()
+        {
+            tbxDescricao.Text = uf.Descricao;
+            tbxCodigo.Text = uf.Codigo;
+        }
+
         private void FEdicaoUF_Shown(object sender, EventArgs e)
         {
-            foreach (Control ctr in Controles)
+            foreach (Control ctr in Controls)
             {
                 if (ctr is TextBox)
                 {
@@ -51,7 +63,7 @@ namespace VERP.Edicao
             else if (estado == Estado.Modificar)
             {
                 uf = Objeto as UF;
-                //MapearTela();
+                MapearTela();
             }
         }
     }

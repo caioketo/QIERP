@@ -21,7 +21,7 @@ namespace VERP.Edicao
 
         private Movimentacao movimentacao;
 
-        protected void Gravar()
+        protected override void Gravar()
         {
             int mult = 1;
             if (movimentacao.Tipo == 1)
@@ -63,9 +63,39 @@ namespace VERP.Edicao
             return null;
         }
 
+        protected override void Mapear()
+        {
+            movimentacao.Descricao = tbxDescricao.Text;
+            if (rbtEntrada.Checked)
+            {
+                movimentacao.Tipo = 0;
+            }
+            else
+            {
+                movimentacao.Tipo = 1;
+            }
+            movimentacao.ClienteOuFornecedor = pesClienteOuFornecedor.Objeto as Pessoa;
+        }
+
+        private void MapearTela()
+        {
+            tbxDescricao.Text = movimentacao.Descricao;
+            if (movimentacao.Tipo == 1)
+            {
+                rbtSaida.Checked = true;
+            }
+            else
+            {
+                rbtEntrada.Checked = true;
+            }
+            pesClienteOuFornecedor.Objeto = movimentacao.ClienteOuFornecedor;
+            pesClienteOuFornecedor.Selecionar();
+        }
+
+
         private void FEdicaoMovimentacao_Shown(object sender, EventArgs e)
         {
-            foreach (Control ctr in Controles)
+            foreach (Control ctr in Controls)
             {
                 if (ctr is TextBox)
                 {
@@ -80,7 +110,7 @@ namespace VERP.Edicao
             else if (estado == Estado.Modificar)
             {
                 movimentacao = Objeto as Movimentacao;
-                //MapearTela();
+                MapearTela();
             }
             gitItens.Campos = new List<Campo>();
             gitItens.Campos.Add(new Campo("Descricao", "Descrição", "", TiposDeCampo.Varchar, 50));

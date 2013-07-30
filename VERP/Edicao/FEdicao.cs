@@ -16,9 +16,6 @@ namespace VERP
 {
     public partial class FEdicao : BaseForm, IEdicao
     {
-        protected List<Control> Controles;
-        private List<Label> Labels;
-
         public FCRUD CRUD;
         public Estado estado;
         public ClasseBase Objeto;
@@ -59,7 +56,7 @@ namespace VERP
 
         public Control GetControl(string nome)
         {
-            foreach (Control ctr in Controles)
+            foreach (Control ctr in Controls)
             {
                 if (ctr.Name.ToUpper().Equals(nome.ToUpper()))
                 {
@@ -72,40 +69,6 @@ namespace VERP
         protected virtual void Mapear()
         { }
 
-        //protected void MapearTela()
-        //{
-            //Utils.Edicao.MapearTela(Objeto, this);
-        //}
-
-        private Control MaxWidth()
-        {
-            int w = 0;
-            Control retorno = null;
-            foreach (Control ctr in Controles)
-            {
-                if ((ctr.Width + ctr.Left) > w)
-                {
-                    w = ctr.Width + ctr.Left;
-                    retorno = ctr;
-                }
-            }
-            return retorno;
-        }
-
-        private Control MaxHeight()
-        {
-            int h = 0;
-            Control retorno = null;
-            foreach (Control ctr in Controles)
-            {
-                if ((ctr.Width + ctr.Top) > h)
-                {
-                    h = (ctr.Height + ctr.Top);
-                    retorno = ctr;
-                }
-            }
-            return retorno;
-        }
 
         private void FEdicao_Load(object sender, EventArgs e)
         {
@@ -162,9 +125,9 @@ namespace VERP
             {
                 this.Size = new Size(screenWidth, screenHeight);
             }
-            Controls.Add(pnlGeral);
+            Controls.Add(pnlGeral);*/
 
-            this.Text = "Inserção/Edição de " + CRUD.tabela.Descricao;*/
+            this.Text = "Inserção/Edição de " + CRUD.tabela.Descricao;
         }
 
         public void tbx_Leave(object sender, EventArgs e)
@@ -219,11 +182,7 @@ namespace VERP
 
         private void FEdicao_Shown(object sender, EventArgs e)
         {
-            if (Controles == null)
-            {
-                return;
-            }
-            foreach (Control ctr in Controles)
+            foreach (Control ctr in Controls)
             {
                 if (ctr is cmpEdicao)
                 {
@@ -231,9 +190,9 @@ namespace VERP
                 }
             }
 
-            if (Controles != null && Controles.Count > 0)
+            if (Controls != null && Controls.Count > 0)
             {
-                Controles[0].Focus();
+                Controls[0].Focus();
             }
         }
 

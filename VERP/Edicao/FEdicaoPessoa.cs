@@ -20,7 +20,7 @@ namespace VERP.Edicao
             InitializeComponent();
         }
 
-        protected void Gravar()
+        protected override void Gravar()
         {
             if (estado == Estado.Inserir)
             {
@@ -69,9 +69,19 @@ namespace VERP.Edicao
             this.Close();
         }
 
+        protected override void Mapear()
+        {
+            //
+        }
+
+        private void MapearTela()
+        {
+            //
+        }
+
         private void FEdicaoPessoa_Shown(object sender, EventArgs e)
         {
-            foreach (Control ctr in Controles)
+            foreach (Control ctr in Controls)
             {
                 if (ctr is TextBox)
                 {
@@ -86,7 +96,7 @@ namespace VERP.Edicao
             else if (estado == Estado.Modificar)
             {
                 pessoa = Objeto as Pessoa;
-                //MapearTela();
+                MapearTela();
             }
 
             cbxCliente.Checked = (DB.GetInstance().ClienteRepo.GetByPessoa(pessoa) != null);

@@ -21,7 +21,7 @@ namespace VERP.Edicao
 
         private FormaDePagamento forma;
 
-        protected void Gravar()
+        protected override void Gravar()
         {
             if (estado == Estado.Inserir)
             {
@@ -35,11 +35,26 @@ namespace VERP.Edicao
             this.Close();
         }
 
+        protected override void Mapear()
+        {
+            forma.Descricao = tbxDescricao.Text;
+            forma.LancaCR = cbxLancaCR.Checked;
+        }
+
+        private void MapearTela()
+        {
+            tbxDescricao.Text = forma.Descricao;
+            cbxLancaCR.Checked = forma.LancaCR;
+        }
+
         private void FEdicaoFormaDePagamento_Shown(object sender, EventArgs e)
         {
-            foreach (Control ctr in Controles)
+            foreach (Control ctr in Controls)
             {
-                ((TextBox)ctr).Clear();
+                if (ctr is TextBox)
+                {
+                    ((TextBox)ctr).Clear();
+                }
             }
             if (estado == Estado.Inserir)
             {
@@ -49,8 +64,13 @@ namespace VERP.Edicao
             else if (estado == Estado.Modificar)
             {
                 forma = Objeto as FormaDePagamento;
-                //MapearTela();
+                MapearTela();
             }
+        }
+
+        private void FEdicaoFormaDePagamento_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

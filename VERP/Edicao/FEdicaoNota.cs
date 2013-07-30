@@ -22,7 +22,7 @@ namespace QIERP.Edicao
         private NotaFiscal nota;
         public bool importacao;
 
-        protected void Gravar()
+        protected override void Gravar()
         {
             if (estado == Estado.Inserir)
             {
@@ -36,16 +36,24 @@ namespace QIERP.Edicao
             this.Close();
         }
 
+        protected override void Mapear()
+        {
+            nota.Numero = tbxNumero.Text;
+        }
+
+        private void MapearTela()
+        {
+            tbxNumero.Text = nota.Numero;
+            tbxVenda.Text = nota.Pedido.ToString();
+        }
+
         private void FEdicaoNota_Shown(object sender, EventArgs e)
         {
-            foreach (Control ctr in Controles)
+            foreach (Control ctr in Controls)
             {
-                try
+                if (ctr is TextBox)
                 {
                     ((TextBox)ctr).Clear();
-                }
-                catch
-                {
                 }
             }
             if (estado == Estado.Inserir && (!this.importacao))
@@ -56,7 +64,7 @@ namespace QIERP.Edicao
             else if (estado == Estado.Modificar || this.importacao)
             {
                 nota = Objeto as NotaFiscal;
-                //MapearTela();
+                MapearTela();
             }
         }
     }

@@ -57,14 +57,11 @@ namespace QIERP.Edicao
 
         private void FEdicaoCP_Shown(object sender, EventArgs e)
         {
-            foreach (Control ctr in Controles)
+            foreach (Control ctr in Controls)
             {
-                try
+                if (ctr is TextBox)
                 {
                     ((TextBox)ctr).Clear();
-                }
-                catch
-                {
                 }
             }
             if (estado == Estado.Inserir)

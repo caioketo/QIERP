@@ -127,7 +127,10 @@ namespace VERP
             }
             Controls.Add(pnlGeral);*/
 
-            this.Text = "Inserção/Edição de " + CRUD.tabela.Descricao;
+            if (CRUD != null)
+            {
+                this.Text = "Inserção/Edição de " + CRUD.tabela.Descricao;
+            }
         }
 
         public void tbx_Leave(object sender, EventArgs e)

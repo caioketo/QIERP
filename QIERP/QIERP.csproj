@@ -463,7 +463,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VERPDatabase\QIERPDatabase.csproj">
+    <ProjectReference Include="..\QIERPDatabase\QIERPDatabase.csproj">
       <Project>{5b12e237-ca0e-49a0-9b50-d6ecee97545c}</Project>
       <Name>QIERPDatabase</Name>
     </ProjectReference>

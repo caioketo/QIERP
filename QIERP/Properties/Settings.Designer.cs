@@ -25,7 +25,7 @@ namespace QIERP.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=127.0.0.1\\\\SQLEXPRESS;Database=qierp;User Id=sa;Password=vd7887;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=127.0.0.1\\\\SQLSERVER;Database=qierp;User Id=sa;Password=vd001989;")]
         public string ConnectionStr {
             get {
                 return ((string)(this["ConnectionStr"]));

@@ -5,15 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using VERP.Edicao;
-using VERP.Utils;
+using QIERP.Edicao;
+using QIERP.Utils;
 using System.Data.Entity;
 using System.Linq;
-using VERPDatabase;
+using QIERPDatabase;
 
-namespace VERP.CRUD
+namespace QIERP.CRUD
 {
-    public partial class FCRUDCondicaoDePagamento : VERP.FCRUD
+    public partial class FCRUDCondicaoDePagamento : QIERP.FCRUD
     {
         protected override void GetRecords()
         {

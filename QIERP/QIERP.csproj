@@ -49,10 +49,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>466DB0827ADB22F6614D4481D93E3C9B495E779D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>CA225BC62FEC9DBCF219F1317F3083A91DE1D799</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VERP_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>QIERP_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -436,6 +436,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QIERP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

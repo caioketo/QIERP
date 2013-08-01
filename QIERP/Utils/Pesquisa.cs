@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERPDatabase.Repositorios;
-using VERPDatabase.Classes;
+using QIERPDatabase.Repositorios;
+using QIERPDatabase.Classes;
 
-namespace VERP.Utils
+namespace QIERP.Utils
 {
     public partial class Pesquisa : UserControl 
     {

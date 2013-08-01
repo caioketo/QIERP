@@ -6,14 +6,14 @@ using System.Linq;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using VERPDatabase;
-using VERPDatabase.Classes;
-using VERP.Utils;
+using QIERPDatabase;
+using QIERPDatabase.Classes;
+using QIERP.Utils;
 using QIERP.Edicao;
 
 namespace QIERP.CRUD
 {
-    public partial class FCRUDCP : VERP.FCRUD
+    public partial class FCRUDCP : QIERP.FCRUD
     {
         protected override void GetRecords()
         {

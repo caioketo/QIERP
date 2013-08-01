@@ -5,14 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using VERP.Classes;
-using VERP.Utils;
-using VERPDatabase;
-using VERPDatabase.Classes;
+using QIERP.Classes;
+using QIERP.Utils;
+using QIERPDatabase;
+using QIERPDatabase.Classes;
+using QIERP.CRUD;
 
-namespace VERP.Edicao
+namespace QIERP.Edicao
 {
-    public partial class FEdicaoMovimentacao : VERP.FEdicao
+    public partial class FEdicaoMovimentacao : QIERP.FEdicao
     {
         public FEdicaoMovimentacao()
         {
@@ -133,7 +134,11 @@ namespace VERP.Edicao
 
         private void FEdicaoMovimentacao_Load(object sender, EventArgs e)
         {
-            
+            pesClienteOuFornecedor.CRUD = new FCRUDPessoa();
+            pesClienteOuFornecedor.Campo = "Documento";
+            pesClienteOuFornecedor.CampoDisplay = "Nome";
+            pesClienteOuFornecedor.Titulo = "Cliente/Fornecedor";
+            pesClienteOuFornecedor.Repo = Util.GetRepo("Pessoas");
         }
 
         public void AddItem(object[] Objeto)

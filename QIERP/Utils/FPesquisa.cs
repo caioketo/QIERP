@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace QIERP.Utils
 {
-    public partial class FPesquisa : VERP.Utils.BaseForm
+    public partial class FPesquisa : QIERP.Utils.BaseForm
     {
         public FPesquisa()
         {

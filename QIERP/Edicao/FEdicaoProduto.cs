@@ -6,12 +6,12 @@ using System.Drawing;
 using System.Text;
 using System.Linq;
 using System.Windows.Forms;
-using VERP.Classes;
-using VERP.Utils;
-using VERPDatabase;
-using VERPDatabase.Classes;
+using QIERP.Classes;
+using QIERP.Utils;
+using QIERPDatabase;
+using QIERPDatabase.Classes;
 
-namespace VERP
+namespace QIERP
 {
     public partial class FEdicaoProduto : FEdicao
     {

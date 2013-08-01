@@ -5,13 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using VERP.Classes;
-using VERPDatabase;
-using VERPDatabase.Classes;
+using QIERP.Classes;
+using QIERPDatabase;
+using QIERPDatabase.Classes;
 
-namespace VERP.Edicao
+namespace QIERP.Edicao
 {
-    public partial class FEdicaoUF : VERP.FEdicao
+    public partial class FEdicaoUF : QIERP.FEdicao
     {
         private UF uf;
 

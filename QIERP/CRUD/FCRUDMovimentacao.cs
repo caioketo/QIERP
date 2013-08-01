@@ -6,14 +6,14 @@ using System.Linq;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using VERPDatabase;
-using VERP.Utils;
-using VERPDatabase.Classes;
-using VERP.Edicao;
+using QIERPDatabase;
+using QIERP.Utils;
+using QIERPDatabase.Classes;
+using QIERP.Edicao;
 
-namespace VERP.CRUD
+namespace QIERP.CRUD
 {
-    public partial class FCRUDMovimentacao : VERP.FCRUD
+    public partial class FCRUDMovimentacao : QIERP.FCRUD
     {
         public FCRUDMovimentacao()
         {

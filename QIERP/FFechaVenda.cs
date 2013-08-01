@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERPDatabase;
-using VERP.Utils;
-using VERP.CRUD;
-using VERPDatabase.Classes;
+using QIERPDatabase;
+using QIERP.Utils;
+using QIERP.CRUD;
+using QIERPDatabase.Classes;
 
-namespace VERP
+namespace QIERP
 {
 
     public partial class FFechaVenda : BaseForm

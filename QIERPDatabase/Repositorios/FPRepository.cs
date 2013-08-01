@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity;
 using System.Threading.Tasks;
-using VERPDatabase.Repositorios;
+using QIERPDatabase.Repositorios;
 using System.Data;
 
-namespace VERPDatabase
+namespace QIERPDatabase
 {
     public class FPRepository : ExtRepository, IRepository<FormaDePagamento>
     {

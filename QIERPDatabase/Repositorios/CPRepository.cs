@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VERPDatabase.Classes;
+using QIERPDatabase.Classes;
 
-namespace VERPDatabase.Repositorios
+namespace QIERPDatabase.Repositorios
 {
     public class CPRepository : ExtRepository, IRepository<ContaPagar>
     {

@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using VERP.Edicao;
-using VERP.Utils;
-using VERPDatabase;
+using QIERP.Edicao;
+using QIERP.Utils;
+using QIERPDatabase;
 
-namespace VERP.CRUD
+namespace QIERP.CRUD
 {
     public partial class FCRUDFormaDePagamento : FCRUD
     {

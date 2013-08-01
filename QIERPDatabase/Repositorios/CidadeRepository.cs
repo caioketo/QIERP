@@ -4,9 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VERPDatabase.Classes;
+using QIERPDatabase.Classes;
 
-namespace VERPDatabase.Repositorios
+namespace QIERPDatabase.Repositorios
 {
     public class CidadeRepository : ExtRepository, IRepository<Cidade>
     {

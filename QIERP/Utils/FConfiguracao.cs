@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QIERP.Properties;
 
-namespace VERP.Utils
+namespace QIERP.Utils
 {
     public partial class FConfiguracao : Form
     {

@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERPDatabase.Classes;
+using QIERPDatabase.Classes;
 
-namespace VERP.Utils
+namespace QIERP.Utils
 {
     public delegate void AddItem(object[] item);
     public delegate void RemoveItem(object item);

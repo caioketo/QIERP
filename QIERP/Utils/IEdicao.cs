@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERPDatabase.Classes;
-using VERPDatabase.Repositorios;
+using QIERPDatabase.Classes;
+using QIERPDatabase.Repositorios;
 
-namespace VERP.Utils
+namespace QIERP.Utils
 {
     public interface IEdicao
     {

@@ -1,4 +1,4 @@
-﻿namespace VERP
+﻿namespace QIERP
 {
     partial class FVenda
     {
@@ -188,7 +188,7 @@
             // 
             // itemBindingSource
             // 
-            this.itemBindingSource.DataSource = typeof(VERPDatabase.Item);
+            this.itemBindingSource.DataSource = typeof(QIERPDatabase.Item);
             // 
             // FVenda
             // 

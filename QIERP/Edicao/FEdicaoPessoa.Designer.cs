@@ -1,4 +1,4 @@
-﻿namespace VERP.Edicao
+﻿namespace QIERP.Edicao
 {
     partial class FEdicaoPessoa
     {
@@ -36,8 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbxNomeFantasia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.edcTelefone = new VERP.Utils.cmpEdicao();
-            this.edcEndereco = new VERP.Utils.cmpEdicao();
+            this.edcTelefone = new QIERP.Utils.cmpEdicao();
+            this.edcEndereco = new QIERP.Utils.cmpEdicao();
             this.SuspendLayout();
             // 
             // cbxCliente
@@ -112,7 +112,7 @@
             // 
             // edcTelefone
             // 
-            this.edcTelefone.estado = VERP.Classes.Estado.Inserir;
+            this.edcTelefone.estado = QIERP.Classes.Estado.Inserir;
             this.edcTelefone.Location = new System.Drawing.Point(16, 56);
             this.edcTelefone.Name = "edcTelefone";
             this.edcTelefone.Objeto = null;
@@ -123,7 +123,7 @@
             // 
             // edcEndereco
             // 
-            this.edcEndereco.estado = VERP.Classes.Estado.Inserir;
+            this.edcEndereco.estado = QIERP.Classes.Estado.Inserir;
             this.edcEndereco.Location = new System.Drawing.Point(276, 56);
             this.edcEndereco.Name = "edcEndereco";
             this.edcEndereco.Objeto = null;

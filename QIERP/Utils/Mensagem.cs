@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VERP.Utils
+namespace QIERP.Utils
 {
     public class Mensagem
     {
@@ -39,7 +39,7 @@ namespace VERP.Utils
                 botoes = MessageBoxButtons.OK;
             }
 
-            return MessageBox.Show(BuscarMensagem(codigo, param1, param2), "VERP", botoes, icone);
+            return MessageBox.Show(BuscarMensagem(codigo, param1, param2), "QIERP", botoes, icone);
         }
 
         protected static string BuscarMensagem(int codigo, string param1 = "", string param2 = "")

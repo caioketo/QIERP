@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERPDatabase;
+using QIERPDatabase;
 using QIERP.Properties;
 
-namespace VERP
+namespace QIERP
 {
     public partial class Splash : Form
     {

@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VERPDatabase.Classes;
+using QIERPDatabase.Classes;
+using System.Data.Entity.Infrastructure;
 
-namespace VERPDatabase
+namespace QIERPDatabase
 {
-    public class VerpContext : DbContext
+    public class QIERPContext : DbContext
     {
         public static string CreateConnectionString()
         {
-            return "Server=127.0.0.1\\SQLSERVER;Database=verp;User Id=sa;Password=vd001989;";
+            return "Server=127.0.0.1\\SQLSERVER;Database=QIERP;User Id=sa;Password=vd001989;";
         }
 
-        public VerpContext() : base() { }
-        public VerpContext(string nameOrConnectionString) : base(nameOrConnectionString) { }
+        public QIERPContext() : base() { }
+        public QIERPContext(string nameOrConnectionString) : base(nameOrConnectionString) { }
 
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<FormaDePagamento> FormasDePagamento { get; set; }
@@ -43,7 +43,7 @@ namespace VERPDatabase
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer<VerpContext>(new DropCreateDatabaseIfModelChanges<VerpContext>());
+            Database.SetInitializer<QIERPContext>(new DropCreateDatabaseIfModelChanges<QIERPContext>());
             Database.DefaultConnectionFactory = new SqlConnectionFactory("System.Data.SqlServer");
             base.OnModelCreating(modelBuilder);
         }

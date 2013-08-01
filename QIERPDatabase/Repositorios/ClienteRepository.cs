@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity;
 using System.Threading.Tasks;
-using VERPDatabase.Classes;
+using QIERPDatabase.Classes;
 
-namespace VERPDatabase.Repositorios
+namespace QIERPDatabase.Repositorios
 {
     public class ClienteRepository : ExtRepository, IRepository<Cliente>
     {

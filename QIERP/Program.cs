@@ -4,13 +4,13 @@ using System.Linq;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERPDatabase;
+using QIERPDatabase;
 using System.ComponentModel;
 using System.Threading;
 using QIERP.Properties;
-using VERP.Utils;
+using QIERP.Utils;
 
-namespace VERP
+namespace QIERP
 {
     static class Program
     {

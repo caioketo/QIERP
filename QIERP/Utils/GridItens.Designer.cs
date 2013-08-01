@@ -1,4 +1,4 @@
-﻿namespace VERP.Utils
+﻿namespace QIERP.Utils
 {
     partial class GridItens
     {
@@ -31,7 +31,7 @@
             this.dgvItens = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.pesPesquisa = new VERP.Utils.Pesquisa();
+            this.pesPesquisa = new QIERP.Utils.Pesquisa();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.SuspendLayout();
             // 

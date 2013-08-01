@@ -1,4 +1,4 @@
-﻿namespace VERP
+﻿namespace QIERP
 {
     partial class FConsVenda
     {
@@ -108,7 +108,7 @@
             // 
             // vendaBindingSource
             // 
-            this.vendaBindingSource.DataSource = typeof(VERPDatabase.Venda);
+            this.vendaBindingSource.DataSource = typeof(QIERPDatabase.Venda);
             this.vendaBindingSource.DataSourceChanged += new System.EventHandler(this.vendaBindingSource_DataSourceChanged);
             this.vendaBindingSource.PositionChanged += new System.EventHandler(this.vendaBindingSource_PositionChanged);
             // 
@@ -162,7 +162,7 @@
             // 
             // itemBindingSource
             // 
-            this.itemBindingSource.DataSource = typeof(VERPDatabase.Item);
+            this.itemBindingSource.DataSource = typeof(QIERPDatabase.Item);
             // 
             // dataGridView3
             // 
@@ -207,7 +207,7 @@
             // 
             // pagamentoBindingSource
             // 
-            this.pagamentoBindingSource.DataSource = typeof(VERPDatabase.Pagamento);
+            this.pagamentoBindingSource.DataSource = typeof(QIERPDatabase.Pagamento);
             // 
             // FConsVenda
             // 

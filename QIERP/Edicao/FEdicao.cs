@@ -4,15 +4,15 @@ using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERPDatabase.Classes;
-using VERP.Classes;
-using VERP.Utils;
-using VERPDatabase;
+using QIERPDatabase.Classes;
+using QIERP.Classes;
+using QIERP.Utils;
+using QIERPDatabase;
 using System.Collections.Generic;
 using System.Linq;
-using VERPDatabase.Repositorios;
+using QIERPDatabase.Repositorios;
 
-namespace VERP
+namespace QIERP
 {
     public partial class FEdicao : BaseForm, IEdicao
     {

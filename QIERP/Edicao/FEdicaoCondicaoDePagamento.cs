@@ -5,12 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using VERP.Classes;
-using VERPDatabase;
+using QIERP.Classes;
+using QIERPDatabase;
+using QIERP.CRUD;
+using QIERP.Utils;
 
-namespace VERP.Edicao
+namespace QIERP.Edicao
 {
-    public partial class FEdicaoCondicaoDePagamento : VERP.FEdicao
+    public partial class FEdicaoCondicaoDePagamento : QIERP.FEdicao
     {
         public FEdicaoCondicaoDePagamento()
         {
@@ -68,6 +70,15 @@ namespace VERP.Edicao
                 condicao = Objeto as CondicaoDePagamento;
                 MapearTela();
             }
+        }
+
+        private void FEdicaoCondicaoDePagamento_Load(object sender, EventArgs e)
+        {
+            pesFormaDePagamento.CRUD = new FCRUDFormaDePagamento();
+            pesFormaDePagamento.Campo = "Descricao";
+            pesFormaDePagamento.CampoDisplay = "Descricao";
+            pesFormaDePagamento.Titulo = "Forma de Pagamento";
+            pesFormaDePagamento.Repo = Util.GetRepo("FormasDePagamento");
         }
     }
 }

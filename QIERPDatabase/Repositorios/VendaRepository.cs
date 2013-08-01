@@ -4,9 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VERPDatabase.Classes;
+using QIERPDatabase.Classes;
 
-namespace VERPDatabase
+namespace QIERPDatabase
 {
     public class VendaRepository : IRepository<Venda>
     {

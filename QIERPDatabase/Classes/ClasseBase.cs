@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VERPDatabase.Classes
+namespace QIERPDatabase.Classes
 {
     public class ClasseBase
     {

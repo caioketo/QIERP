@@ -1,4 +1,4 @@
-﻿namespace VERP.Edicao
+﻿namespace QIERP.Edicao
 {
     partial class FEdicaoFormaDePagamento
     {

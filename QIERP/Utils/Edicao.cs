@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERPDatabase;
-using VERPDatabase.Classes;
+using QIERPDatabase;
+using QIERPDatabase.Classes;
 
-namespace VERP.Utils
+namespace QIERP.Utils
 {
     public class Edicao
     {

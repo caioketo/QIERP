@@ -5,7 +5,7 @@ using System.Text;
 using System.Data.Entity;
 using System.Threading.Tasks;
 
-namespace VERPDatabase
+namespace QIERPDatabase
 {
     public class CondicaoRepository : IRepository<CondicaoDePagamento>
     {

@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERPDatabase;
-using VERPDatabase.Classes;
-using VERP.Classes;
-using VERP.Utils;
+using QIERPDatabase;
+using QIERPDatabase.Classes;
+using QIERP.Classes;
+using QIERP.Utils;
 
-namespace VERP
+namespace QIERP
 {
     public partial class FCRUD : BaseForm
     {

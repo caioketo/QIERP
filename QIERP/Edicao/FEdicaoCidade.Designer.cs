@@ -1,4 +1,4 @@
-﻿namespace VERP.Edicao
+﻿namespace QIERP.Edicao
 {
     partial class FEdicaoCidade
     {
@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tbxDescricao = new System.Windows.Forms.TextBox();
-            this.pesEstado = new VERP.Utils.Pesquisa();
+            this.pesEstado = new QIERP.Utils.Pesquisa();
             this.SuspendLayout();
             // 
             // label1

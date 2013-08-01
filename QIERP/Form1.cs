@@ -9,11 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QIERP.CRUD;
-using VERP.CRUD;
-using VERP.Utils;
-using VERPDatabase;
+using QIERP.Utils;
+using QIERPDatabase;
 
-namespace VERP
+namespace QIERP
 {
     public partial class Form1 : BaseForm
     {

@@ -1,4 +1,4 @@
-﻿namespace VERP.CRUD
+﻿namespace QIERP.CRUD
 {
     partial class FCRUDCidade
     {

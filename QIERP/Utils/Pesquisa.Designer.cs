@@ -1,4 +1,4 @@
-﻿namespace VERP.Utils
+﻿namespace QIERP.Utils
 {
     partial class Pesquisa
     {

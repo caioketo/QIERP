@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pesquisa1 = new VERP.Utils.Pesquisa();
+            this.pesquisa1 = new QIERP.Utils.Pesquisa();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
@@ -98,7 +98,7 @@
 
         #endregion
 
-        private VERP.Utils.Pesquisa pesquisa1;
+        private QIERP.Utils.Pesquisa pesquisa1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.Button btnFechar;

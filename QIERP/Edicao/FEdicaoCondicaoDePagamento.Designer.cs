@@ -1,4 +1,4 @@
-﻿namespace VERP.Edicao
+﻿namespace QIERP.Edicao
 {
     partial class FEdicaoCondicaoDePagamento
     {
@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tbxDescricao = new System.Windows.Forms.TextBox();
-            this.pesFormaDePagamento = new VERP.Utils.Pesquisa();
+            this.pesFormaDePagamento = new QIERP.Utils.Pesquisa();
             this.tbxDiasVencimento = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -94,6 +94,7 @@
             this.Controls.Add(this.tbxDescricao);
             this.Controls.Add(this.label1);
             this.Name = "FEdicaoCondicaoDePagamento";
+            this.Load += new System.EventHandler(this.FEdicaoCondicaoDePagamento_Load);
             this.Shown += new System.EventHandler(this.FEdicaoCondicaoDePagamento_Shown);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.tbxDescricao, 0);

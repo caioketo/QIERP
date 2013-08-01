@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERP.Utils;
-using VERPDatabase;
+using QIERP.Utils;
+using QIERPDatabase;
 
-namespace VERP
+namespace QIERP
 {
     public partial class FConsVenda : BaseForm
     {

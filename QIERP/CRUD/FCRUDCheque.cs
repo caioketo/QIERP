@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using QIERP.Edicao;
-using VERP.Utils;
-using VERPDatabase;
-using VERPDatabase.Classes;
+using QIERP.Utils;
+using QIERPDatabase;
+using QIERPDatabase.Classes;
 
 namespace QIERP.CRUD
 {
-    public partial class FCRUDCheque : VERP.FCRUD
+    public partial class FCRUDCheque : QIERP.FCRUD
     {
         protected override void GetRecords()
         {

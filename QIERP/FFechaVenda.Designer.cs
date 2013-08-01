@@ -1,4 +1,4 @@
-﻿namespace VERP
+﻿namespace QIERP
 {
     partial class FFechaVenda
     {
@@ -44,8 +44,8 @@
             this.pagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pesCliente = new VERP.Utils.Pesquisa();
-            this.pesVendedor = new VERP.Utils.Pesquisa();
+            this.pesCliente = new QIERP.Utils.Pesquisa();
+            this.pesVendedor = new QIERP.Utils.Pesquisa();
             ((System.ComponentModel.ISupportInitialize)(this.formaDePagamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.condicaoDePagamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -95,7 +95,7 @@
             // 
             // formaDePagamentoBindingSource
             // 
-            this.formaDePagamentoBindingSource.DataSource = typeof(VERPDatabase.FormaDePagamento);
+            this.formaDePagamentoBindingSource.DataSource = typeof(QIERPDatabase.FormaDePagamento);
             // 
             // cmbCondicao
             // 
@@ -112,7 +112,7 @@
             // 
             // condicaoDePagamentoBindingSource
             // 
-            this.condicaoDePagamentoBindingSource.DataSource = typeof(VERPDatabase.CondicaoDePagamento);
+            this.condicaoDePagamentoBindingSource.DataSource = typeof(QIERPDatabase.CondicaoDePagamento);
             // 
             // tbxValor
             // 
@@ -172,7 +172,7 @@
             // 
             // pagamentoBindingSource
             // 
-            this.pagamentoBindingSource.DataSource = typeof(VERPDatabase.Pagamento);
+            this.pagamentoBindingSource.DataSource = typeof(QIERPDatabase.Pagamento);
             // 
             // button1
             // 

@@ -4,10 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VERPDatabase.Classes;
-using VERPDatabase.Repositorios;
+using QIERPDatabase.Classes;
+using QIERPDatabase.Repositorios;
 
-namespace VERPDatabase
+namespace QIERPDatabase
 {
     public enum Modo
     {
@@ -48,7 +48,7 @@ namespace VERPDatabase
         public CPRepository CPRepo = new CPRepository();
         public ChequeRepository ChequeRepo = new ChequeRepository();
         public NotaRepository NotaRepo = new NotaRepository();
-        public VerpContext context;
+        public QIERPContext context;
 
 
         public string Error { get; set; }
@@ -77,7 +77,7 @@ namespace VERPDatabase
 
         public DB(string connectionString)
         {
-            context = new VerpContext(connectionString);
+            context = new QIERPContext(connectionString);
             Tabelas.Add(new Tabela("Produtos"));
             Tabelas.Add(new Tabela("FormasDePagamento"));
             Tabelas.Add(new Tabela("CondicoesDePagamento"));

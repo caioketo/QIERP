@@ -6,11 +6,11 @@ using System.Linq;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using VERPDatabase;
-using VERP.Utils;
-using VERP.Classes;
+using QIERPDatabase;
+using QIERP.Utils;
+using QIERP.Classes;
 
-namespace VERP.Edicao
+namespace QIERP.Edicao
 {
     public partial class FEdicaoFormaDePagamento : FEdicao
     {

@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERPDatabase;
-using VERP.Utils;
+using QIERPDatabase;
+using QIERP.Utils;
 
-namespace VERP
+namespace QIERP
 {
     public partial class FVenda : BaseForm
     {

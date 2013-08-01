@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERP.CRUD;
+using QIERP.CRUD;
 using QIERP.Properties;
-using VERPDatabase;
-using VERPDatabase.Classes;
+using QIERPDatabase;
+using QIERPDatabase.Classes;
 
-namespace VERP.Utils
+namespace QIERP.Utils
 {
     public class Util
     {
@@ -109,7 +109,7 @@ namespace VERP.Utils
             return null;
         }
 
-        internal static VERPDatabase.Repositorios.ExtRepository GetRepo(string p)
+        internal static QIERPDatabase.Repositorios.ExtRepository GetRepo(string p)
         {
             switch (p)
             {

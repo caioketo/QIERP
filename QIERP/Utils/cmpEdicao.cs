@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VERP.Classes;
-using VERPDatabase.Repositorios;
-using VERPDatabase.Classes;
+using QIERP.Classes;
+using QIERPDatabase.Repositorios;
+using QIERPDatabase.Classes;
 
-namespace VERP.Utils
+namespace QIERP.Utils
 {
     public partial class cmpEdicao : UserControl, IEdicao
     {

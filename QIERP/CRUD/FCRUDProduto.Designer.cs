@@ -1,4 +1,4 @@
-﻿namespace VERP
+﻿namespace QIERP
 {
     partial class FCRUDProduto
     {

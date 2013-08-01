@@ -1,4 +1,4 @@
-﻿namespace VERP.Edicao
+﻿namespace QIERP.Edicao
 {
     partial class FEdicaoMovimentacao
     {
@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gitItens = new VERP.Utils.GridItens();
+            this.gitItens = new QIERP.Utils.GridItens();
             this.tbxDescricao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbtEntrada = new System.Windows.Forms.RadioButton();
             this.rbtSaida = new System.Windows.Forms.RadioButton();
-            this.pesClienteOuFornecedor = new VERP.Utils.Pesquisa();
+            this.pesClienteOuFornecedor = new QIERP.Utils.Pesquisa();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 

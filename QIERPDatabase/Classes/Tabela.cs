@@ -87,11 +87,11 @@ namespace QIERPDatabase.Classes
                     campo.Obrigatorio = false;
                     Campos.Add(campo);
                     campo = new Campo("Telefone", "Telefone", "", TiposDeCampo.ModelUnico, 50);
-                    campo.TabelaRel = "Telefone";
+                    campo.TabelaRel = "Telefones";
                     campo.MostraGrid = false;
                     Campos.Add(campo);
                     campo = new Campo("Endereco", "Endereço", "", TiposDeCampo.ModelUnico, 50);
-                    campo.TabelaRel = "Endereco";
+                    campo.TabelaRel = "Enderecos";
                     campo.MostraGrid = false;
                     Campos.Add(campo);
                     Descricao = "Pessoas";

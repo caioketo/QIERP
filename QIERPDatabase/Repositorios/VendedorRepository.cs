@@ -91,7 +91,11 @@ namespace QIERPDatabase.Repositorios
 
         public Vendedor GetByPessoa(Pessoa pessoa)
         {
-            Vendedor vendedor = this.GetAll().Where(v => v.Pessoa.Id == pessoa.Id).FirstOrDefault();
+            if (pessoa.Id == -1)
+            {
+                return null;
+            }
+            Vendedor vendedor = this.GetAll().Where(v => v.Pessoa == pessoa).FirstOrDefault();
             return vendedor;
         }
     }

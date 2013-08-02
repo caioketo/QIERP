@@ -65,6 +65,8 @@ namespace QIERP.Edicao
                 uf = Objeto as UF;
                 MapearTela();
             }
+
+            tbxCodigo.Focus();
         }
     }
 }

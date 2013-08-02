@@ -41,7 +41,7 @@
             this.dtpVencimento.Location = new System.Drawing.Point(10, 103);
             this.dtpVencimento.Name = "dtpVencimento";
             this.dtpVencimento.Size = new System.Drawing.Size(265, 20);
-            this.dtpVencimento.TabIndex = 12;
+            this.dtpVencimento.TabIndex = 3;
             // 
             // label3
             // 
@@ -57,7 +57,7 @@
             this.tbxValor.Location = new System.Drawing.Point(10, 63);
             this.tbxValor.Name = "tbxValor";
             this.tbxValor.Size = new System.Drawing.Size(102, 20);
-            this.tbxValor.TabIndex = 10;
+            this.tbxValor.TabIndex = 2;
             // 
             // label2
             // 
@@ -73,7 +73,7 @@
             this.tbxDescricao.Location = new System.Drawing.Point(10, 23);
             this.tbxDescricao.Name = "tbxDescricao";
             this.tbxDescricao.Size = new System.Drawing.Size(265, 20);
-            this.tbxDescricao.TabIndex = 8;
+            this.tbxDescricao.TabIndex = 1;
             // 
             // label1
             // 

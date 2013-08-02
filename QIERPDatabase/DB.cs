@@ -65,6 +65,10 @@ namespace QIERPDatabase
 
         public Tabela GetTabela(string nome)
         {
+            if (nome.Substring(nome.Length - 1).Equals("s"))
+            {
+                nome = nome.Substring(0, nome.Length - 1);
+            }
             foreach (Tabela tab in Tabelas)
             {
                 if (tab.Nome.ToUpper().Equals(nome.ToUpper()))

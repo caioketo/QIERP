@@ -48,7 +48,7 @@
             this.tbxNumero.Location = new System.Drawing.Point(15, 24);
             this.tbxNumero.Name = "tbxNumero";
             this.tbxNumero.Size = new System.Drawing.Size(125, 20);
-            this.tbxNumero.TabIndex = 2;
+            this.tbxNumero.TabIndex = 1;
             // 
             // tbxVenda
             // 
@@ -57,7 +57,8 @@
             this.tbxVenda.Name = "tbxVenda";
             this.tbxVenda.ReadOnly = true;
             this.tbxVenda.Size = new System.Drawing.Size(125, 20);
-            this.tbxVenda.TabIndex = 4;
+            this.tbxVenda.TabIndex = 2;
+            this.tbxVenda.TabStop = false;
             // 
             // label2
             // 

@@ -147,9 +147,12 @@ namespace QIERP.Utils
             for (var i = 0; i < Controles.Count; i++)
             {
                 adds[i + 1] = Controles[i].Text;
+                Controles[i].Text = "";
             }
                         
-            addItem.Invoke(adds);   
+            addItem.Invoke(adds);
+            pesPesquisa.Reset();
+            pesPesquisa.Focus();
         }
 
         private void button2_Click(object sender, EventArgs e)

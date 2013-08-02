@@ -49,7 +49,7 @@
             this.tbxDescricao.Location = new System.Drawing.Point(16, 30);
             this.tbxDescricao.Name = "tbxDescricao";
             this.tbxDescricao.Size = new System.Drawing.Size(251, 20);
-            this.tbxDescricao.TabIndex = 2;
+            this.tbxDescricao.TabIndex = 1;
             // 
             // pesFormaDePagamento
             // 
@@ -73,7 +73,7 @@
             this.tbxDiasVencimento.Location = new System.Drawing.Point(273, 30);
             this.tbxDiasVencimento.Name = "tbxDiasVencimento";
             this.tbxDiasVencimento.Size = new System.Drawing.Size(59, 20);
-            this.tbxDiasVencimento.TabIndex = 5;
+            this.tbxDiasVencimento.TabIndex = 2;
             // 
             // label2
             // 

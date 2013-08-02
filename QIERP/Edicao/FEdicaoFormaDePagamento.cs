@@ -66,6 +66,8 @@ namespace QIERP.Edicao
                 forma = Objeto as FormaDePagamento;
                 MapearTela();
             }
+
+            tbxDescricao.Focus();
         }
 
         private void FEdicaoFormaDePagamento_Load(object sender, EventArgs e)

@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>CA225BC62FEC9DBCF219F1317F3083A91DE1D799</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>0BEAB85349956B1415E7157EC844BCF89EECC8DF</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>QIERP_TemporaryKey.pfx</ManifestKeyFile>

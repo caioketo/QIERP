@@ -38,7 +38,7 @@
             this.tbxDescricao.Location = new System.Drawing.Point(15, 26);
             this.tbxDescricao.Name = "tbxDescricao";
             this.tbxDescricao.Size = new System.Drawing.Size(388, 20);
-            this.tbxDescricao.TabIndex = 4;
+            this.tbxDescricao.TabIndex = 1;
             // 
             // label1
             // 
@@ -55,7 +55,7 @@
             this.cbxLancaCR.Location = new System.Drawing.Point(15, 53);
             this.cbxLancaCR.Name = "cbxLancaCR";
             this.cbxLancaCR.Size = new System.Drawing.Size(160, 17);
-            this.cbxLancaCR.TabIndex = 5;
+            this.cbxLancaCR.TabIndex = 2;
             this.cbxLancaCR.Text = "Lança no Contas à Receber";
             this.cbxLancaCR.UseVisualStyleBackColor = true;
             // 

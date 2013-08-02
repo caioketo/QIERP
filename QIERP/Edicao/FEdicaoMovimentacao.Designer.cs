@@ -32,8 +32,8 @@
             this.tbxDescricao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtEntrada = new System.Windows.Forms.RadioButton();
             this.rbtSaida = new System.Windows.Forms.RadioButton();
+            this.rbtEntrada = new System.Windows.Forms.RadioButton();
             this.pesClienteOuFornecedor = new QIERP.Utils.Pesquisa();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -47,14 +47,14 @@
             this.gitItens.Location = new System.Drawing.Point(12, 144);
             this.gitItens.Name = "gitItens";
             this.gitItens.Size = new System.Drawing.Size(668, 218);
-            this.gitItens.TabIndex = 2;
+            this.gitItens.TabIndex = 4;
             // 
             // tbxDescricao
             // 
             this.tbxDescricao.Location = new System.Drawing.Point(15, 26);
             this.tbxDescricao.Name = "tbxDescricao";
             this.tbxDescricao.Size = new System.Drawing.Size(388, 20);
-            this.tbxDescricao.TabIndex = 6;
+            this.tbxDescricao.TabIndex = 1;
             // 
             // label1
             // 
@@ -72,9 +72,20 @@
             this.groupBox1.Location = new System.Drawing.Point(420, 9);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(144, 37);
-            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo";
+            // 
+            // rbtSaida
+            // 
+            this.rbtSaida.AutoSize = true;
+            this.rbtSaida.Location = new System.Drawing.Point(84, 14);
+            this.rbtSaida.Name = "rbtSaida";
+            this.rbtSaida.Size = new System.Drawing.Size(54, 17);
+            this.rbtSaida.TabIndex = 1;
+            this.rbtSaida.TabStop = true;
+            this.rbtSaida.Text = "Saída";
+            this.rbtSaida.UseVisualStyleBackColor = true;
             // 
             // rbtEntrada
             // 
@@ -87,17 +98,6 @@
             this.rbtEntrada.TabStop = true;
             this.rbtEntrada.Text = "Entrada";
             this.rbtEntrada.UseVisualStyleBackColor = true;
-            // 
-            // rbtSaida
-            // 
-            this.rbtSaida.AutoSize = true;
-            this.rbtSaida.Location = new System.Drawing.Point(84, 14);
-            this.rbtSaida.Name = "rbtSaida";
-            this.rbtSaida.Size = new System.Drawing.Size(54, 17);
-            this.rbtSaida.TabIndex = 1;
-            this.rbtSaida.TabStop = true;
-            this.rbtSaida.Text = "Saída";
-            this.rbtSaida.UseVisualStyleBackColor = true;
             // 
             // pesClienteOuFornecedor
             // 
@@ -112,7 +112,7 @@
             this.pesClienteOuFornecedor.Objeto = null;
             this.pesClienteOuFornecedor.Repo = null;
             this.pesClienteOuFornecedor.Size = new System.Drawing.Size(549, 51);
-            this.pesClienteOuFornecedor.TabIndex = 8;
+            this.pesClienteOuFornecedor.TabIndex = 3;
             this.pesClienteOuFornecedor.Tamanho = new System.Drawing.Size(0, 0);
             this.pesClienteOuFornecedor.Titulo = null;
             // 

@@ -41,7 +41,7 @@ namespace QIERP.Utils
             if (venda != null)
             {
                 tbxPedido.ReadOnly = true;
-                tbxPedido.Text = venda.Pedido.ToString() + " - " + venda.Total + " - " + venda.ClienteNome;
+                tbxPedido.Text = venda.Pedido.ToString() + " - " + venda.Total.ToString("c") + " - " + venda.ClienteNome;
                 tbxPedido.BackColor = Color.LightGray;
                 resultado = venda;
             }

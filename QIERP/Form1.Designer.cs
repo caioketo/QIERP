@@ -32,6 +32,7 @@
             this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notasFiscaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formasDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,7 @@
             this.contasÀReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasÀPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chequesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notasFiscaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,12 +55,12 @@
             this.pagamentosToolStripMenuItem,
             this.movimentaçõesToolStripMenuItem,
             this.clientesVendedoresToolStripMenuItem,
-            this.financeiroToolStripMenuItem});
+            this.financeiroToolStripMenuItem,
+            this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(608, 24);
             this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // vendaToolStripMenuItem
@@ -85,6 +86,13 @@
             this.consultaVendaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.consultaVendaToolStripMenuItem.Text = "Consulta Venda";
             this.consultaVendaToolStripMenuItem.Click += new System.EventHandler(this.consultaVendaToolStripMenuItem_Click);
+            // 
+            // notasFiscaisToolStripMenuItem
+            // 
+            this.notasFiscaisToolStripMenuItem.Name = "notasFiscaisToolStripMenuItem";
+            this.notasFiscaisToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.notasFiscaisToolStripMenuItem.Text = "Notas Fiscais";
+            this.notasFiscaisToolStripMenuItem.Click += new System.EventHandler(this.notasFiscaisToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
@@ -161,12 +169,12 @@
             this.chequesToolStripMenuItem.Text = "Cheques";
             this.chequesToolStripMenuItem.Click += new System.EventHandler(this.chequesToolStripMenuItem_Click);
             // 
-            // notasFiscaisToolStripMenuItem
+            // sairToolStripMenuItem
             // 
-            this.notasFiscaisToolStripMenuItem.Name = "notasFiscaisToolStripMenuItem";
-            this.notasFiscaisToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.notasFiscaisToolStripMenuItem.Text = "Notas Fiscais";
-            this.notasFiscaisToolStripMenuItem.Click += new System.EventHandler(this.notasFiscaisToolStripMenuItem_Click);
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Text = "Sair";
             // 
             // Form1
             // 
@@ -176,7 +184,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "QIERP - Gestão de Negócio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -203,6 +211,7 @@
         private System.Windows.Forms.ToolStripMenuItem contasÀPagarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chequesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem notasFiscaisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
     }
 }
 

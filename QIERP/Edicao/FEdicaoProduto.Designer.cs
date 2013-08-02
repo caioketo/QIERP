@@ -46,7 +46,7 @@
             this.tbxDescricao.Location = new System.Drawing.Point(16, 64);
             this.tbxDescricao.Name = "tbxDescricao";
             this.tbxDescricao.Size = new System.Drawing.Size(439, 20);
-            this.tbxDescricao.TabIndex = 1;
+            this.tbxDescricao.TabIndex = 2;
             // 
             // label1
             // 
@@ -72,7 +72,8 @@
             this.tbxCodigo.Location = new System.Drawing.Point(16, 25);
             this.tbxCodigo.Name = "tbxCodigo";
             this.tbxCodigo.Size = new System.Drawing.Size(142, 20);
-            this.tbxCodigo.TabIndex = 3;
+            this.tbxCodigo.TabIndex = 1;
+            this.tbxCodigo.TextChanged += new System.EventHandler(this.tbxCodigo_TextChanged);
             // 
             // label3
             // 
@@ -89,7 +90,7 @@
             this.tbxQuantidade.Location = new System.Drawing.Point(16, 103);
             this.tbxQuantidade.Name = "tbxQuantidade";
             this.tbxQuantidade.Size = new System.Drawing.Size(70, 20);
-            this.tbxQuantidade.TabIndex = 5;
+            this.tbxQuantidade.TabIndex = 3;
             // 
             // label4
             // 
@@ -106,7 +107,7 @@
             this.tbxCusto.Location = new System.Drawing.Point(92, 103);
             this.tbxCusto.Name = "tbxCusto";
             this.tbxCusto.Size = new System.Drawing.Size(70, 20);
-            this.tbxCusto.TabIndex = 7;
+            this.tbxCusto.TabIndex = 4;
             // 
             // label5
             // 
@@ -123,7 +124,7 @@
             this.tbxValor.Location = new System.Drawing.Point(168, 103);
             this.tbxValor.Name = "tbxValor";
             this.tbxValor.Size = new System.Drawing.Size(70, 20);
-            this.tbxValor.TabIndex = 9;
+            this.tbxValor.TabIndex = 5;
             // 
             // FEdicaoProduto
             // 

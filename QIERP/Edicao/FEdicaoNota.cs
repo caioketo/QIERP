@@ -66,6 +66,8 @@ namespace QIERP.Edicao
                 nota = Objeto as NotaFiscal;
                 MapearTela();
             }
+
+            tbxNumero.Focus();
         }
     }
 }

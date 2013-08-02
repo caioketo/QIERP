@@ -69,7 +69,7 @@ namespace QIERP
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void movimentaçõesToolStripMenuItem_Click(object sender, EventArgs e)

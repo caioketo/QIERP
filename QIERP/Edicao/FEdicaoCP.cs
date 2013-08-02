@@ -74,6 +74,8 @@ namespace QIERP.Edicao
                 conta = Objeto as ContaPagar;
                 MapearTela();
             }
+
+            tbxDescricao.Focus();
         }
     }
 }

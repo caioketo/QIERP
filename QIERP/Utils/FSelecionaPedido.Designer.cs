@@ -67,7 +67,7 @@
             this.btnConfirmar.Location = new System.Drawing.Point(203, 47);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirmar.TabIndex = 3;
+            this.btnConfirmar.TabIndex = 1;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
@@ -82,6 +82,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxPedido);
             this.Name = "FSelecionaPedido";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FSelecionaPedido";
             this.ResumeLayout(false);
             this.PerformLayout();

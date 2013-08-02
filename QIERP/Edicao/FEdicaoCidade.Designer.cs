@@ -48,7 +48,7 @@
             this.tbxDescricao.MaxLength = 50;
             this.tbxDescricao.Name = "tbxDescricao";
             this.tbxDescricao.Size = new System.Drawing.Size(343, 20);
-            this.tbxDescricao.TabIndex = 2;
+            this.tbxDescricao.TabIndex = 1;
             // 
             // pesEstado
             // 
@@ -63,7 +63,7 @@
             this.pesEstado.Objeto = null;
             this.pesEstado.Repo = null;
             this.pesEstado.Size = new System.Drawing.Size(343, 51);
-            this.pesEstado.TabIndex = 3;
+            this.pesEstado.TabIndex = 2;
             this.pesEstado.Tamanho = new System.Drawing.Size(0, 0);
             this.pesEstado.Titulo = null;
             // 

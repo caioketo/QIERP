@@ -48,13 +48,16 @@ namespace QIERP.CRUD
 
             foreach (DataGridViewRow row in dgvCRUD.Rows)
             {
-                if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(2)))
+                if (row.Cells[2] != null)
                 {
-                    row.DefaultCellStyle = RedCellStyle;
-                }
-                else if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(4)))
-                {
-                    row.DefaultCellStyle = YellowCellStyle;
+                    if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(2)))
+                    {
+                        row.DefaultCellStyle = RedCellStyle;
+                    }
+                    else if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(4)))
+                    {
+                        row.DefaultCellStyle = YellowCellStyle;
+                    }
                 }
             }
         }
@@ -70,13 +73,16 @@ namespace QIERP.CRUD
 
             foreach (DataGridViewRow row in dgvCRUD.Rows)
             {
-                if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(2)))
+                if (row.Cells[2] != null)
                 {
-                    row.DefaultCellStyle = RedCellStyle;
-                }
-                else if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(4)))
-                {
-                    row.DefaultCellStyle = YellowCellStyle;
+                    if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(2)))
+                    {
+                        row.DefaultCellStyle = RedCellStyle;
+                    }
+                    else if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(4)))
+                    {
+                        row.DefaultCellStyle = YellowCellStyle;
+                    }
                 }
             }
         }

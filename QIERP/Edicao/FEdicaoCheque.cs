@@ -75,6 +75,7 @@ namespace QIERP.Edicao
                 cheque = Objeto as Cheque;
                 MapearTela();
             }
+            tbxBanco.Focus();
         }
 
     }

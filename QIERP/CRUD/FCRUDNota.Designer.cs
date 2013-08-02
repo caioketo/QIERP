@@ -46,6 +46,7 @@
             // 
             // btnImpVenda
             // 
+            this.btnImpVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImpVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnImpVenda.Location = new System.Drawing.Point(487, 12);
             this.btnImpVenda.Name = "btnImpVenda";

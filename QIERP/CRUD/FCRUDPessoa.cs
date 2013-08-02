@@ -48,6 +48,16 @@ namespace QIERP.CRUD
         {
             if (Mensagem.MostrarMsg(30002) == System.Windows.Forms.DialogResult.Yes)
             {
+                Cliente cliente = DB.GetInstance().ClienteRepo.GetByPessoa((Pessoa)bindingSource.Current);
+                if (cliente != null)
+                {
+                    DB.GetInstance().ClienteRepo.Deletar(cliente);
+                }
+                Vendedor vendedor = DB.GetInstance().VendedorRepo.GetByPessoa((Pessoa)bindingSource.Current);
+                if (vendedor != null)
+                {
+                    DB.GetInstance().VendedorRepo.Deletar(vendedor);
+                }
                 DB.GetInstance().PessoaRepo.Deletar((Pessoa)bindingSource.Current);
                 DB.GetInstance().context.SaveChanges();
                 GetRecords();

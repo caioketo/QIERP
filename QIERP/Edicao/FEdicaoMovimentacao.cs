@@ -107,6 +107,7 @@ namespace QIERP.Edicao
             {
                 movimentacao = new Movimentacao();
                 Objeto = movimentacao;
+                pesClienteOuFornecedor.Reset();
             }
             else if (estado == Estado.Modificar)
             {
@@ -130,6 +131,7 @@ namespace QIERP.Edicao
             gitItens.removeItem += RemoveItem;
             gitItens.bindingSource.DataSource = movimentacao.Itens;
             gitItens.onLoad();
+            tbxDescricao.Focus();
         }
 
         private void FEdicaoMovimentacao_Load(object sender, EventArgs e)

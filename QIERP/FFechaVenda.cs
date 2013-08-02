@@ -35,7 +35,6 @@ namespace QIERP
             pesCliente.CampoDisplay = "Nome";
             pesCliente.Titulo = "Cliente";
             pesCliente.Repo = DB.GetInstance().PessoaRepo;
-            pesCliente.Objeto = VendaAtual.Cliente;
             pesCliente.Filter = "Clientes";
             pesCliente.onLoad();
             pesVendedor.CRUD = new FCRUDPessoa();
@@ -43,7 +42,6 @@ namespace QIERP
             pesVendedor.CampoDisplay = "Nome";
             pesVendedor.Titulo = "Vendedor";
             pesVendedor.Repo = DB.GetInstance().PessoaRepo;
-            pesVendedor.Objeto = VendaAtual.Vendedor;
             pesVendedor.onLoad();
 
             CalculaPagto();
@@ -101,6 +99,19 @@ namespace QIERP
             {
                 return;
             }
+
+            if (pesCliente.Objeto == null)
+            {
+                return;
+            }
+
+            if (pesVendedor.Objeto == null)
+            {
+                return;
+            }
+
+            VendaAtual.Cliente = DB.GetInstance().ClienteRepo.GetByPessoa((Pessoa)pesCliente.Objeto);
+            VendaAtual.Vendedor = DB.GetInstance().VendedorRepo.GetByPessoa((Pessoa)pesVendedor.Objeto);
 
             if (!DB.GetInstance().VendaRepo.Inserir(VendaAtual))
             {

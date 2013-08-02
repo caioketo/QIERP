@@ -35,6 +35,14 @@ namespace QIERP.Utils
             }
         }
 
+        public void Reset()
+        {
+            onLoad();
+            tbxPesquisa.Text = "";
+            tbxPesquisa.BackColor = Color.White;
+            Objeto = null;
+        }
+
         public void Selecionar()
         {
             if (Objeto != null)
@@ -52,6 +60,10 @@ namespace QIERP.Utils
 
         public void Procurar()
         {
+            if (tbxPesquisa.Text.Equals(""))
+            {
+                return;
+            }
             Objeto = Repo.GetByText(tbxPesquisa.Text);
             if (Objeto != null)
             {
@@ -114,15 +126,12 @@ namespace QIERP.Utils
             {
                 CRUD.Filter = Filter;
             }
-            if (Titulo != null)
+            if (Titulo == null || Titulo.Equals(""))
             {
-                if (Titulo.Equals(""))
-                {
-                    Titulo = Campo;
-                }
-                lblCampo.Text = Titulo + ":";
-                Objeto = null;
+                Titulo = Campo;
             }
+            lblCampo.Text = Titulo + ":";
+            Objeto = null;
         }
 
         private void tbxPesquisa_Leave(object sender, EventArgs e)

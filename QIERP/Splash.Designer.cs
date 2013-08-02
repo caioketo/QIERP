@@ -29,17 +29,28 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(86, 119);
+            this.label1.Location = new System.Drawing.Point(106, 110);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 76);
+            this.label1.Size = new System.Drawing.Size(242, 76);
             this.label1.TabIndex = 0;
-            this.label1.Text = "SPLASH";
+            this.label1.Text = "QIERP";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(88, 200);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(302, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Sistema inicializando. Por favor aguarde...";
             // 
             // Splash
             // 
@@ -47,6 +58,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 358);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -68,5 +80,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

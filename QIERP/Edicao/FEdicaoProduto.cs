@@ -102,9 +102,16 @@ namespace QIERP
                 produto = Objeto as Produto;
                 MapearTela();
             }
+
+            tbxCodigo.Focus();
         }
 
         private void FEdicaoProduto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxCodigo_TextChanged(object sender, EventArgs e)
         {
 
         }

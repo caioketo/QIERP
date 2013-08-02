@@ -40,7 +40,7 @@
             this.tbxDescricao.MaxLength = 50;
             this.tbxDescricao.Name = "tbxDescricao";
             this.tbxDescricao.Size = new System.Drawing.Size(343, 20);
-            this.tbxDescricao.TabIndex = 4;
+            this.tbxDescricao.TabIndex = 2;
             // 
             // label1
             // 
@@ -57,7 +57,7 @@
             this.tbxCodigo.MaxLength = 2;
             this.tbxCodigo.Name = "tbxCodigo";
             this.tbxCodigo.Size = new System.Drawing.Size(37, 20);
-            this.tbxCodigo.TabIndex = 6;
+            this.tbxCodigo.TabIndex = 1;
             // 
             // label2
             // 

@@ -53,7 +53,7 @@ namespace QIERPDatabase
         {
             get
             {
-                if (Cliente != null)
+                if (Cliente != null && Cliente.Pessoa != null)
                 {
                     return Cliente.Pessoa.Nome;
                 }
@@ -65,7 +65,7 @@ namespace QIERPDatabase
         {
             get
             {
-                if (Vendedor != null)
+                if (Vendedor != null && Vendedor.Pessoa != null)
                 {
                     return Vendedor.Pessoa.Nome;
                 }

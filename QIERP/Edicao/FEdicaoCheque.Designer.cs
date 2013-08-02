@@ -59,7 +59,7 @@
             this.tbxBanco.MaxLength = 3;
             this.tbxBanco.Name = "tbxBanco";
             this.tbxBanco.Size = new System.Drawing.Size(32, 20);
-            this.tbxBanco.TabIndex = 2;
+            this.tbxBanco.TabIndex = 1;
             // 
             // tbxAgencia
             // 
@@ -67,7 +67,7 @@
             this.tbxAgencia.MaxLength = 6;
             this.tbxAgencia.Name = "tbxAgencia";
             this.tbxAgencia.Size = new System.Drawing.Size(57, 20);
-            this.tbxAgencia.TabIndex = 4;
+            this.tbxAgencia.TabIndex = 2;
             // 
             // label2
             // 
@@ -84,7 +84,7 @@
             this.tbxConta.MaxLength = 15;
             this.tbxConta.Name = "tbxConta";
             this.tbxConta.Size = new System.Drawing.Size(141, 20);
-            this.tbxConta.TabIndex = 15;
+            this.tbxConta.TabIndex = 3;
             // 
             // label3
             // 
@@ -101,7 +101,7 @@
             this.tbxNumero.MaxLength = 20;
             this.tbxNumero.Name = "tbxNumero";
             this.tbxNumero.Size = new System.Drawing.Size(248, 20);
-            this.tbxNumero.TabIndex = 17;
+            this.tbxNumero.TabIndex = 4;
             // 
             // label4
             // 
@@ -118,7 +118,7 @@
             this.tbxEmissor.MaxLength = 50;
             this.tbxEmissor.Name = "tbxEmissor";
             this.tbxEmissor.Size = new System.Drawing.Size(374, 20);
-            this.tbxEmissor.TabIndex = 19;
+            this.tbxEmissor.TabIndex = 5;
             // 
             // label5
             // 
@@ -135,7 +135,7 @@
             this.tbxTelefone.MaxLength = 15;
             this.tbxTelefone.Name = "tbxTelefone";
             this.tbxTelefone.Size = new System.Drawing.Size(139, 20);
-            this.tbxTelefone.TabIndex = 21;
+            this.tbxTelefone.TabIndex = 6;
             // 
             // label6
             // 
@@ -160,7 +160,7 @@
             this.dtpVencimento.Location = new System.Drawing.Point(164, 143);
             this.dtpVencimento.Name = "dtpVencimento";
             this.dtpVencimento.Size = new System.Drawing.Size(219, 20);
-            this.dtpVencimento.TabIndex = 23;
+            this.dtpVencimento.TabIndex = 7;
             // 
             // FEdicaoCheque
             // 

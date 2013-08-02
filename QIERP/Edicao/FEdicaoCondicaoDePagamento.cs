@@ -64,12 +64,15 @@ namespace QIERP.Edicao
             {
                 condicao = new CondicaoDePagamento();
                 Objeto = condicao;
+                pesFormaDePagamento.Reset();
             }
             else if (estado == Estado.Modificar)
             {
                 condicao = Objeto as CondicaoDePagamento;
                 MapearTela();
             }
+
+            tbxDescricao.Focus();
         }
 
         private void FEdicaoCondicaoDePagamento_Load(object sender, EventArgs e)

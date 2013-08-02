@@ -92,7 +92,11 @@ namespace QIERPDatabase.Repositorios
 
         public Cliente GetByPessoa(Pessoa pessoa)
         {
-            Cliente cliente = this.GetAll().Where(c => c.Pessoa.Id == pessoa.Id).FirstOrDefault();
+            if (pessoa.Id == -1)
+            {
+                return null;
+            }
+            Cliente cliente = this.GetAll().Where(c => c.Pessoa == pessoa).FirstOrDefault();
             return cliente;
         }
     }

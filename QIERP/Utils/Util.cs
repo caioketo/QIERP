@@ -123,6 +123,8 @@ namespace QIERP.Utils
                     return DB.GetInstance().CidadeRepo;
                 case "UFs":
                     return DB.GetInstance().UFRepo;
+                case "Pessoas":
+                    return DB.GetInstance().PessoaRepo;
             }
 
             return null;

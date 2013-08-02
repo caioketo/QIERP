@@ -62,12 +62,14 @@ namespace QIERP.Edicao
             {
                 cidade = new Cidade();
                 Objeto = cidade;
+                pesEstado.Reset();
             }
             else if (estado == Estado.Modificar)
             {
                 cidade = Objeto as Cidade;
                 MapearTela();
             }
+            tbxDescricao.Focus();
         }
 
         private void FEdicaoCidade_Load(object sender, EventArgs e)

@@ -196,7 +196,7 @@ namespace QIERP.Utils
                 if ((edicao is cmpEdicao && (i % 3 == 0) && i > 0) || ((x + (int)(campo.Tamanho / 13) * 100) > screenWidth))
                 {
                     x = 13;
-                    y = Controles[Controles.Count - 1].control.Top + Controles[Controles.Count - 1].control.Height + 8;
+                    y = Controles[Controles.Count - 1].control.Top + Controles[Controles.Count - 1].control.Height + 12;
                 }
                 Label lbl = new Label();
                 lbl.Text = campo.Titulo;
@@ -216,7 +216,7 @@ namespace QIERP.Utils
                     pes.Titulo = campo.Titulo;
                     pes.Repo = Util.GetRepo(campo.TabelaRel);
                     pes.Name = "tbx" + campo.Nome;
-                    pes.Location = new Point(x + 13, y + 8);
+                    pes.Location = new Point(x + 13, y + 10);
                     pes.TabIndex = i;
                     pes.Size = new Size((int)(campo.Tamanho / 13) * 100, 20);
                     ctr = pes;
@@ -227,7 +227,7 @@ namespace QIERP.Utils
                     cmpEdicao edc = new cmpEdicao();
                     edc.Repo = Util.GetRepo(campo.TabelaRel);
                     edc.tabela = DB.GetInstance().GetTabela(campo.TabelaRel);
-                    edc.Location = new Point(x + 13, y + 8);
+                    edc.Location = new Point(x + 13, y + 10);
                     edc.TabIndex = i;
                     edc.Size = new Size((int)(campo.Tamanho / 13) * 100, 20);
                     edc.cmpEdicao_Load(edicao, null);

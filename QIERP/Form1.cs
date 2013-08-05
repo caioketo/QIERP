@@ -69,7 +69,7 @@ namespace QIERP
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void movimentaçõesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,6 +118,11 @@ namespace QIERP
             {
                 crud.ShowDialog();
             }
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

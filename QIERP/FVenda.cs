@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QIERPDatabase;
 using QIERP.Utils;
+using VERPDatabase.Classes;
 
 namespace QIERP
 {
@@ -16,6 +17,8 @@ namespace QIERP
     {
         private Produto produtoAchado;
         public Venda VendaAtual;
+        public Orcamento OrcamentoAtual;
+        public bool Orcamento = false;
 
         public FVenda()
         {
@@ -38,6 +41,11 @@ namespace QIERP
 
         private void Venda_Shown(object sender, EventArgs e)
         {
+            if (Orcamento)
+            {
+                tbxPreco.Visible = true;
+                lblPreco.Visible = true;
+            }
             itemBindingSource.DataSource = null;
             rtbTotal.Text = "CAIXA ABERTO" + Environment.NewLine + "PASSE O ITEM";
         }

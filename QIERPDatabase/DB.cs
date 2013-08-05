@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QIERPDatabase.Classes;
 using QIERPDatabase.Repositorios;
+using VERPDatabase.Repositorios;
 
 namespace QIERPDatabase
 {
@@ -48,6 +49,7 @@ namespace QIERPDatabase
         public CPRepository CPRepo = new CPRepository();
         public ChequeRepository ChequeRepo = new ChequeRepository();
         public NotaRepository NotaRepo = new NotaRepository();
+        public FornecedorRepository FornecedorRepo = new FornecedorRepository();
         public QIERPContext context;
 
 

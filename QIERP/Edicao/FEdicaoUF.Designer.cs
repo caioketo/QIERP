@@ -36,6 +36,7 @@
             // 
             // tbxDescricao
             // 
+            this.tbxDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxDescricao.Location = new System.Drawing.Point(10, 62);
             this.tbxDescricao.MaxLength = 50;
             this.tbxDescricao.Name = "tbxDescricao";
@@ -53,6 +54,7 @@
             // 
             // tbxCodigo
             // 
+            this.tbxCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxCodigo.Location = new System.Drawing.Point(10, 22);
             this.tbxCodigo.MaxLength = 2;
             this.tbxCodigo.Name = "tbxCodigo";

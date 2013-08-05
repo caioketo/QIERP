@@ -11,6 +11,7 @@ namespace QIERPDatabase
     {
         public string Descricao { get; set; }
         public int DiasVencimento { get; set; }
+        public int Parcelas { get; set; }
         public FormaDePagamento Forma { get; set; }
         public string FormaDescricao
         {

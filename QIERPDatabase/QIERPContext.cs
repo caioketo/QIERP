@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QIERPDatabase.Classes;
 using System.Data.Entity.Infrastructure;
+using VERPDatabase;
 
 namespace QIERPDatabase
 {
@@ -43,7 +44,7 @@ namespace QIERPDatabase
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer<QIERPContext>(new DropCreateDatabaseIfModelChanges<QIERPContext>());
+            Database.SetInitializer<QIERPContext>(new DontDropDbJustCreateTablesIfModelChanged<QIERPContext>());
             Database.DefaultConnectionFactory = new SqlConnectionFactory("System.Data.SqlServer");
             base.OnModelCreating(modelBuilder);
         }

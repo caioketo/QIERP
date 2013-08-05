@@ -40,6 +40,7 @@ namespace QIERP.Edicao
         {
             condicao.Descricao = tbxDescricao.Text;
             condicao.DiasVencimento = Convert.ToInt32(tbxDiasVencimento.Text);
+            condicao.Parcelas = Convert.ToInt32(tbxParcelas.Text);
             condicao.Forma = pesFormaDePagamento.Objeto as FormaDePagamento;
         }
 
@@ -47,6 +48,7 @@ namespace QIERP.Edicao
         {
             tbxDescricao.Text = condicao.Descricao;
             tbxDiasVencimento.Text = condicao.DiasVencimento.ToString();
+            tbxParcelas.Text = condicao.Parcelas.ToString();
             pesFormaDePagamento.Objeto = condicao.Forma;
             pesFormaDePagamento.Selecionar();
         }
@@ -82,6 +84,8 @@ namespace QIERP.Edicao
             pesFormaDePagamento.CampoDisplay = "Descricao";
             pesFormaDePagamento.Titulo = "Forma de Pagamento";
             pesFormaDePagamento.Repo = Util.GetRepo("FormasDePagamento");
+            tbxDiasVencimento.Validating += tbx_Leave;
+            tbxParcelas.Validating += tbxLeave;
         }
     }
 }

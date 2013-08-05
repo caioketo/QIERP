@@ -142,6 +142,11 @@ namespace QIERP.Utils
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (pesPesquisa.Objeto == null)
+            {
+                Mensagem.MostrarMsg(40000, "Item");
+                return;
+            }
             object[] adds = new object[Controles.Count + 1];
             adds[0] = pesPesquisa.Objeto;
             for (var i = 0; i < Controles.Count; i++)

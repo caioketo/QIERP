@@ -68,6 +68,23 @@ namespace QIERP.Edicao
                 }
             }
 
+            if (cbxFornecedor.Checked)
+            {
+                if (estado == Estado.Inserir)
+                {
+                    Fornecedor fornecedor = new Fornecedor();
+                    fornecedor.Pessoa = pessoa;
+                    DB.GetInstance().FornecedorRepo.Inserir(fornecedor);
+                }
+            }
+            else
+            {
+                if (estado == Estado.Modificar && DB.GetInstance().FornecedorRepo.GetByPessoa(pessoa) != null)
+                {
+                    DB.GetInstance().FornecedorRepo.Deletar(DB.GetInstance().FornecedorRepo.GetByPessoa(pessoa));
+                }
+            }
+
             this.Close();
         }
 
@@ -106,6 +123,15 @@ namespace QIERP.Edicao
             else
             {
                 cbxVendedor.Checked = true;
+            }
+
+            if (DB.GetInstance().FornecedorRepo.GetAll().Where(f => f.Pessoa == pessoa).FirstOrDefault() == null)
+            {
+                cbxFornecedor.Checked = false;
+            }
+            else
+            {
+                cbxFornecedor.Checked = true;
             }
         }
 

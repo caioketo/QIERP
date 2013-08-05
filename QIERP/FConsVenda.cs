@@ -40,7 +40,7 @@ namespace QIERP
 
         private void FConsVenda_Shown(object sender, EventArgs e)
         {
-            vendaBindingSource.DataSource = DB.GetInstance().VendaRepo.GetAll();
+            vendaBindingSource.DataSource = DB.GetInstance().VendaRepo.GetAll().OrderByDescending(v => v.Pedido);
             MudaCor();
         }
 

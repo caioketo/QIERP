@@ -31,11 +31,14 @@ namespace QIERPDatabase
             {
                 if (pag.Forma.LancaCR)
                 {
-                    ContaReceber cr = new ContaReceber();
-                    cr.Descricao = pag.Forma.Descricao + " - Venda nº " + item.Pedido.ToString();
-                    cr.Valor = (decimal)pag.Valor;
-                    cr.Vencimento = DateTime.Now.AddDays(pag.Condicao.DiasVencimento);
-                    DB.GetInstance().context.CRs.Add(cr);
+                    for (int i = 0; i < pag.Condicao.Parcelas; i++)
+                    {
+                        ContaReceber cr = new ContaReceber();
+                        cr.Descricao = pag.Forma.Descricao + " - Venda nº " + item.Pedido.ToString();
+                        cr.Valor = (decimal)pag.Valor;
+                        cr.Vencimento = DateTime.Now.AddDays(((i + 1) * pag.Condicao.DiasVencimento));
+                        DB.GetInstance().context.CRs.Add(cr);
+                    }
                 }
             }
 

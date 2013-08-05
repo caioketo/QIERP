@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,7 +72,9 @@
             this.VendedorNome});
             this.dataGridView1.DataSource = this.vendaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(865, 210);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
@@ -86,8 +88,8 @@
             // totalDataGridViewTextBoxColumn
             // 
             this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            dataGridViewCellStyle1.Format = "c2";
-            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "c2";
+            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -126,7 +128,9 @@
             this.totalDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.itemBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(12, 229);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(865, 231);
             this.dataGridView2.TabIndex = 1;
             // 
@@ -141,8 +145,8 @@
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            dataGridViewCellStyle2.Format = "c2";
-            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Format = "c2";
+            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             // 
@@ -155,8 +159,8 @@
             // totalDataGridViewTextBoxColumn1
             // 
             this.totalDataGridViewTextBoxColumn1.DataPropertyName = "Total";
-            dataGridViewCellStyle3.Format = "c2";
-            this.totalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Format = "c2";
+            this.totalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
             this.totalDataGridViewTextBoxColumn1.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn1.Name = "totalDataGridViewTextBoxColumn1";
             // 
@@ -177,7 +181,9 @@
             this.valorDataGridViewTextBoxColumn1});
             this.dataGridView3.DataSource = this.pagamentoBindingSource;
             this.dataGridView3.Location = new System.Drawing.Point(12, 467);
+            this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView3.Size = new System.Drawing.Size(865, 150);
             this.dataGridView3.TabIndex = 2;
             // 
@@ -200,8 +206,8 @@
             // valorDataGridViewTextBoxColumn1
             // 
             this.valorDataGridViewTextBoxColumn1.DataPropertyName = "Valor";
-            dataGridViewCellStyle4.Format = "c2";
-            this.valorDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Format = "c2";
+            this.valorDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
             this.valorDataGridViewTextBoxColumn1.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn1.Name = "valorDataGridViewTextBoxColumn1";
             // 

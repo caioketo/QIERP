@@ -87,7 +87,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnSalvar;
+        public System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnFechar;
 
 

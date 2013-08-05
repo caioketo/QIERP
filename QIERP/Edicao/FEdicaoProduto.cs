@@ -108,7 +108,9 @@ namespace QIERP
 
         private void FEdicaoProduto_Load(object sender, EventArgs e)
         {
-
+            tbxCusto.Validating += tbx_Leave;
+            tbxValor.Validating += tbx_Leave;
+            tbxQuantidade.Validating += tbx_Leave;
         }
 
         private void tbxCodigo_TextChanged(object sender, EventArgs e)

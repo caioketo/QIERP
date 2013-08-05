@@ -92,7 +92,7 @@ namespace QIERP.Utils
                             tbxPesquisa.BackColor = Color.LightGray;
                         }
                     }
-                    SendKeys.Send("{TAB}");
+                    //SendKeys.Send("{TAB}");
                     return;
                 }
             }

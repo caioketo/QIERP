@@ -67,12 +67,16 @@ namespace QIERP
 
             if (tabela != null)
             {
-                if (!tabela.Edita)
+                if (!tabela.Edita && !tabela.Visualiza)
                 {
                     btnEditar.Enabled = false;
                 }
                 else
                 {
+                    if (tabela.Visualiza)
+                    {
+                        btnEditar.Text = "Visualizar";
+                    }
                     btnEditar.Enabled = true;
                 }
 
@@ -146,6 +150,11 @@ namespace QIERP
         private void dgvCRUD_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             btnGridClick(e.ColumnIndex, e.RowIndex);
+        }
+
+        private void dgvCRUD_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEditar_Click(sender, e);
         }
     }
 }

@@ -16,6 +16,7 @@ namespace QIERP
     public partial class FVenda : BaseForm
     {
         private Produto produtoAchado;
+        public BaseVenda Atual;
         public Venda VendaAtual;
         public Orcamento OrcamentoAtual;
         public bool Orcamento = false;
@@ -27,15 +28,30 @@ namespace QIERP
 
         public void AddItem(Item item)
         {
-            if (VendaAtual == null)
+            if (Atual == null)
             {
-                VendaAtual = new Venda();
-                itemBindingSource.DataSource = VendaAtual.Itens;
+                if (Orcamento)
+                {
+                    Atual = new Orcamento();
+                }
+                else
+                {
+                    Atual = new Venda();
+                }
+                itemBindingSource.DataSource = Atual.Itens;
             }
-            VendaAtual.Itens.Add(item);
+            Atual.Itens.Add(item);
+            rtbTotal.Text = "Total: " + Atual.Total.ToString("C2") + Environment.NewLine
+                + "Total Itens: " + Atual.Itens.Count.ToString();
+            //if (VendaAtual == null)
+            //{
+                //VendaAtual = new Venda();
+                //itemBindingSource.DataSource = VendaAtual.Itens;
+            //}
+            //VendaAtual.Itens.Add(item);
             produtoAchado.Quantidade -= item.Quantidade;
-            rtbTotal.Text = "Total: " + VendaAtual.Total.ToString("C2") + Environment.NewLine 
-                + "Total Itens: " + VendaAtual.Itens.Count.ToString();
+            //rtbTotal.Text = "Total: " + VendaAtual.Total.ToString("C2") + Environment.NewLine 
+                //+ "Total Itens: " + VendaAtual.Itens.Count.ToString();
         }
 
 
@@ -46,8 +62,20 @@ namespace QIERP
                 tbxPreco.Visible = true;
                 lblPreco.Visible = true;
             }
+            else
+            {
+                tbxPreco.Visible = false;
+                lblPreco.Visible = false;
+            }
             itemBindingSource.DataSource = null;
-            rtbTotal.Text = "CAIXA ABERTO" + Environment.NewLine + "PASSE O ITEM";
+            if (Orcamento)
+            {
+                rtbTotal.Text = "ORÇAMENTO" + Environment.NewLine + "PASSE O ITEM";
+            }
+            else
+            {
+                rtbTotal.Text = "CAIXA ABERTO" + Environment.NewLine + "PASSE O ITEM";
+            }
         }
 
         public void textBox2_Leave(object sender, EventArgs e)
@@ -103,7 +131,8 @@ namespace QIERP
 
         private void FecharVenda(FormaDePagamento fp)
         {
-            if (VendaAtual.Itens.Count == 0)
+            //if (VendaAtual.Itens.Count == 0)
+            if (Atual.Itens.Count == 0)
             {
                 return;
             }
@@ -114,7 +143,8 @@ namespace QIERP
                 fechaVenda.VendaAtual = this.VendaAtual;
                 fechaVenda.ShowDialog();
 
-                if (VendaAtual == null)
+                //if (VendaAtual == null)
+                if (Atual == null)
                 {
                     itemBindingSource.DataSource = null;
                     rtbTotal.Text = "CAIXA ABERTO" + Environment.NewLine + "PASSE O ITEM";
@@ -131,7 +161,8 @@ namespace QIERP
         {
             if (e.KeyCode == Keys.Escape)
             {
-                if (VendaAtual != null)
+                //if (VendaAtual != null)
+                if (Atual != null)
                 {
                     if (Mensagem.MostrarMsg(30001) != System.Windows.Forms.DialogResult.Yes)
                     {

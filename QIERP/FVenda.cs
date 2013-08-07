@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QIERPDatabase;
 using QIERP.Utils;
-using VERPDatabase.Classes;
+using QIERPDatabase.Classes;
 
 namespace QIERP
 {
@@ -60,6 +60,7 @@ namespace QIERP
             {
                 tbxPreco.Visible = true;
                 lblPreco.Visible = true;
+                mstMenu.Visible = false;
             }
             itemBindingSource.DataSource = null;
             rtbTotal.Text = "CAIXA ABERTO" + Environment.NewLine + "PASSE O ITEM";
@@ -221,6 +222,25 @@ namespace QIERP
             AddItem(new Item(produtoAchado, Convert.ToDouble(tbxQtde.Text), Convert.ToDouble(tbxPreco.Text)));
             tbxProduto.Clear();
             tbxQtde.Clear();
+        }
+
+        private void importarOrçamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FSelecionaPedido sel = new FSelecionaPedido())
+            {
+                sel.Orcamento = true;
+                sel.ShowDialog();
+                if (sel.resultado == null)
+                {
+                    return;
+                }
+                foreach (Item item in sel.resultadoOrc.Itens)
+                {
+                    AddItem(item);
+                }
+                VendaOrcAtual.Cliente = sel.resultadoOrc.Cliente;
+                VendaOrcAtual.Vendedor = sel.resultadoOrc.Vendedor;
+            }
         }
     }
 }

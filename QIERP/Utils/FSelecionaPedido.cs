@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QIERP.Utils;
 using QIERPDatabase;
+using QIERPDatabase.Classes;
 
 namespace QIERP.Utils
 {
@@ -23,7 +24,11 @@ namespace QIERP.Utils
         }
 
         public Expression<Func<Venda, bool>> Filtro = x => x.DataExclusao == null;
+        public Expression<Func<Orcamento, bool>> FiltroOrc = x => x.DataExclusao == null;
         public Venda resultado = null;
+        public Orcamento resultadoOrc = null;
+
+        public bool Orcamento = false;
 
         public FSelecionaPedido()
         {
@@ -36,19 +41,39 @@ namespace QIERP.Utils
             {
                 return;
             }
-            Filtro = Combine<Venda>(Filtro, x => x.Pedido == Convert.ToInt32(tbxPedido.Text));
-            Venda venda = DB.GetInstance().VendaRepo.GetAll().Where(Filtro).FirstOrDefault();
-            if (venda != null)
+            if (!Orcamento)
             {
-                tbxPedido.ReadOnly = true;
-                tbxPedido.Text = venda.Pedido.ToString() + " - " + venda.Total.ToString("c") + " - " + venda.ClienteNome;
-                tbxPedido.BackColor = Color.LightGray;
-                resultado = venda;
+                Filtro = Combine<Venda>(Filtro, x => x.Pedido == Convert.ToInt32(tbxPedido.Text));
+                Venda venda = DB.GetInstance().VendaRepo.GetAll().Where(Filtro).FirstOrDefault();
+                if (venda != null)
+                {
+                    tbxPedido.ReadOnly = true;
+                    tbxPedido.Text = venda.Pedido.ToString() + " - " + venda.Total.ToString("c") + " - " + venda.ClienteNome;
+                    tbxPedido.BackColor = Color.LightGray;
+                    resultado = venda;
+                }
+                else
+                {
+                    Mensagem.MostrarMsg(40006);
+                    tbxPedido.Focus();
+                }
             }
             else
             {
-                Mensagem.MostrarMsg(40006);
-                tbxPedido.Focus();
+                FiltroOrc = Combine<Orcamento>(FiltroOrc, x => x.Numero == Convert.ToInt32(tbxPedido.Text));
+                Orcamento orc = DB.GetInstance().OrcamentoRepo.GetAll().Where(FiltroOrc).FirstOrDefault();
+                if (orc != null)
+                {
+                    tbxPedido.ReadOnly = true;
+                    tbxPedido.Text = orc.Numero.ToString() + " - " + orc.Total.ToString("c") + " - " + orc.ClienteNome;
+                    tbxPedido.BackColor = Color.LightGray;
+                    resultadoOrc = orc;
+                }
+                else
+                {
+                    Mensagem.MostrarMsg(40006);
+                    tbxPedido.Focus();
+                }
             }
         }
 

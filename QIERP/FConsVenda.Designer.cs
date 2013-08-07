@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClienteNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VendedorNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.formaPagtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.condicaoPagtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.formaPagtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condicaoPagtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlBotoes = new System.Windows.Forms.Panel();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnPDF = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagamentoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,6 +89,15 @@
             this.Pedido.HeaderText = "Pedido";
             this.Pedido.Name = "Pedido";
             // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            dataGridViewCellStyle9.Format = "c2";
+            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // ClienteNome
             // 
             this.ClienteNome.DataPropertyName = "ClienteNome";
@@ -102,6 +111,12 @@
             this.VendedorNome.HeaderText = "Vendedor";
             this.VendedorNome.Name = "VendedorNome";
             this.VendedorNome.ReadOnly = true;
+            // 
+            // vendaBindingSource
+            // 
+            this.vendaBindingSource.DataSource = typeof(QIERPDatabase.Venda);
+            this.vendaBindingSource.DataSourceChanged += new System.EventHandler(this.vendaBindingSource_DataSourceChanged);
+            this.vendaBindingSource.PositionChanged += new System.EventHandler(this.vendaBindingSource_PositionChanged);
             // 
             // dataGridView2
             // 
@@ -122,6 +137,40 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(865, 231);
             this.dataGridView2.TabIndex = 1;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descricaoDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // valorDataGridViewTextBoxColumn
+            // 
+            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
+            dataGridViewCellStyle10.Format = "c2";
+            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            // 
+            // quantidadeDataGridViewTextBoxColumn
+            // 
+            this.quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
+            // 
+            // totalDataGridViewTextBoxColumn1
+            // 
+            this.totalDataGridViewTextBoxColumn1.DataPropertyName = "Total";
+            dataGridViewCellStyle11.Format = "c2";
+            this.totalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle11;
+            this.totalDataGridViewTextBoxColumn1.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn1.Name = "totalDataGridViewTextBoxColumn1";
+            // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataSource = typeof(QIERPDatabase.Item);
             // 
             // dataGridView3
             // 
@@ -161,63 +210,14 @@
             // valorDataGridViewTextBoxColumn1
             // 
             this.valorDataGridViewTextBoxColumn1.DataPropertyName = "Valor";
-            dataGridViewCellStyle5.Format = "c2";
-            this.valorDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Format = "c2";
+            this.valorDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle12;
             this.valorDataGridViewTextBoxColumn1.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn1.Name = "valorDataGridViewTextBoxColumn1";
             // 
             // pagamentoBindingSource
             // 
             this.pagamentoBindingSource.DataSource = typeof(QIERPDatabase.Pagamento);
-            // 
-            // descricaoDataGridViewTextBoxColumn
-            // 
-            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descricaoDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // valorDataGridViewTextBoxColumn
-            // 
-            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            dataGridViewCellStyle6.Format = "c2";
-            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
-            // 
-            // quantidadeDataGridViewTextBoxColumn
-            // 
-            this.quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
-            this.quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
-            this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
-            // 
-            // totalDataGridViewTextBoxColumn1
-            // 
-            this.totalDataGridViewTextBoxColumn1.DataPropertyName = "Total";
-            dataGridViewCellStyle7.Format = "c2";
-            this.totalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.totalDataGridViewTextBoxColumn1.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn1.Name = "totalDataGridViewTextBoxColumn1";
-            // 
-            // itemBindingSource
-            // 
-            this.itemBindingSource.DataSource = typeof(QIERPDatabase.Item);
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            dataGridViewCellStyle8.Format = "c2";
-            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vendaBindingSource
-            // 
-            this.vendaBindingSource.DataSource = typeof(QIERPDatabase.Venda);
-            this.vendaBindingSource.DataSourceChanged += new System.EventHandler(this.vendaBindingSource_DataSourceChanged);
-            this.vendaBindingSource.PositionChanged += new System.EventHandler(this.vendaBindingSource_PositionChanged);
             // 
             // pnlBotoes
             // 
@@ -228,15 +228,6 @@
             this.pnlBotoes.Size = new System.Drawing.Size(865, 39);
             this.pnlBotoes.TabIndex = 3;
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Location = new System.Drawing.Point(3, 3);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(96, 32);
-            this.btnImprimir.TabIndex = 0;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            // 
             // btnPDF
             // 
             this.btnPDF.Location = new System.Drawing.Point(105, 3);
@@ -245,6 +236,16 @@
             this.btnPDF.TabIndex = 1;
             this.btnPDF.Text = "Gerar PDF";
             this.btnPDF.UseVisualStyleBackColor = true;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Location = new System.Drawing.Point(3, 3);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(96, 32);
+            this.btnImprimir.TabIndex = 0;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // FConsVenda
             // 
@@ -261,11 +262,11 @@
             this.Shown += new System.EventHandler(this.FConsVenda_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FConsVenda_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagamentoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).EndInit();
             this.pnlBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 

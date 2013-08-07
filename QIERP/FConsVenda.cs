@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QIERP.Utils;
 using QIERPDatabase;
-using VERPDatabase.Classes;
+using QIERPDatabase.Classes;
+using QIERP.Relatorios;
 
 namespace QIERP
 {
@@ -129,6 +130,14 @@ namespace QIERP
                     }
                     MudaCor();
                 }
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            using (RPOrcamento rel = new RPOrcamento())
+            {
+                rel.ShowDialog();
             }
         }
     }

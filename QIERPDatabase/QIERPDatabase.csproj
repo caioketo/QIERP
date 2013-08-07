@@ -7,8 +7,8 @@
     <ProjectGuid>{5B12E237-CA0E-49A0-9B50-D6ECEE97545C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VERPDatabase</RootNamespace>
-    <AssemblyName>VERPDatabase</AssemblyName>
+    <RootNamespace>QIERPDatabase</RootNamespace>
+    <AssemblyName>QIERPDatabase</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

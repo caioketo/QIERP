@@ -5,10 +5,10 @@ using System.Linq;
 using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
-using VERPDatabase.Classes;
 using QIERPDatabase.Classes.DTO;
+using QIERPDatabase.Classes;
 
-namespace VERPDatabase.Repositorios
+namespace QIERPDatabase.Repositorios
 {
     public partial class OrcamentoRepository: IRepository<Orcamento>
     {
@@ -44,16 +44,16 @@ namespace VERPDatabase.Repositorios
             return true;
         }
 
-        public static List<DTO_Orcamento> SelectOrc(int Numero)
+        public DTO_Orcamento GetDTOById(int id)
         {
-            return (from o in DB.GetInstance().context.Orcamentos
-                    where o.Numero == Numero
-                    select new DTO_Orcamento
-                    {
-                        Numero = o.Numero,
-                        ClienteNome = o.Cliente.Pessoa.Nome,
-                        VendedorNome = o.Vendedor.Pessoa.Nome
-                    }).ToList();
+            Orcamento orc = DB.GetInstance().context.Orcamentos.Find(id);
+            return new DTO_Orcamento
+            {
+                Numero = orc.Numero,
+                ClienteNome = orc.ClienteNome,
+                VendedorNome = orc.VendedorNome,
+                Itens = orc.Itens
+            };
         }
     }
 }

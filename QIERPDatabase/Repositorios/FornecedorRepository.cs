@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VERPDatabase.Repositorios
+namespace QIERPDatabase.Repositorios
 {
     public class FornecedorRepository : ExtRepository, IRepository<Fornecedor>
     {

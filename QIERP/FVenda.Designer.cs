@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rtbTotal = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,15 +46,18 @@
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mstMenu = new System.Windows.Forms.MenuStrip();
+            this.importarOrçamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
+            this.mstMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(205, 114);
             this.pictureBox1.TabIndex = 1;
@@ -68,7 +71,7 @@
             this.rtbTotal.BackColor = System.Drawing.SystemColors.Window;
             this.rtbTotal.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbTotal.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.rtbTotal.Location = new System.Drawing.Point(223, 12);
+            this.rtbTotal.Location = new System.Drawing.Point(223, 27);
             this.rtbTotal.Name = "rtbTotal";
             this.rtbTotal.ReadOnly = true;
             this.rtbTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -171,11 +174,11 @@
             this.valorDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.itemBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 133);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 147);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(804, 488);
+            this.dataGridView1.Size = new System.Drawing.Size(804, 474);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.TabStop = false;
             // 
@@ -197,8 +200,8 @@
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            dataGridViewCellStyle1.Format = "c";
-            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "c";
+            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             this.valorDataGridViewTextBoxColumn.ReadOnly = true;
@@ -206,8 +209,8 @@
             // totalDataGridViewTextBoxColumn
             // 
             this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            dataGridViewCellStyle2.Format = "c";
-            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "c";
+            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -215,6 +218,23 @@
             // itemBindingSource
             // 
             this.itemBindingSource.DataSource = typeof(QIERPDatabase.Item);
+            // 
+            // mstMenu
+            // 
+            this.mstMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importarOrçamentoToolStripMenuItem});
+            this.mstMenu.Location = new System.Drawing.Point(0, 0);
+            this.mstMenu.Name = "mstMenu";
+            this.mstMenu.Size = new System.Drawing.Size(828, 24);
+            this.mstMenu.TabIndex = 6;
+            this.mstMenu.Text = "menuStrip1";
+            // 
+            // importarOrçamentoToolStripMenuItem
+            // 
+            this.importarOrçamentoToolStripMenuItem.Name = "importarOrçamentoToolStripMenuItem";
+            this.importarOrçamentoToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.importarOrçamentoToolStripMenuItem.Text = "Importar Orçamento";
+            this.importarOrçamentoToolStripMenuItem.Click += new System.EventHandler(this.importarOrçamentoToolStripMenuItem_Click);
             // 
             // FVenda
             // 
@@ -225,6 +245,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.rtbTotal);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.mstMenu);
+            this.MainMenuStrip = this.mstMenu;
             this.Name = "FVenda";
             this.Text = "Venda";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -235,7 +257,10 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
+            this.mstMenu.ResumeLayout(false);
+            this.mstMenu.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -256,5 +281,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox tbxPreco;
         private System.Windows.Forms.Label lblPreco;
+        private System.Windows.Forms.MenuStrip mstMenu;
+        private System.Windows.Forms.ToolStripMenuItem importarOrçamentoToolStripMenuItem;
     }
 }

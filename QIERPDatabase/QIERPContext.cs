@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using QIERPDatabase.Classes;
 using QIERPDatabase.Migrations;
 using System.Data.Entity.Infrastructure;
-using VERPDatabase;
-using VERPDatabase.Classes;
 
 namespace QIERPDatabase
 {

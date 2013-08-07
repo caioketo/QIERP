@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using QIERPDatabase.Classes;
 using QIERPDatabase.Repositorios;
-using VERPDatabase.Repositorios;
 
 namespace QIERPDatabase
 {

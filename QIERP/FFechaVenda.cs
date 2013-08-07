@@ -11,7 +11,6 @@ using QIERPDatabase;
 using QIERP.Utils;
 using QIERP.CRUD;
 using QIERPDatabase.Classes;
-using VERPDatabase.Classes;
 
 namespace QIERP
 {
@@ -30,8 +29,14 @@ namespace QIERP
 
         private void FFechaVenda_Shown(object sender, EventArgs e)
         {
-            VendaOrcAtual.Cliente = new Cliente();
-            VendaOrcAtual.Vendedor = new Vendedor();
+            if (VendaOrcAtual.Cliente == null)
+            {
+                VendaOrcAtual.Cliente = new Cliente();
+            }
+            if (VendaOrcAtual.Vendedor == null)
+            {
+                VendaOrcAtual.Vendedor = new Vendedor();
+            }
             pesCliente.CRUD = new FCRUDPessoa();
             pesCliente.Campo = "Nome";
             pesCliente.CampoDisplay = "Nome";

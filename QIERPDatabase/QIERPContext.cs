@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QIERPDatabase.Classes;
+using QIERPDatabase.Migrations;
 using System.Data.Entity.Infrastructure;
 using VERPDatabase;
 
@@ -16,11 +17,14 @@ namespace QIERPDatabase
     {
         public static string CreateConnectionString()
         {
-            return "Server=127.0.0.1\\SQLSERVER;Database=QIERP;User Id=sa;Password=vd001989;";
+            return "Server=127.0.0.1\\SQLSERVER;Database=qierp;User Id=sa;Password=vd001989;";
         }
-
+        private string connectionString;
         public QIERPContext() : base() { }
-        public QIERPContext(string nameOrConnectionString) : base(nameOrConnectionString) { }
+        public QIERPContext(string nameOrConnectionString) : base(nameOrConnectionString) 
+        {
+            connectionString = nameOrConnectionString;
+        }
 
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<FormaDePagamento> FormasDePagamento { get; set; }
@@ -44,7 +48,7 @@ namespace QIERPDatabase
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer<QIERPContext>(new DontDropDbJustCreateTablesIfModelChanged<QIERPContext>());
+            Database.SetInitializer<QIERPContext>(new DropCreateDatabaseIfModelChanges<QIERPContext>());
             Database.DefaultConnectionFactory = new SqlConnectionFactory("System.Data.SqlServer");
             base.OnModelCreating(modelBuilder);
         }

@@ -35,7 +35,7 @@ namespace QIERPDatabase
                     {
                         ContaReceber cr = new ContaReceber();
                         cr.Descricao = pag.Forma.Descricao + " - Venda nº " + item.Pedido.ToString();
-                        cr.Valor = (decimal)pag.Valor;
+                        cr.Valor = (decimal)pag.Valor / pag.Condicao.Parcelas;
                         cr.Vencimento = DateTime.Now.AddDays(((i + 1) * pag.Condicao.DiasVencimento));
                         DB.GetInstance().context.CRs.Add(cr);
                     }

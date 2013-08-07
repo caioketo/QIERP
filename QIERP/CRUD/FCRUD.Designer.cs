@@ -93,6 +93,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCRUD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCRUD.Location = new System.Drawing.Point(12, 49);
+            this.dgvCRUD.MultiSelect = false;
             this.dgvCRUD.Name = "dgvCRUD";
             this.dgvCRUD.ReadOnly = true;
             this.dgvCRUD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

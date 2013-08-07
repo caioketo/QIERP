@@ -93,7 +93,7 @@ namespace QIERP.CRUD
             ContaReceber cr = dgvCRUD.Rows[row].DataBoundItem as ContaReceber;
             if (cr != null)
             {
-                if (cr.Baixa != null)
+                if (column == 4 && cr.Baixa == null && Mensagem.MostrarMsg(30003) == System.Windows.Forms.DialogResult.Yes)
                 {
                     cr.Baixa = DateTime.Now;
                     DB.GetInstance().CRRepo.Salvar(cr);

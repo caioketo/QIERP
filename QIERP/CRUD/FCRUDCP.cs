@@ -26,7 +26,7 @@ namespace QIERP.CRUD
             ContaPagar cp = dgvCRUD.Rows[row].DataBoundItem as ContaPagar;
             if (cp != null)
             {
-                if (cp.Baixa != null)
+                if (column == 4 && cp.Baixa == null && Mensagem.MostrarMsg(30003) == System.Windows.Forms.DialogResult.Yes)
                 {
                     cp.Baixa = DateTime.Now;
                     DB.GetInstance().CPRepo.Salvar(cp);

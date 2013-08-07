@@ -37,6 +37,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(394, 0);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -67,7 +71,7 @@
             this.pesFormaDePagamento.Objeto = null;
             this.pesFormaDePagamento.Repo = null;
             this.pesFormaDePagamento.Size = new System.Drawing.Size(316, 51);
-            this.pesFormaDePagamento.TabIndex = 3;
+            this.pesFormaDePagamento.TabIndex = 4;
             this.pesFormaDePagamento.Tamanho = new System.Drawing.Size(0, 0);
             this.pesFormaDePagamento.Titulo = null;
             // 
@@ -94,7 +98,7 @@
             this.tbxParcelas.Location = new System.Drawing.Point(380, 30);
             this.tbxParcelas.Name = "tbxParcelas";
             this.tbxParcelas.Size = new System.Drawing.Size(59, 20);
-            this.tbxParcelas.TabIndex = 5;
+            this.tbxParcelas.TabIndex = 3;
             // 
             // label3
             // 

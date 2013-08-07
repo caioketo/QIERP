@@ -166,7 +166,8 @@ namespace QIERPDatabase.Classes
                     Campos.Add(new Campo("Conta", "Conta", "", TiposDeCampo.Varchar, 15));
                     Campos.Add(new Campo("Emissor", "Emissor", "", TiposDeCampo.Varchar, 50));
                     Campos.Add(new Campo("Telefone", "Telefone", "", TiposDeCampo.Varchar, 15));
-                    Campos.Add(new Campo("Vencimento", "Bom Para", "", TiposDeCampo.DateTime, 15));
+                    Campos.Add(new Campo("Valor", "Valor", "c", TiposDeCampo.Numeric, 15, 2, true, true));
+                    Campos.Add(new Campo("Vencimento", "Bom Para", "d", TiposDeCampo.DateTime, 0));
                     Descricao = "Cheques";
                     break;
             }

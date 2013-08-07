@@ -74,6 +74,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <Direction>RTL</Direction>
                           </Style>
                         </Textbox>
                         <Textbox Name="Quantidade2">
@@ -84,7 +85,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Valor.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>c</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -104,6 +107,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <Direction>RTL</Direction>
                           </Style>
                         </Textbox>
                         <Textbox Name="Quantidade3">
@@ -114,7 +118,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Total.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>c</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -134,6 +140,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <Direction>RTL</Direction>
                           </Style>
                         </Textbox>
                       </ReportItems>

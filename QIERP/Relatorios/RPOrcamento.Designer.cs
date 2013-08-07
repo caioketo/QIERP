@@ -29,35 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.DTO_OrcamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.DTO_OrcamentoBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            reportDataSource1.Name = "dtsOrcamento";
-            reportDataSource1.Value = this.DTO_OrcamentoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QIERP.Relatorios.Orcamento.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(579, 678);
-            this.reportViewer1.TabIndex = 0;
             // 
             // DTO_OrcamentoBindingSource
             // 
             this.DTO_OrcamentoBindingSource.DataSource = typeof(QIERPDatabase.Classes.DTO.DTO_Orcamento);
             // 
+            // reportViewer1
+            // 
+            reportDataSource2.Name = "dtsOrcamento";
+            reportDataSource2.Value = this.DTO_OrcamentoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QIERP.Relatorios.Orcamento.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(641, 731);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // RPOrcamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 702);
+            this.ClientSize = new System.Drawing.Size(665, 755);
             this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "RPOrcamento";
-            this.Text = "RPOrcamento";
+            this.Text = "Orçamento";
             this.Load += new System.EventHandler(this.RPOrcamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DTO_OrcamentoBindingSource)).EndInit();
             this.ResumeLayout(false);

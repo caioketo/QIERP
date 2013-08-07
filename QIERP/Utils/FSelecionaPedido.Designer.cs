@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tbxPedido = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPedido = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -43,14 +43,14 @@
             this.tbxPedido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxPedido_KeyDown);
             this.tbxPedido.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
-            // label1
+            // lblPedido
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Pedido";
+            this.lblPedido.AutoSize = true;
+            this.lblPedido.Location = new System.Drawing.Point(12, 5);
+            this.lblPedido.Name = "lblPedido";
+            this.lblPedido.Size = new System.Drawing.Size(40, 13);
+            this.lblPedido.TabIndex = 1;
+            this.lblPedido.Text = "Pedido";
             // 
             // btnCancelar
             // 
@@ -79,11 +79,12 @@
             this.ClientSize = new System.Drawing.Size(371, 79);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPedido);
             this.Controls.Add(this.tbxPedido);
             this.Name = "FSelecionaPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FSelecionaPedido";
+            this.Shown += new System.EventHandler(this.FSelecionaPedido_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,7 +93,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox tbxPedido;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPedido;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnConfirmar;
     }

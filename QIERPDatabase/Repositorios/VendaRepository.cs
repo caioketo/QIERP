@@ -42,6 +42,12 @@ namespace QIERPDatabase
                 }
             }
 
+            if (item.Orcamento != null)
+            {
+                item.Orcamento.ImpVenda = true;
+                DB.GetInstance().OrcamentoRepo.Salvar(item.Orcamento);
+            }
+
             DB.GetInstance().context.SaveChanges();
             return true;
         }

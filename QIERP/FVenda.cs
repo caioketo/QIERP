@@ -201,15 +201,16 @@ namespace QIERP
                 tbxQtde.Focus();
                 return;
             }
+            double Preco;
             try
             {
                 if (tbxPreco.Text.Contains("R$"))
                 {
-                    Convert.ToDouble(tbxPreco.Text.Substring(2));
+                    Preco = Convert.ToDouble(tbxPreco.Text.Substring(2));
                 }
                 else
                 {
-                    Convert.ToDouble(tbxPreco.Text);
+                    Preco = Convert.ToDouble(tbxPreco.Text);
                 }
             }
             catch (Exception)
@@ -219,9 +220,10 @@ namespace QIERP
                 return;
             }
 
-            AddItem(new Item(produtoAchado, Convert.ToDouble(tbxQtde.Text), Convert.ToDouble(tbxPreco.Text)));
+            AddItem(new Item(produtoAchado, Convert.ToDouble(tbxQtde.Text), Preco));
             tbxProduto.Clear();
             tbxQtde.Clear();
+            tbxPreco.Clear();
         }
 
         private void importarOrçamentoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -230,16 +232,18 @@ namespace QIERP
             {
                 sel.Orcamento = true;
                 sel.ShowDialog();
-                if (sel.resultado == null)
+                if (sel.resultadoOrc == null)
                 {
                     return;
                 }
                 foreach (Item item in sel.resultadoOrc.Itens)
                 {
+                    produtoAchado = item.Produto;
                     AddItem(item);
                 }
                 VendaOrcAtual.Cliente = sel.resultadoOrc.Cliente;
                 VendaOrcAtual.Vendedor = sel.resultadoOrc.Vendedor;
+                ((Venda)VendaOrcAtual).Orcamento = sel.resultadoOrc;
             }
         }
     }

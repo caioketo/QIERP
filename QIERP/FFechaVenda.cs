@@ -29,14 +29,6 @@ namespace QIERP
 
         private void FFechaVenda_Shown(object sender, EventArgs e)
         {
-            if (VendaOrcAtual.Cliente == null)
-            {
-                VendaOrcAtual.Cliente = new Cliente();
-            }
-            if (VendaOrcAtual.Vendedor == null)
-            {
-                VendaOrcAtual.Vendedor = new Vendedor();
-            }
             pesCliente.CRUD = new FCRUDPessoa();
             pesCliente.Campo = "Nome";
             pesCliente.CampoDisplay = "Nome";
@@ -50,6 +42,25 @@ namespace QIERP
             pesVendedor.Titulo = "Vendedor";
             pesVendedor.Repo = DB.GetInstance().PessoaRepo;
             pesVendedor.onLoad();
+
+            if (VendaOrcAtual.Cliente == null)
+            {
+                VendaOrcAtual.Cliente = new Cliente();
+            }
+            else
+            {
+                pesCliente.Objeto = VendaOrcAtual.Cliente.Pessoa;
+                pesCliente.Selecionar();
+            }
+            if (VendaOrcAtual.Vendedor == null)
+            {
+                VendaOrcAtual.Vendedor = new Vendedor();
+            }
+            else
+            {
+                pesVendedor.Objeto = VendaOrcAtual.Vendedor.Pessoa;
+                pesVendedor.Selecionar();
+            }
 
             if (!Orcamento)
             {

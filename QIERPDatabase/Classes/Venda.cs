@@ -12,8 +12,10 @@ namespace QIERPDatabase
 {
     public class Venda : BaseVenda
     {
+        public bool ImpNota { get; set; }
         public BindingList<Pagamento> Pagamentos { get; set; }
         public int Pedido { get; set; }
+        public Orcamento Orcamento { get; set; }
         public double Troco
         {
             get
@@ -38,6 +40,7 @@ namespace QIERPDatabase
         {
             Itens = new BindingList<Item>();
             Pagamentos = new BindingList<Pagamento>();
+            ImpNota = false;
         }
     }
 }

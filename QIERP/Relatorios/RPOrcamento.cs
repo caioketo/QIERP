@@ -10,10 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QIERP.Utils;
 
 namespace QIERP.Relatorios
 {
-    public partial class RPOrcamento : Form
+    public partial class RPOrcamento : BaseForm
     {
         public int OrcamentoId;
 
@@ -35,7 +36,9 @@ namespace QIERP.Relatorios
 
         void LocalReport_SubreportProcessing(object sender, SubreportProcessingEventArgs e)
         {
-            e.DataSources.Add(new ReportDataSource("OrcamentoDetail", DB.GetInstance().OrcamentoRepo.GetDTOById(OrcamentoId).Itens));
+            DTO_Orcamento orc = DB.GetInstance().OrcamentoRepo.GetDTOById(OrcamentoId);
+            
+            e.DataSources.Add(new ReportDataSource("dtsItens", orc.Itens));
         }
     }
 }

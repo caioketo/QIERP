@@ -137,6 +137,7 @@ namespace QIERP
         {
             using (RPOrcamento rel = new RPOrcamento())
             {
+                rel.OrcamentoId = ((Orcamento)vendaBindingSource.Current).Id;
                 rel.ShowDialog();
             }
         }

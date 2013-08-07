@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +51,6 @@
             this.valorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlBotoes = new System.Windows.Forms.Panel();
-            this.btnPDF = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
@@ -92,8 +91,8 @@
             // totalDataGridViewTextBoxColumn
             // 
             this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            dataGridViewCellStyle9.Format = "c2";
-            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Format = "c2";
+            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -149,8 +148,8 @@
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-            dataGridViewCellStyle10.Format = "c2";
-            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Format = "c2";
+            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             // 
@@ -163,8 +162,8 @@
             // totalDataGridViewTextBoxColumn1
             // 
             this.totalDataGridViewTextBoxColumn1.DataPropertyName = "Total";
-            dataGridViewCellStyle11.Format = "c2";
-            this.totalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Format = "c2";
+            this.totalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
             this.totalDataGridViewTextBoxColumn1.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn1.Name = "totalDataGridViewTextBoxColumn1";
             // 
@@ -210,8 +209,8 @@
             // valorDataGridViewTextBoxColumn1
             // 
             this.valorDataGridViewTextBoxColumn1.DataPropertyName = "Valor";
-            dataGridViewCellStyle12.Format = "c2";
-            this.valorDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Format = "c2";
+            this.valorDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
             this.valorDataGridViewTextBoxColumn1.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn1.Name = "valorDataGridViewTextBoxColumn1";
             // 
@@ -221,21 +220,11 @@
             // 
             // pnlBotoes
             // 
-            this.pnlBotoes.Controls.Add(this.btnPDF);
             this.pnlBotoes.Controls.Add(this.btnImprimir);
             this.pnlBotoes.Location = new System.Drawing.Point(12, 623);
             this.pnlBotoes.Name = "pnlBotoes";
             this.pnlBotoes.Size = new System.Drawing.Size(865, 39);
             this.pnlBotoes.TabIndex = 3;
-            // 
-            // btnPDF
-            // 
-            this.btnPDF.Location = new System.Drawing.Point(105, 3);
-            this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(96, 32);
-            this.btnPDF.TabIndex = 1;
-            this.btnPDF.Text = "Gerar PDF";
-            this.btnPDF.UseVisualStyleBackColor = true;
             // 
             // btnImprimir
             // 
@@ -293,6 +282,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VendedorNome;
         private System.Windows.Forms.Panel pnlBotoes;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.Button btnPDF;
     }
 }

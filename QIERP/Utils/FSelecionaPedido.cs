@@ -41,6 +41,10 @@ namespace QIERP.Utils
             {
                 return;
             }
+            if (resultado != null || resultadoOrc != null)
+            {
+                return;
+            }
             if (!Orcamento)
             {
                 Filtro = Combine<Venda>(Filtro, x => x.Pedido == Convert.ToInt32(tbxPedido.Text));
@@ -91,14 +95,23 @@ namespace QIERP.Utils
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             resultado = null;
+            resultadoOrc = null;
             Close();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (resultado != null)
+            if (resultado != null || resultadoOrc != null)
             {
                 Close();
+            }
+        }
+
+        private void FSelecionaPedido_Shown(object sender, EventArgs e)
+        {
+            if (Orcamento)
+            {
+                lblPedido.Text = "Orçamento";
             }
         }
     }

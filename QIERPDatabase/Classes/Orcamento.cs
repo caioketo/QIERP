@@ -12,10 +12,12 @@ namespace QIERPDatabase.Classes
     public class Orcamento : BaseVenda
     {
         public int Numero { get; set; }
+        public bool ImpVenda { get; set; }
 
         public Orcamento()
         {
             Itens = new BindingList<Item>();
+            ImpVenda = false;
         }
 
     }

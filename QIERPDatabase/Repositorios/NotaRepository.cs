@@ -23,6 +23,8 @@ namespace QIERPDatabase.Repositorios
         public bool Inserir(NotaFiscal item)
         {
             DB.GetInstance().context.Notas.Add(item);
+            item.Venda.ImpNota = true;
+            DB.GetInstance().VendaRepo.Salvar(item.Venda);
             DB.GetInstance().context.SaveChanges();
             return true;
         }

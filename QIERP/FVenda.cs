@@ -17,7 +17,7 @@ namespace QIERP
     {
         private Produto produtoAchado;
         public Venda VendaAtual;
-        public Orcamento OrcamentoAtual;
+        public BaseVenda VendaOrcAtual;
         public bool Orcamento = false;
 
         public FVenda()
@@ -27,15 +27,30 @@ namespace QIERP
 
         public void AddItem(Item item)
         {
-            if (VendaAtual == null)
+            //if (VendaAtual == null)
+            //{
+                //VendaAtual = new Venda();
+                //itemBindingSource.DataSource = VendaAtual.Itens;
+            //}
+            if (VendaOrcAtual == null)
             {
-                VendaAtual = new Venda();
-                itemBindingSource.DataSource = VendaAtual.Itens;
+                if (Orcamento)
+                {
+                    VendaOrcAtual = new Orcamento();
+                }
+                else
+                {
+                    VendaOrcAtual = new Venda();
+                }
+                itemBindingSource.DataSource = VendaOrcAtual.Itens;
             }
-            VendaAtual.Itens.Add(item);
+            VendaOrcAtual.Itens.Add(item);
+            //VendaAtual.Itens.Add(item);
             produtoAchado.Quantidade -= item.Quantidade;
-            rtbTotal.Text = "Total: " + VendaAtual.Total.ToString("C2") + Environment.NewLine 
-                + "Total Itens: " + VendaAtual.Itens.Count.ToString();
+            //rtbTotal.Text = "Total: " + VendaAtual.Total.ToString("C2") + Environment.NewLine 
+                //+ "Total Itens: " + VendaAtual.Itens.Count.ToString();
+            rtbTotal.Text = "Total: " + VendaOrcAtual.Total.ToString("C2") + Environment.NewLine
+                + "Total Itens: " + VendaOrcAtual.Itens.Count.ToString();
         }
 
 
@@ -96,28 +111,49 @@ namespace QIERP
                 return;
             }
 
-            AddItem(new Item(produtoAchado, Convert.ToDouble(tbxQtde.Text)));
-            tbxProduto.Clear();
-            tbxQtde.Clear();
+            if (!Orcamento)
+            {
+                AddItem(new Item(produtoAchado, Convert.ToDouble(tbxQtde.Text)));
+                tbxProduto.Clear();
+                tbxQtde.Clear();
+            }
+            else
+            {
+                tbxPreco.Text = produtoAchado.Valor.ToString("c");
+                tbxPreco.Focus();
+            }
         }
 
         private void FecharVenda(FormaDePagamento fp)
         {
-            if (VendaAtual == null || VendaAtual.Itens.Count == 0)
+            //if (VendaAtual == null || VendaAtual.Itens.Count == 0)
+            if (VendaOrcAtual == null || VendaOrcAtual.Itens.Count == 0)
             {
                 return;
             }
             using (FFechaVenda fechaVenda = new FFechaVenda())
             {
-                fechaVenda.FP = fp;
+                if (!Orcamento)
+                {
+                    fechaVenda.FP = fp;
+                }
                 fechaVenda.fVenda = this;
-                fechaVenda.VendaAtual = this.VendaAtual;
+                fechaVenda.VendaOrcAtual = this.VendaOrcAtual;
+                fechaVenda.Orcamento = this.Orcamento;
                 fechaVenda.ShowDialog();
 
-                if (VendaAtual == null)
+                //if (VendaAtual == null)
+                if (VendaOrcAtual == null)
                 {
                     itemBindingSource.DataSource = null;
-                    rtbTotal.Text = "CAIXA ABERTO" + Environment.NewLine + "PASSE O ITEM";
+                    if (Orcamento)
+                    {
+                        rtbTotal.Text = "ORÇAMENTO" + Environment.NewLine + "PASSE O ITEM";
+                    }
+                    else
+                    {
+                        rtbTotal.Text = "CAIXA ABERTO" + Environment.NewLine + "PASSE O ITEM";
+                    }
                 }
             }
         }
@@ -131,7 +167,8 @@ namespace QIERP
         {
             if (e.KeyCode == Keys.Escape)
             {
-                if (VendaAtual != null)
+                //if (VendaAtual != null)
+                if (VendaOrcAtual != null) 
                 {
                     if (Mensagem.MostrarMsg(30001) != System.Windows.Forms.DialogResult.Yes)
                     {
@@ -154,6 +191,36 @@ namespace QIERP
                 e.Handled = true;
             }
 
+        }
+
+        private void tbxPreco_Leave(object sender, EventArgs e)
+        {
+            if (tbxPreco.Text.Equals(""))
+            {
+                tbxQtde.Focus();
+                return;
+            }
+            try
+            {
+                if (tbxPreco.Text.Contains("R$"))
+                {
+                    Convert.ToDouble(tbxPreco.Text.Substring(2));
+                }
+                else
+                {
+                    Convert.ToDouble(tbxPreco.Text);
+                }
+            }
+            catch (Exception)
+            {
+                Mensagem.MostrarMsg(40004);
+                tbxPreco.Focus();
+                return;
+            }
+
+            AddItem(new Item(produtoAchado, Convert.ToDouble(tbxQtde.Text), Convert.ToDouble(tbxPreco.Text)));
+            tbxProduto.Clear();
+            tbxQtde.Clear();
         }
     }
 }

@@ -26,6 +26,7 @@ namespace QIERP
         {
             using (FVenda venda = new FVenda())
             {
+                venda.Orcamento = false;
                 venda.ShowDialog();
             }
         }
@@ -123,6 +124,24 @@ namespace QIERP
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void criarOrçamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FVenda venda = new FVenda())
+            {
+                venda.Orcamento = true;
+                venda.ShowDialog();
+            }
+        }
+
+        private void consultaOrçamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FConsVenda consulta = new FConsVenda())
+            {
+                consulta.Orcamento = true;
+                consulta.ShowDialog();
+            }
         }
     }
 }

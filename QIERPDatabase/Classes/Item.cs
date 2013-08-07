@@ -22,11 +22,13 @@ namespace QIERPDatabase
         }
 
         public Item() { }
-        public Item(Produto prod, double qtde)
+        public Item(Produto prod, double qtde) : this(prod, qtde, prod.Valor) { }
+
+        public Item(Produto prod, double qtde, double valor)
         {
             this.Produto = prod;
             this.Quantidade = qtde;
-            this.Valor = prod.Valor;
+            this.Valor = valor;
             this.Total = this.Valor * this.Quantidade;
         }
     }

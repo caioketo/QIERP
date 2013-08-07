@@ -10,6 +10,7 @@ using QIERPDatabase.Classes;
 using QIERPDatabase.Migrations;
 using System.Data.Entity.Infrastructure;
 using VERPDatabase;
+using VERPDatabase.Classes;
 
 namespace QIERPDatabase
 {
@@ -45,6 +46,7 @@ namespace QIERPDatabase
         public DbSet<ContaPagar> CPs { get; set; }
         public DbSet<Cheque> Cheques { get; set; }
         public DbSet<NotaFiscal> Notas { get; set; }
+        public DbSet<Orcamento> Orcamentos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -88,6 +90,7 @@ namespace QIERPDatabase
             CPs.Load();
             Cheques.Load();
             Notas.Load();
+            Orcamentos.Load();
         }
     }
 }

@@ -50,6 +50,7 @@ namespace QIERPDatabase
         public ChequeRepository ChequeRepo = new ChequeRepository();
         public NotaRepository NotaRepo = new NotaRepository();
         public FornecedorRepository FornecedorRepo = new FornecedorRepository();
+        public OrcamentoRepository OrcamentoRepo = new OrcamentoRepository();
         public QIERPContext context;
 
 

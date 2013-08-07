@@ -100,6 +100,8 @@
             this.tbxPreco.Size = new System.Drawing.Size(79, 31);
             this.tbxPreco.TabIndex = 5;
             this.tbxPreco.Visible = false;
+            this.tbxPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxQtde_KeyPress);
+            this.tbxPreco.Leave += new System.EventHandler(this.tbxPreco_Leave);
             // 
             // lblPreco
             // 

@@ -33,6 +33,8 @@
             this.abrirVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notasFiscaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.criarOrçamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaOrçamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formasDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +70,9 @@
             this.vendaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.abrirVendaToolStripMenuItem,
             this.consultaVendaToolStripMenuItem,
-            this.notasFiscaisToolStripMenuItem});
+            this.notasFiscaisToolStripMenuItem,
+            this.criarOrçamentoToolStripMenuItem,
+            this.consultaOrçamentoToolStripMenuItem});
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
             this.vendaToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.vendaToolStripMenuItem.Text = "Venda";
@@ -76,23 +80,37 @@
             // abrirVendaToolStripMenuItem
             // 
             this.abrirVendaToolStripMenuItem.Name = "abrirVendaToolStripMenuItem";
-            this.abrirVendaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.abrirVendaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.abrirVendaToolStripMenuItem.Text = "Abrir Venda";
             this.abrirVendaToolStripMenuItem.Click += new System.EventHandler(this.abrirVendaToolStripMenuItem_Click);
             // 
             // consultaVendaToolStripMenuItem
             // 
             this.consultaVendaToolStripMenuItem.Name = "consultaVendaToolStripMenuItem";
-            this.consultaVendaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.consultaVendaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.consultaVendaToolStripMenuItem.Text = "Consulta Venda";
             this.consultaVendaToolStripMenuItem.Click += new System.EventHandler(this.consultaVendaToolStripMenuItem_Click);
             // 
             // notasFiscaisToolStripMenuItem
             // 
             this.notasFiscaisToolStripMenuItem.Name = "notasFiscaisToolStripMenuItem";
-            this.notasFiscaisToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.notasFiscaisToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.notasFiscaisToolStripMenuItem.Text = "Notas Fiscais";
             this.notasFiscaisToolStripMenuItem.Click += new System.EventHandler(this.notasFiscaisToolStripMenuItem_Click);
+            // 
+            // criarOrçamentoToolStripMenuItem
+            // 
+            this.criarOrçamentoToolStripMenuItem.Name = "criarOrçamentoToolStripMenuItem";
+            this.criarOrçamentoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.criarOrçamentoToolStripMenuItem.Text = "Criar Orçamento";
+            this.criarOrçamentoToolStripMenuItem.Click += new System.EventHandler(this.criarOrçamentoToolStripMenuItem_Click);
+            // 
+            // consultaOrçamentoToolStripMenuItem
+            // 
+            this.consultaOrçamentoToolStripMenuItem.Name = "consultaOrçamentoToolStripMenuItem";
+            this.consultaOrçamentoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.consultaOrçamentoToolStripMenuItem.Text = "Consulta Orçamento";
+            this.consultaOrçamentoToolStripMenuItem.Click += new System.EventHandler(this.consultaOrçamentoToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
@@ -213,6 +231,8 @@
         private System.Windows.Forms.ToolStripMenuItem chequesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem notasFiscaisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem criarOrçamentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaOrçamentoToolStripMenuItem;
     }
 }
 

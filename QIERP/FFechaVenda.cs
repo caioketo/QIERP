@@ -11,13 +11,15 @@ using QIERPDatabase;
 using QIERP.Utils;
 using QIERP.CRUD;
 using QIERPDatabase.Classes;
+using VERPDatabase.Classes;
 
 namespace QIERP
 {
 
     public partial class FFechaVenda : BaseForm
     {
-        public Venda VendaAtual;
+        public bool Orcamento;
+        public BaseVenda VendaOrcAtual;
         public FormaDePagamento FP = null;
         public FVenda fVenda;
 
@@ -28,8 +30,8 @@ namespace QIERP
 
         private void FFechaVenda_Shown(object sender, EventArgs e)
         {
-            VendaAtual.Cliente = new Cliente();
-            VendaAtual.Vendedor = new Vendedor();
+            VendaOrcAtual.Cliente = new Cliente();
+            VendaOrcAtual.Vendedor = new Vendedor();
             pesCliente.CRUD = new FCRUDPessoa();
             pesCliente.Campo = "Nome";
             pesCliente.CampoDisplay = "Nome";
@@ -44,15 +46,31 @@ namespace QIERP
             pesVendedor.Repo = DB.GetInstance().PessoaRepo;
             pesVendedor.onLoad();
 
-            CalculaPagto();
-            pagamentoBindingSource.DataSource = VendaAtual.Pagamentos;
-            formaDePagamentoBindingSource.DataSource = DB.GetInstance().FPRepo.GetAll();
-            if (FP != null)
+            if (!Orcamento)
             {
-                cmbForma.SelectedItem = FP;
-                cmbCondicao.Focus();
+                CalculaPagto();
+                pagamentoBindingSource.DataSource = ((Venda)VendaOrcAtual).Pagamentos;
+                formaDePagamentoBindingSource.DataSource = DB.GetInstance().FPRepo.GetAll();
+                if (FP != null)
+                {
+                    cmbForma.SelectedItem = FP;
+                    cmbCondicao.Focus();
+                }
+                AtualizaCondicoes();
             }
-            AtualizaCondicoes();
+            else
+            {
+                cmbCondicao.Visible = false;
+                cmbForma.Visible = false;
+                tbxValor.Visible = false;
+                dataGridView1.Visible = false;
+                button1.Visible = false;
+                pesCliente.Location = new Point(74, 187);
+                pesVendedor.Location = new Point(74, 249);
+                btnFinalizaVenda.Location = new Point(74, 313);
+                rtbTotal.Clear();
+                rtbTotal.AppendText("Total Orçamento: " + VendaOrcAtual.Total.ToString("C2") + Environment.NewLine, Color.Black);
+            }
         }
 
         public void AtualizaCondicoes()
@@ -74,15 +92,15 @@ namespace QIERP
         private void CalculaPagto()
         {
             rtbTotal.Clear();
-            rtbTotal.AppendText("Total Venda: " + VendaAtual.Total.ToString("C2") + Environment.NewLine, Color.Black);
-            rtbTotal.AppendText("Total Pago: " + VendaAtual.TotalPagto.ToString("C2") + Environment.NewLine, Color.Black);
-            if (VendaAtual.Troco > 0)
+            rtbTotal.AppendText("Total Venda: " + ((Venda)VendaOrcAtual).Total.ToString("C2") + Environment.NewLine, Color.Black);
+            rtbTotal.AppendText("Total Pago: " + ((Venda)VendaOrcAtual).TotalPagto.ToString("C2") + Environment.NewLine, Color.Black);
+            if (((Venda)VendaOrcAtual).Troco > 0)
             {
-                rtbTotal.AppendText("Troco: " + VendaAtual.Troco.ToString("C2"), Color.Black);
+                rtbTotal.AppendText("Troco: " + ((Venda)VendaOrcAtual).Troco.ToString("C2"), Color.Black);
             }
-            else if (VendaAtual.Troco < 0)
+            else if (((Venda)VendaOrcAtual).Troco < 0)
             {
-                rtbTotal.AppendText("Falta: " + (VendaAtual.Troco * -1).ToString("C2"), Color.Red);
+                rtbTotal.AppendText("Falta: " + (((Venda)VendaOrcAtual).Troco * -1).ToString("C2"), Color.Red);
             }
         }
 
@@ -95,9 +113,12 @@ namespace QIERP
 
         private void btnFinalizaVenda_Click(object sender, EventArgs e)
         {
-            if (VendaAtual.Troco < 0)
+            if (!Orcamento)
             {
-                return;
+                if (((Venda)VendaOrcAtual).Troco < 0)
+                {
+                    return;
+                }
             }
 
             if (pesCliente.Objeto == null)
@@ -110,19 +131,26 @@ namespace QIERP
                 return;
             }
 
-            VendaAtual.Cliente = DB.GetInstance().ClienteRepo.GetByPessoa((Pessoa)pesCliente.Objeto);
-            VendaAtual.Vendedor = DB.GetInstance().VendedorRepo.GetByPessoa((Pessoa)pesVendedor.Objeto);
+            VendaOrcAtual.Cliente = DB.GetInstance().ClienteRepo.GetByPessoa((Pessoa)pesCliente.Objeto);
+            VendaOrcAtual.Vendedor = DB.GetInstance().VendedorRepo.GetByPessoa((Pessoa)pesVendedor.Objeto);
 
-            if (!DB.GetInstance().VendaRepo.Inserir(VendaAtual))
+            if (!Orcamento)
             {
-                Mensagem.MostrarMsg(40002, DB.GetInstance().Error);
+                if (!DB.GetInstance().VendaRepo.Inserir(((Venda)VendaOrcAtual)))
+                {
+                    return;
+                }
             }
             else
             {
-                fVenda.VendaAtual = null;
-                Mensagem.MostrarMsg(10000);
-                this.Close();
+                if (!DB.GetInstance().OrcamentoRepo.Inserir(((Orcamento)VendaOrcAtual)))
+                {
+                    return;
+                }
             }
+            fVenda.VendaOrcAtual = null;
+            Mensagem.MostrarMsg(10000);
+            this.Close();
         }
 
         private void FFechaVenda_KeyDown(object sender, KeyEventArgs e)
@@ -182,7 +210,7 @@ namespace QIERP
             pagto.Forma = fp;
             pagto.Valor = valor;
 
-            VendaAtual.Pagamentos.Add(pagto);
+            ((Venda)VendaOrcAtual).Pagamentos.Add(pagto);
             CalculaPagto();
         }
 

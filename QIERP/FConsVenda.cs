@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QIERP.Utils;
 using QIERPDatabase;
+using VERPDatabase.Classes;
 
 namespace QIERP
 {
     public partial class FConsVenda : BaseForm
     {
+        public bool Orcamento = false;
+
         public FConsVenda()
         {
             InitializeComponent();
@@ -24,8 +27,15 @@ namespace QIERP
         {
             try
             {
-                itemBindingSource.DataSource = ((Venda)vendaBindingSource.Current).Itens;
-                pagamentoBindingSource.DataSource = ((Venda)vendaBindingSource.Current).Pagamentos;
+                if (!Orcamento)
+                {
+                    itemBindingSource.DataSource = ((Venda)vendaBindingSource.Current).Itens;
+                    pagamentoBindingSource.DataSource = ((Venda)vendaBindingSource.Current).Pagamentos;
+                }
+                else
+                {
+                    itemBindingSource.DataSource = ((Orcamento)vendaBindingSource.Current).Itens;
+                }
             }
             catch
             {
@@ -40,7 +50,20 @@ namespace QIERP
 
         private void FConsVenda_Shown(object sender, EventArgs e)
         {
-            vendaBindingSource.DataSource = DB.GetInstance().VendaRepo.GetAll().OrderByDescending(v => v.Pedido);
+            if (Orcamento)
+            {
+                vendaBindingSource.DataSource = DB.GetInstance().OrcamentoRepo.GetAll().OrderByDescending(o => o.Numero);
+                dataGridView1.Columns[0].HeaderText = "Número";
+                dataGridView1.Columns[0].DataPropertyName = "Numero";
+                pnlBotoes.Visible = true;
+            }
+            else
+            {
+                vendaBindingSource.DataSource = DB.GetInstance().VendaRepo.GetAll().OrderByDescending(v => v.Pedido);
+                dataGridView1.Columns[0].HeaderText = "Pedido";
+                dataGridView1.Columns[0].DataPropertyName = "Pedido";
+                pnlBotoes.Visible = false;
+            }
             MudaCor();
         }
 
@@ -52,6 +75,7 @@ namespace QIERP
         private void FConsVenda_Load(object sender, EventArgs e)
         {
             DB.GetInstance().context.Vendas.Load();
+            DB.GetInstance().context.Orcamentos.Load();
             DB.GetInstance().context.Items.Load();
             DB.GetInstance().context.Pagamentos.Load();
         }
@@ -78,7 +102,7 @@ namespace QIERP
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (((Venda)row.DataBoundItem).DataExclusao != null)
+                if (((BaseVenda)row.DataBoundItem).DataExclusao != null)
                 {
                     row.DefaultCellStyle = RedCellStyle;
                 }
@@ -91,9 +115,18 @@ namespace QIERP
             {
                 if (Mensagem.MostrarMsg(30003) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    DB.GetInstance().VendaRepo.Deletar((Venda)vendaBindingSource.Current);
-                    DB.GetInstance().context.SaveChanges();
-                    vendaBindingSource.DataSource = DB.GetInstance().VendaRepo.GetAll();
+                    if (Orcamento)
+                    {
+                        DB.GetInstance().OrcamentoRepo.Deletar((Orcamento)vendaBindingSource.Current);
+                        DB.GetInstance().context.SaveChanges();
+                        vendaBindingSource.DataSource = DB.GetInstance().OrcamentoRepo.GetAll();
+                    }
+                    else
+                    {
+                        DB.GetInstance().VendaRepo.Deletar((Venda)vendaBindingSource.Current);
+                        DB.GetInstance().context.SaveChanges();
+                        vendaBindingSource.DataSource = DB.GetInstance().VendaRepo.GetAll();
+                    }
                     MudaCor();
                 }
             }

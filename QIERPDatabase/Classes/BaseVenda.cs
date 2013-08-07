@@ -14,7 +14,6 @@ namespace VERPDatabase.Classes
         public BindingList<Item> Itens { get; set; }
         public Cliente Cliente { get; set; }
         public Vendedor Vendedor { get; set; }
-        public int Numero { get; set; }
 
         public double Total
         {

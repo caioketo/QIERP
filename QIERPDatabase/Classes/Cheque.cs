@@ -15,6 +15,5 @@ namespace QIERPDatabase.Classes
         public string Emissor { get; set; }
         public string Telefone { get; set; }
         public DateTime Vencimento { get; set; }
-        public decimal Valor { get; set; }
     }
 }

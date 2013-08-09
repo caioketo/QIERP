@@ -51,6 +51,7 @@ namespace QIERP
 
         private void FConsVenda_Shown(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (Orcamento)
             {
                 vendaBindingSource.DataSource = DB.GetInstance().OrcamentoRepo.GetAll().OrderByDescending(o => o.Numero);
@@ -65,6 +66,9 @@ namespace QIERP
                 dataGridView1.Columns[0].DataPropertyName = "Pedido";
                 pnlBotoes.Visible = false;
             }
+=======
+            vendaBindingSource.DataSource = DB.GetInstance().VendaRepo.GetAll();
+>>>>>>> parent of b796574... c
             MudaCor();
         }
 

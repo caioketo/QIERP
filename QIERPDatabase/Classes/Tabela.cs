@@ -12,7 +12,6 @@ namespace QIERPDatabase.Classes
         public string Nome;
         public string Descricao;
         public bool Edita = true;
-        public bool Visualiza = true;
 
         public Tabela(string nome)
         {
@@ -46,7 +45,6 @@ namespace QIERPDatabase.Classes
                     campo.MostraGrid = false;
                     Campos.Add(campo);
                     Campos.Add(new Campo("DiasVencimento", "Dias p/ Vencimento", "", TiposDeCampo.Integer, 10));
-                    Campos.Add(new Campo("Parcelas", "Nº de Parcelas", "", TiposDeCampo.Integer, 10));
                     Descricao = "Condições de Pagamento";
                     break;
                 case "Movimentacao":
@@ -66,7 +64,6 @@ namespace QIERPDatabase.Classes
                     campo.MostraGrid = false;
                     Campos.Add(campo);
                     Edita = false;
-                    Visualiza = true;
                     Descricao = "Movimentações";
                     break;
                 case "NotaFiscal":
@@ -166,8 +163,11 @@ namespace QIERPDatabase.Classes
                     Campos.Add(new Campo("Conta", "Conta", "", TiposDeCampo.Varchar, 15));
                     Campos.Add(new Campo("Emissor", "Emissor", "", TiposDeCampo.Varchar, 50));
                     Campos.Add(new Campo("Telefone", "Telefone", "", TiposDeCampo.Varchar, 15));
+<<<<<<< HEAD
                     Campos.Add(new Campo("Valor", "Valor", "c", TiposDeCampo.Numeric, 15, 2, true, true));
                     Campos.Add(new Campo("Vencimento", "Bom Para", "d", TiposDeCampo.DateTime, 0));
+=======
+>>>>>>> parent of b796574... c
                     Descricao = "Cheques";
                     break;
             }

@@ -132,23 +132,6 @@ namespace QIERP.Edicao
             gitItens.bindingSource.DataSource = movimentacao.Itens;
             gitItens.onLoad();
             tbxDescricao.Focus();
-
-            if (estado == Estado.Modificar)
-            {
-                tbxDescricao.Enabled = false;
-                groupBox1.Enabled = false;
-                pesClienteOuFornecedor.Enabled = false;
-                gitItens.Enabled = false;
-                btnSalvar.Enabled = false;
-            }
-            else
-            {
-                tbxDescricao.Enabled = true;
-                groupBox1.Enabled = true;
-                pesClienteOuFornecedor.Enabled = true;
-                gitItens.Enabled = true;
-                btnSalvar.Enabled = true;
-            }
         }
 
         private void FEdicaoMovimentacao_Load(object sender, EventArgs e)

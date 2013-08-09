@@ -37,7 +37,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,7 +62,6 @@
     <Compile Include="Classes\ItemMovimentacao.cs" />
     <Compile Include="Classes\Movimentacao.cs" />
     <Compile Include="Classes\NotaFiscal.cs" />
-    <Compile Include="Classes\Orcamento.cs" />
     <Compile Include="Classes\Pagamento.cs" />
     <Compile Include="Classes\Pessoa.cs" />
     <Compile Include="Classes\Produto.cs" />
@@ -85,7 +83,6 @@
     <Compile Include="Repositorios\CRRepository.cs" />
     <Compile Include="Repositorios\EndRepository.cs" />
     <Compile Include="Repositorios\ExtRepository.cs" />
-    <Compile Include="Repositorios\FornecedorRepository.cs" />
     <Compile Include="Repositorios\FPRepository.cs" />
     <Compile Include="Repositorios\MovRepository.cs" />
     <Compile Include="Repositorios\NotaRepository.cs" />

@@ -101,7 +101,6 @@
             this.dgvCRUD.TabIndex = 10;
             this.dgvCRUD.TabStop = false;
             this.dgvCRUD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCRUD_CellContentClick);
-            this.dgvCRUD.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCRUD_CellDoubleClick);
             // 
             // btnSelecionar
             // 

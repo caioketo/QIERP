@@ -45,7 +45,6 @@
             // 
             // tbxNumero
             // 
-            this.tbxNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxNumero.Location = new System.Drawing.Point(15, 24);
             this.tbxNumero.Name = "tbxNumero";
             this.tbxNumero.Size = new System.Drawing.Size(125, 20);
@@ -54,7 +53,6 @@
             // tbxVenda
             // 
             this.tbxVenda.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.tbxVenda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxVenda.Location = new System.Drawing.Point(15, 64);
             this.tbxVenda.Name = "tbxVenda";
             this.tbxVenda.ReadOnly = true;
@@ -80,7 +78,6 @@
             this.Controls.Add(this.tbxNumero);
             this.Controls.Add(this.label1);
             this.Name = "FEdicaoNota";
-            this.Load += new System.EventHandler(this.FEdicaoNota_Load);
             this.Shown += new System.EventHandler(this.FEdicaoNota_Shown);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.tbxNumero, 0);

@@ -77,10 +77,5 @@ namespace QIERP.Edicao
 
             tbxDescricao.Focus();
         }
-
-        private void FEdicaoCR_Load(object sender, EventArgs e)
-        {
-            tbxValor.Validating += tbx_Leave;
-        }
     }
 }

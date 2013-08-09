@@ -96,11 +96,6 @@ namespace QIERP
 
         private void textBox3_Leave(object sender, EventArgs e)
         {
-            if (tbxQtde.Text.Equals(""))
-            {
-                tbxProduto.Focus();
-                return;
-            }
             try
             {
                 Convert.ToDouble(tbxQtde.Text);
@@ -127,11 +122,14 @@ namespace QIERP
 
         private void FecharVenda(FormaDePagamento fp)
         {
+<<<<<<< HEAD
             //if (VendaAtual == null || VendaAtual.Itens.Count == 0)
             if (VendaOrcAtual == null || VendaOrcAtual.Itens.Count == 0)
             {
                 return;
             }
+=======
+>>>>>>> parent of b796574... c
             using (FFechaVenda fechaVenda = new FFechaVenda())
             {
                 if (!Orcamento)

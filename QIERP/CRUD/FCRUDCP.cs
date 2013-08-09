@@ -65,11 +65,11 @@ namespace QIERP.CRUD
             {
                 if (row.Cells[2] != null)
                 {
-                    if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(3)))
+                    if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(2)))
                     {
                         row.DefaultCellStyle = RedCellStyle;
                     }
-                    else if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(10)))
+                    else if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(4)))
                     {
                         row.DefaultCellStyle = YellowCellStyle;
                     }
@@ -90,11 +90,11 @@ namespace QIERP.CRUD
             {
                 if (row.Cells[2] != null)
                 {
-                    if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(3)))
+                    if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(2)))
                     {
                         row.DefaultCellStyle = RedCellStyle;
                     }
-                    else if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(10)))
+                    else if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(4)))
                     {
                         row.DefaultCellStyle = YellowCellStyle;
                     }

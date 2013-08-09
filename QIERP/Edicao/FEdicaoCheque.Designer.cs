@@ -42,8 +42,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dtpVencimento = new System.Windows.Forms.DateTimePicker();
-            this.tbxValor = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +55,6 @@
             // 
             // tbxBanco
             // 
-            this.tbxBanco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxBanco.Location = new System.Drawing.Point(9, 23);
             this.tbxBanco.MaxLength = 3;
             this.tbxBanco.Name = "tbxBanco";
@@ -66,7 +63,6 @@
             // 
             // tbxAgencia
             // 
-            this.tbxAgencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxAgencia.Location = new System.Drawing.Point(53, 23);
             this.tbxAgencia.MaxLength = 6;
             this.tbxAgencia.Name = "tbxAgencia";
@@ -84,7 +80,6 @@
             // 
             // tbxConta
             // 
-            this.tbxConta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxConta.Location = new System.Drawing.Point(116, 23);
             this.tbxConta.MaxLength = 15;
             this.tbxConta.Name = "tbxConta";
@@ -102,7 +97,6 @@
             // 
             // tbxNumero
             // 
-            this.tbxNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxNumero.Location = new System.Drawing.Point(9, 63);
             this.tbxNumero.MaxLength = 20;
             this.tbxNumero.Name = "tbxNumero";
@@ -120,7 +114,6 @@
             // 
             // tbxEmissor
             // 
-            this.tbxEmissor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxEmissor.Location = new System.Drawing.Point(9, 103);
             this.tbxEmissor.MaxLength = 50;
             this.tbxEmissor.Name = "tbxEmissor";
@@ -138,7 +131,6 @@
             // 
             // tbxTelefone
             // 
-            this.tbxTelefone.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxTelefone.Location = new System.Drawing.Point(9, 143);
             this.tbxTelefone.MaxLength = 15;
             this.tbxTelefone.Name = "tbxTelefone";
@@ -170,30 +162,10 @@
             this.dtpVencimento.Size = new System.Drawing.Size(219, 20);
             this.dtpVencimento.TabIndex = 7;
             // 
-            // tbxValor
-            // 
-            this.tbxValor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxValor.Location = new System.Drawing.Point(263, 63);
-            this.tbxValor.MaxLength = 6;
-            this.tbxValor.Name = "tbxValor";
-            this.tbxValor.Size = new System.Drawing.Size(120, 20);
-            this.tbxValor.TabIndex = 23;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(260, 46);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Valor";
-            // 
             // FEdicaoCheque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(401, 230);
-            this.Controls.Add(this.tbxValor);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.dtpVencimento);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tbxTelefone);
@@ -209,7 +181,6 @@
             this.Controls.Add(this.tbxBanco);
             this.Controls.Add(this.label1);
             this.Name = "FEdicaoCheque";
-            this.Load += new System.EventHandler(this.FEdicaoCheque_Load);
             this.Shown += new System.EventHandler(this.FEdicaoCheque_Shown);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.tbxBanco, 0);
@@ -225,8 +196,6 @@
             this.Controls.SetChildIndex(this.tbxTelefone, 0);
             this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.dtpVencimento, 0);
-            this.Controls.SetChildIndex(this.label8, 0);
-            this.Controls.SetChildIndex(this.tbxValor, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,7 +217,5 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpVencimento;
-        private System.Windows.Forms.TextBox tbxValor;
-        private System.Windows.Forms.Label label8;
     }
 }

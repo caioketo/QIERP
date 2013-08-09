@@ -33,8 +33,6 @@
             this.pesFormaDePagamento = new QIERP.Utils.Pesquisa();
             this.tbxDiasVencimento = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbxParcelas = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSalvar
@@ -52,7 +50,6 @@
             // 
             // tbxDescricao
             // 
-            this.tbxDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxDescricao.Location = new System.Drawing.Point(16, 30);
             this.tbxDescricao.Name = "tbxDescricao";
             this.tbxDescricao.Size = new System.Drawing.Size(251, 20);
@@ -77,7 +74,6 @@
             // 
             // tbxDiasVencimento
             // 
-            this.tbxDiasVencimento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxDiasVencimento.Location = new System.Drawing.Point(273, 30);
             this.tbxDiasVencimento.Name = "tbxDiasVencimento";
             this.tbxDiasVencimento.Size = new System.Drawing.Size(59, 20);
@@ -92,6 +88,7 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Dias p/ Vencimento";
             // 
+<<<<<<< HEAD
             // tbxParcelas
             // 
             this.tbxParcelas.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -109,12 +106,12 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Nº de Parcelas";
             // 
+=======
+>>>>>>> parent of b796574... c
             // FEdicaoCondicaoDePagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(564, 284);
-            this.Controls.Add(this.tbxParcelas);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.tbxDiasVencimento);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pesFormaDePagamento);
@@ -128,8 +125,6 @@
             this.Controls.SetChildIndex(this.pesFormaDePagamento, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.tbxDiasVencimento, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.tbxParcelas, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,7 +137,5 @@
         private Utils.Pesquisa pesFormaDePagamento;
         private System.Windows.Forms.TextBox tbxDiasVencimento;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbxParcelas;
-        private System.Windows.Forms.Label label3;
     }
 }

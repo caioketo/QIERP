@@ -43,14 +43,6 @@ namespace QIERP.Edicao
             cheque.Numero = tbxNumero.Text;
             cheque.Telefone = tbxTelefone.Text;
             cheque.Vencimento = dtpVencimento.Value;
-            if (tbxValor.Text.Contains("R$"))
-            {
-                cheque.Valor = Convert.ToDecimal(tbxValor.Text.Substring(3));
-            }
-            else
-            {
-                cheque.Valor = Convert.ToDecimal(tbxValor.Text);
-            }
         }
 
         private void MapearTela()
@@ -62,7 +54,6 @@ namespace QIERP.Edicao
             tbxNumero.Text = cheque.Numero;
             tbxTelefone.Text = cheque.Telefone;
             dtpVencimento.Value = cheque.Vencimento;
-            tbxValor.Text = cheque.Valor.ToString("c");
         }
 
         private void FEdicaoCheque_Shown(object sender, EventArgs e)
@@ -85,11 +76,6 @@ namespace QIERP.Edicao
                 MapearTela();
             }
             tbxBanco.Focus();
-        }
-
-        private void FEdicaoCheque_Load(object sender, EventArgs e)
-        {
-            tbxValor.Validating += tbx_Leave;
         }
 
     }

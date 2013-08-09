@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> parent of b796574... c
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rtbTotal = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,8 +51,11 @@
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+<<<<<<< HEAD
             this.mstMenu = new System.Windows.Forms.MenuStrip();
             this.importarOrçamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+>>>>>>> parent of b796574... c
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -84,8 +92,11 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+<<<<<<< HEAD
             this.panel1.Controls.Add(this.tbxPreco);
             this.panel1.Controls.Add(this.lblPreco);
+=======
+>>>>>>> parent of b796574... c
             this.panel1.Controls.Add(this.tbxQtde);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.tbxProduto);
@@ -200,8 +211,13 @@
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
+<<<<<<< HEAD
             dataGridViewCellStyle3.Format = "c";
             this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+=======
+            dataGridViewCellStyle1.Format = "c";
+            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+>>>>>>> parent of b796574... c
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             this.valorDataGridViewTextBoxColumn.ReadOnly = true;
@@ -209,8 +225,13 @@
             // totalDataGridViewTextBoxColumn
             // 
             this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+<<<<<<< HEAD
             dataGridViewCellStyle4.Format = "c";
             this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+=======
+            dataGridViewCellStyle2.Format = "c";
+            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+>>>>>>> parent of b796574... c
             this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -219,6 +240,7 @@
             // 
             this.itemBindingSource.DataSource = typeof(QIERPDatabase.Item);
             // 
+<<<<<<< HEAD
             // mstMenu
             // 
             this.mstMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -236,6 +258,8 @@
             this.importarOrçamentoToolStripMenuItem.Text = "Importar Orçamento";
             this.importarOrçamentoToolStripMenuItem.Click += new System.EventHandler(this.importarOrçamentoToolStripMenuItem_Click);
             // 
+=======
+>>>>>>> parent of b796574... c
             // FVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,8 +269,12 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.rtbTotal);
             this.Controls.Add(this.pictureBox1);
+<<<<<<< HEAD
             this.Controls.Add(this.mstMenu);
             this.MainMenuStrip = this.mstMenu;
+=======
+            this.KeyPreview = true;
+>>>>>>> parent of b796574... c
             this.Name = "FVenda";
             this.Text = "Venda";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -279,9 +307,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox tbxPreco;
         private System.Windows.Forms.Label lblPreco;
         private System.Windows.Forms.MenuStrip mstMenu;
         private System.Windows.Forms.ToolStripMenuItem importarOrçamentoToolStripMenuItem;
+=======
+>>>>>>> parent of b796574... c
     }
 }

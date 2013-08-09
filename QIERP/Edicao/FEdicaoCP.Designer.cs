@@ -47,7 +47,6 @@
             // 
             // tbxDescricao
             // 
-            this.tbxDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxDescricao.Location = new System.Drawing.Point(14, 27);
             this.tbxDescricao.Name = "tbxDescricao";
             this.tbxDescricao.Size = new System.Drawing.Size(265, 20);
@@ -96,7 +95,6 @@
             this.Controls.Add(this.tbxDescricao);
             this.Controls.Add(this.label1);
             this.Name = "FEdicaoCP";
-            this.Load += new System.EventHandler(this.FEdicaoCP_Load);
             this.Shown += new System.EventHandler(this.FEdicaoCP_Shown);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.tbxDescricao, 0);

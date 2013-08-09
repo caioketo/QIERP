@@ -51,7 +51,6 @@
             // 
             // tbxDescricao
             // 
-            this.tbxDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxDescricao.Location = new System.Drawing.Point(15, 26);
             this.tbxDescricao.Name = "tbxDescricao";
             this.tbxDescricao.Size = new System.Drawing.Size(388, 20);

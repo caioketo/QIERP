@@ -38,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.edcTelefone = new QIERP.Utils.cmpEdicao();
             this.edcEndereco = new QIERP.Utils.cmpEdicao();
-            this.cbxFornecedor = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // cbxCliente
@@ -74,7 +73,6 @@
             // 
             // tbxDocumento
             // 
-            this.tbxDocumento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxDocumento.Location = new System.Drawing.Point(16, 30);
             this.tbxDocumento.Name = "tbxDocumento";
             this.tbxDocumento.Size = new System.Drawing.Size(132, 20);
@@ -82,7 +80,6 @@
             // 
             // tbxNome
             // 
-            this.tbxNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxNome.Location = new System.Drawing.Point(154, 30);
             this.tbxNome.Name = "tbxNome";
             this.tbxNome.Size = new System.Drawing.Size(232, 20);
@@ -99,7 +96,6 @@
             // 
             // tbxNomeFantasia
             // 
-            this.tbxNomeFantasia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxNomeFantasia.Location = new System.Drawing.Point(392, 30);
             this.tbxNomeFantasia.Name = "tbxNomeFantasia";
             this.tbxNomeFantasia.Size = new System.Drawing.Size(254, 20);
@@ -136,22 +132,10 @@
             this.edcEndereco.tabela = null;
             this.edcEndereco.TabIndex = 5;
             // 
-            // cbxFornecedor
-            // 
-            this.cbxFornecedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbxFornecedor.AutoSize = true;
-            this.cbxFornecedor.Location = new System.Drawing.Point(177, 281);
-            this.cbxFornecedor.Name = "cbxFornecedor";
-            this.cbxFornecedor.Size = new System.Drawing.Size(80, 17);
-            this.cbxFornecedor.TabIndex = 8;
-            this.cbxFornecedor.Text = "Fornecedor";
-            this.cbxFornecedor.UseVisualStyleBackColor = true;
-            // 
             // FEdicaoPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(713, 338);
-            this.Controls.Add(this.cbxFornecedor);
             this.Controls.Add(this.edcEndereco);
             this.Controls.Add(this.edcTelefone);
             this.Controls.Add(this.tbxNomeFantasia);
@@ -175,7 +159,6 @@
             this.Controls.SetChildIndex(this.tbxNomeFantasia, 0);
             this.Controls.SetChildIndex(this.edcTelefone, 0);
             this.Controls.SetChildIndex(this.edcEndereco, 0);
-            this.Controls.SetChildIndex(this.cbxFornecedor, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,7 +176,6 @@
         private System.Windows.Forms.Label label3;
         private Utils.cmpEdicao edcTelefone;
         private Utils.cmpEdicao edcEndereco;
-        private System.Windows.Forms.CheckBox cbxFornecedor;
 
     }
 }

@@ -69,10 +69,5 @@ namespace QIERP.Edicao
 
             tbxNumero.Focus();
         }
-
-        private void FEdicaoNota_Load(object sender, EventArgs e)
-        {
-            tbxNumero.Validating += tbx_Leave;
-        }
     }
 }

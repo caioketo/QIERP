@@ -29,18 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< HEAD
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-=======
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> parent of b796574... c
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rtbTotal = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbxPreco = new System.Windows.Forms.TextBox();
-            this.lblPreco = new System.Windows.Forms.Label();
             this.tbxQtde = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbxProduto = new System.Windows.Forms.TextBox();
@@ -51,16 +42,10 @@
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-<<<<<<< HEAD
-            this.mstMenu = new System.Windows.Forms.MenuStrip();
-            this.importarOrçamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-=======
->>>>>>> parent of b796574... c
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
-            this.mstMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -92,11 +77,6 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
-            this.panel1.Controls.Add(this.tbxPreco);
-            this.panel1.Controls.Add(this.lblPreco);
-=======
->>>>>>> parent of b796574... c
             this.panel1.Controls.Add(this.tbxQtde);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.tbxProduto);
@@ -105,28 +85,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(803, 45);
             this.panel1.TabIndex = 4;
-            // 
-            // tbxPreco
-            // 
-            this.tbxPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxPreco.Location = new System.Drawing.Point(546, 10);
-            this.tbxPreco.Name = "tbxPreco";
-            this.tbxPreco.Size = new System.Drawing.Size(79, 31);
-            this.tbxPreco.TabIndex = 5;
-            this.tbxPreco.Visible = false;
-            this.tbxPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxQtde_KeyPress);
-            this.tbxPreco.Leave += new System.EventHandler(this.tbxPreco_Leave);
-            // 
-            // lblPreco
-            // 
-            this.lblPreco.AutoSize = true;
-            this.lblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreco.Location = new System.Drawing.Point(466, 12);
-            this.lblPreco.Name = "lblPreco";
-            this.lblPreco.Size = new System.Drawing.Size(74, 25);
-            this.lblPreco.TabIndex = 4;
-            this.lblPreco.Text = "Preço:";
-            this.lblPreco.Visible = false;
             // 
             // tbxQtde
             // 
@@ -211,13 +169,6 @@
             // valorDataGridViewTextBoxColumn
             // 
             this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
-<<<<<<< HEAD
-            dataGridViewCellStyle3.Format = "c";
-            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-=======
-            dataGridViewCellStyle1.Format = "c";
-            this.valorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
->>>>>>> parent of b796574... c
             this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
             this.valorDataGridViewTextBoxColumn.ReadOnly = true;
@@ -225,13 +176,6 @@
             // totalDataGridViewTextBoxColumn
             // 
             this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-<<<<<<< HEAD
-            dataGridViewCellStyle4.Format = "c";
-            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-=======
-            dataGridViewCellStyle2.Format = "c";
-            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
->>>>>>> parent of b796574... c
             this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -240,26 +184,6 @@
             // 
             this.itemBindingSource.DataSource = typeof(QIERPDatabase.Item);
             // 
-<<<<<<< HEAD
-            // mstMenu
-            // 
-            this.mstMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importarOrçamentoToolStripMenuItem});
-            this.mstMenu.Location = new System.Drawing.Point(0, 0);
-            this.mstMenu.Name = "mstMenu";
-            this.mstMenu.Size = new System.Drawing.Size(828, 24);
-            this.mstMenu.TabIndex = 6;
-            this.mstMenu.Text = "menuStrip1";
-            // 
-            // importarOrçamentoToolStripMenuItem
-            // 
-            this.importarOrçamentoToolStripMenuItem.Name = "importarOrçamentoToolStripMenuItem";
-            this.importarOrçamentoToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
-            this.importarOrçamentoToolStripMenuItem.Text = "Importar Orçamento";
-            this.importarOrçamentoToolStripMenuItem.Click += new System.EventHandler(this.importarOrçamentoToolStripMenuItem_Click);
-            // 
-=======
->>>>>>> parent of b796574... c
             // FVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,12 +193,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.rtbTotal);
             this.Controls.Add(this.pictureBox1);
-<<<<<<< HEAD
-            this.Controls.Add(this.mstMenu);
-            this.MainMenuStrip = this.mstMenu;
-=======
-            this.KeyPreview = true;
->>>>>>> parent of b796574... c
             this.Name = "FVenda";
             this.Text = "Venda";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -285,8 +203,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
-            this.mstMenu.ResumeLayout(false);
-            this.mstMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,12 +223,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
-<<<<<<< HEAD
-        private System.Windows.Forms.TextBox tbxPreco;
-        private System.Windows.Forms.Label lblPreco;
-        private System.Windows.Forms.MenuStrip mstMenu;
-        private System.Windows.Forms.ToolStripMenuItem importarOrçamentoToolStripMenuItem;
-=======
->>>>>>> parent of b796574... c
     }
 }

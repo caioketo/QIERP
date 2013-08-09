@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using QIERPDatabase.Classes;
 using QIERPDatabase.Migrations;
 using System.Data.Entity.Infrastructure;
+using System.Diagnostics;
 
 namespace QIERPDatabase
 {
@@ -16,7 +17,7 @@ namespace QIERPDatabase
     {
         public static string CreateConnectionString()
         {
-            return "Server=127.0.0.1\\SQLSERVER;Database=qierp;User Id=sa;Password=vd001989;";
+            return "Server=PC\\SQLEXPRESS;Database=qierp;User Id=sa;Password=vd7887;";
         }
         private string connectionString;
         public QIERPContext() : base() { }
@@ -44,11 +45,10 @@ namespace QIERPDatabase
         public DbSet<ContaPagar> CPs { get; set; }
         public DbSet<Cheque> Cheques { get; set; }
         public DbSet<NotaFiscal> Notas { get; set; }
-        public DbSet<Orcamento> Orcamentos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer<QIERPContext>(new DropCreateDatabaseIfModelChanges<QIERPContext>());
+            Database.SetInitializer<QIERPContext>(new CreateDatabaseIfNotExists<QIERPContext>());
             Database.DefaultConnectionFactory = new SqlConnectionFactory("System.Data.SqlServer");
             base.OnModelCreating(modelBuilder);
         }
@@ -69,6 +69,7 @@ namespace QIERPDatabase
 
         public void LoadAll()
         {
+            Debug.Write(Database.Connection.ConnectionString);
             Produtos.Load();
             FormasDePagamento.Load();
             CondicoesDePagamento.Load();
@@ -88,7 +89,6 @@ namespace QIERPDatabase
             CPs.Load();
             Cheques.Load();
             Notas.Load();
-            Orcamentos.Load();
         }
     }
 }

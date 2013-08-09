@@ -24,9 +24,7 @@ namespace QIERP.Utils
         }
 
         public Expression<Func<Venda, bool>> Filtro = x => x.DataExclusao == null;
-        public Expression<Func<Orcamento, bool>> FiltroOrc = x => x.DataExclusao == null;
         public Venda resultado = null;
-        public Orcamento resultadoOrc = null;
 
         public bool Orcamento = false;
 
@@ -41,7 +39,7 @@ namespace QIERP.Utils
             {
                 return;
             }
-            if (resultado != null || resultadoOrc != null)
+            if (resultado != null)
             {
                 return;
             }
@@ -55,23 +53,6 @@ namespace QIERP.Utils
                     tbxPedido.Text = venda.Pedido.ToString() + " - " + venda.Total.ToString("c") + " - " + venda.ClienteNome;
                     tbxPedido.BackColor = Color.LightGray;
                     resultado = venda;
-                }
-                else
-                {
-                    Mensagem.MostrarMsg(40006);
-                    tbxPedido.Focus();
-                }
-            }
-            else
-            {
-                FiltroOrc = Combine<Orcamento>(FiltroOrc, x => x.Numero == Convert.ToInt32(tbxPedido.Text));
-                Orcamento orc = DB.GetInstance().OrcamentoRepo.GetAll().Where(FiltroOrc).FirstOrDefault();
-                if (orc != null)
-                {
-                    tbxPedido.ReadOnly = true;
-                    tbxPedido.Text = orc.Numero.ToString() + " - " + orc.Total.ToString("c") + " - " + orc.ClienteNome;
-                    tbxPedido.BackColor = Color.LightGray;
-                    resultadoOrc = orc;
                 }
                 else
                 {
@@ -95,13 +76,12 @@ namespace QIERP.Utils
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             resultado = null;
-            resultadoOrc = null;
             Close();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (resultado != null || resultadoOrc != null)
+            if (resultado != null)
             {
                 Close();
             }

@@ -35,10 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(394, 0);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -88,26 +84,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Dias p/ Vencimento";
             // 
-<<<<<<< HEAD
-            // tbxParcelas
-            // 
-            this.tbxParcelas.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxParcelas.Location = new System.Drawing.Point(380, 30);
-            this.tbxParcelas.Name = "tbxParcelas";
-            this.tbxParcelas.Size = new System.Drawing.Size(59, 20);
-            this.tbxParcelas.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(377, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Nº de Parcelas";
-            // 
-=======
->>>>>>> parent of b796574... c
             // FEdicaoCondicaoDePagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

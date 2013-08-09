@@ -98,20 +98,6 @@
             this.notasFiscaisToolStripMenuItem.Text = "Notas Fiscais";
             this.notasFiscaisToolStripMenuItem.Click += new System.EventHandler(this.notasFiscaisToolStripMenuItem_Click);
             // 
-            // criarOrçamentoToolStripMenuItem
-            // 
-            this.criarOrçamentoToolStripMenuItem.Name = "criarOrçamentoToolStripMenuItem";
-            this.criarOrçamentoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.criarOrçamentoToolStripMenuItem.Text = "Criar Orçamento";
-            this.criarOrçamentoToolStripMenuItem.Click += new System.EventHandler(this.criarOrçamentoToolStripMenuItem_Click);
-            // 
-            // consultaOrçamentoToolStripMenuItem
-            // 
-            this.consultaOrçamentoToolStripMenuItem.Name = "consultaOrçamentoToolStripMenuItem";
-            this.consultaOrçamentoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.consultaOrçamentoToolStripMenuItem.Text = "Consulta Orçamento";
-            this.consultaOrçamentoToolStripMenuItem.Click += new System.EventHandler(this.consultaOrçamentoToolStripMenuItem_Click);
-            // 
             // produtosToolStripMenuItem
             // 
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";

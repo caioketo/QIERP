@@ -31,30 +31,14 @@ namespace QIERPDatabase
             {
                 if (pag.Forma.LancaCR)
                 {
-<<<<<<< HEAD
-                    for (int i = 0; i < pag.Condicao.Parcelas; i++)
-                    {
-                        ContaReceber cr = new ContaReceber();
-                        cr.Descricao = pag.Forma.Descricao + " - Venda nº " + item.Pedido.ToString();
-                        cr.Valor = (decimal)pag.Valor / pag.Condicao.Parcelas;
-                        cr.Vencimento = DateTime.Now.AddDays(((i + 1) * pag.Condicao.DiasVencimento));
-                        DB.GetInstance().context.CRs.Add(cr);
-                    }
-=======
                     ContaReceber cr = new ContaReceber();
                     cr.Descricao = pag.Forma.Descricao + " - Venda nº " + item.Pedido.ToString();
                     cr.Valor = (decimal)pag.Valor;
                     cr.Vencimento = DateTime.Now.AddDays(pag.Condicao.DiasVencimento);
                     DB.GetInstance().context.CRs.Add(cr);
->>>>>>> parent of b796574... c
                 }
             }
 
-            if (item.Orcamento != null)
-            {
-                item.Orcamento.ImpVenda = true;
-                DB.GetInstance().OrcamentoRepo.Salvar(item.Orcamento);
-            }
 
             DB.GetInstance().context.SaveChanges();
             return true;

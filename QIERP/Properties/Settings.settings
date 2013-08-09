@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionStr" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Server=KETO-PC\\SQLSERVER;Database=qierp;User Id=sa;Password=vd001989</Value>
+      <Value Profile="(Default)">Server=PC\\SQLEXPRESS;Database=qierp;User Id=sa;Password=vd7887</Value>
     </Setting>
     <Setting Name="FirstRun" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

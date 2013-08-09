@@ -82,11 +82,6 @@ namespace QIERP.Edicao
             pesFormaDePagamento.CampoDisplay = "Descricao";
             pesFormaDePagamento.Titulo = "Forma de Pagamento";
             pesFormaDePagamento.Repo = Util.GetRepo("FormasDePagamento");
-<<<<<<< HEAD
-            tbxDiasVencimento.Validating += tbx_Leave;
-            tbxParcelas.Validating += tbx_Leave;
-=======
->>>>>>> parent of b796574... c
         }
     }
 }

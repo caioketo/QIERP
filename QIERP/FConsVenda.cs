@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using QIERP.Utils;
 using QIERPDatabase;
 using QIERPDatabase.Classes;
-using QIERP.Relatorios;
 
 namespace QIERP
 {
@@ -33,10 +32,6 @@ namespace QIERP
                     itemBindingSource.DataSource = ((Venda)vendaBindingSource.Current).Itens;
                     pagamentoBindingSource.DataSource = ((Venda)vendaBindingSource.Current).Pagamentos;
                 }
-                else
-                {
-                    itemBindingSource.DataSource = ((Orcamento)vendaBindingSource.Current).Itens;
-                }
             }
             catch
             {
@@ -51,24 +46,7 @@ namespace QIERP
 
         private void FConsVenda_Shown(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            if (Orcamento)
-            {
-                vendaBindingSource.DataSource = DB.GetInstance().OrcamentoRepo.GetAll().OrderByDescending(o => o.Numero);
-                dataGridView1.Columns[0].HeaderText = "Número";
-                dataGridView1.Columns[0].DataPropertyName = "Numero";
-                pnlBotoes.Visible = true;
-            }
-            else
-            {
-                vendaBindingSource.DataSource = DB.GetInstance().VendaRepo.GetAll().OrderByDescending(v => v.Pedido);
-                dataGridView1.Columns[0].HeaderText = "Pedido";
-                dataGridView1.Columns[0].DataPropertyName = "Pedido";
-                pnlBotoes.Visible = false;
-            }
-=======
             vendaBindingSource.DataSource = DB.GetInstance().VendaRepo.GetAll();
->>>>>>> parent of b796574... c
             MudaCor();
         }
 
@@ -80,7 +58,6 @@ namespace QIERP
         private void FConsVenda_Load(object sender, EventArgs e)
         {
             DB.GetInstance().context.Vendas.Load();
-            DB.GetInstance().context.Orcamentos.Load();
             DB.GetInstance().context.Items.Load();
             DB.GetInstance().context.Pagamentos.Load();
         }
@@ -120,18 +97,9 @@ namespace QIERP
             {
                 if (Mensagem.MostrarMsg(30003) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    if (Orcamento)
-                    {
-                        DB.GetInstance().OrcamentoRepo.Deletar((Orcamento)vendaBindingSource.Current);
-                        DB.GetInstance().context.SaveChanges();
-                        vendaBindingSource.DataSource = DB.GetInstance().OrcamentoRepo.GetAll();
-                    }
-                    else
-                    {
-                        DB.GetInstance().VendaRepo.Deletar((Venda)vendaBindingSource.Current);
-                        DB.GetInstance().context.SaveChanges();
-                        vendaBindingSource.DataSource = DB.GetInstance().VendaRepo.GetAll();
-                    }
+                    DB.GetInstance().VendaRepo.Deletar((Venda)vendaBindingSource.Current);
+                    DB.GetInstance().context.SaveChanges();
+                    vendaBindingSource.DataSource = DB.GetInstance().VendaRepo.GetAll();
                     MudaCor();
                 }
             }
@@ -139,11 +107,6 @@ namespace QIERP
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            using (RPOrcamento rel = new RPOrcamento())
-            {
-                rel.OrcamentoId = ((Orcamento)vendaBindingSource.Current).Id;
-                rel.ShowDialog();
-            }
         }
     }
 }

@@ -120,34 +120,11 @@ namespace QIERP
                 crud.ShowDialog();
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void criarOrçamentoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (FVenda venda = new FVenda())
-            {
-                venda.Orcamento = true;
-                venda.ShowDialog();
-            }
-        }
-
-        private void consultaOrçamentoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (FConsVenda consulta = new FConsVenda())
-            {
-                consulta.Orcamento = true;
-                consulta.ShowDialog();
-            }
-        }
-=======
->>>>>>> parent of 97dace5... c
-=======
->>>>>>> parent of 97dace5... c
     }
 }

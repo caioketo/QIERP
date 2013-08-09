@@ -86,7 +86,6 @@
     <Compile Include="Repositorios\FPRepository.cs" />
     <Compile Include="Repositorios\MovRepository.cs" />
     <Compile Include="Repositorios\NotaRepository.cs" />
-    <Compile Include="Repositorios\OrcamentoRepository.cs" />
     <Compile Include="Repositorios\PessoaRepository.cs" />
     <Compile Include="Repositorios\ProdutoRepository.cs" />
     <Compile Include="Repositorios\TelefoneRepository.cs" />

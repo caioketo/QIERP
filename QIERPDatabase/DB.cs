@@ -48,11 +48,6 @@ namespace QIERPDatabase
         public CPRepository CPRepo = new CPRepository();
         public ChequeRepository ChequeRepo = new ChequeRepository();
         public NotaRepository NotaRepo = new NotaRepository();
-<<<<<<< HEAD
-        public FornecedorRepository FornecedorRepo = new FornecedorRepository();
-        public OrcamentoRepository OrcamentoRepo = new OrcamentoRepository();
-=======
->>>>>>> parent of b796574... c
         public QIERPContext context;
 
 

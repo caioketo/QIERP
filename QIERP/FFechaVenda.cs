@@ -157,13 +157,6 @@ namespace QIERP
                     return;
                 }
             }
-            else
-            {
-                if (!DB.GetInstance().OrcamentoRepo.Inserir(((Orcamento)VendaOrcAtual)))
-                {
-                    return;
-                }
-            }
             fVenda.VendaOrcAtual = null;
             Mensagem.MostrarMsg(10000);
             this.Close();

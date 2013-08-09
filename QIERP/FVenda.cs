@@ -34,14 +34,7 @@ namespace QIERP
             //}
             if (VendaOrcAtual == null)
             {
-                if (Orcamento)
-                {
-                    VendaOrcAtual = new Orcamento();
-                }
-                else
-                {
-                    VendaOrcAtual = new Venda();
-                }
+                VendaOrcAtual = new Venda();
                 itemBindingSource.DataSource = VendaOrcAtual.Itens;
             }
             VendaOrcAtual.Itens.Add(item);
@@ -56,12 +49,6 @@ namespace QIERP
 
         private void Venda_Shown(object sender, EventArgs e)
         {
-            if (Orcamento)
-            {
-                tbxPreco.Visible = true;
-                lblPreco.Visible = true;
-                mstMenu.Visible = false;
-            }
             itemBindingSource.DataSource = null;
             rtbTotal.Text = "CAIXA ABERTO" + Environment.NewLine + "PASSE O ITEM";
         }
@@ -113,23 +100,10 @@ namespace QIERP
                 tbxProduto.Clear();
                 tbxQtde.Clear();
             }
-            else
-            {
-                tbxPreco.Text = produtoAchado.Valor.ToString("c");
-                tbxPreco.Focus();
-            }
         }
 
         private void FecharVenda(FormaDePagamento fp)
         {
-<<<<<<< HEAD
-            //if (VendaAtual == null || VendaAtual.Itens.Count == 0)
-            if (VendaOrcAtual == null || VendaOrcAtual.Itens.Count == 0)
-            {
-                return;
-            }
-=======
->>>>>>> parent of b796574... c
             using (FFechaVenda fechaVenda = new FFechaVenda())
             {
                 if (!Orcamento)
@@ -194,55 +168,12 @@ namespace QIERP
 
         private void tbxPreco_Leave(object sender, EventArgs e)
         {
-            if (tbxPreco.Text.Equals(""))
-            {
-                tbxQtde.Focus();
-                return;
-            }
-            double Preco;
-            try
-            {
-                if (tbxPreco.Text.Contains("R$"))
-                {
-                    Preco = Convert.ToDouble(tbxPreco.Text.Substring(2));
-                }
-                else
-                {
-                    Preco = Convert.ToDouble(tbxPreco.Text);
-                }
-            }
-            catch (Exception)
-            {
-                Mensagem.MostrarMsg(40004);
-                tbxPreco.Focus();
-                return;
-            }
-
-            AddItem(new Item(produtoAchado, Convert.ToDouble(tbxQtde.Text), Preco));
-            tbxProduto.Clear();
-            tbxQtde.Clear();
-            tbxPreco.Clear();
+            
         }
 
         private void importarOrçamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (FSelecionaPedido sel = new FSelecionaPedido())
-            {
-                sel.Orcamento = true;
-                sel.ShowDialog();
-                if (sel.resultadoOrc == null)
-                {
-                    return;
-                }
-                foreach (Item item in sel.resultadoOrc.Itens)
-                {
-                    produtoAchado = item.Produto;
-                    AddItem(item);
-                }
-                VendaOrcAtual.Cliente = sel.resultadoOrc.Cliente;
-                VendaOrcAtual.Vendedor = sel.resultadoOrc.Vendedor;
-                ((Venda)VendaOrcAtual).Orcamento = sel.resultadoOrc;
-            }
+            
         }
     }
 }

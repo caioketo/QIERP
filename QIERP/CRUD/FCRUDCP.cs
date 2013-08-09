@@ -63,7 +63,7 @@ namespace QIERP.CRUD
 
             foreach (DataGridViewRow row in dgvCRUD.Rows)
             {
-                if (row.Cells[2].Value != null)
+                if (row.Cells[2] != null)
                 {
                     if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(3)))
                     {
@@ -88,7 +88,7 @@ namespace QIERP.CRUD
 
             foreach (DataGridViewRow row in dgvCRUD.Rows)
             {
-                if (row.Cells[2].Value != null)
+                if (row.Cells[2] != null)
                 {
                     if (((DateTime)row.Cells[2].Value).Date <= (DateTime.Now.Date.AddDays(3)))
                     {

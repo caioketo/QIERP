@@ -70,7 +70,7 @@ namespace QIERP
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            //this.Close();
+            this.Close();
         }
 
         private void movimentaçõesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,6 +120,7 @@ namespace QIERP
                 crud.ShowDialog();
             }
         }
+<<<<<<< HEAD
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -143,5 +144,7 @@ namespace QIERP
                 consulta.ShowDialog();
             }
         }
+=======
+>>>>>>> parent of 97dace5... c
     }
 }

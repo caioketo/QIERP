@@ -71,10 +71,6 @@ namespace QIERPDatabase
             {
                 nome = nome.Substring(0, nome.Length - 1);
             }
-            if (nome.Equals("Produto"))
-            {
-                nome = "Produtos";
-            }
             foreach (Tabela tab in Tabelas)
             {
                 if (tab.Nome.ToUpper().Equals(nome.ToUpper()))

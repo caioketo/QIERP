@@ -93,7 +93,7 @@ namespace QIERP.Utils
                     this.ResizeRedraw = true;
                     if (gbxGeral.Controls.Count == (Controles.Count * 2))
                     {
-                        this.Size = new Size(screenWidth + 20, screenHeight + 20);
+                        this.Size = new Size(screenWidth, screenHeight);
                     }
                 }
             }

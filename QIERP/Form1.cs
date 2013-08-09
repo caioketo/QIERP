@@ -121,6 +121,7 @@ namespace QIERP
             }
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -144,6 +145,8 @@ namespace QIERP
                 consulta.ShowDialog();
             }
         }
+=======
+>>>>>>> parent of 97dace5... c
 =======
 >>>>>>> parent of 97dace5... c
     }
